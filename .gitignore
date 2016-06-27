@@ -12,8 +12,14 @@ target
 
 #Idea
 .idea
-sushi.iml
-src/main/main.iml
+spring-*/src/main/java/META-INF/MANIFEST.MF
 
-
+# IDEA artifacts and output dirs
+*.iml
+*.ipr
+*.iws
+out
+test-output
+atlassian-ide-plugin.xml
+.gradletasknamecache
 src/main/resources/META-INF/persistence.xml
