@@ -56,6 +56,7 @@
 
 </c:choose>
 
+<div></div>
                 </c:forEach>             
             </table>
             
