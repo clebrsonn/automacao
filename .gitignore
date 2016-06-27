@@ -9,3 +9,11 @@ target
 
 # SpringSource Tool Suite
 .springBeans
+
+#Idea
+.idea
+sushi.iml
+src/main/main.iml
+
+
+src/main/resources/META-INF/persistence.xml
