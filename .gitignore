@@ -5,7 +5,7 @@
 .classpath
 Servers
 bin
-target
+target/
 
 # SpringSource Tool Suite
 .springBeans
