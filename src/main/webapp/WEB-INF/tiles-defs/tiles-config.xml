@@ -430,4 +430,11 @@
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaorecebimento.jsp"/>      
     </definition>
 
+
+
+
+    <definition name="AddCategoria" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrocategoria.jsp"/>
+    </definition>
+
 </tiles-definitions>

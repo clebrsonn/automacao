@@ -18,6 +18,19 @@
 		<input name="nome"type="text" class="inp-form" value="${categoria.nome}"/>
 
 
+<p>Categoria Pai:</p>
+				<select name="tipo" id="files" class="inp-form">
+			        <option value="${categoria.catpai}">${categoria.catpai.nome}</option>
+				
+			 <optgroup label="Categoria Pai">
+                     			<c:forEach var="categoria" items="${categoriaList}">
+                     			
+                     			
+                     				<option value="${categoria.id}">${categoria.nome}</option>
+                     				</c:forEach>
+
+                </optgroup>
+		</select>
 
 
 

@@ -7,17 +7,18 @@
 
 
     <div id="form">
-        <form id="formCategoria" action="AddCategoria" method="GET">
+        <form id="formCategoria" action="AddCategoria" method="post">
 
 
             <p>ID da Categoria:</p>
             <input name="id" type="text" class="inp-form" readonly="readonly"/>
 
-            <p>Categoria Pai:</p>
-            <select id="catPai" name="catPai" id="files" class="inp-form">
+            <p> Categoria Pai:</p>
+            <select id="catpai" name="catpai" id="files" class="inp-form">
+            
                 <optgroup label="Categoria Pai">
                      			<c:forEach var="categoria" items="${categoriaList}">
-                     				<option value="${categoria}">${categoria.nome}</option>
+                     				<option value="${categoria.id}">${categoria.nome}</option>
                      				</c:forEach>
 
                 </optgroup>

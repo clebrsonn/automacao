@@ -1,9 +1,16 @@
 package com.teccsoluction.sushi;
 
 import com.teccsoluction.sushi.dao.CategoriaDAO;
+import com.teccsoluction.sushi.dao.SubCategoriaDAO;
 import com.teccsoluction.sushi.entidade.Categoria;
+import com.teccsoluction.sushi.entidade.SubCategoria;
+import com.teccsoluction.sushi.util.CategoriaEditor;
+import com.teccsoluction.sushi.util.SubCategoriaEditor;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
  * Handles requests for the application home page.
@@ -22,7 +31,22 @@ public class CategoriaController {
     @Autowired
     private CategoriaDAO categoriaDao;
 
+    @Autowired
+    private SubCategoriaDAO subcategoriaDao;
+
     private List<Categoria> categoriaList;
+
+    private List<SubCategoria> subcategoriaList;
+
+
+
+    @InitBinder
+    protected void initBinder(HttpServletRequest request,  ServletRequestDataBinder binder) {
+
+        binder.registerCustomEditor(Categoria.class, new CategoriaEditor(this.categoriaDao));
+
+
+    }
 
 
     @RequestMapping(value = "/cadastrocategoria", method = RequestMethod.GET)
@@ -38,28 +62,29 @@ public class CategoriaController {
         return cadastrocategoria;
     }
 
-    @RequestMapping(value = "/AddCategoria", method = RequestMethod.GET)
-    public ModelAndView AdicionarCategoria(@ModelAttribute("Categoria") Categoria categoria) {
+    @RequestMapping(value = "/AddCategoria", method = RequestMethod.POST)
+    public ModelAndView AdicionarCategoria(@ModelAttribute("Categoria") Categoria categoria,HttpServletRequest request) {
 
-//        long idf = Long.parseLong(request.getParameter("catPai"));
+	
+//    	
+//    	long id - Long.parseLong(request.getParameter("ca"));
+    		
+        ModelAndView cadastrocategoria = new ModelAndView("cadastrocategoria");
+        
+        categoria.setCatpai(categoria.getCatpai());
+        
+        categoriaDao.add(categoria);       
+        
+        
+        categoriaList = categoriaDao.getAll();
+        cadastrocategoria.addObject("categoriaList", categoriaList);
 
-//        Categoria catPai = categoriaDao.PegarPorId(idf);
-        ModelAndView cadastro_categoria = new ModelAndView("cadastrocategoria");
-//        categoria.setCatPai(catPai);
-        categoriaDao.add(categoria);
 
-        return cadastro_categoria;
+
+        return cadastrocategoria;
     }
 
-    //
-//	@RequestMapping(value = "cadastrocategoria", method = RequestMethod.GET)
-//	public ModelAndView cadastrocategoria() {
-//		
-//		ModelAndView cadastrocategoria = new ModelAndView("cadastrocategoria");
-//		
-//		return cadastrocategoria;
-//	}
-//	
+
     @RequestMapping(value = "/movimentacaocategoria", method = RequestMethod.GET)
     public ModelAndView movimentacaoCategoria() {
 
@@ -79,7 +104,9 @@ public class CategoriaController {
         long idf = Long.parseLong(request.getParameter("id"));
         ModelAndView edicaocategoria = new ModelAndView("edicaocategoria");
         categoria = categoriaDao.PegarPorId(idf);
+        categoriaList =categoriaDao.getAll();
         edicaocategoria.addObject("categoria", categoria);
+        edicaocategoria.addObject("categoriaList", categoriaList);
 
 
         return edicaocategoria;
@@ -110,5 +137,8 @@ public class CategoriaController {
 
         return new ModelAndView("redirect:/movimentacaocategoria");
     }
+    
+    
+    
 
 }

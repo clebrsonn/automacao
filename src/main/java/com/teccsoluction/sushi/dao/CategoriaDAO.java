@@ -50,7 +50,8 @@ public class CategoriaDAO {
 				Categoria categoriaant =em.find(Categoria.class, id);
 				
 				categoriaant.setNome(categoria.getNome());
-//				arquitetoant.setProjeto(projeto);
+				categoriaant.setCatpai(categoria.getCatpai());
+				categoria.setCatpai(categoriaant.getCatpai());
 				
 				categoria = em.merge(categoriaant);
 				

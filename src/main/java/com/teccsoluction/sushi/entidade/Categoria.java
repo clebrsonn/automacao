@@ -2,6 +2,7 @@ package com.teccsoluction.sushi.entidade;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
@@ -21,15 +22,19 @@ public class Categoria implements Serializable {
     @Column(name = "NOME")
     private String nome;
 
-    @ManyToOne
-    @JoinColumn(name = "CAT_PAI", nullable = true)
-    private Categoria catPai;
+    @JoinColumn(name="CAT_PAI_ID",nullable=true)
+    private Categoria catpai;
 
 
     //CONSTRUTOR PADRAO
 
     public Categoria() {
         // TODO Auto-generated constructor stub
+    }
+    
+    public Categoria(Categoria cat) {
+        // TODO Auto-generated constructor stub
+    	this.catpai=cat;
     }
 
 
@@ -49,19 +54,31 @@ public class Categoria implements Serializable {
         return id;
     }
 
-    public Categoria getCatPai() {
-        return catPai;
-    }
-
-    public void setCatPai(Categoria catPai) {
-        this.catPai = catPai;
-    }
-
+//    public SubCategoria getSubCategoria() {
+//        return subCategoria;
+//    }
+//
+//    public void setSubCategoria(SubCategoria subCategoria) {
+//        this.subCategoria=subCategoria;
+//    }
+    
+    
+    
 
     @Override
     public String toString() {
         return nome;
     }
+
+
+	public Categoria getCatpai() {
+		return catpai;
+	}
+
+
+	public void setCatpai(Categoria catpai) {
+		this.catpai = catpai;
+	}
 
 
 }
