@@ -1,6 +1,5 @@
 package com.teccsoluction.sushi;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import com.teccsoluction.sushi.dao.UsuarioDAO;
 import com.teccsoluction.sushi.entidade.Usuario;
-import com.teccsoluction.sushi.util.TipoUsuario;
 
 /**
  * Handles requests for the application home page.
@@ -34,25 +32,27 @@ public class UsuarioController {
 		
 		ModelAndView cadastrousuario = new ModelAndView("cadastrousuario");
 		
-		TipoUsuario[] tipoList = TipoUsuario.values() ;
-	
-		
-		cadastrousuario.addObject("tipoList", tipoList);
-
-		
 		return cadastrousuario;
 	}
 	
 	@RequestMapping(value = "/AddUsuario", method = RequestMethod.POST)
-	public ModelAndView AdicionarUsuario(@ModelAttribute("Usuario") Usuario usuario) {
+	public ModelAndView AdicionarUsuario(@ModelAttribute("Usuario") Usuario mesa) {
 		
 		ModelAndView cadastrousuario = new ModelAndView("cadastrousuario");
 		
-		usuarioDao.add(usuario);
+		usuarioDao.add(mesa);
 		
 		return cadastrousuario;
 	}
-
+//	
+//	@RequestMapping(value = "cadastrocategoria", method = RequestMethod.GET)
+//	public ModelAndView cadastrocategoria() {
+//		
+//		ModelAndView cadastrocategoria = new ModelAndView("cadastrocategoria");
+//		
+//		return cadastrocategoria;
+//	}
+//	
 	@RequestMapping(value = "/movimentacaousuario", method = RequestMethod.GET)
 	public ModelAndView movimentacaoUsuario() {
 		
@@ -74,12 +74,6 @@ public class UsuarioController {
 		long id = Long.parseLong(request.getParameter("id"));
 		ModelAndView edicaousuario = new ModelAndView("edicaousuario");
 		Usuario usuario=usuarioDao.PegarPorId(id);
-		
-		//carregando valores do enu tipousuario em um array
-		TipoUsuario[] tipoList = TipoUsuario.values() ;
-		
-		edicaousuario.addObject("tipoList", tipoList);
-		
 		edicaousuario.addObject("usuario", usuario);
 			
 		

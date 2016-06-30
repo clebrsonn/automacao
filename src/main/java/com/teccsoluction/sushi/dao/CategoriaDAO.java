@@ -51,7 +51,7 @@ public class CategoriaDAO {
 				
 				categoriaant.setNome(categoria.getNome());
 				categoriaant.setCatpai(categoria.getCatpai());
-//				categoria.setCatpai(categoriaant.getCatpai());
+				categoria.setCatpai(categoriaant.getCatpai());
 				
 				categoria = em.merge(categoriaant);
 				

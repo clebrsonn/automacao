@@ -1,14 +1,12 @@
 package com.teccsoluction.sushi.entidade;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,20 +23,17 @@ public class Fornecedor implements Serializable {
 	@Column(name="ID")
 	private long id;
 	
-	@Column(name="NOME_FANTASIA")
+	@Column(name="nome_fantasia")
 	private String nomefantasia;
 	
-	@Column(name="RAZAO_SOCIAL")
+	@Column(name="razao_social")
 	private String razaoSocial;
 	
-	@Column(name="CNPJ")
+	@Column(name="cnpj")
 	private String cnpj;
 	
-	@Column(name="INSCRICAOESTADUAL")
+	@Column(name="inscricaoestadual")
 	private String inscricaoestadual;
-	
-//	@OneToMany
-//	private List<Produto> ListaProdutoPorFornecedor;
 	
 	
 	public Fornecedor() {

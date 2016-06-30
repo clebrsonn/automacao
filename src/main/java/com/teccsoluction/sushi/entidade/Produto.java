@@ -4,23 +4,18 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.ManyToAny;
-
-import com.teccsoluction.sushi.util.UnidadeMedida;
 
 @Entity
 @Table(name="PRODUTO")
 public class Produto implements Serializable {
 	
-
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -28,27 +23,24 @@ public class Produto implements Serializable {
 	@Column(name="ID")
 	private long id;
 	
-	@Column(name="CODEBAR")
+	@Column(name="codebar")
 	private String codebar;
 	
-	@Column(name="DESCRICAO")
+	
+	@Column(name="descricao")
 	private String descricao;
 	
 	@Column(name="UM")
-	@Enumerated(EnumType.ORDINAL)
-	private UnidadeMedida um;
+	private String um;
 	
-	@Column(name="PRECO_CUSTO")
+	
+	@Column(name="preco_custo")
 	private double precoCusto;
 	
-	@Column(name="PRECO_VENDA")
+	@Column(name="preco_venda")
 	private double precoVenda;
 	
-	@ManyToOne
-	private Fornecedor fornecedor;
 	
-	@ManyToOne
-	private Categoria categoria;
 	
 	
 	
@@ -56,36 +48,6 @@ public class Produto implements Serializable {
 	public Produto() {
 		// TODO Auto-generated constructor stub
 	}
-
-
-	
-	
-	public Fornecedor getFornecedor() {
-		return fornecedor;
-	}
-
-
-
-
-	public void setFornecedor(Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
-	}
-
-
-
-
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-
-
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-
-
 
 
 	public String getNumero() {
@@ -113,12 +75,12 @@ public class Produto implements Serializable {
 	}
 
 
-	public UnidadeMedida getUm() {
+	public String getUm() {
 		return um;
 	}
 
 
-	public void setUm(UnidadeMedida um) {
+	public void setUm(String um) {
 		this.um = um;
 	}
 

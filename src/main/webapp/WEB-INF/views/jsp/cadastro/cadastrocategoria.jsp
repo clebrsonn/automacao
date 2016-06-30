@@ -15,7 +15,6 @@
 
             <p> Categoria Pai:</p>
             <select id="catpai" name="catpai" id="files" class="inp-form">
-                    				<option value=""></option>
             
                 <optgroup label="Categoria Pai">
                      			<c:forEach var="categoria" items="${categoriaList}">
