@@ -49,12 +49,13 @@ public class ProdutoDAO {
 				Produto produtoant =em.find(Produto.class, id);
 				
 				produtoant.setCodebar(produto.getCodebar());
+				produtoant.setCategoria(produto.getCategoria());
 				produtoant.setDescricao(produto.getDescricao());
 				produtoant.setPrecoCusto(produto.getPrecoCusto());
 				produtoant.setPrecoVenda(produtoant.getPrecoVenda());
 				produtoant.setUm(produto.getUm());
-//				arquitetoant.setProjeto(projeto);
-				
+				produtoant.setFornecedor(produto.getFornecedor());
+
 				produto = em.merge(produtoant);
 				
 				

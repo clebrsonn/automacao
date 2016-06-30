@@ -13,11 +13,21 @@
 			
 			<p>Nome</p>
 			<input id="nome" name="nome" type="text" />
-				<p>Senha</p>
+			
+			<p>Senha</p>
 			<input id="senha" name="senha" type="text" />
 			
-		
-
+            <p> Tipo:</p>
+            <select id="tipo" name="tipo" id="files" class="inp-form">           
+                <optgroup label="Tipos de Usuario">
+           			<c:forEach var="tipo" items="${tipoList}">
+           			
+           				<option value="${tipo}">${tipo}</option>
+           				      				
+           				
+       				</c:forEach>
+                </optgroup>
+            </select>
 			
 			<p>Email</p>
 			<input id="email" name="email" type="text" />

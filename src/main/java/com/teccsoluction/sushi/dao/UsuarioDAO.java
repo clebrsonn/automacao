@@ -24,33 +24,36 @@ public class UsuarioDAO {
 		  }
 		   
 			@Transactional
-		  public void add(Usuario cliente) {			
-		    em.persist(cliente);
+		  public void add(Usuario usuario) {			
+		    em.persist(usuario);
 		  }
 			@Transactional
 			  public void delete(long id) {
-				Usuario cliente = em.getReference(Usuario.class, id);
-				em.remove(cliente);
+				Usuario usuario = em.getReference(Usuario.class, id);
+				em.remove(usuario);
 				
 			  }
 			
 			@Transactional
 			public Usuario PegarPorId(long id){
 				
-				Usuario cliente = em.find(Usuario.class, id);
+				Usuario usuario = em.find(Usuario.class, id);
 				
 				
-				return cliente;
+				return usuario;
 			}
 			
 			@Transactional
-			public void editar(long id,Usuario cliente){
-				Usuario clienteant =em.find(Usuario.class, id);
+			public void editar(long id,Usuario usuario){
+				Usuario usuarioant =em.find(Usuario.class, id);
 				
-				clienteant.setNome(cliente.getNome());
+				usuarioant.setNome(usuario.getNome());
+				usuarioant.setSenha(usuario.getSenha());
+				usuarioant.setTipo(usuario.getTipo());
+				usuarioant.setEmail(usuario.getEmail());
 //				arquitetoant.setProjeto(projeto);
 				
-				cliente = em.merge(clienteant);
+				usuario = em.merge(usuarioant);
 				
 				
 				

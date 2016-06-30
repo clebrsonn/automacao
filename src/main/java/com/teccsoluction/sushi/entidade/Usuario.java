@@ -4,10 +4,14 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.teccsoluction.sushi.util.TipoUsuario;
 
 @Entity
 @Table(name="USUARIO")
@@ -30,11 +34,17 @@ public class Usuario implements Serializable{
 	@Column(name="senha")
 	private String senha;
 	
+	@Enumerated(EnumType.ORDINAL)
+	private TipoUsuario tipo;
+	
 	@Column(name="email")
 	private String email;
 	
 	
 	
+
+
+
 	public Usuario() {
 		// TODO Auto-generated constructor stub
 	}
@@ -62,7 +72,14 @@ public class Usuario implements Serializable{
 		this.senha = senha;
 	}
 
+	public TipoUsuario getTipo() {
+		return tipo;
+	}
 
+
+	public void setTipo(TipoUsuario tipo) {
+		this.tipo = tipo;
+	}
 	public String getEmail() {
 		return email;
 	}

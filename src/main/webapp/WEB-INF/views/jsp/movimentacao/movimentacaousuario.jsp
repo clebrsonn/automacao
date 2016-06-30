@@ -16,15 +16,11 @@
                 <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Nome </a></th>          
                 <th class="table-header-repeat line-left minwidth-1"><a>Senha</a></th>  
-                 <th class="table-header-repeat line-left minwidth-1"><a>Email</a></th>                              
-                                            
+                 <th class="table-header-repeat line-left minwidth-1"><a>Tipo Usuario</a></th>  
+                 <th class="table-header-repeat line-left minwidth-1"><a>Email</a></th>                                                         
                 <th class="table-header-repeat line-left"><a>Acão</a></th>
                  
   <c:forEach var="usuario" items="${usuarioList}" varStatus="id">
-               
-
-
-
 
 		<c:choose>
 		  <c:when test="${usuario.id % 2 == 0}">
@@ -33,7 +29,8 @@
 		                    <td>${usuario.id}</td>
 		                     <td>${usuario.nome}</td>
 		                    <td ><input type="password" value="${usuario.senha}"></td>
-							<td>${usuario.email}</td>
+		                     <td>${usuario.tipo}</td>
+		                    <td>${usuario.email}</td>
 							
 		                   
 		                    <td class="options-width">
@@ -52,7 +49,8 @@
 		      				<td>${usuario.id}</td>
 		                     <td>${usuario.nome}</td>
 		                    <td><input type="password" value="${usuario.senha}"></td>
-							<td>${usuario.email}</td>
+		                     <td>${usuario.tipo}</td>
+		                    <td>${usuario.email}</td>
 		
 		                    <td class="options-width">
 		                        <a href="edicaousuario?id=${usuario.id}" class="icon-1 info-tooltip" title="Edit"></a>
