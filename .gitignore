@@ -22,5 +22,5 @@ out
 test-output
 atlassian-ide-plugin.xml
 .gradletasknamecache
-src/main/resources/META-INF/persistence.xml
-src/main/resources/META-INF/persistence.xml
+/src/main/resources/META-INF/persistence.xml
+/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
