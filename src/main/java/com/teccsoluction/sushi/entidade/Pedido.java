@@ -38,7 +38,8 @@ public class Pedido implements Serializable {
 	
 	private double total;
 	
-	private String garcon;
+	@ManyToOne
+	private Garcon garcon;
 	
 	
 	public Pedido() {
@@ -105,12 +106,12 @@ public class Pedido implements Serializable {
 	}
 
 
-	public String getGarcon() {
+	public Garcon getGarcon() {
 		return garcon;
 	}
 
 
-	public void setGarcon(String garcon) {
+	public void setGarcon(Garcon garcon) {
 		this.garcon = garcon;
 	}
 
