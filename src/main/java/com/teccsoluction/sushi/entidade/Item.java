@@ -26,7 +26,11 @@ public class Item {
 	
 	private double totalItem;
 	
-	private long pedido;
+	@ManyToOne
+	private Pedido pedido;
+	
+	@ManyToOne
+	private Produto produto;
 	
 	
 	
@@ -46,12 +50,21 @@ public class Item {
 
 
 
-	public long getPedido() {
+	public Pedido getPedido() {
 		return pedido;
 	}
 
 
-	public void setPedido(long pedido) {
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+
+	public void setPedido(Pedido pedido) {
 		this.pedido = pedido;
 	}
 
