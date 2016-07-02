@@ -1,6 +1,8 @@
 package com.teccsoluction.sushi.entidade;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -40,7 +42,7 @@ public class Fornecedor implements Serializable {
 	private List<Produto> produtos;
 	
 	public Fornecedor() {
-		produtos = new ArrayList<>();
+		produtos = new ArrayList<Produto>();
 	}
 
 
@@ -104,7 +106,7 @@ public class Fornecedor implements Serializable {
 	}
 	
 	
-	public Lost<Produto> getProdutos() {
+	public List<Produto> getProdutos() {
 		return produtos;
 	}
 

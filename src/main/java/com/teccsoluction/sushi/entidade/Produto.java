@@ -1,12 +1,16 @@
 package com.teccsoluction.sushi.entidade;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -41,7 +45,7 @@ public class Produto implements Serializable {
 	private double precoVenda;
 	
 	@ManyToOne
-	private Fornecedor fornecedor
+	private Fornecedor fornecedor;
 	
 	@OneToMany
 	private List<Item> items;
@@ -49,7 +53,7 @@ public class Produto implements Serializable {
 	
 	public Produto() {
 		// TODO Auto-generated constructor stub
-		items = new ArrayList<>();
+		items = new ArrayList<Item>();
 	}
 
 

@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.teccsoluction.sushi.dao.ItemDAO;
+import com.teccsoluction.sushi.dao.PedidoDAO;
 import com.teccsoluction.sushi.dao.ProdutoDAO;
 import com.teccsoluction.sushi.dao.RecebimentoDAO;
 import com.teccsoluction.sushi.entidade.Item;
 import com.teccsoluction.sushi.entidade.Pagamento;
+import com.teccsoluction.sushi.entidade.Pedido;
 import com.teccsoluction.sushi.entidade.Produto;
 import com.teccsoluction.sushi.entidade.Recebimento;
 
@@ -36,6 +38,9 @@ public class RecebimentoController {
 	private ProdutoDAO produtodao;
 	private List<Produto> listProduto;
 	
+	@Autowired
+	private PedidoDAO pedidodao;
+	private List<Pedido> listPedido;
 	
 	@RequestMapping(value = "cadastrorecebimento", method = RequestMethod.GET)
 	public ModelAndView cadastroRecebimento() {
@@ -141,12 +146,14 @@ public class RecebimentoController {
 		
 		
 		long idf = Long.parseLong(request.getParameter("idpedidocompra"));
+		Pedido pedido = pedidodao.PegarPorId(idf);
+
 ////		double precouni = Double.parseDouble(request.getParameter("valoritem"));
 		int qtdf = Integer.parseInt(request.getParameter("quantidade"));
 //		double totalf = Double.parseDouble(request.getParameter("valor"));
 		
 		
-		item.setPedido(idf);
+		item.setPedido(pedido);
 //		item.setPrecoUnitario(precouni);
 		item.setQtd(qtdf);
 //		item.setTotalItem(totalf);

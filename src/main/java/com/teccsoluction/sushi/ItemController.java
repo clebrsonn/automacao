@@ -40,12 +40,13 @@ public class ItemController {
 		
 		
 		long idf = Long.parseLong(request.getParameter("idpedido"));
+		Pedido pedido = pedidoDao.PegarPorId(idf);
 //		double precouni = Double.parseDouble(request.getParameter("valoritem"));
 		int qtdf = Integer.parseInt(request.getParameter("quantidade"));
 //		double totalf = Double.parseDouble(request.getParameter("valor"));
 		
 		
-		item.setPedido(idf);
+		item.setPedido(pedido);
 //		item.setPrecoUnitario(precouni);
 		item.setQtd(qtdf);
 //		item.setTotalItem(totalf);
@@ -85,6 +86,7 @@ public class ItemController {
 		
 		
 		long idf = Long.parseLong(request.getParameter("id"));
+		
 		Item item;
 		
 		Pedido pedido;
@@ -93,7 +95,7 @@ public class ItemController {
 		
 		item = itemDao.PegarPorId(idf);
 		
-		pedido=pedidoDao.PegarPorId(item.getPedido());
+		pedido=pedidoDao.PegarPorId(idf);
 		
 		listProduto = produtodao.getAll();
 		
@@ -115,7 +117,9 @@ public class ItemController {
 		long idf = Long.parseLong(request.getParameter("id"));
 		
 		long idpedido = Long.parseLong(request.getParameter("idpedido"));
-		item.setPedido(idpedido);
+		Pedido pedido = pedidoDao.PegarPorId(idf);
+
+		item.setPedido(pedido);
 
 		 itemDao.editar(idf, item);
 		

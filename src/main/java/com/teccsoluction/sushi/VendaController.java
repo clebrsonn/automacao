@@ -155,12 +155,14 @@ public class VendaController {
 		
 		
 		long idf = Long.parseLong(request.getParameter("idpedido"));
+		
+		Pedido pedido = pedidodao.PegarPorId(idf);
 ////		double precouni = Double.parseDouble(request.getParameter("valoritem"));
 		int qtdf = Integer.parseInt(request.getParameter("quantidade"));
 //		double totalf = Double.parseDouble(request.getParameter("valor"));
 		
 		
-		item.setPedido(idf);
+		item.setPedido(pedido);
 //		item.setPrecoUnitario(precouni);
 		item.setQtd(qtdf);
 //		item.setTotalItem(totalf);

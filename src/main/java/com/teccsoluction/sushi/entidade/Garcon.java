@@ -1,12 +1,15 @@
 package com.teccsoluction.sushi.entidade;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -32,7 +35,7 @@ public class Garcon implements Serializable {
 	
 	public Garcon() {
 		// TODO Auto-generated constructor stub
-		pedidos = new ArrayList<>();
+		pedidos = new ArrayList<Pedido>();
 	}
 
 	public String getNome() {

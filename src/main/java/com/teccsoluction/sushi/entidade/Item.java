@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -38,7 +39,7 @@ public class Item {
 	}
 	
 	
-	public Item(Produto produto,long pedido) {
+	public Item(Produto produto,Pedido pedido) {
 		
 		this.codigo=produto.getCodebar();
 		this.descricao=produto.getDescricao();

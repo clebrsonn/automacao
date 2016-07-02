@@ -1,6 +1,7 @@
 package com.teccsoluction.sushi.entidade;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -47,7 +50,7 @@ public class Pedido implements Serializable {
 	
 	public Pedido() {
 		// TODO Auto-generated constructor stub
-		items = new ArrayList<>();
+		items = new ArrayList<Item>();
 	}
 
 
