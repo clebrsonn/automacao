@@ -28,8 +28,8 @@ public class Mesa implements Serializable {
 	
 	private String status;
 	
-	
-	
+	@OneToMany
+	private List<Pedido> pedidos;
 	
 	public Mesa() {
 		// TODO Auto-generated constructor stub
@@ -46,32 +46,26 @@ public class Mesa implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
-
+	
+	public List<Pedido> getPedidos(){
+		return pedidos;
+	}
+	
+	public void setPedidos(List<Pedido> pedidos){
+		this.pedidos = pedidos;
+	}
 
 	public String getNumero() {
 		return numero;
 	}
 
-
-
-
-
-
 	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
-
-
-
-
-
 	public long getId() {
 		return id;
 	}
-
-
 
 	@Override
 	public String toString() {
