@@ -26,11 +26,13 @@ public class Garcon implements Serializable {
 	@Column(name="nome")
 	private String nome;
 	
-	
+	@OneToMany
+	private List<Pedido> pedidos;
 	
 	
 	public Garcon() {
 		// TODO Auto-generated constructor stub
+		pedidos = new ArrayList<>();
 	}
 
 	public String getNome() {
@@ -50,8 +52,14 @@ public class Garcon implements Serializable {
 		return  nome;
 	}
 	
-	
-	
+	public List<Pedido> gePedidos() {
+		return pedidos;
+	}
+
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
 	
 	
 	
