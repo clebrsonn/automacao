@@ -7,12 +7,17 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.teccsoluction.sushi.util.StatusPedido;
+import com.teccsoluction.sushi.util.TipoPedido;
 
 
 
@@ -36,9 +41,11 @@ public class Pedido implements Serializable {
 	@ManyToOne
 	private Mesa mesa;
 	
-	private String tipo;
+	@Enumerated(EnumType.ORDINAL)
+	private TipoPedido tipo;
 	
-	private String status;
+	@Enumerated(EnumType.ORDINAL)
+	private StatusPedido status;
 	
 	private double total;
 	
@@ -57,7 +64,7 @@ public class Pedido implements Serializable {
 
 
 
-	public String getTipo() {
+	public TipoPedido getTipo() {
 		return tipo;
 	}
 
@@ -65,7 +72,7 @@ public class Pedido implements Serializable {
 
 
 
-	public void setTipo(String tipo) {
+	public void setTipo(TipoPedido tipo) {
 		this.tipo = tipo;
 	}
 
@@ -93,12 +100,12 @@ public class Pedido implements Serializable {
 	}
 
 
-	public String getStatus() {
+	public StatusPedido getStatus() {
 		return status;
 	}
 
 
-	public void setStatus(String status) {
+	public void setStatus(StatusPedido status) {
 		this.status = status;
 	}
 
@@ -139,7 +146,7 @@ public class Pedido implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Pedido [id=" + id + "]";
+		return "id="+id;
 	}
 	
 	

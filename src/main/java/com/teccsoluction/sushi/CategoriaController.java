@@ -1,11 +1,9 @@
 package com.teccsoluction.sushi;
 
 import com.teccsoluction.sushi.dao.CategoriaDAO;
-import com.teccsoluction.sushi.dao.SubCategoriaDAO;
 import com.teccsoluction.sushi.entidade.Categoria;
-import com.teccsoluction.sushi.entidade.SubCategoria;
 import com.teccsoluction.sushi.util.CategoriaEditor;
-import com.teccsoluction.sushi.util.SubCategoriaEditor;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,12 +29,8 @@ public class CategoriaController {
     @Autowired
     private CategoriaDAO categoriaDao;
 
-    @Autowired
-    private SubCategoriaDAO subcategoriaDao;
-
     private List<Categoria> categoriaList;
 
-    private List<SubCategoria> subcategoriaList;
 
 
 
@@ -71,7 +65,7 @@ public class CategoriaController {
     		
         ModelAndView cadastrocategoria = new ModelAndView("cadastrocategoria");
         
-        categoria.setCatpai(categoria.getCatpai());
+//        categoria.setCatpai(categoria.getCatpai());
         
         categoriaDao.add(categoria);       
         
@@ -117,7 +111,8 @@ public class CategoriaController {
     public ModelAndView editarCategoria(HttpServletRequest request, Categoria categoria) {
 
 
-        Long idf = Long.parseLong(request.getParameter("id"));
+        long idf = Long.parseLong(request.getParameter("id"));
+        
 
         categoriaDao.editar(idf, categoria);
 

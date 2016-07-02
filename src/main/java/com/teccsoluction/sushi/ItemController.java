@@ -54,7 +54,7 @@ public class ItemController {
 		
 		itemDao.add(item);
 		
-		return new ModelAndView("redirect:/additem?id="+item.getPedido());
+		return new ModelAndView("redirect:/additem?"+item.getPedido());
 		
 //		return additem;
 	}

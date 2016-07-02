@@ -18,8 +18,8 @@
 		<input name="nome"type="text" class="inp-form" value="${categoria.nome}"/>
 
 
-<p>Categoria Pai:</p>
-				<select name="tipo" id="files" class="inp-form">
+		<p>Categoria Pai:</p>
+				<select name="catpai" id="files" class="inp-form">
 			        <option value="${categoria.catpai}">${categoria.catpai.nome}</option>
 				
 			 <optgroup label="Categoria Pai">

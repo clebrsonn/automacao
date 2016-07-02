@@ -11,7 +11,7 @@
     			<th class="table-header-check"><a id="toggle-all" ></a> </th>
                 <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Nome da Categoria</a></th>          
-<!--                 <th class="table-header-repeat line-left minwidth-1"><a>Projeto</a></th>                                -->
+                <th class="table-header-repeat line-left minwidth-1"><a>Categoria Pai</a></th>                               
                 <th class="table-header-repeat line-left"><a>Acão</a></th>
                  
                 <c:forEach var="categoria" items="${categoriaList}" varStatus="id">
@@ -42,7 +42,7 @@
                 <td><input  type="checkbox"/></td>
                     <td>${categoria.id}</td>
                      <td>${categoria.nome}</td>
-<%--                     <td>${gerente.projeto}</td> --%>
+                    <td>${categoria.catpai}</td>
                    
                     <td class="options-width">
                         <a href="edicaocategoria?id=${categoria.id}" class="icon-1 info-tooltip" title="Edit"></a>
@@ -59,7 +59,7 @@
                 <td><input  type="checkbox"/></td>
                    <td>${categoria.id}</td>
                      <td>${categoria.nome}</td>
-<%--                     <td>${gerente.projeto}</td> --%>
+                    <td>${categoria.catpai}</td>
                     <td class="options-width">
                         <a href="edicaocategoria?id=${categoria.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;

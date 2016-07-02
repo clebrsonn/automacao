@@ -30,7 +30,7 @@
 
 
 <c:choose>
-  <c:when test="${pedido.status != 'Finalizado'}">
+  <c:when test="${pedido.status != 'CANCELADO'}">
   
   
 			    <tr class="alternate-row">

@@ -20,10 +20,9 @@
 				<select name="tipo" id="files" class="inp-form">
 			<optgroup label="Tipo de Pedido">
 				       
-				        <option value="Mesa">Mesa</option>
-				        <option value="Balcao">Balcao</option>
-				        <option value="Delivery">Delivery</option>
-				         
+							<c:forEach var="tipo" items="${tipoList}">
+                     				<option value="${tipo}">${tipo}</option>
+                     				</c:forEach>  
 			
 				        
 					
@@ -32,26 +31,30 @@
 		
 
 		<p>Mesa:</p>
-		<input name="mesa" type="text" class="inp-form" />
-		
-		<p>Status:</p>
-				<select name="status" id="files" class="inp-form">
-			<optgroup label="Status">
+				<select name="mesa" id="files" class="inp-form">
+			<optgroup label="Mesas">
 				       
-			        <option value="Aberto">Aberto</option>
-				        <option value="Aguardando">Aguardando Preparação</option>
-				        <option value="Aberto">Cancelado</option>
-				        <option value="Em Preparação">Em Preparação</option>
-				        <option value="Entregue">Entregue</option>
-				       	<option value="Finalizado">Finalizado</option>
-				        <option value="Impedido">Impedido</option>
-				        <option value="Pronto">Pronto</option>
-				         
+							<c:forEach var="mesa" items="${mesaList}">
+                     				<option value="${mesa.id}">${mesa.numero}</option>
+                     				</c:forEach>  
 			
 				        
 					
 			</optgroup>
-		</select>
+			</select>
+		
+		<p>Status:</p>
+			<select name="status" id="files" class="inp-form">
+				<optgroup label="Status do Pedido">
+					       
+				<c:forEach var="tipostatus" items="${tipoStatusList}">
+                  		<option value="${tipostatus}">${tipostatus}</option>
+   				</c:forEach>  
+				
+					        
+						
+				</optgroup>
+			</select>
 		
 		<p>Total:</p>
 		<input name="total" type="text" class="inp-form" />

@@ -1,7 +1,10 @@
 package com.teccsoluction.sushi.entidade;
 
 import java.io.Serializable;
+
 import java.util.ArrayList;
+
+
 import java.util.List;
 
 import javax.persistence.Column;
@@ -9,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.OneToMany;
 
@@ -26,20 +30,26 @@ public class Fornecedor implements Serializable {
 	@Column(name="ID")
 	private long id;
 	
-	@Column(name="nome_fantasia")
+	@Column(name="NOME_FANTASIA")
 	private String nomefantasia;
 	
-	@Column(name="razao_social")
+	@Column(name="RAZAO_SOCIAL")
 	private String razaoSocial;
 	
-	@Column(name="cnpj")
+	@Column(name="CNPJ")
 	private String cnpj;
 	
-	@Column(name="inscricaoestadual")
+	@Column(name="INSCRICAOESTADUAL")
 	private String inscricaoestadual;
 	
+
 	@OneToMany
 	private List<Produto> produtos;
+
+//	@OneToMany
+//	private List<Produto> ListaProdutoPorFornecedor;
+	
+
 	
 	public Fornecedor() {
 		produtos = new ArrayList<Produto>();

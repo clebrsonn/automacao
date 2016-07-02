@@ -22,7 +22,7 @@ public class Categoria implements Serializable {
     @Column(name = "NOME")
     private String nome;
 
-    @JoinColumn(name="CAT_PAI_ID",nullable=true)
+    @ManyToOne    
     private Categoria catpai;
 
 

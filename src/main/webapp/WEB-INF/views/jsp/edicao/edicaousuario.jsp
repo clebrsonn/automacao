@@ -13,6 +13,26 @@
 			<input id="nome" name="nome" type="text" value="${usuario.nome }"/>
 			<p>Senha</p>
 			<input id="senha" name="senha" type="text" value="${usuario.senha }"/>
+			
+		 	<p> Tipo:</p>
+	            <select id="tipo" name="tipo" id="files" class="inp-form">           
+	               
+	           				<option value="${usuario.tipo}">${usuario.tipo}</option>
+	               
+	                <optgroup label="Tipos de Usuario">
+	           			<c:forEach var="tipo" items="${tipoList}">
+	           			
+	           				<option value="${tipo}">${tipo}</option>
+	           				      				
+	           				
+	       				</c:forEach>
+	                </optgroup>
+	            </select>
+			
+			
+			
+			
+			
 			<p>Email</p>
 			<input id="email" name="email" type="text" value="${usuario.email }"/>
 			
