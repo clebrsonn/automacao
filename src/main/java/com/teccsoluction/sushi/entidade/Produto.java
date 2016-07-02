@@ -43,9 +43,13 @@ public class Produto implements Serializable {
 	@ManyToOne
 	private Fornecedor fornecedor
 	
+	@OneToMany
+	private List<Item> items;
+	
 	
 	public Produto() {
 		// TODO Auto-generated constructor stub
+		items = new ArrayList<>();
 	}
 
 
@@ -118,6 +122,14 @@ public class Produto implements Serializable {
 		this.fornecedor = fornecedor;
 	}
 
+	public List<Item> getItems() {
+		return items;
+	}
+
+
+	public void setItems(List<Item> items) {
+		this.items = items;
+	}
 
 	@Override
 	public String toString() {
