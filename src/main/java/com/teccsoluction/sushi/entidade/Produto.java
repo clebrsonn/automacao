@@ -40,9 +40,8 @@ public class Produto implements Serializable {
 	@Column(name="preco_venda")
 	private double precoVenda;
 	
-	
-	
-	
+	@ManyToOne
+	private Fornecedor fornecedor
 	
 	
 	public Produto() {
@@ -107,6 +106,16 @@ public class Produto implements Serializable {
 
 	public String getCodebar() {
 		return codebar;
+	}
+	
+	
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
 	}
 
 
