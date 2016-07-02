@@ -30,7 +30,8 @@ public class Pedido implements Serializable {
 		
 	private Date data;
 	
-	private String mesa;
+	@ManyToOne
+	private Mesa mesa;
 	
 	private String tipo;
 	
@@ -41,9 +42,12 @@ public class Pedido implements Serializable {
 	@ManyToOne
 	private Garcon garcon;
 	
+	@OneToMany
+	private List<Item> items;
 	
 	public Pedido() {
 		// TODO Auto-generated constructor stub
+		items = new ArrayList<>();
 	}
 
 
@@ -76,12 +80,12 @@ public class Pedido implements Serializable {
 	}
 
 
-	public String getMesa() {
+	public Mesa getMesa() {
 		return mesa;
 	}
 
 
-	public void setMesa(String mesa) {
+	public void setMesa(Mesa mesa) {
 		this.mesa = mesa;
 	}
 
@@ -113,6 +117,15 @@ public class Pedido implements Serializable {
 
 	public void setGarcon(Garcon garcon) {
 		this.garcon = garcon;
+	}
+	
+	public List<Item> getItems() {
+		return items;
+	}
+
+
+	public void setItems(List<Item> items) {
+		this.items = items;
 	}
 
 
