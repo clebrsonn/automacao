@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.OneToMany;
 
 @Entity
 @Table(name="FORNECEDOR")
@@ -35,9 +36,11 @@ public class Fornecedor implements Serializable {
 	@Column(name="inscricaoestadual")
 	private String inscricaoestadual;
 	
+	@OneToMany
+	private List<Produto> produtos;
 	
 	public Fornecedor() {
-		// TODO Auto-generated constructor stub
+		produtos = new ArrayList<>();
 	}
 
 
@@ -101,8 +104,14 @@ public class Fornecedor implements Serializable {
 	}
 	
 	
-	
-	
+	public Lost<Produto> getProdutos() {
+		return produtos;
+	}
+
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
+	}
 	
 	
 	
