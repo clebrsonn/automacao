@@ -74,10 +74,10 @@ public class VendaController {
 		
 		long idf = Long.parseLong(request.getParameter("id"));
 		itemList = itemDao.getAllId(idf);
-		
+		Pedido pedido = pedidodao.PegarPorId(idf);
 		
 		cadastrovenda.addObject("listProduto", listProduto);
-		
+		cadastrovenda.addObject("pedido", pedido);	
 		cadastrovenda.addObject("itemList", itemList);
 		return cadastrovenda;
 	}

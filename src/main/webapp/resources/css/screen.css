@@ -321,10 +321,10 @@ button {
 }
 
 .button{
-	width: 8em;
+	width: 10em;
 	height:3em ;
 	background: #FFFFFF url(../images/img01.gif) repeat-x;
-	margin-top: 2em;
+	margins: 2em;
 	font: italic;
 	color: red;
 	
@@ -349,7 +349,7 @@ button p{
 .conteudo{
 	
 	margin-left: 5em;
-	width: 60%;
+	width: 75%;
 }
 
 .disponivel {
@@ -654,4 +654,84 @@ a.icon-5 {
 
 a:hover.icon-5 {
 	background: url(../images/delete.png) 0 -24px;
+}
+
+#botoes {
+width:70%;
+height: 100%;
+background-color: gray;
+margin: 2em;	
+	
+	
+}
+
+
+.detalheitem{
+	font-family: monospace;
+	font-size: 2em;
+	font-weight: bolder;
+	
+}
+
+.detalheitem input{
+	
+	width: 15%;
+	height: 3em;
+	border: 0 none;
+	
+	
+}
+
+
+.item{
+	font-family: monospace;
+	font-size: 2em;
+	font-weight: bolder;
+	
+	
+}
+
+.item input{
+	
+	width: 15%;
+	height: 3em;
+		border: 0 none;
+	
+	
+}
+
+
+#descricaoitem{
+	width: 49%;
+
+	
+}
+
+
+
+.dadospedido{
+	width: 100%;
+	font-family: monospace;
+	font-size: 2em;
+	font-weight: bolder;
+	
+}
+
+.dadospedido input{
+	
+	width: 15%;
+	height: 2em;
+	border: 0 none;
+	
+}
+
+.product-table2{
+/* overflow-y:scroll;	 */
+	
+}
+
+#totalpedido{
+	
+	color: blue;
+	font-size: 1.3em;
 }

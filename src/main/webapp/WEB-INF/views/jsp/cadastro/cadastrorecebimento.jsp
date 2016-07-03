@@ -9,23 +9,25 @@
 	<div id="form">
 	<form id="formRecebimentos" action="additemrecebimento" method="GET">
 
+		<div id="dadospedido" class="dadospedido">
 
-		ID do Pedido:
-		<input id="idpedidocompra"name="idpedidocompra"type="text" class="idpedido" />
-		
-
-		ID FORNECEDOR:
-		<input name="tipo" type="text" class="tipo"/>
-		
-		Total:
-		<input id="totalpedido" name="totalpedido" type="text" class="totalpedido" />
-		
-		<p></p>
+			ID do Pedido:
+			<input id="idpedidocompra"name="idpedidocompra"type="text" class="idpedido" />
+			
+	
+			ID FORNECEDOR:
+			<input name="tipo" type="text" class="tipo"/>
+			
+			Total:
+			<input id="totalpedido" name="totalpedido" type="text" class="totalpedido" />
+			
+		</div>
 		
 	
 		
+		<div id="item" class="item">
 		
-		<p>Cod Prod
+		Cod Prod
 		
 			<input id="codigoitem"name="codigo" type="text" list="id" class="codigoitem" />
 			
@@ -38,10 +40,9 @@
 
 			</datalist>
 			
-			
-		</p>
+	
 		
-		<p>Descrição
+		Descrição
 		
 			<input id="descricaoitem" name="descricao" type="text" list="produtos" class="descricaoitem" />
 			
@@ -58,54 +59,45 @@
 					</datalist>
 
 					
-
-		</p>
+		</div>
 		
-		<p>Quantidade
+		<div id="detalheitem" class="detalheitem">
+		
+			Quantidade
+				
+				<input id="quantidadeitem" name="quantidade" type="text" class="quantidadeitem" />
+	
+
+				Valor Item
+						
+				<input id="valoritem"name="valor" type="text" class="valoritem" />
 			
-			<input id="quantidadeitem" name="quantidade" type="text" class="quantidadeitem" />
 
+				Total Item
+						
+				<input id="valortotal"name="valor" type="text" class="valortotal" />
+			
 		
-		
-		
-		
-		
-		
-			Valor Item
-					
-			<input id="valoritem"name="valor" type="text" class="valoritem" />
-		
-		
-		
-		
-		
-		
-			Total Item
-					
-			<input id="valortotal"name="valor" type="text" class="valortotal" />
-		
-		</p>
 		
 		
 					SubTotal
 					
 			<input id="subtotal"name="subtotal" type="text" class="subtotal" />
-		
-		</p>
+		</div>
 		
 		
 		
 		<div id="botoes">
 <button class="button">AdicionarItemRecebimento</button>
 <button class="button">Apagar</button>
-<a href="AddRecebimento?id=${pedido.id }"><div class="button">Salvar</div></a>
-<a href="finalizacaorecebimento?id=${pedido.id }"><div class="button">FinalizarRecebimento</div></a>
+<button class="button"><a href="AddRecebimento?id=${pedido.id }">Salvar</a></button>
+<button class="button"><a href="finalizacaorecebimento?id=${pedido.id }">FinalizarRecebimento</a></button>
 
 </div>
 
 </br>
 		
-		      <table border="0" width="140%"cellpadding="0" cellspacing="0"  class="product-table">
+		      <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table2">
     			 <th class="table-header-check"><a id="toggle-all" ></a> </th>
                  <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Pedido Compra </a></th>         

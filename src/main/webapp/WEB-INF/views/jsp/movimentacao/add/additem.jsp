@@ -10,6 +10,9 @@
 	<form id="formAdd" action="movimentacao/additem" method="GET">
 
 
+
+		<div id="dadospedido" class="dadospedido">
+
 		ID do Pedido:
 		<input name="idpedido"type="text" class="idpedido" readonly="readonly" value="${pedido.id }" />
 		
@@ -20,12 +23,13 @@
 		Total:
 		<input id="totalpedido" name="total" type="text" class="totalpedido" value="${pedido.total }" />
 		
-		<p></p>
+		</div>
 		
 	
 		
+				<div id="item" class="item">
 		
-		<p>Cod Prod
+		Cod Prod
 		
 			<input id="codigoitem"name="codigo" type="text" list="id" class="codigoitem" />
 			
@@ -38,10 +42,8 @@
 
 			</datalist>
 			
-			
-		</p>
 		
-		<p>Descrição
+		Descrição
 		
 			<input id="descricaoitem" name="descricao" type="text" list="produtos" class="descricaoitem" />
 			
@@ -58,10 +60,11 @@
 					</datalist>
 
 					
-
-		</p>
+		</div>
 		
-		<p>Quantidade
+				<div id="detalheitem" class="detalheitem">
+		
+		Quantidade
 			
 			<input id="quantidadeitem" name="quantidade" type="text" class="quantidadeitem" />
 
@@ -84,14 +87,14 @@
 					
 			<input id="valortotal"name="valor" type="text" class="valortotal" />
 		
-		</p>
+		
 		
 		
 					SubTotal
 					
 			<input id="subtotal"name="subtotal" type="text" class="subtotal" />
 		
-		</p>
+		</div>
 		
 		
 		
@@ -102,7 +105,7 @@
 
 </br>
 		
-		      <table border="0" width="140%"cellpadding="0" cellspacing="0"  class="product-table">
+		      <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table2">
     			<th class="table-header-check"><a id="toggle-all" ></a> </th>
                 <th class="table-header-repeat line-left "><a>Id</a></th>
                 <th class="table-header-repeat line-left minwidth-1"><a>Pedido </a></th> 

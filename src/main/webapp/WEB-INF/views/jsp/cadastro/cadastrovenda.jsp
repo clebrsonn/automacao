@@ -9,23 +9,22 @@
 	<div id="form">
 	<form id="formVenda" action="additemvenda" method="GET">
 
-
-		ID do Pedido:
-		<input id="idpedido"name="idpedido"type="text" class="idpedido" />
-		
-
-		Tipo:
-		<input name="tipo" type="text" class="tipo"/>
-		
-		Total:
-		<input id="totalpedido" name="total" type="text" class="totalpedido" />
-		
-		<p></p>
-		
+		<div id="dadospedido" class="dadospedido">
+			ID do Pedido:
+			<input id="idpedido"name="idpedido"type="text" class="idpedido" value="${pedido.id }"/>
+			
 	
+			Tipo:
+			<input name="tipo" type="text" class="tipo" value="${pedido.tipo }"/>
+			
+			Total:
+			<input id="totalpedido" name="total" type="text" class="totalpedido" value="${pedido.total }" />
+		
+		</div>
 		
 		
-		<p>Cod Prod
+		<div id="item" class="item">
+		Cod
 		
 			<input id="codigoitem"name="codigo" type="text" list="id" class="codigoitem" />
 			
@@ -39,9 +38,9 @@
 			</datalist>
 			
 			
-		</p>
 		
-		<p>Descrição
+		
+		Descrição
 		
 			<input id="descricaoitem" name="descricao" type="text" list="produtos" class="descricaoitem" />
 			
@@ -57,11 +56,10 @@
 
 					</datalist>
 
-					
-
-		</p>
+		</div>
 		
-		<p>Quantidade
+		<div id="detalheitem" class="detalheitem">
+		Qtd
 			
 			<input id="quantidadeitem" name="quantidade" type="text" class="quantidadeitem" />
 
@@ -84,26 +82,25 @@
 					
 			<input id="valortotal"name="valor" type="text" class="valortotal" />
 		
-		</p>
+		
 		
 		
 					SubTotal
 					
 			<input id="subtotal"name="subtotal" type="text" class="subtotal" />
 		
-		</p>
+		
+		</div>
 		
 		
-		
-		<div id="botoes">
+<div id="botoes">
 <button class="button">AdicionarItemVenda</button>
-<button class="button">Apagar</button></a>
-<a href="addformapagamento?id=7"><div class="button"onclick="window.location.href='movimentacaopagamento'">Caixa</div></a>
+<button class="button">Apagar</button>
+<button class="button"onclick="window.location.href='addformapagamento'+${pedido.id }"><a href="addformapagamento?id=7">Caixa</a></button>
 </div>
 
-</br>
 		
-		      <table border="0" width="140%"cellpadding="0" cellspacing="0"  class="product-table">
+		      <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table2">
     			 <th class="table-header-check"><a id="toggle-all" ></a> </th>
                  <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Pedido </a></th>         

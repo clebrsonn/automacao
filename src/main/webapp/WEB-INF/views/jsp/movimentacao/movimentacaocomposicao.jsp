@@ -7,7 +7,7 @@
             	<div id="content-table">
 	<form id="mainform">
 
-      <table border="0" width="140%"cellpadding="0" cellspacing="0"  class="product-table">
+      <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table">
     			<th class="table-header-check"><a id="toggle-all" ></a> </th>
                 <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Nome Composição</a></th> 

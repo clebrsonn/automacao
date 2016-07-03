@@ -146,7 +146,8 @@ public class Pedido implements Serializable {
 
 	@Override
 	public String toString() {
-		return "id="+id;
+		
+		return String.valueOf(id);
 	}
 	
 	

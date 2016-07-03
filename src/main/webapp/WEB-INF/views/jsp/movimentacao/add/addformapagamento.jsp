@@ -10,6 +10,8 @@
 	<form id="formAdd" action="movimentacaopagamento/addformapagamento" method="GET">
 
 
+		<div id="dadospedido" class="dadospedido">
+
 		ID do Pedido:
 		<input name="idpedido"type="text" class="idpedido" value="${pedido.id }"/>
 		
@@ -22,12 +24,14 @@
 		Total:
 		<input id="totalpedido" name="total" type="text" class="totalpedido" value="${pedido.total }"/>
 		
-		<p></p>
+		</div>
 		
 	
 		
 		
-		<p>Nome Forma de Pagamento
+				<div id="item" class="item">
+		
+			Nome Forma de Pagamento
 		
 			<input id="nome"name="nome" type="text" list="formapagamento" class="formapagamento" />
 			
@@ -40,10 +44,9 @@
 
 			</datalist>
 			
-			
-		</p>
 		
-				Qtd Parcelas
+		
+			Qtd Parcelas
 					
 			<input id="qtdparcela"name="qtdparcela" type="text" class="valoritem" />
 		
@@ -55,17 +58,17 @@
 		
 		
 		
-										Restante
+			Restante
 					
 			<input id="subtotal"name="subtotal" type="text" class="subtotal" />
 		
-		</p>
 		
-							Troco
+		
+			Troco
 					
 			<input id="troco"name="troco" type="text" class="subtotal" />
 		
-		</p>
+		</div>
 		
 		
 		<div id="botoes">
