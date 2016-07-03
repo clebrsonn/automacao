@@ -94,10 +94,9 @@
 		
 		
 <div id="botoes">
-<button class="button">AdicionarItemVenda</button>
+<button class="button" >AdicionarItemVenda</button>
 <button class="button">Apagar</button>
-<button class="button"onclick="window.location.href='addformapagamento'+${pedido.id }"><a href="addformapagamento?id=7">Caixa</a></button>
-</div>
+<button class="button" formaction="addformapagamento?id=${pedido.id }">AddFormaPagamento</button>
 
 		
 		      <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table2">

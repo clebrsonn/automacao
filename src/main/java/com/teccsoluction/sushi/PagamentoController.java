@@ -106,7 +106,7 @@ public class PagamentoController {
 	public ModelAndView addFormaPagamentoVendaForm(HttpServletRequest request) {
 		
 		
-		long idf = Long.parseLong(request.getParameter("id"));
+		long idf = Long.parseLong(request.getParameter("idpedido"));
 		Pedido pedido;
 		pedido = pedidodao.PegarPorId(idf);
 		ModelAndView addformapagamento = new ModelAndView("addformapagamento");

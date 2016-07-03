@@ -99,7 +99,7 @@
 <button class="button">AdicionarItemCompra</button>
 <button class="button">Apagar</button>
 <button class="button"><a href="AddRecebimento?id=${pedido.id }">Salvar</a></button>
-<button class="button"><a href="finalizacaorecebimento?id=${pedido.id }">FinalizarCompra</a></button>
+<button class="button" formaction="addformapagamento?id=${pedido.id }">FinalizarCompra</button>
 
 </div>
 
