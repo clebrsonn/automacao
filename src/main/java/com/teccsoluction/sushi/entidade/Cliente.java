@@ -24,7 +24,7 @@ public class Cliente implements Serializable {
 	@Column(name="ID")
 	private long id;
 	
-	@Column(name="numero")
+	@Column(name="nome")
 	private String nome;
 	
 	@Column(name="email")
