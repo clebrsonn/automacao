@@ -86,5 +86,16 @@ public abstract class AbstractEntityDao<Entity> {
         return manager.find(entityClass, entityId);
     }
 
+//    public Entity searchOneEntity(String entity) {
+//        TypedQuery<Entity> query = manager.createQuery(createQueryOne(),
+//                entityClass);
+//        query.setParameter("entityName", entity.toUpperCase());
+//        List<Entity> result = query.getResultList();
+//        if (result.isEmpty()) {
+//            return null;
+//        } else {
+//            return result.get(0);
+//        }
+//    }
 
 }

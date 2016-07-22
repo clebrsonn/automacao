@@ -25,7 +25,7 @@ public abstract class AbstractController<Entity> {
     }
 
     @RequestMapping(value = "cadastro", method = RequestMethod.GET)
-    public ModelAndView cadastroControler() {
+    public ModelAndView cadastrarEntity() {
 
         ModelAndView cadastro = new ModelAndView("cadastro" + entityAlias);
 
@@ -33,7 +33,7 @@ public abstract class AbstractController<Entity> {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public ModelAndView AdicionarCliente(Entity entity) {
+    public ModelAndView AdicionarEntity(Entity entity) {
 
         ModelAndView cadastro_cliente = new ModelAndView("cadastro" + entityAlias);
 
@@ -44,7 +44,7 @@ public abstract class AbstractController<Entity> {
 
 
     @RequestMapping(value = "movimentacao", method = RequestMethod.GET)
-    public ModelAndView movimentacaoCliente() {
+    public ModelAndView movimentacaoEntity() {
 
         ModelAndView movimentacao = new ModelAndView("movimentacao" + entityAlias);
 
@@ -57,7 +57,7 @@ public abstract class AbstractController<Entity> {
 
 
     @RequestMapping(value = "edicao", method = RequestMethod.GET)
-    public ModelAndView editarClienteForm(HttpServletRequest request) {
+    public ModelAndView editarEntityForm(HttpServletRequest request) {
 
         Entity entity;
         long idf = Long.parseLong(request.getParameter("id"));
@@ -70,20 +70,20 @@ public abstract class AbstractController<Entity> {
     }
 
 
-    @RequestMapping(value = "/movimentacaocliente/edicaocliente", method = RequestMethod.POST)
-    public ModelAndView editarCliente(HttpServletRequest request, Entity entity) {
+    @RequestMapping(value = "edicao", method = RequestMethod.POST)
+    public ModelAndView editarEntity(HttpServletRequest request, Entity entity) {
 
 
         Long idf = Long.parseLong(request.getParameter("id"));
         getDao().editar(entity);
 
 
-        return new ModelAndView("redirect:/movimentacao" + entityAlias);
+        return new ModelAndView("redirect:/movimentacao");
     }
 
 
     @RequestMapping(value = "/movimentacaocliente/delete", method = RequestMethod.GET)
-    public ModelAndView delete(HttpServletRequest request) {
+    public ModelAndView deletarEntity(HttpServletRequest request) {
 
 
         long idf = Long.parseLong(request.getParameter("id"));
@@ -91,7 +91,7 @@ public abstract class AbstractController<Entity> {
         getDao().delete(idf);
 
 
-        return new ModelAndView("redirect:/movimentacao" + entityAlias);
+        return new ModelAndView("redirect:/movimentacao/" + entityAlias);
     }
 
 
