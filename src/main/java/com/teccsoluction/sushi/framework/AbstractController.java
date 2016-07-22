@@ -11,16 +11,12 @@ import java.util.List;
 public abstract class AbstractController<Entity> {
 
 
-    //    private final Class<Entity> entityClass;
     private final String entityAlias;
-
-    private List<Entity> entityList;
 
     protected abstract AbstractEntityDao<Entity> getDao();
 
 
     public AbstractController(String entityAlias) {
-//        this.entityClass = entityClass;
         this.entityAlias = entityAlias;
     }
 
@@ -48,7 +44,7 @@ public abstract class AbstractController<Entity> {
 
         ModelAndView movimentacao = new ModelAndView("movimentacao" + entityAlias);
 
-        entityList = getDao().getAll();
+        List<Entity> entityList = getDao().getAll();
 
         movimentacao.addObject(entityAlias + "List", entityList);
 
