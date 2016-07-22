@@ -24,8 +24,8 @@ public class HomeController {
 		
 		return home;
 	}
-	
-	@RequestMapping(value = "/cadastro/", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/cadastro", method = RequestMethod.GET)
 	public ModelAndView cadastro() {
 		
 		ModelAndView cadastro = new ModelAndView("cadastro");
