@@ -3,8 +3,6 @@ package com.teccsoluction.sushi;
 import com.teccsoluction.sushi.dao.CategoriaDAO;
 import com.teccsoluction.sushi.entidade.Categoria;
 import com.teccsoluction.sushi.util.CategoriaEditor;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
@@ -114,7 +112,7 @@ public class CategoriaController {
         long idf = Long.parseLong(request.getParameter("id"));
         
 
-        categoriaDao.editar(idf, categoria);
+        categoriaDao.editar(categoria);
 
 
         return new ModelAndView("redirect:/movimentacaocategoria");

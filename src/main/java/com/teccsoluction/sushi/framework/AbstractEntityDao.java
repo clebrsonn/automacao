@@ -9,10 +9,13 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 /**
- * Created by clebr on 04/07/2016.
+ * Created by Cleberson on 04/07/2016.
+ *
+ * @version 1.0
  */
 @Component
 public abstract class AbstractEntityDao<Entity> {
+
     protected
     @PersistenceContext
     EntityManager manager;
@@ -45,8 +48,19 @@ public abstract class AbstractEntityDao<Entity> {
 //        return result.intValue();
 //    }
 
+    /**
+     * Realizar junção dos atributos para montar a query de busca
+     *
+     * @param predicate
+     */
     protected abstract void appendPredicate(StringBuilder predicate);
 
+
+    /**
+     * Seta os parametros de acordo com os dados passados na Entity
+     *
+     * @param query
+     */
     protected abstract void setParameters(TypedQuery<?> query);
 
 //    public List<Entity> searchEntity(EntitySearchOptions options) {
@@ -66,6 +80,9 @@ public abstract class AbstractEntityDao<Entity> {
 //        return result;
 //    }
 
+    /**
+     * Diz a ordem de busca de um determinado dado
+     */
     protected abstract void appendOrder(StringBuilder predicate);
 
     @Transactional
@@ -86,5 +103,16 @@ public abstract class AbstractEntityDao<Entity> {
         return manager.find(entityClass, entityId);
     }
 
+//    public Entity searchOneEntity(String entity) {
+//        TypedQuery<Entity> query = manager.createQuery(createQueryOne(),
+//                entityClass);
+//        query.setParameter("entityName", entity.toUpperCase());
+//        List<Entity> result = query.getResultList();
+//        if (result.isEmpty()) {
+//            return null;
+//        } else {
+//            return result.get(0);
+//        }
+//    }
 
 }

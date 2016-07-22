@@ -1,6 +1,5 @@
 package com.teccsoluction.sushi.framework;
 
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,29 +11,25 @@ import java.util.List;
 public abstract class AbstractController<Entity> {
 
 
-    //    private final Class<Entity> entityClass;
     private final String entityAlias;
-
-    private List<Entity> entityList;
 
     protected abstract AbstractEntityDao<Entity> getDao();
 
 
     public AbstractController(String entityAlias) {
-//        this.entityClass = entityClass;
         this.entityAlias = entityAlias;
     }
 
-    @RequestMapping(value = "cadastrocliente", method = RequestMethod.GET)
-    public ModelAndView cadastroControler() {
+    @RequestMapping(value = "cadastro", method = RequestMethod.GET)
+    public ModelAndView cadastrarEntity() {
 
         ModelAndView cadastro = new ModelAndView("cadastro" + entityAlias);
 
         return cadastro;
     }
 
-    @RequestMapping(value = "/AddCliente", method = RequestMethod.POST)
-    public ModelAndView AdicionarCliente(@ModelAttribute("Cliente") Entity entity) {
+    @RequestMapping(value = "add", method = RequestMethod.POST)
+    public ModelAndView AdicionarEntity(Entity entity) {
 
         ModelAndView cadastro_cliente = new ModelAndView("cadastro" + entityAlias);
 
@@ -44,12 +39,12 @@ public abstract class AbstractController<Entity> {
     }
 
 
-    @RequestMapping(value = "/movimentacaocliente", method = RequestMethod.GET)
-    public ModelAndView movimentacaoCliente() {
+    @RequestMapping(value = "movimentacao", method = RequestMethod.GET)
+    public ModelAndView movimentacaoEntity() {
 
         ModelAndView movimentacao = new ModelAndView("movimentacao" + entityAlias);
 
-        entityList = getDao().getAll();
+        List<Entity> entityList = getDao().getAll();
 
         movimentacao.addObject(entityAlias + "List", entityList);
 
@@ -57,8 +52,8 @@ public abstract class AbstractController<Entity> {
     }
 
 
-    @RequestMapping(value = "/edicaocliente", method = RequestMethod.GET)
-    public ModelAndView editarClienteForm(HttpServletRequest request) {
+    @RequestMapping(value = "edicao", method = RequestMethod.GET)
+    public ModelAndView editarEntityForm(HttpServletRequest request) {
 
         Entity entity;
         long idf = Long.parseLong(request.getParameter("id"));
@@ -71,20 +66,20 @@ public abstract class AbstractController<Entity> {
     }
 
 
-    @RequestMapping(value = "/movimentacaocliente/edicaocliente", method = RequestMethod.POST)
-    public ModelAndView editarCliente(HttpServletRequest request, Entity entity) {
+    @RequestMapping(value = "edicao", method = RequestMethod.POST)
+    public ModelAndView editarEntity(HttpServletRequest request, Entity entity) {
 
 
         Long idf = Long.parseLong(request.getParameter("id"));
         getDao().editar(entity);
 
 
-        return new ModelAndView("redirect:/movimentacao" + entityAlias);
+        return new ModelAndView("redirect:/movimentacao");
     }
 
 
     @RequestMapping(value = "/movimentacaocliente/delete", method = RequestMethod.GET)
-    public ModelAndView delete(HttpServletRequest request) {
+    public ModelAndView deletarEntity(HttpServletRequest request) {
 
 
         long idf = Long.parseLong(request.getParameter("id"));
@@ -92,7 +87,7 @@ public abstract class AbstractController<Entity> {
         getDao().delete(idf);
 
 
-        return new ModelAndView("redirect:/movimentacao" + entityAlias);
+        return new ModelAndView("redirect:/movimentacao/" + entityAlias);
     }
 
 
