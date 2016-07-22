@@ -1,8 +1,8 @@
 package com.teccsoluction.sushi.entidade;
 
+
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 
 @Entity
@@ -54,16 +54,9 @@ public class Categoria implements Serializable {
         return id;
     }
 
-//    public SubCategoria getSubCategoria() {
-//        return subCategoria;
-//    }
-//
-//    public void setSubCategoria(SubCategoria subCategoria) {
-//        this.subCategoria=subCategoria;
-//    }
-    
-    
-    
+    public void setId(long id) {
+        this.id = id;
+    }
 
     @Override
     public String toString() {

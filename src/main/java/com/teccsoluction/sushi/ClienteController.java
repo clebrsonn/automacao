@@ -1,6 +1,6 @@
 //package com.teccsoluction.sushi;
 //
-//import com.teccsoluction.sushi.dao.ClienteDAO2;
+//import com.teccsoluction.sushi.dao.generic.ClienteDAO2;
 //import com.teccsoluction.sushi.entidade.Cliente;
 //import com.teccsoluction.sushi.framework.AbstractController;
 //import org.springframework.beans.factory.annotation.Autowired;
