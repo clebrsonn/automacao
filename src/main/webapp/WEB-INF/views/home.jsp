@@ -13,7 +13,7 @@
 
 	<div id="user_msg" class="user_msg">
 	<h1>Seja Bem-Vindo ${usuario.nome}</h1>
-	<h2>Último Acesso em ${usuario.dataultimoacesso}</h2>
+	<h2>Ãºltimo Acesso em ${usuario.dataultimoacesso}</h2>
 	
    </div>
    

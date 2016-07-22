@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 <div align="">
-            <h3>Movimentação Cliente</h3>
+            <h3>Movimentaï¿½ï¿½o Cliente</h3>
             	<div id="content-table">
 	<form id="mainform">
 
@@ -16,7 +16,7 @@
                                  <th class="table-header-repeat line-left minwidth-1"><a>Data Nascimento</a></th>                               
                          
 <!--                 <th class="table-header-repeat line-left minwidth-1"><a>Projeto</a></th>                                -->
-                <th class="table-header-repeat line-left"><a>Acão</a></th>
+                <th class="table-header-repeat line-left"><a>Acï¿½o</a></th>
                  
                 <c:forEach var="cliente" items="${clienteList}" varStatus="id">
 
@@ -36,7 +36,7 @@
 <%--                     <td>${gerente.projeto}</td> --%>
                    
                     <td class="options-width">
-                        <a href="edicaocliente?id=${cliente.id}" class="icon-1 info-tooltip" title="Edit"></a>
+                        <a href="edicao?id=${cliente.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${cliente.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${cliente.id}" class="icon-3 info-tooltip" title="bbb"></a>
@@ -56,12 +56,12 @@
               
 <%--                     <td>${gerente.projeto}</td> --%>
                     <td class="options-width">
-                        <a href="edicaocliente?id=${cliente.id}" class="icon-1 info-tooltip" title="Edit"></a>
+                        <a href="edicao?id=${cliente.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="/delete?id=${cliente.id}" class="icon-4 info-tooltip" title="aaa"></a>
-                         <a href="/edit?id=${cliente.id}" class="icon-3 info-tooltip" title="bbb"></a>
+                        <a href="delete?id=${cliente.id}" class="icon-4 info-tooltip" title="aaa"></a>
+                         <a href="edit?id=${cliente.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaocliente/delete?id=${cliente.id}" class="icon-5 info-tooltip" title="ccc"></a>
+                        <a href="delete?id=${cliente.id}" class="icon-5 info-tooltip" title="ccc"></a>
                     </td>
                 </tr>
   </c:when>
