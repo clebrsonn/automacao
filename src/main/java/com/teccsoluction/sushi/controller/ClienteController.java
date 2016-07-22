@@ -1,6 +1,6 @@
 package com.teccsoluction.sushi.controller;
 
-import com.teccsoluction.sushi.dao.ClienteDAO2;
+import com.teccsoluction.sushi.dao.generic.ClienteDAO;
 import com.teccsoluction.sushi.entidade.Cliente;
 import com.teccsoluction.sushi.framework.AbstractController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,17 +13,17 @@ public class ClienteController extends AbstractController<Cliente> {
 
     private
     final
-    ClienteDAO2 dao;
+    ClienteDAO dao;
 
     @Autowired
-    public ClienteController(ClienteDAO2 dao) {
+    public ClienteController(ClienteDAO dao) {
         super("cliente");
         this.dao = dao;
     }
 
 
     @Override
-    protected ClienteDAO2 getDao() {
+    protected ClienteDAO getDao() {
         return dao;
     }
 
