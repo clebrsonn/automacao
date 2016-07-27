@@ -11,14 +11,14 @@
 
 
 		<p>ID do Cliente:</p>
-		<input name="id"type="text" class="inp-form" readonly="readonly" />
+		<%--<input name="id"type="text" class="inp-form" readonly="readonly" />--%>
 
 		<p>Nome do Cliente:</p>
 		<input name="nome"type="text" class="inp-form" />
 		
 		<p>Data Nascimento do Cliente:</p>
-		<input name="dataNascimento"type="text" class="inp-form" />
-		
+		<input name="dataNascimento"type="date" class="inp-form" />
+
 		<p>Email do Cliente:</p>
 		<input name="email"type="text" class="inp-form" />
 		
