@@ -1,9 +1,10 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page session="false" %>
 
 <div id="conteudo" class="conteudo">
 
-    <h3>Edi��o de Gerente</h3>
+    <h3>Ediçao de Gerente</h3>
 
     <div id="form">
         <form id="formCliente" action="edicao" method="POST">
@@ -16,6 +17,10 @@
             <input name="nome" type="text" class="inp-form" value="${cliente.nome }"/>
 
             <p>Data Nascimento do Cliente:</p>
+
+            <%--<input type="date" name="dataFinalizacao"--%>
+                   <%--value="<fmt:parseDate value="${cliente.dataNascimento }" pattern="dd/MM/yyyy" />"/>--%>
+
             <input name="dataNascimento" type="text" class="inp-form" value="${cliente.dataNascimento }"/>
 
             <p>Email do Cliente:</p>
