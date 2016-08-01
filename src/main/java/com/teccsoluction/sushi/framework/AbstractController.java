@@ -1,5 +1,6 @@
 package com.teccsoluction.sushi.framework;
 
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -29,13 +30,13 @@ public abstract class AbstractController<Entity> {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public ModelAndView AdicionarEntity(Entity entity) {
+    public ModelAndView AdicionarEntity(@ModelAttribute Entity entity) {
 
-        ModelAndView cadastro_cliente = new ModelAndView("cadastro" + entityAlias);
+//        ModelAndView cadastro_cliente = new ModelAndView("cadastro" + entityAlias);
 
         getDao().add(entity);
         System.out.println(entityAlias);
-        return cadastro_cliente;
+        return new ModelAndView("redirect:/cadastro" + entityAlias);
     }
 
 
@@ -78,7 +79,7 @@ public abstract class AbstractController<Entity> {
     }
 
 
-    @RequestMapping(value = "/movimentacaocliente/delete", method = RequestMethod.GET)
+    @RequestMapping(value = "delete", method = RequestMethod.GET)
     public ModelAndView deletarEntity(HttpServletRequest request) {
 
 
@@ -87,7 +88,7 @@ public abstract class AbstractController<Entity> {
         getDao().delete(idf);
 
 
-        return new ModelAndView("redirect:/movimentacao/" + entityAlias);
+        return new ModelAndView("redirect:/" + entityAlias + "/movimentacao");
     }
 
 
