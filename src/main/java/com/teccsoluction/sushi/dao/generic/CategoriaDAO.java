@@ -2,12 +2,12 @@ package com.teccsoluction.sushi.dao.generic;
 
 import com.teccsoluction.sushi.entidade.Categoria;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.TypedQuery;
 
 
-@Service
+@Repository
 public class CategoriaDAO extends AbstractEntityDao<Categoria> {
 
 
