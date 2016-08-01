@@ -7,7 +7,7 @@
 
 
     <div id="form">
-        <form id="formCategoria" action="AddCategoria" method="post">
+        <form id="formCategoria" action="add" method="POST">
 
 
             <p>ID da Categoria:</p>
@@ -15,12 +15,12 @@
 
             <p> Categoria Pai:</p>
             <select id="catpai" name="catpai" id="files" class="inp-form">
-                    				<option value=""></option>
-            
+                <option value=""></option>
+
                 <optgroup label="Categoria Pai">
-                     			<c:forEach var="categoria" items="${categoriaList}">
-                     				<option value="${categoria.id}">${categoria.nome}</option>
-                     				</c:forEach>
+                    <c:forEach var="categoria" items="${categoriaList}">
+                        <option value="${categoria.id}">${categoria.nome}</option>
+                    </c:forEach>
 
                 </optgroup>
             </select>
