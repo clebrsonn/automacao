@@ -1,9 +1,13 @@
 package com.teccsoluction.sushi;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.teccsoluction.sushi.dao.FornecedorDAO;
+import com.teccsoluction.sushi.dao.ProdutoDAO;
+import com.teccsoluction.sushi.dao.generic.CategoriaDAO;
+import com.teccsoluction.sushi.entidade.Categoria;
+import com.teccsoluction.sushi.entidade.Fornecedor;
+import com.teccsoluction.sushi.entidade.Produto;
+import com.teccsoluction.sushi.util.FornecedorEditor;
+import com.teccsoluction.sushi.util.UnidadeMedida;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
@@ -13,15 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.teccsoluction.sushi.dao.CategoriaDAO;
-import com.teccsoluction.sushi.dao.FornecedorDAO;
-import com.teccsoluction.sushi.dao.ProdutoDAO;
-import com.teccsoluction.sushi.entidade.Categoria;
-import com.teccsoluction.sushi.entidade.Fornecedor;
-import com.teccsoluction.sushi.entidade.Produto;
-import com.teccsoluction.sushi.util.CategoriaEditor;
-import com.teccsoluction.sushi.util.FornecedorEditor;
-import com.teccsoluction.sushi.util.UnidadeMedida;
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Handles requests for the application home page.
@@ -47,7 +44,7 @@ public class ProdutoController {
     protected void initBinder(HttpServletRequest request,  ServletRequestDataBinder binder) {
 
         binder.registerCustomEditor(Fornecedor.class, new FornecedorEditor(this.fornecedorDao));
-        binder.registerCustomEditor(Categoria.class, new CategoriaEditor(this.categoriaDao));
+//        binder.registerCustomEditor(Categoria.class, new CategoriaEditor(this.categoriaDao));
 
 
     }
@@ -134,7 +131,7 @@ public class ProdutoController {
 			
 			produto.setCategoria(produto.getCategoria());
 		
-			produtoDao.editar(id, produto);;
+//			produtoDao.editar(id, produto);;
 		
 	
 		

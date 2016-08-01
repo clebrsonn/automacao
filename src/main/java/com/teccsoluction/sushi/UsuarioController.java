@@ -1,19 +1,17 @@
 package com.teccsoluction.sushi;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.teccsoluction.sushi.dao.UsuarioDAO;
+import com.teccsoluction.sushi.entidade.Usuario;
+import com.teccsoluction.sushi.util.TipoUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import com.teccsoluction.sushi.dao.UsuarioDAO;
-import com.teccsoluction.sushi.entidade.Usuario;
-import com.teccsoluction.sushi.util.TipoUsuario;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Handles requests for the application home page.
@@ -91,7 +89,7 @@ public class UsuarioController {
 		
 		long id = Long.parseLong(request.getParameter("id"));
 		
-		 usuarioDao.editar(id, user);
+//		 usuarioDao.editar(id, user);
 				
 			return new ModelAndView("redirect:/movimentacaousuario");
 	}

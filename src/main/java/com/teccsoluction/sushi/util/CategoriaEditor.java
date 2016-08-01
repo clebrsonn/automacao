@@ -1,29 +1,29 @@
 package com.teccsoluction.sushi.util;
 
-import com.teccsoluction.sushi.dao.CategoriaDAO;
+
 import com.teccsoluction.sushi.entidade.Categoria;
+import com.teccsoluction.sushi.framework.AbstractEntityDao;
 
 import java.beans.PropertyEditorSupport;
 
 
-
 public class CategoriaEditor extends PropertyEditorSupport {
 
-	 final CategoriaDAO categoriadao;
-	
-	
-	public CategoriaEditor(final CategoriaDAO dao) {
+    final AbstractEntityDao<Categoria> categoriadao;
 
-	this.categoriadao =dao;
-	
-	}
-	
-	@Override
+
+    public CategoriaEditor(final AbstractEntityDao<Categoria> dao) {
+
+        this.categoriadao = dao;
+
+    }
+
+    @Override
     public void setAsText(final String id) {
- 
+
         final Categoria categoria = this.categoriadao.PegarPorId(Long.parseLong(id));
- 
+
         this.setValue(categoria);
 
-}
+    }
 }
