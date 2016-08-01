@@ -1,6 +1,7 @@
 package com.teccsoluction.sushi.util;
 
-import com.teccsoluction.sushi.dao.CategoriaDAO;
+
+import com.teccsoluction.sushi.dao.generic.CategoriaDAO;
 import com.teccsoluction.sushi.entidade.Categoria;
 import com.teccsoluction.sushi.framework.AbstractEditor;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
