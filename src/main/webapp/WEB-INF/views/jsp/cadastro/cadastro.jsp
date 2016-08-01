@@ -4,9 +4,9 @@
 <div id="conteudo" class="">
 	<div class="post">
 		<h1 class="title">Cadastros</h1>
-		
-		
-		<button onclick="window.location.href='cadastrocategoria'"><p><img alt="kkk" src="/resources/images/categoria.png">categorias</p></button>
+
+
+		<button onclick="window.location.href='categoria/cadastro'"><p><img alt="kkk" src="/resources/images/categoria.png">categorias</p></button>
 		<button onclick="window.location.href='cadastroproduto'"><p><img alt="kkk" src="/resources/images/produto.png">produtos</p></button>
 		<button onclick="window.location.href='cadastrousuario'"><p><img alt="kkk" src="/resources/images/user.png">usuário</p></button>
 		<button onclick="window.location.href='cadastrogarcon'"><p><img alt="kkk" src="/resources/images/garcon.png">garçon</p></button>
@@ -24,7 +24,7 @@
 		<button onclick="window.location.href='cadastrocategoria'"><p><img alt="kkk" src="/resources/images/mesa_disp.png">mesas</p></button>
 		<button onclick="window.location.href='cadastrocategoria'"><p><img alt="kkk" src="/resources/images/mesa_disp.png">mesas</p></button>
 
-	
+
 </div>
 </div>
 

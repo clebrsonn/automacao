@@ -24,9 +24,7 @@ public abstract class AbstractController<Entity> {
     @RequestMapping(value = "cadastro", method = RequestMethod.GET)
     public ModelAndView cadastrarEntity() {
 
-        ModelAndView cadastro = new ModelAndView("cadastro" + entityAlias);
-
-        return cadastro;
+        return new ModelAndView("cadastro" + entityAlias);
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
@@ -35,8 +33,8 @@ public abstract class AbstractController<Entity> {
 //        ModelAndView cadastro_cliente = new ModelAndView("cadastro" + entityAlias);
 
         getDao().add(entity);
-        System.out.println(entityAlias);
-        return new ModelAndView("redirect:/cadastro" + entityAlias);
+//        System.out.println(entityAlias);
+        return new ModelAndView("redirect:/" + entityAlias + "/cadastro");
     }
 
 
