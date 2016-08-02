@@ -9,10 +9,6 @@
     <div id="form">
         <form id="formCategoria" action="add" method="POST">
 
-
-            <p>ID da Categoria:</p>
-            <input name="id" type="text" class="inp-form" readonly="readonly"/>
-
             <p> Categoria Pai:</p>
             <select id="catpai" name="catpai" id="files" class="inp-form">
                 <option value=""></option>
