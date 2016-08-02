@@ -11,7 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.teccsoluction.sushi.entidade.Reserva;
 
 
-@Service
+
+@Repository
 public class ReservaDAO {
 	
 	@PersistenceContext
