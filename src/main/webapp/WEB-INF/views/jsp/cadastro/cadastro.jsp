@@ -12,7 +12,7 @@
 		<button onclick="window.location.href='cadastrogarcon'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/garcon.png">garçon</p></button>
 		<button onclick="window.location.href='cadastrodespesa'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/despesa.png">despesas</p></button>
 		<button onclick="window.location.href='cliente/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/cliente.png">cliente</p></button>
-		<button onclick="window.location.href='cadastrofornecedor'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/fornecedor.png">fornecedor</p></button>
+		<button onclick="window.location.href='fornecedor/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/fornecedor.png">fornecedor</p></button>
 		<button onclick="window.location.href='cadastroservico'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/servico.png">serviço</p></button>
 		<div><p></p></div>
 		<button onclick="window.location.href='cadastromesa'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/mesa_disp.png">mesas</p></button>

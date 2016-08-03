@@ -20,7 +20,7 @@
 		<button onclick="window.location.href='movimentacaogarcon'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/garcon.png">gar�on</p></button>
 		<button onclick="window.location.href='movimentacao_despesa'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/despesa.png">despesas</p></button>
 		<button onclick="window.location.href='cliente/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/cliente.png">cliente</p></button>
-		<button onclick="window.location.href='movimentacaofornecedor'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/fornecedor.png">fornecedor</p></button>
+		<button onclick="window.location.href='fornecedor/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/fornecedor.png">fornecedor</p></button>
 		<button onclick="window.location.href='movimentacaoservico'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/servico.png">servi�o</p></button>
 		
 		<button onclick="window.location.href='movimentacaomesas'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/mesa_indisp.png">mesas</p></button>
