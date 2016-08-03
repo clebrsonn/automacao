@@ -5,7 +5,7 @@ import java.beans.PropertyEditorSupport;
 /**
  * Created by clebr on 17/07/2016.
  */
-public abstract class AbstractEditor<Entity> extends PropertyEditorSupport {
+public class AbstractEditor<Entity> extends PropertyEditorSupport {
 
     private final AbstractEntityDao<Entity> dao;
 
