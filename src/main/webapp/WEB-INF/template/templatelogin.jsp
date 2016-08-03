@@ -13,15 +13,15 @@
 <!-- chef -->
 
 
-<link rel="stylesheet" href="resources/css/screen.css" type="text/css" media="screen" title="default" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/screen.css" type="text/css" media="screen" title="default" />
 <!--  jquery core -->
-<script src="resources/js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
 
 <!-- Custom jquery scripts -->
-<script src="resources/js/jquery/custom_jquery.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery/custom_jquery.js" type="text/javascript"></script>
 
 <!-- MUST BE THE LAST SCRIPT IN <HEAD></HEAD></HEAD> png fix -->
-<script src="resources/js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 $(document).ready(function () {
