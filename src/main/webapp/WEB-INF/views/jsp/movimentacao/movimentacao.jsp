@@ -14,7 +14,7 @@
 		
 		
 		
-		<button onclick="window.location.href='movimentacaocategoria'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/categoria.png">categorias</p></button>
+		<button onclick="window.location.href='categoria/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/categoria.png">categorias</p></button>
 		<button onclick="window.location.href='movimentacaoproduto'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/produto.png">produtos</p></button>
 		<button onclick="window.location.href='movimentacaousuario'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/user.png">usuario</p></button>
 		<button onclick="window.location.href='movimentacaogarcon'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/garcon.png">gar�on</p></button>
