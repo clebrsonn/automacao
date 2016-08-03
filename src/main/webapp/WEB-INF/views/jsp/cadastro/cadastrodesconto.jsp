@@ -7,7 +7,7 @@
 	
 	
 	<div id="form">
-	<form id="formDesconto" action="ADDDesconto" method=POST>
+	<form id="formDesconto" action="add" method=POST>
 
 
 		<p>ID do Desconto:</p>

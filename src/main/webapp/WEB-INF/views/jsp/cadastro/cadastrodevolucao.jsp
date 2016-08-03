@@ -7,7 +7,7 @@
 	
 	
 	<div id="form">
-	<form id="formRecebimentos" action="additemrecebimento" method="GET">
+	<form id="formRecebimentos" action="add" method="GET">
 
 		<div id="dadospedido" class="dadospedido">
 

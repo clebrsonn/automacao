@@ -132,8 +132,8 @@
    
     </definition>
     
-             <definition name="movimentacaomesas" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaomesas.jsp"/>      
+             <definition name="movimentacaomesa" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaomesa.jsp"/>      
            <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
    
     </definition>
@@ -167,8 +167,8 @@
     </definition>
     
     
-                   <definition name="movimentacao_despesa" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacao_despesa.jsp"/>      
+                   <definition name="movimentacaodespesa" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaodespesa.jsp"/>      
            <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
    
     </definition>
@@ -202,8 +202,8 @@
            <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
    
     </definition>
-                                 <definition name="movimentacaoreservas" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoreservas.jsp"/>      
+                                 <definition name="movimentacaoreserva" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoreserva.jsp"/>      
            <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
    
     </definition>

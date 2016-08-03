@@ -7,7 +7,7 @@
 	
 	
 	<div id="form">
-	<form id="formMesa" action="AddMesa" method="POST">
+	<form id="formMesa" action="add" method="POST">
 
 		<p>ID Mesa:</p>
 		<input name="id" type="text" class="inp-form" />

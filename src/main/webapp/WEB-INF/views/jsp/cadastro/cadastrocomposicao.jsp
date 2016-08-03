@@ -7,7 +7,7 @@
 	
 	
 	<div id="form">
-	<form id="formComposicao" action="ADDComposicao" method="POST">
+	<form id="formComposicao" action="add" method="POST">
 
 
 		<p>ID da Composição:</p>

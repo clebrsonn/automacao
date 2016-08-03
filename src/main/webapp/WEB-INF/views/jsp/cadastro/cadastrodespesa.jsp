@@ -9,7 +9,7 @@
 	
 	
 	<div id="formm">
-	<form id="formDespesa" action="AddDespesa" method="POST">
+	<form id="formDespesa" action="add" method="POST">
 
 
 		<p>ID da Despesa:</p>

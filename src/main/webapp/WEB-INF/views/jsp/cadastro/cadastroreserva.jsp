@@ -9,7 +9,7 @@
 	
 	
 	<div id="formm">
-	<form id="formReserva" action="AddReserva" method="POST">
+	<form id="formReserva" action="add" method="POST">
 
 
 		<p>ID da Reserva:</p>

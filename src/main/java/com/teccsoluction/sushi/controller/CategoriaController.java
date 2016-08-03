@@ -40,24 +40,25 @@ public class CategoriaController extends AbstractController<Categoria> {
     protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) {
 
         binder.registerCustomEditor(Categoria.class, new AbstractEditor<Categoria>(getDao()) {
+        	
         });
 
 
     }
 
 
-    @Override
-    @RequestMapping(value = "cadastro", method = RequestMethod.GET)
-    public ModelAndView cadastrarEntity() {
-
-        ModelAndView cadastrocategoria = new ModelAndView("cadastrocategoria");
-
-        List<Categoria> categoriaList = getDao().getAll();
-
-        cadastrocategoria.addObject("categoriaList", categoriaList);
-
-
-        return cadastrocategoria;
-    }
+//    @Override
+//    @RequestMapping(value = "cadastro", method = RequestMethod.GET)
+//    public ModelAndView cadastrarEntity() {
+//
+//        ModelAndView cadastrocategoria = new ModelAndView("cadastrocategoria");
+//
+//        List<Categoria> categoriaList = getDao().getAll();
+//
+//        cadastrocategoria.addObject("categoriaList", categoriaList);
+//
+//
+//        return cadastrocategoria;
+//    }
 }
 

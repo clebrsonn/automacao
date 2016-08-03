@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "Garcon")
+@RequestMapping(value = "garcon/")
 public class GarconController extends AbstractController<Garcon> {
 
     private

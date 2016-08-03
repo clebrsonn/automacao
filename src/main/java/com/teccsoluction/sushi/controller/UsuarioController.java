@@ -7,7 +7,7 @@ import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping(value = "usuario/")
+@RequestMapping(value = "usuario")
 public class UsuarioController extends AbstractController<Usuario> {
 
 
@@ -15,8 +15,9 @@ public class UsuarioController extends AbstractController<Usuario> {
     UsuarioDAO dao;
 
 
-    public UsuarioController() {
-        super("Usuario");
+    public UsuarioController(UsuarioDAO dao) {
+        super("usuario");
+        this.dao= dao;
     }
 
     @Override

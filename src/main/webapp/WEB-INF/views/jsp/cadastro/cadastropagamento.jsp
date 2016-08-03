@@ -9,7 +9,7 @@
 	
 	
 	<div id="formm">
-	<form id="formPagamento" action="AddPagamento" method="POST">
+	<form id="formPagamento" action="add" method="POST">
 
 
 		<p>ID da Forma de Pagamento:</p>

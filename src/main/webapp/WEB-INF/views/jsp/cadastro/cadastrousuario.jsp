@@ -5,7 +5,7 @@
 <h3> Cadastro Usuario </h3> 
 <div id="form"> 
  
- <form id="formUsuario" action="AddUsuario" method="POST">
+ <form id="formUsuario" action="add" method="POST">
 
 			<p>Id Usuario</p>
 			<input id="id" name="id" type="text" readonly="readonly"/>
