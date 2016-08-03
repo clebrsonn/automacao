@@ -8,7 +8,7 @@
 
 	<!-- start logo -->
 	<div id="logo-login">
-		<img src="resources/images/shared/ACENTURE.png" width="200" height="100" alt="" />
+		<img src="${pageContext.request.contextPath}/resources/images/shared/ACENTURE.png" width="200" height="100" alt="" />
 	</div>
 	<!-- end logo -->
 	

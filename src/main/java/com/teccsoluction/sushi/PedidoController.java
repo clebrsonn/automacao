@@ -1,9 +1,17 @@
 package com.teccsoluction.sushi;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.teccsoluction.sushi.dao.MesaDAO;
+import com.teccsoluction.sushi.dao.PedidoDAO;
+import com.teccsoluction.sushi.dao.ProdutoDAO;
+import com.teccsoluction.sushi.dao.generic.GarconDAO;
+import com.teccsoluction.sushi.entidade.Garcon;
+import com.teccsoluction.sushi.entidade.Mesa;
+import com.teccsoluction.sushi.entidade.Pedido;
+import com.teccsoluction.sushi.entidade.Produto;
+import com.teccsoluction.sushi.framework.AbstractEditor;
+import com.teccsoluction.sushi.util.MesaEditor;
+import com.teccsoluction.sushi.util.StatusPedido;
+import com.teccsoluction.sushi.util.TipoPedido;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
@@ -13,23 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.teccsoluction.sushi.dao.GarconDAO;
-import com.teccsoluction.sushi.dao.MesaDAO;
-import com.teccsoluction.sushi.dao.PedidoDAO;
-import com.teccsoluction.sushi.dao.ProdutoDAO;
-import com.teccsoluction.sushi.entidade.Categoria;
-import com.teccsoluction.sushi.entidade.Fornecedor;
-import com.teccsoluction.sushi.entidade.Garcon;
-import com.teccsoluction.sushi.entidade.Mesa;
-import com.teccsoluction.sushi.entidade.Pagamento;
-import com.teccsoluction.sushi.entidade.Pedido;
-import com.teccsoluction.sushi.entidade.Produto;
-import com.teccsoluction.sushi.util.CategoriaEditor;
-import com.teccsoluction.sushi.util.FornecedorEditor;
-import com.teccsoluction.sushi.util.GarconEditor;
-import com.teccsoluction.sushi.util.MesaEditor;
-import com.teccsoluction.sushi.util.StatusPedido;
-import com.teccsoluction.sushi.util.TipoPedido;
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class PedidoController {
@@ -61,7 +54,8 @@ public class PedidoController {
 	    protected void initBinder(HttpServletRequest request,  ServletRequestDataBinder binder) {
 
 	        binder.registerCustomEditor(Mesa.class, new MesaEditor(this.mesadao));
-	        binder.registerCustomEditor(Garcon.class, new GarconEditor(this.garcondao));
+	        binder.registerCustomEditor(Garcon.class, new AbstractEditor<Garcon>(this.garcondao) {
+			});
 
 
 	    }

@@ -1,30 +1,29 @@
 package com.teccsoluction.sushi.controller;
 
-import com.teccsoluction.sushi.dao.FornecedorDAO;
-import com.teccsoluction.sushi.entidade.Fornecedor;
+import com.teccsoluction.sushi.dao.generic.GarconDAO;
+import com.teccsoluction.sushi.entidade.Garcon;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/**
- * Created by clebr on 06/07/2016.
- */
 @Controller
-@RequestMapping(value = "fornecedor/")
-public class FornecedorController extends AbstractController<Fornecedor> {
+@RequestMapping(value = "Garcon")
+public class GarconController extends AbstractController<Garcon> {
 
-    private final FornecedorDAO dao;
+    private
+    final
+    GarconDAO dao;
 
     @Autowired
-    public FornecedorController(FornecedorDAO dao) {
-        super("fornecedor");
+    public GarconController(GarconDAO dao) {
+        super("garcon");
         this.dao = dao;
     }
 
     @Override
-    protected AbstractEntityDao<Fornecedor> getDao() {
+    protected AbstractEntityDao<Garcon> getDao() {
         return dao;
     }
 }
