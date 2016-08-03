@@ -111,7 +111,7 @@
 //		 UnidadeMedida[] umList = UnidadeMedida.values();
 //		 //carregando A LISTA DE fornecedores  em um list
 //		 fornecedorList = fornecedorDao.getAll();
-//		 //carregando a çista de Categorias
+//		 //carregando a lista de Categorias
 //		 categoriaList = categoriaDao.getAll();
 //
 //		 edicaoproduto.addObject("umList",umList);

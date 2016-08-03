@@ -101,7 +101,7 @@ public class Devolucao implements Serializable {
 
 	@Override
 	public String toString() {
-		return "ID DEVOLU«√O:"+id;
+		return "ID DEVOLU√á√ÉO:" + id;
 	}
 	
 	
