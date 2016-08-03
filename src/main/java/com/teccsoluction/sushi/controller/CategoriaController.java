@@ -3,8 +3,8 @@ package com.teccsoluction.sushi.controller;
 import com.teccsoluction.sushi.dao.generic.CategoriaDAO;
 import com.teccsoluction.sushi.entidade.Categoria;
 import com.teccsoluction.sushi.framework.AbstractController;
+import com.teccsoluction.sushi.framework.AbstractEditor;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
-import com.teccsoluction.sushi.util.CategoriaEditor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
@@ -39,7 +39,8 @@ public class CategoriaController extends AbstractController<Categoria> {
     @InitBinder
     protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) {
 
-        binder.registerCustomEditor(Categoria.class, new CategoriaEditor(getDao()));
+        binder.registerCustomEditor(Categoria.class, new AbstractEditor<Categoria>(getDao()) {
+        });
 
 
     }
