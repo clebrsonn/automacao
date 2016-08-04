@@ -50,12 +50,12 @@
 <%--                     <td>${lider.projeto}</td> --%>
                    
                     <td class="options-width">
-                        <a href="edicaoservico?id=${servico.id}" class="icon-1 info-tooltip" title="Edit"></a>
+                        <a href="edicao?id=${servico.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${servico.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${servico.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaoservico/delete?id=${servico.id}" class="icon-5 info-tooltip" title="ccc"></a>
+                        <a href="delete?id=${servico.id}" class="icon-5 info-tooltip" title="ccc"></a>
                     </td>
                 </tr>
   </c:when>
@@ -68,12 +68,12 @@
                      <td>${servico.preco}</td>
 <%--                     <td>${lider.projeto}</td> --%>
                     <td class="options-width">
-                        <a href="edicaoservico?id=${servico.id}" class="icon-1 info-tooltip" title="Edit"></a>
+                        <a href="edicao?id=${servico.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${servico.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${servico.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaoservico/delete?id=${servico.id}" class="icon-5 info-tooltip" title="ccc"></a>
+                        <a href="delete?id=${servico.id}" class="icon-5 info-tooltip" title="ccc"></a>
                     </td>
                 </tr>
   </c:when>

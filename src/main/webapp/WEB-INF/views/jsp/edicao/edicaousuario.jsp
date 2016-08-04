@@ -5,7 +5,7 @@
 
 <div id="page-heading"> <h1> Edição de Usuario </h1> </div>
  
- <form id="formUsuario" action="movimentacaousuario/edicaousuario" method="POST">
+ <form id="formUsuario" action="edicao" method="POST">
 
 			<p>Id Usuario</p>
 			<input id="id" name="id" type="text" readonly="readonly" value="${usuario.id }"/>

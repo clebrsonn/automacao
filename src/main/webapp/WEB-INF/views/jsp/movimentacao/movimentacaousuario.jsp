@@ -34,12 +34,12 @@
 							
 		                   
 		                    <td class="options-width">
-		                        <a href="edicaousuario?id=${usuario.id}" class="icon-1 info-tooltip" title="Edit"></a>
+		                        <a href="edicao?id=${usuario.id}" class="icon-1 info-tooltip" title="Edit"></a>
 		                        &nbsp;&nbsp;&nbsp;&nbsp;
 		                        <a href="/delete?id=${usuario.id}" class="icon-4 info-tooltip" title="aaa"></a>
 		                         <a href="/edit?id=${usuario.id}" class="icon-3 info-tooltip" title="bbb"></a>
 		                        &nbsp;&nbsp;&nbsp;&nbsp;
-		                        <a href="movimentacaousuario/delete?id=${usuario.id}" class="icon-5 info-tooltip" title="ccc"></a>
+		                        <a href="delete?id=${usuario.id}" class="icon-5 info-tooltip" title="ccc"></a>
 		                    </td>
 		                </tr>
 		  </c:when>
@@ -53,12 +53,12 @@
 		                    <td>${usuario.email}</td>
 		
 		                    <td class="options-width">
-		                        <a href="edicaousuario?id=${usuario.id}" class="icon-1 info-tooltip" title="Edit"></a>
+		                        <a href="edicao?id=${usuario.id}" class="icon-1 info-tooltip" title="Edit"></a>
 		                        &nbsp;&nbsp;&nbsp;&nbsp;
 		                        <a href="/delete?id=${usuario.id}" class="icon-4 info-tooltip" title="aaa"></a>
 		                         <a href="/edit?id=${usuario.id}" class="icon-3 info-tooltip" title="bbb"></a>
 		                        &nbsp;&nbsp;&nbsp;&nbsp;
-		                        <a href="movimentacaousuario/delete?id=${usuario.id}" class="icon-5 info-tooltip" title="ccc"></a>
+		                        <a href="delete?id=${usuario.id}" class="icon-5 info-tooltip" title="ccc"></a>
 		                    </td>
 		                </tr>
 		  </c:when>

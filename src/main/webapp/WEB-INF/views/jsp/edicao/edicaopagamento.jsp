@@ -7,7 +7,7 @@
 	
 	
 	<div id="formm">
-	<form id="formPagamento" action="movimentacaopagamento/edicaopagamento" method="POST">
+	<form id="formPagamento" action="edicao" method="POST">
 
 
 		<p>ID da Forma de Pagamento:</p>

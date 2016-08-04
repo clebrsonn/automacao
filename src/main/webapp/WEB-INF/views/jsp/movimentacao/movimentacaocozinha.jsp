@@ -45,12 +45,12 @@
 			
 			                   
 			                    <td class="options-width">
-			                        <a href="edicaocozinha?id=${pedido.id}" class="icon-1 info-tooltip" title="Edit"></a>
+			                        <a href="edicao?id=${pedido.id}" class="icon-1 info-tooltip" title="Edit"></a>
 			                        &nbsp;&nbsp;&nbsp;&nbsp;
 			                        <a href="/delete?id=${pedido.id}" class="icon-40 info-tooltip" title="aaa"></a>
 			                         <a href="additem?id=${pedido.id}" class="icon-30 info-tooltip" title="Adicionar Item ao Pedido"></a>
 			                        &nbsp;&nbsp;&nbsp;&nbsp;
-			                        <a href="movimentacaocozinha/delete?id=${pedido.id}" class="icon-5 info-tooltip" title="ccc"></a>
+			                        <a href="delete?id=${pedido.id}" class="icon-5 info-tooltip" title="ccc"></a>
 			                    </td>
 	                </tr>
  		

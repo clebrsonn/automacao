@@ -7,7 +7,7 @@
 	
 	
 	<div id="formm">
-	<form id="formReserva" action="movimentacaoreserva/edicaoreserva" method="POST">
+	<form id="formReserva" action="edicao" method="POST">
 
 
 		<p>ID da Reserva:</p>

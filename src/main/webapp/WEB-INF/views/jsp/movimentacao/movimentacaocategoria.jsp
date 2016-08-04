@@ -45,12 +45,12 @@
                     <td>${categoria.catpai}</td>
                    
                     <td class="options-width">
-                        <a href="edicaocategoria?id=${categoria.id}" class="icon-1 info-tooltip" title="Edit"></a>
+                        <a href="edicao?id=${categoria.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${categoria.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${categoria.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaocategoria/delete?id=${categoria.id}" class="icon-5 info-tooltip" title="ccc"></a>
+                        <a href="delete?id=${categoria.id}" class="icon-5 info-tooltip" title="ccc"></a>
                     </td>
                 </tr>
   </c:when>
@@ -61,12 +61,12 @@
                      <td>${categoria.nome}</td>
                     <td>${categoria.catpai}</td>
                     <td class="options-width">
-                        <a href="edicaocategoria?id=${categoria.id}" class="icon-1 info-tooltip" title="Edit"></a>
+                        <a href="edicao?id=${categoria.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${categoria.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${categoria.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaocategoria/delete?id=${categoria.id}" class="icon-5 info-tooltip" title="ccc"></a>
+                        <a href="delete?id=${categoria.id}" class="icon-5 info-tooltip" title="ccc"></a>
                     </td>
                 </tr>
   </c:when>

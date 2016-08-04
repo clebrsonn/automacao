@@ -35,12 +35,12 @@
                       <td>${pagamento.parcelas}</td>
                    
                     <td class="options-width">
-                        <a href="edicaopagamento?id=${pagamento.id}" class="icon-1 info-tooltip" title="Edidar Estoria"></a>
+                        <a href="edicao?id=${pagamento.id}" class="icon-1 info-tooltip" title="Edidar Estoria"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${pagamento.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${pagamento.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaopagamento/delete?id=${pagamento.id}" class="icon-5 info-tooltip" title="Excluir Estória"></a>
+                        <a href="delete?id=${pagamento.id}" class="icon-5 info-tooltip" title="Excluir Estória"></a>
                     </td>
                 
                 </tr>
@@ -55,12 +55,12 @@
                        <td>${pagamento.parcelas}</td>
                     
                      <td class="options-width">
-                        <a href="edicaopagamento?id=${pagamento.id}" class="icon-1 info-tooltip" title="Edidar Estoria"></a>
+                        <a href="edicaoid=${pagamento.id}" class="icon-1 info-tooltip" title="Edidar Estoria"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${pagamento.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${pagamento.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaopagamento/delete?id=${pagamento.id}" class="icon-5 info-tooltip" title="Excluir Estória"></a>
+                        <a href="delete?id=${pagamento.id}" class="icon-5 info-tooltip" title="Excluir Estória"></a>
                     </td>
 
                 </tr>

@@ -32,12 +32,12 @@
                     
                    
                     <td class="options-width">
-                        <a href="edicaocomposicao?id=${composicao.id}" class="icon-1 info-tooltip" title="Edidar Estoria"></a>
+                        <a href="edicao?id=${composicao.id}" class="icon-1 info-tooltip" title="Edidar Estoria"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${composicao.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${composicao.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaocomposicao/delete?id=${composicao.id}" class="icon-5 info-tooltip" title="Excluir Estória"></a>
+                        <a href="delete?id=${composicao.id}" class="icon-5 info-tooltip" title="Excluir Estória"></a>
                     </td>
                 
                 </tr>
@@ -50,12 +50,12 @@
                     <td>${composicao.numero}</td>
                     
                     <td class="options-width">
-                        <a href="edicaocomposicao?id=${composicao.id}" class="icon-1 info-tooltip" title="Editar Estoria"></a>
+                        <a href="edicao?id=${composicao.id}" class="icon-1 info-tooltip" title="Editar Estoria"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${composicao.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${composicao.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaocomposicao/delete?id=${composicao.id}" class="icon-5 info-tooltip" title="Excluir Estória"></a>
+                        <a href="delete?id=${composicao.id}" class="icon-5 info-tooltip" title="Excluir Estória"></a>
                     </td>
 
                 </tr>

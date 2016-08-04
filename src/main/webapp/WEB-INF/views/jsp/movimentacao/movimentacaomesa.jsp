@@ -13,7 +13,7 @@
                 	<c:choose>
   						
   						<c:when test="${mesa.status == 'Disponivel'}">
-								<a href="edicaomesa?id=${mesa.id}" ><div class="mesa"><div class="mesa_disponivel">${mesa.numero}</div><div class="disponivel"></div></div></a>
+								<a href="edicao?id=${mesa.id}" ><div class="mesa"><div class="mesa_disponivel">${mesa.numero}</div><div class="disponivel"></div></div></a>
   						
   						</c:when>
   						

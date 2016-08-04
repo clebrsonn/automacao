@@ -52,12 +52,12 @@
                      <td>${promocao.datafim}</td>
                    
                     <td class="options-width">
-                        <a href="edicaopromocao?id=${promocao.id}" class="icon-1 info-tooltip" title="Edit"></a>
+                        <a href="edicao?id=${promocao.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${promocao.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${promocao.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaopromocao/delete?id=${promocao.id}" class="icon-5 info-tooltip" title="ccc"></a>
+                        <a href="delete?id=${promocao.id}" class="icon-5 info-tooltip" title="ccc"></a>
                     </td>
                 </tr>
   </c:when>
@@ -70,12 +70,12 @@
                      <td>${promocao.datainicio}</td>
                      <td>${promocao.datafim}</td>
                     <td class="options-width">
-                        <a href="edicaopromocao?id=${promocao.id}" class="icon-1 info-tooltip" title="Edit"></a>
+                        <a href="edicao?id=${promocao.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${promocao.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${promocao.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaopromocao/delete?id=${promocao.id}" class="icon-5 info-tooltip" title="ccc"></a>
+                        <a href="delete?id=${promocao.id}" class="icon-5 info-tooltip" title="ccc"></a>
                     </td>
                 </tr>
   </c:when>

@@ -33,12 +33,12 @@
                     <td>${reserva.mesa}</td>
                    
                     <td class="options-width">
-                        <a href="edicaoreserva?id=${reserva.id}" class="icon-1 info-tooltip" title="Editar Projeto"></a>
+                        <a href="edicao?id=${reserva.id}" class="icon-1 info-tooltip" title="Editar Projeto"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${reserva.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${reserva.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaoreserva/delete?id=${reserva.id}" class="icon-5 info-tooltip" title="Excluir Projeto"></a>
+                        <a href="delete?id=${reserva.id}" class="icon-5 info-tooltip" title="Excluir Projeto"></a>
                     </td>
                 </tr>
   </c:when>
@@ -52,12 +52,12 @@
                     <td>${reserva.mesa}</td>
                     
                     <td class="options-width">
-                        <a href="edicaoreserva?id=${reserva.id}" class="icon-1 info-tooltip" title="Editar Projeto"></a>
+                        <a href="edicao?id=${reserva.id}" class="icon-1 info-tooltip" title="Editar Projeto"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${reserva.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${reserva.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaoreserva/delete?id=${reserva.id}" class="icon-5 info-tooltip" title="Excluir Projeto"></a>
+                        <a href="delete?id=${reserva.id}" class="icon-5 info-tooltip" title="Excluir Projeto"></a>
                     </td>
                 </tr>
   </c:when>

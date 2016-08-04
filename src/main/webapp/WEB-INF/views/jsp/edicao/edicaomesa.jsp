@@ -6,7 +6,7 @@
 		<h3>Edição de Mesa</h3>
 	
 	<div id="form">
-	<form id="formMesa" action="movimentacaomesa/editarmesa" method="get">
+	<form id="formMesa" action="edicao" method="get">
 
 
 		<p>ID Mesa:</p>

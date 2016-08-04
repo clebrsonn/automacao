@@ -8,7 +8,7 @@
 
 	
 	<div id="form">
-	<form id="formServicos" action="movimentacaoservico/edicaoservico" method="POST">
+	<form id="formServicos" action="edicao" method="POST">
 
 
 		<p>Id do Servico:</p>

@@ -7,7 +7,7 @@
 	
 	
 	<div id="form">
-	<form id="formPromocao" action="movimentacaopromocao/edicaopromocao" method="POST">
+	<form id="formPromocao" action="edicao" method="POST">
 
 
 		<p>ID do Promocao:</p>
