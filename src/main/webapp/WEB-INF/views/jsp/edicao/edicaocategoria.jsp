@@ -6,16 +6,11 @@
     <h3>Edição de Categoria</h3>
 
     <div id="form">
-        <form id="formCategoria" action="edicao" method="GET">
+        <form id="formCategoria" action="edicao" method="POST">
 
 
             <p>ID da Categoria:</p>
             <input name="id" type="text" class="inp-form" readonly="readonly" value="${categoria.id}"/>
-
-
-            <p>Nome da Categoria:</p>
-            <input name="nome" type="text" class="inp-form" value="${categoria.nome}"/>
-
 
             <p>Categoria Pai:</p>
             <select name="catpai" id="files" class="inp-form">
@@ -30,6 +25,10 @@
 
                 </optgroup>
             </select>
+
+
+            <p>Nome da Categoria:</p>
+            <input name="nome" type="text" class="inp-form" value="${categoria.nome}"/>
 
 
             <div id="botoes">
