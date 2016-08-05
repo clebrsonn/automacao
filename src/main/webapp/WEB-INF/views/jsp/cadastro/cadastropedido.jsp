@@ -62,7 +62,7 @@
 		<p> Garcon:</p>
 					
 		<select name="tipo" id="files" class="inp-form">
-			<optgroup label="Garçon">
+			<optgroup label="GarÃ§on">
 				       
 				<c:forEach var="garcon" items="${garconList}">
            				<option value="${garcon.id}">${garcon.nome}</option>

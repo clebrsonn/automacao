@@ -3,25 +3,25 @@
 
 <div id="conteudo" class="conteudo">
 <div align="">
-            <h3>MovimentaÁ„o Produto</h3>
+            <h3>Movimenta√ß√£o Produto</h3>
             	<div id="content-table">
 	<form id="mainform">
 
       <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table">
     			<th class="table-header-check"><a id="toggle-all" ></a> </th>
                 <th class="table-header-repeat line-left "><a>Id</a></th>
-                <th class="table-header-repeat line-left minwidth-1"><a>CÛdigo de Barras</a></th>
+                <th class="table-header-repeat line-left minwidth-1"><a>C√≥digo de Barras</a></th>
                 <th class="table-header-repeat line-left minwidth-1"><a>Categoria</a></th>
                 <th class="table-header-repeat line-left minwidth-1"><a>Descricao </a></th> 
-           		<th class="table-header-repeat line-left minwidth-1"><a>PreÁo de Custo</a></th> 
-             	<th class="table-header-repeat line-left minwidth-1"><a>PreÁo de Venda</a></th> 
+           		<th class="table-header-repeat line-left minwidth-1"><a>Pre√ßo de Custo</a></th> 
+             	<th class="table-header-repeat line-left minwidth-1"><a>Pre√ßo de Venda</a></th> 
                 <th class="table-header-repeat line-left minwidth-1"><a>Um</a></th>
                 <th class="table-header-repeat line-left minwidth-1"><a>Fornecedor</a></th>
 <!--                  <th class="table-header-repeat line-left minwidth-1"><a>Data Abertura</a></th>  -->
                            
 <!--                 <th class="table-header-repeat line-left minwidth-1"><a>Data Fechamento</a></th>             -->
                                   
-                <th class="table-header-repeat line-left"><a>Ac„o</a></th>
+                <th class="table-header-repeat line-left"><a>Ac√£o</a></th>
                  
                 <c:forEach var="produto" items="${produtoList}" varStatus="id">
 

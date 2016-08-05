@@ -3,14 +3,14 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Finalizacao de Devolução</h3>
+		<h3>Finalizacao de DevoluÃ§Ã£o</h3>
 	
 	
 	<div id="form">
 	<form id="formVenda" action="AddVenda" method="POST">
 
 
-<div id="blink" name="blink"><h1>Devolução Finalizada</h1></div>
+<div id="blink" name="blink"><h1>DevoluÃ§Ã£o Finalizada</h1></div>
 
 
 <!-- 		<p>ID do Venda:</p> -->
@@ -42,9 +42,9 @@
 <!-- 			<optgroup label="Status"> -->
 				       
 <!-- 			        <option value="Aberto">Aberto</option> -->
-<!-- 				        <option value="Aguardando">Aguardando Preparação</option> -->
+<!-- 				        <option value="Aguardando">Aguardando PreparaÃ§Ã£o</option> -->
 <!-- 				        <option value="Aberto">Cancelado</option> -->
-<!-- 				        <option value="Em Preparação">Em Preparação</option> -->
+<!-- 				        <option value="Em PreparaÃ§Ã£o">Em PreparaÃ§Ã£o</option> -->
 <!-- 				        <option value="Entregue">Entregue</option> -->
 <!-- 				       	<option value="Finalizado">Finalizado</option> -->
 <!-- 				        <option value="Impedido">Impedido</option> -->

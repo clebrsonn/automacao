@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-<h3>Edição de Reserva</h3>
+<h3>EdiÃ§Ã£o de Reserva</h3>
 	
 	
 	<div id="formm">

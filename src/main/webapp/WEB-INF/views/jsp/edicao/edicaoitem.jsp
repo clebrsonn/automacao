@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Edição Item</h3>
+		<h3>EdiÃ§Ã£o Item</h3>
 	
 	
 	<div id="formAddItem">
@@ -45,7 +45,7 @@
 			
 		</p>
 		
-		<p>Descrição
+		<p>DescriÃ§Ã£o
 		
 			<input id="descricaoitem" name="descricao" type="text" list="produtos" class="descricaoitem" value="${item.descricao}" />
 			

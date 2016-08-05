@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Edição de Cozinha</h3>
+		<h3>EdiÃ§Ã£o de Cozinha</h3>
 	
 	
 		<div id="form">
@@ -26,9 +26,9 @@
 					<optgroup label="Status">
    				     				       
 				        <option value="Aberto">Aberto</option>
-				        <option value="Aguardando">Aguardando Preparação</option>
+				        <option value="Aguardando">Aguardando PreparaÃ§Ã£o</option>
 				        <option value="Aberto">Cancelado</option>
-				        <option value="Em Preparação">Em Preparação</option>
+				        <option value="Em PreparaÃ§Ã£o">Em PreparaÃ§Ã£o</option>
 				        <option value="Entregue">Entregue</option>
 				       	<option value="Finalizado">Finalizado</option>
 				        <option value="Impedido">Impedido</option>

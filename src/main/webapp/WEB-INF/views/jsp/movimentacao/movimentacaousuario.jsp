@@ -5,7 +5,7 @@
 
 
 <div align="">
-            <h3>MovimentaÁ„o Usu·rio</h3>
+            <h3>Movimenta√ß√£o Usu√°rio</h3>
             	<div id="content-table">
 
 	<form id="mainformn">
@@ -18,7 +18,7 @@
                 <th class="table-header-repeat line-left minwidth-1"><a>Senha</a></th>  
                  <th class="table-header-repeat line-left minwidth-1"><a>Tipo Usuario</a></th>  
                  <th class="table-header-repeat line-left minwidth-1"><a>Email</a></th>                                                         
-                <th class="table-header-repeat line-left"><a>Ac„o</a></th>
+                <th class="table-header-repeat line-left"><a>Ac√£o</a></th>
                  
   <c:forEach var="usuario" items="${usuarioList}" varStatus="id">
 

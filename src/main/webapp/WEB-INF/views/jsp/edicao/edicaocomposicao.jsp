@@ -3,20 +3,20 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>EdiÁ„o de Composic„o</h3>
+		<h3>Edi√ß√£o de Composic√£o</h3>
 	
 	
 	<div id="form">
 	<form id="formComposicao" action="edicao" method="POST">
 
 
-		<p>ID da ComposiÁ„o:</p>
+		<p>ID da Composi√ß√£o:</p>
 		<input name="id"type="text" class="inp-form" readonly="readonly" value="${composicao.id }"/>
 
-		<p>Numero da ComposiÁ„o:</p>
+		<p>Numero da Composi√ß√£o:</p>
 		<input name="numero"type="text" class="inp-form" value="${composicao.numero }" />
 		
-			<p>Nome da ComposiÁ„o:</p>
+			<p>Nome da Composi√ß√£o:</p>
 		<input name="nome"type="text" class="inp-form" value="${composicao.nome }"/>
 
 

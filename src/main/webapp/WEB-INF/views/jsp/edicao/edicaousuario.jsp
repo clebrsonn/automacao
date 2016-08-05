@@ -3,7 +3,7 @@
 
 <div id="conteudo"  class="conteudo">
 
-<div id="page-heading"> <h1> Edição de Usuario </h1> </div>
+<div id="page-heading"> <h1> EdiÃ§Ã£o de Usuario </h1> </div>
  
  <form id="formUsuario" action="edicao" method="POST">
 

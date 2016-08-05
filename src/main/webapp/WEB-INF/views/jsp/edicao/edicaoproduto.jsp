@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Edição de Bug</h3>
+		<h3>EdiÃ§Ã£o de Bug</h3>
 	
 	
 		<div id="form">
@@ -13,7 +13,7 @@
 		<p>ID do Produto:</p>
 		<input name="id"type="text" class="inp-form" readonly="readonly" value="${produto.id}"/>
 		
-		<p>Código de Barra do Produto:</p>
+		<p>CÃ³digo de Barra do Produto:</p>
 		<input name="codebar"type="text" class="inp-form" value="${produto.codebar}"/>
         <p> Categoria:</p>
           <select id="categoria" name="categoria" id="files" class="inp-form">           
@@ -30,13 +30,13 @@
                 </optgroup>
            </select>
 
-		<p>Descrição do Produto:</p>
+		<p>DescriÃ§Ã£o do Produto:</p>
 		<input name="descricao" type="text" class="inp-form" value="${produto.descricao}"/>
 		
-		<p>Preço Custo do Produto:</p>
+		<p>PreÃ§o Custo do Produto:</p>
 		<input name="precoCusto" type="text" class="inp-form" value="${produto.precoCusto}"/>
 		
-		<p>Preço Venda do Produto:</p>
+		<p>PreÃ§o Venda do Produto:</p>
 		<input name="precoVenda" type="text" class="inp-form" value="${produto.precoVenda}"/>
 		
 			<p> Unidade de Medida:</p>

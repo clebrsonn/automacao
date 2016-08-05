@@ -42,7 +42,7 @@
 			
 	
 		
-		DescriÁ„o
+		Descri√ß√£o
 		
 			<input id="descricaoitem" name="descricao" type="text" list="produtos" class="descricaoitem" />
 			
@@ -101,12 +101,12 @@
     			 <th class="table-header-check"><a id="toggle-all" ></a> </th>
                  <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Pedido Compra </a></th>         
-               	 <th class="table-header-repeat line-left minwidth-1"><a>CÛdigo de Barras</a></th>
+               	 <th class="table-header-repeat line-left minwidth-1"><a>C√≥digo de Barras</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Descricao </a></th> 
-	             <th class="table-header-repeat line-left minwidth-1"><a>PreÁo Unitario</a></th> 
+	             <th class="table-header-repeat line-left minwidth-1"><a>Pre√ßo Unitario</a></th> 
 	             <th class="table-header-repeat line-left minwidth-1"><a>Quantidade</a></th>             
 	             <th class="table-header-repeat line-left minwidth-1"><a>TotalItem</a></th>                                  
-                 <th class="table-header-repeat line-left"><a>Ac„o</a></th>
+                 <th class="table-header-repeat line-left"><a>Ac√£o</a></th>
                  
 <c:forEach var="item" items="${itemList}" varStatus="id">
 

@@ -88,7 +88,7 @@
 	             <th class="table-header-repeat line-left minwidth-1"><a>Valor da Parcela</a></th> 
 	             <th class="table-header-repeat line-left minwidth-1"><a>Total</a></th>             
 <!-- 	             <th class="table-header-repeat line-left minwidth-1"><a>TotalItem</a></th>                                   -->
-                 <th class="table-header-repeat line-left"><a>Ac„o</a></th>
+                 <th class="table-header-repeat line-left"><a>Ac√£o</a></th>
                  
 <c:forEach var="pagamento" items="${pagamentoList}" varStatus="id">
 

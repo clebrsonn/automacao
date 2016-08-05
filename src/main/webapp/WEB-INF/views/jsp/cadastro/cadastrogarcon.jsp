@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Cadastro de Garçon</h3>
+		<h3>Cadastro de GarÃ§on</h3>
 	
 	
 	<div id="form">
@@ -18,7 +18,7 @@
 
 
 
-<!-- 		<p>Líder do Projeto:</p> -->
+<!-- 		<p>LÃ­der do Projeto:</p> -->
 
 
 

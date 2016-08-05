@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 <div>
-            <h3>Movimentação das Formas de Pagamento</h3>
+            <h3>MovimentaÃ§Ã£o das Formas de Pagamento</h3>
             	<div id="content-table">
 	<form id="mainform">
 
@@ -11,11 +11,11 @@
     			<th class="table-header-check"><a id="toggle-all" ></a> </th>
                 <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Nome Forma de Pagamento</a></th> 
-                 <th class="table-header-repeat line-left minwidth-1"><a>Número Forma de Pagamento</a></th>
+                 <th class="table-header-repeat line-left minwidth-1"><a>NÃºmero Forma de Pagamento</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Tipo de Forma de Pagamento</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Parcelas da Forma de Pagamento</a></th>
                     
-                <th class="table-header-repeat line-left"><a>Acão</a></th>
+                <th class="table-header-repeat line-left"><a>AcÃ£o</a></th>
          
                 <c:forEach var="pagamento" items="${pagamentoList}" varStatus="id">
                 
@@ -40,7 +40,7 @@
                         <a href="/delete?id=${pagamento.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${pagamento.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="delete?id=${pagamento.id}" class="icon-5 info-tooltip" title="Excluir Estória"></a>
+                        <a href="delete?id=${pagamento.id}" class="icon-5 info-tooltip" title="Excluir EstÃ³ria"></a>
                     </td>
                 
                 </tr>
@@ -60,7 +60,7 @@
                         <a href="/delete?id=${pagamento.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${pagamento.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="delete?id=${pagamento.id}" class="icon-5 info-tooltip" title="Excluir Estória"></a>
+                        <a href="delete?id=${pagamento.id}" class="icon-5 info-tooltip" title="Excluir EstÃ³ria"></a>
                     </td>
 
                 </tr>

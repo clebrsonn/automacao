@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Cadastro de Promoção</h3>
+		<h3>Cadastro de PromoÃ§Ã£o</h3>
 	
 	
 	<div id="form">

@@ -14,11 +14,11 @@
 		<p>Id do Servico:</p>
 		<input name="id" type="text" class="inp-form" readonly="readonly" />
 
-		<p>Numero do Serviço:</p>
+		<p>Numero do ServiÃ§o:</p>
 		<input name="numero" type="text" class="inp-form" />
-		<p>Nome do Serviço:</p>
+		<p>Nome do ServiÃ§o:</p>
 		<input name="nome" type="text" class="inp-form" />
-		<p>Preço do Serviço:</p>
+		<p>PreÃ§o do ServiÃ§o:</p>
 		<input name="preco" type="text" class="inp-form" />
 			
 		

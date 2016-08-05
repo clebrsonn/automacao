@@ -3,7 +3,7 @@
 
 		<div id="content">
 			<div id="about" class="post">
-				<h1 class="title">Movimentação de Mesas</h1>
+				<h1 class="title">MovimentaÃ§Ã£o de Mesas</h1>
 				<div class="entry">
 				
 				

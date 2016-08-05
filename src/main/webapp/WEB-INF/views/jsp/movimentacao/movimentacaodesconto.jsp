@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 <div align="">
-            <h3>Movimentação Desconto</h3>
+            <h3>MovimentaÃ§Ã£o Desconto</h3>
             	<div id="content-table">
 	<form id="mainform">
 
@@ -11,10 +11,10 @@
     			<th class="table-header-check"><a id="toggle-all" ></a> </th>
                 <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Nome Desconto</a></th>          
-                <th class="table-header-repeat line-left minwidth-1"><a>Número Desconto</a></th>                               
+                <th class="table-header-repeat line-left minwidth-1"><a>NÃºmero Desconto</a></th>                               
                 <th class="table-header-repeat line-left minwidth-1"><a>Valor Desconto</a></th>                               
                 
-                <th class="table-header-repeat line-left"><a>Acão</a></th>
+                <th class="table-header-repeat line-left"><a>AcÃ£o</a></th>
                  
                 <c:forEach var="desconto" items="${descontoList}" varStatus="id">
                 

@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Edição de Mesa</h3>
+		<h3>EdiÃ§Ã£o de Mesa</h3>
 	
 	<div id="form">
 	<form id="formMesa" action="edicao" method="get">
