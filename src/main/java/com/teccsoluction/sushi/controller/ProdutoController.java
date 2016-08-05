@@ -39,7 +39,7 @@ public class ProdutoController extends AbstractController<Produto> {
 
     @Autowired
     public ProdutoController(ProdutoDAO dao, CategoriaDAO categoriaDao, FornecedorDAO fornecedorDao) {
-        super("Produto");
+        super("produto");
         this.dao = dao;
         this.categoriaDao = categoriaDao;
         this.fornecedorDao = fornecedorDao;

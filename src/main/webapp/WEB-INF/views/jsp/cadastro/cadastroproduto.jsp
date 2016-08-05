@@ -7,13 +7,13 @@
 	
 	
 	<div id="form">
-	<form id="formProduto" action="AddProduto" method="POST">
+	<form id="formProduto" action="add" method="POST">
 
 
 		<p>ID do Produto:</p>
 		<input name="id"type="text" class="inp-form" readonly="readonly" />
 		
-		<p>Código de Barra do Produto:</p>
+		<p>CÃ³digo de Barra do Produto:</p>
 		<input name="codebar"type="text" class="inp-form" />
         
         <p> Categoria:</p>
@@ -32,13 +32,13 @@
            </select>
 		
 
-		<p>Descrição do Produto:</p>
+		<p>Descriï¿½ï¿½o do Produto:</p>
 		<input name="descricao" type="text" class="inp-form" />
 		
-		<p>Preço Custo do Produto:</p>
+		<p>Preï¿½o Custo do Produto:</p>
 		<input name="precoCusto" type="text" class="inp-form" />
 		
-		<p>Preço Venda do Produto:</p>
+		<p>Preï¿½o Venda do Produto:</p>
 		<input name="precoVenda" type="text" class="inp-form" />
 		
 				<p> Unidade de Medida:</p>

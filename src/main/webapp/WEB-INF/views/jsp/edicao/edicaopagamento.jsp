@@ -3,11 +3,11 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Edição de Formas de Pagamentos</h3>
+		<h3>EdiÃ§Ã£o de Formas de Pagamentos</h3>
 	
 	
 	<div id="formm">
-	<form id="formPagamento" action="movimentacaopagamento/edicaopagamento" method="POST">
+	<form id="formPagamento" action="edicao" method="POST">
 
 
 		<p>ID da Forma de Pagamento:</p>

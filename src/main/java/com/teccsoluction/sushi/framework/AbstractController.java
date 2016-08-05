@@ -1,12 +1,18 @@
 package com.teccsoluction.sushi.framework;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.List;
+import com.teccsoluction.sushi.entidade.Garcon;
+import com.teccsoluction.sushi.entidade.Mesa;
+import com.teccsoluction.sushi.util.StatusPedido;
+import com.teccsoluction.sushi.util.TipoPedido;
 
 
 public abstract class AbstractController<Entity> {
@@ -23,17 +29,27 @@ public abstract class AbstractController<Entity> {
 
     @RequestMapping(value = "cadastro", method = RequestMethod.GET)
     public ModelAndView cadastrarEntity() {
+    	
+    	ModelAndView cadastro = new ModelAndView("cadastro" + entityAlias);
 
-        return new ModelAndView("cadastro" + entityAlias);
+    	 List<Entity> entityList = getDao().getAll();
+   	 
+    	 cadastro.addObject("entityList", entityList);
+    	 
+    	 return cadastro;
+
+//        return new ModelAndView("cadastro" + entityAlias);
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public ModelAndView AdicionarEntity(@ModelAttribute Entity entity) {
 
-//        ModelAndView cadastro_cliente = new ModelAndView("cadastro" + entityAlias);
+//        ModelAndView cadastroEntity = new ModelAndView("cadastro" + entityAlias);
 
         getDao().add(entity);
-//        System.out.println(entityAlias);
+        
+//        return cadastroEntity;
+        System.out.println(entityAlias);
         return new ModelAndView("redirect:/" + entityAlias + "/cadastro");
     }
 
@@ -73,7 +89,7 @@ public abstract class AbstractController<Entity> {
         getDao().editar(entity);
 
 
-        return new ModelAndView("redirect:/movimentacao");
+        return new ModelAndView("redirect:/" + entityAlias + "/"+"movimentacao");
     }
 
 

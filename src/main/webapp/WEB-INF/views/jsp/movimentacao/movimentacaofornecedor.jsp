@@ -4,7 +4,7 @@
 <div id="conteudo" class="conteudo">
 
     <div align="">
-        <h3>MovimentaÁ„o Fornecedor</h3>
+        <h3>Movimenta√ß√£o Fornecedor</h3>
         <div id="content-table">
             <form id="mainform">
 
@@ -16,7 +16,7 @@
                     <th class="table-header-repeat line-left minwidth-1"><a>Inscricao Estadual</a></th>
                     <th class="table-header-repeat line-left minwidth-1"><a>Cnpj</a></th>
 
-                    <th class="table-header-repeat line-left"><a>Ac„o</a></th>
+                    <th class="table-header-repeat line-left"><a>Ac√£o</a></th>
 
                     <c:forEach var="fornecedor" items="${fornecedorList}" varStatus="id">
 

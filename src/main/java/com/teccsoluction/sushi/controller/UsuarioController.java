@@ -15,8 +15,9 @@ public class UsuarioController extends AbstractController<Usuario> {
     UsuarioDAO dao;
 
 
-    public UsuarioController() {
-        super("Usuario");
+    public UsuarioController(UsuarioDAO dao) {
+        super("usuario");
+        this.dao= dao;
     }
 
     @Override

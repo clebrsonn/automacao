@@ -3,12 +3,12 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Edição de Despesa</h3>
+		<h3>EdiÃ§Ã£o de Despesa</h3>
 	
 
 	
 	<div id="form">
-		<form id="formDespesa" action="movimentacaodespesa/edicaodespesa" method="POST">
+		<form id="formDespesa" action="edicao" method="POST">
 
 
 		<p>ID da Despesa:</p>

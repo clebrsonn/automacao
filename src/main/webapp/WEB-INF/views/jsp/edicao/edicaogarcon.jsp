@@ -3,10 +3,10 @@
 
 <div id="conteudo" class="conteudo">
 
-<h3>Edição de Garçon</h3>
+<h3>EdiÃ§Ã£o de GarÃ§on</h3>
 	
 		<div id="form">
-	<form id="formGarcon" action="movimentacaogarcon/edicaogarcon" method="POST">
+	<form id="formGarcon" action="edicao" method="POST">
 
 	<p>ID do Garcon:</p>
 		<input name="id"type="text" class="inp-form" value="${garcon.id }"/>
