@@ -7,10 +7,10 @@ public enum TipoPedido {
 	MESA,BALCAO,DELIVERY;
 
 	
-	TipoPedido() {
+//	TipoPedido() {
 		// TODO Auto-generated constructor stub
 		
-	}
+//	}
 	
 //	public List<TipoUsuario> TipoUsuario() {
 //		List<Integer>TipoUsuario.values();
