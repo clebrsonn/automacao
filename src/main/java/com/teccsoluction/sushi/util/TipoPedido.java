@@ -4,10 +4,10 @@ import java.util.List;
 
 public enum TipoPedido {
 	
-	//MESA, BALC√ÉO,DELIVERY;
+	MESA, BALC√O,DELIVERY;
 
 	
-//	TipoPedido() {
+	TipoPedido() {
 		// TODO Auto-generated constructor stub
 		
 //	}
@@ -17,6 +17,8 @@ public enum TipoPedido {
 //		return null;
 //		
 //	}
+}
+	
 }
 
 

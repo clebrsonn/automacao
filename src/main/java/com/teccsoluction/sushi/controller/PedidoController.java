@@ -1,12 +1,9 @@
 package com.teccsoluction.sushi.controller;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.teccsoluction.sushi.dao.generic.GarconDAO;
 import com.teccsoluction.sushi.dao.generic.MesaDAO;
 import com.teccsoluction.sushi.dao.generic.PedidoDAO;
@@ -34,7 +31,7 @@ public class PedidoController extends AbstractController<Pedido> {
 		
 	public PedidoController(PedidoDAO dao, MesaDAO daomesa, GarconDAO daogarcon){
 		
-		super("Pedido");
+		super("pedido");
 		
 		this.pedidoDao= dao;
 		this.garconDao= daogarcon;
@@ -59,4 +56,17 @@ public class PedidoController extends AbstractController<Pedido> {
 
 
     }
+	  
+	  
+//		@RequestMapping(value = "movimentacaocozinha", method = RequestMethod.GET)
+//		public ModelAndView movimentacaoPedido() {
+//			
+//			ModelAndView movimentacaocozinha = new ModelAndView("movimentacaocozinha");
+//			
+//			List<Pedido> pedidoList = pedidoDao.getAll();
+//			
+//			movimentacaocozinha.addObject("pedidoList", pedidoList);
+//			
+//			return movimentacaocozinha;
+//		}
 }
