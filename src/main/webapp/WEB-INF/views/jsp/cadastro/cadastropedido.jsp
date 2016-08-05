@@ -16,12 +16,12 @@
 		<p>Data:</p>
 		<input name="data"type="text" class="inp-form" />
 		
-				<p>Tipo:</p>
+				<p>Tipo de Pedido:</p>
 				<select name="tipo" id="files" class="inp-form">
 			<optgroup label="Tipo de Pedido">
 				       
-							<c:forEach var="tipo" items="${tipoList}">
-                     				<option value="${tipo}">${tipo}</option>
+							<c:forEach var="garcon" items="${tipoList}">
+                     				<option value="${garcon.id}">${garcon.nome}</option>
                      				</c:forEach>  
 			
 				        
@@ -57,10 +57,21 @@
 			</select>
 		
 		<p>Total:</p>
-		<input name="total" type="text" class="inp-form" />
+		<input name="total" type="text" class="inp-form" disabled="disabled"/>
 		
 		<p> Garcon:</p>
-		<input name="garcon" type="text" class="inp-form" />
+					
+		<select name="tipo" id="files" class="inp-form">
+			<optgroup label="Garçon">
+				       
+				<c:forEach var="garcon" items="${garconList}">
+           				<option value="${garcon.id}">${garcon.nome}</option>
+   				</c:forEach>  
+			
+				        
+					
+			</optgroup>
+		</select>
 
 
 

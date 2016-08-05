@@ -5,7 +5,7 @@
 <div align="">
             <h3>Movimentação Pedido</h3>
             	<div id="content-table">
-	<form id="mainform"  action="cadastropedido">
+	<form id="mainform"  action="cadastro">
 
       <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table">
     			<th class="table-header-check"><a id="toggle-all" ></a> </th>

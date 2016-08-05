@@ -58,15 +58,5 @@ public class PedidoController extends AbstractController<Pedido> {
     }
 	  
 	  
-//		@RequestMapping(value = "movimentacaocozinha", method = RequestMethod.GET)
-//		public ModelAndView movimentacaoPedido() {
-//			
-//			ModelAndView movimentacaocozinha = new ModelAndView("movimentacaocozinha");
-//			
-//			List<Pedido> pedidoList = pedidoDao.getAll();
-//			
-//			movimentacaocozinha.addObject("pedidoList", pedidoList);
-//			
-//			return movimentacaocozinha;
-//		}
+
 }
