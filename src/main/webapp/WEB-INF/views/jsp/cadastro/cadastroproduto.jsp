@@ -13,7 +13,7 @@
 		<p>ID do Produto:</p>
 		<input name="id"type="text" class="inp-form" readonly="readonly" />
 		
-		<p>C�digo de Barra do Produto:</p>
+		<p>Código de Barra do Produto:</p>
 		<input name="codebar"type="text" class="inp-form" />
         
         <p> Categoria:</p>

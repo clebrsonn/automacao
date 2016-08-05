@@ -11,11 +11,11 @@
 
 		<div id="dadospedido" class="dadospedido">
 
-			ID do Pedido:
-			<input id="idpedidocompra"name="idpedidocompra"type="text" class="idpedido" />
-			
-	
-			ID FORNECEDOR:
+            ID do Pedido:
+            <input id="idpedidocompra" name="idpedidocompra" type="text" class="idpedido"/>
+
+
+            ID FORNECEDOR:
 			<input name="tipo" type="text" class="tipo"/>
 			
 			Total:
