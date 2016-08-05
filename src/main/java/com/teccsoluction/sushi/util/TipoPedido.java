@@ -4,7 +4,7 @@ import java.util.List;
 
 public enum TipoPedido {
 	
-	MESA,BALCÃO,DELIVERY;
+	MESA,BALCAO,DELIVERY;
 
 	
 	TipoPedido() {
