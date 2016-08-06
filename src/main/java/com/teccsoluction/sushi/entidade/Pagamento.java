@@ -1,13 +1,7 @@
 package com.teccsoluction.sushi.entidade;
 
+import javax.persistence.*;
 import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 @Table(name="PAGAMENTO")
@@ -81,10 +75,16 @@ public class Pagamento implements Serializable {
 	public String toString() {
 		return nome;
 	}
-	
-	
-	
-	
-	
-	
+
+
+	@ManyToOne(optional = false)
+	private Pedido pedido;
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
 }
