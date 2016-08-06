@@ -1,25 +1,25 @@
 package com.teccsoluction.sushi.entidade;
 
-import com.teccsoluction.sushi.util.TipoPedido;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 
 @Entity
-@Table(name = "DEVOLUCAO")
-public class Devolucao implements Serializable {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Devolucao implements Serializable {
 
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
-    private long id;
+    private Long id;
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
@@ -27,61 +27,45 @@ public class Devolucao implements Serializable {
 
     private String status;
 
-    //venda ou compra
-    @Enumerated(EnumType.STRING)
-    private TipoPedido tipo;
-
-    @ManyToOne
-    @JoinColumn
-    private Fornecedor fornecedor;
 
     @OneToMany(mappedBy = "devolucao")
     private List<Item> itens;
 
-
     public Devolucao() {
-        // TODO Auto-generated constructor stub
+        itens = new ArrayList<>();
     }
 
-    public TipoPedido getTipo() {
-        return tipo;
+    public Long getId() {
+        return id;
     }
 
-    public void setTipo(TipoPedido tipo) {
-        this.tipo = tipo;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Date getData() {
         return data;
     }
 
-    public void setFornecedor(Fornecedor fornecedor) {
-        this.fornecedor = fornecedor;
-    }
-
-    public Fornecedor getFornecedor() {
-        return fornecedor;
-    }
-
     public void setData(Date data) {
         this.data = data;
     }
-
 
     public String getStatus() {
         return status;
     }
 
-
     public void setStatus(String status) {
         this.status = status;
     }
 
-
-    public long getId() {
-        return id;
+    public List<Item> getItens() {
+        return itens;
     }
 
+    public void setItens(List<Item> itens) {
+        this.itens = itens;
+    }
 
     @Override
     public String toString() {
