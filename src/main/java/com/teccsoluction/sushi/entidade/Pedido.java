@@ -1,6 +1,7 @@
 package com.teccsoluction.sushi.entidade;
 
 import com.teccsoluction.sushi.util.StatusPedido;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -16,6 +17,8 @@ public abstract class Pedido {
     @Column(name = "ID")
     protected long id;
 
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date data;
 
     @Enumerated(EnumType.ORDINAL)
@@ -23,7 +26,7 @@ public abstract class Pedido {
 
     private double total;
 
-    @OneToOne
+    @OneToOne(mappedBy = "pedido", optional = false)
     private Pagamento pagamento;
 
     @OneToMany
