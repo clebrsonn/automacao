@@ -21,7 +21,7 @@ public abstract class Pedido {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date data;
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private StatusPedido status;
 
     private double total;
