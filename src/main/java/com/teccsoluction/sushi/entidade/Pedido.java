@@ -26,15 +26,16 @@ public abstract class Pedido {
 
     private double total;
 
-    @OneToOne(mappedBy = "pedido", optional = false)
-    private Pagamento pagamento;
+    @OneToMany(mappedBy = "pedido")
+    private List<Pagamento> pagamentos;
 
-    @OneToMany
+    @OneToMany(mappedBy = "pedido")
     private List<Item> items;
 
     public Pedido() {
         // TODO Auto-generated constructor stub
         items = new ArrayList<>();
+        pagamentos = new ArrayList<>();
     }
 
     public long getId() {
@@ -69,12 +70,12 @@ public abstract class Pedido {
         this.total = total;
     }
 
-    public Pagamento getPagamento() {
-        return pagamento;
+    public List<Pagamento> getPagamentos() {
+        return pagamentos;
     }
 
-    public void setPagamento(Pagamento pagamento) {
-        this.pagamento = pagamento;
+    public void setPagamentos(List<Pagamento> pagamentos) {
+        this.pagamentos = pagamentos;
     }
 
     public List<Item> getItems() {

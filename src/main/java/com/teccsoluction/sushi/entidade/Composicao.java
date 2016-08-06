@@ -1,20 +1,14 @@
 package com.teccsoluction.sushi.entidade;
 
+import javax.persistence.*;
 import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 @Table(name="COMPOSICAO")
 public class Composicao implements Serializable {
-	
+
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -22,14 +16,14 @@ public class Composicao implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID")
 	private long id;
-	
+
 	@Column(name="numero")
 	private String numero;
-	
+
 	@Column(name="nome")
 	private String nome;
-	
-	
+
+
 	public Composicao() {
 		// TODO Auto-generated constructor stub
 	}
@@ -64,11 +58,11 @@ public class Composicao implements Serializable {
 	public String toString() {
 		return nome;
 	}
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 }

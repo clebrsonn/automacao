@@ -6,6 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -30,7 +31,12 @@ public class Devolucao implements Serializable {
     @Enumerated(EnumType.STRING)
     private TipoPedido tipo;
 
-    private long fornecedor;
+    @ManyToOne
+    @JoinColumn
+    private Fornecedor fornecedor;
+
+    @OneToMany(mappedBy = "devolucao")
+    private List<Item> itens;
 
 
     public Devolucao() {
@@ -49,16 +55,13 @@ public class Devolucao implements Serializable {
         return data;
     }
 
-
-    public long getFornecedor() {
-        return fornecedor;
-    }
-
-
-    public void setFornecedor(long fornecedor) {
+    public void setFornecedor(Fornecedor fornecedor) {
         this.fornecedor = fornecedor;
     }
 
+    public Fornecedor getFornecedor() {
+        return fornecedor;
+    }
 
     public void setData(Date data) {
         this.data = data;

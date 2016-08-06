@@ -32,7 +32,7 @@ public class Fornecedor implements Serializable {
     private String inscricaoestadual;
 
 
-    @OneToMany
+    @OneToMany(mappedBy = "fornecedor")
     private List<Produto> produtos;
 
 //	@OneToMany
@@ -40,7 +40,7 @@ public class Fornecedor implements Serializable {
 
 
     public Fornecedor() {
-        produtos = new ArrayList<Produto>();
+        produtos = new ArrayList<>();
     }
 
 

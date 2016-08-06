@@ -12,14 +12,17 @@ public class PedidoVenda extends Pedido {
     private TipoPedido tipo;
 
     @ManyToOne
+    @JoinColumn
     private Mesa mesa;
 
     private double total;
 
     @ManyToOne
+    @JoinColumn
     private Garcon garcon;
 
     @ManyToOne
+    @JoinColumn
     private Cliente cliente;
 
     public PedidoVenda() {
