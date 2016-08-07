@@ -1,10 +1,13 @@
 package com.teccsoluction.sushi.entidade;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "DEVOLUCAO_COMPRA")
-public class DevolucaoCompra extends Devolucao {
+public class DevolucaoCompra extends Devolucao implements Serializable {
+
+    private static final long serialVersionUID = 12L;
 
     @ManyToOne
     @JoinColumn
