@@ -13,21 +13,16 @@
 		<p>ID do Produto:</p>
 		<input name="id"type="text" class="inp-form" readonly="readonly" />
 		
-		<p>Código de Barra do Produto:</p>
+		<p>Codigo de Barra do Produto:</p>
 		<input name="codebar"type="text" class="inp-form" />
         
         <p> Categoria:</p>
           <select id="categoria" name="categoria" id="files" class="inp-form">           
-                <optgroup label="Lista de Categoria">
+                <optgroup label="Selecione uma Categoria">
+                    <c:forEach var="categoria" items="${categoriaList}">
+                        <option value="${categoria.id}">${categoria.nome}</option>
+                    </c:forEach>
 
-           				<option value=""></option>
-
-           			<c:forEach var="categoria" items="${categoriaList}">
-           			
-           				<option value="${categoria.id}">${categoria.nome}</option>
-           				      				
-           				
-       				</c:forEach>
                 </optgroup>
            </select>
 		

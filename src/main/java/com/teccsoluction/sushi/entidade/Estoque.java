@@ -17,6 +17,8 @@ public class Estoque {
 
     @OneToMany
     private List<Item> items;
+    
+    
 
     public Long getId() {
         return id;

@@ -22,13 +22,13 @@ public class Garcon implements Serializable {
     @Column(name = "nome")
     private String nome;
 
-    @OneToMany(mappedBy = "garcon")
-    private List<PedidoVenda> pedidos;
+//    @OneToMany(mappedBy = "garcon")
+//    private List<PedidoVenda> pedidos;
 
 
     public Garcon() {
         // TODO Auto-generated constructor stub
-        pedidos = new ArrayList<>();
+//        pedidos = new ArrayList<>();
     }
 
     public String getNome() {
@@ -52,14 +52,14 @@ public class Garcon implements Serializable {
         return nome;
     }
 
-    public List<PedidoVenda> gePedidos() {
-        return pedidos;
-    }
-
-
-    public void setPedidos(List<PedidoVenda> pedidos) {
-        this.pedidos = pedidos;
-    }
+//    public List<PedidoVenda> gePedidos() {
+//        return pedidos;
+//    }
+//
+//
+//    public void setPedidos(List<PedidoVenda> pedidos) {
+//        this.pedidos = pedidos;
+//    }
 
 
 }

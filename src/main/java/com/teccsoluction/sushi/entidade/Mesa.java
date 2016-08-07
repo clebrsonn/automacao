@@ -22,8 +22,8 @@ public class Mesa implements Serializable {
 
     private String status;
 
-    @OneToMany(mappedBy = "mesa")
-    private List<PedidoVenda> pedidos;
+//    @OneToMany(mappedBy = "mesa")
+//    private List<PedidoVenda> pedidos;
 
     public Mesa() {
         // TODO Auto-generated constructor stub
@@ -39,13 +39,13 @@ public class Mesa implements Serializable {
         this.status = status;
     }
 
-    public List<PedidoVenda> getPedidos() {
-        return pedidos;
-    }
-
-    public void setPedidos(List<PedidoVenda> pedidos) {
-        this.pedidos = pedidos;
-    }
+//    public List<PedidoVenda> getPedidos() {
+//        return pedidos;
+//    }
+//
+//    public void setPedidos(List<PedidoVenda> pedidos) {
+//        this.pedidos = pedidos;
+//    }
 
     public String getNumero() {
         return numero;

@@ -14,7 +14,7 @@
                 <option value=""></option>
 
                 <optgroup label="Categoria Pai">
-                    <c:forEach var="categoria" items="${entityList}">
+                    <c:forEach var="categoria" items="${categoriaList}">
                         <option value="${categoria.id}">${categoria.nome}</option>
                     </c:forEach>
 

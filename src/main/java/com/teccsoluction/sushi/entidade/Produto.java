@@ -9,13 +9,14 @@ import java.util.List;
 
 @Entity
 @Table(name = "PRODUTO")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Produto implements Serializable {
 
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private long id;
 
@@ -40,8 +41,8 @@ public class Produto implements Serializable {
     private Fornecedor fornecedor;
 
 
-    @OneToMany(mappedBy = "produto")
-    private List<Item> items;
+//    @OneToMany(mappedBy = "produto")
+//    private List<Item> items;
 
     @ManyToOne
     @JoinColumn
@@ -50,7 +51,7 @@ public class Produto implements Serializable {
 
     public Produto() {
         // TODO Auto-generated constructor stub
-        items = new ArrayList<Item>();
+//        items = new ArrayList<Item>();
     }
 
 
@@ -134,14 +135,14 @@ public class Produto implements Serializable {
     }
 
 
-    public List<Item> getItems() {
-        return items;
-    }
-
-
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
+//    public List<Item> getItems() {
+//        return items;
+//    }
+//
+//
+//    public void setItems(List<Item> items) {
+//        this.items = items;
+//    }
 
     @Override
     public String toString() {

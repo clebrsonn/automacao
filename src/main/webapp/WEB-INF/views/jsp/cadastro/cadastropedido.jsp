@@ -15,8 +15,8 @@
             <select name="tipo" id="files" class="inp-form">
                 <optgroup label="Tipo de Pedido">
 
-                    <c:forEach var="garcon" items="${tipoList}">
-                        <option value="${garcon.id}">${garcon.nome}</option>
+                    <c:forEach var="tipoPedido" items="${tipoList}">
+                        <option value="${tipoPedido}">${tipoPedido}</option>
                     </c:forEach>
 
 

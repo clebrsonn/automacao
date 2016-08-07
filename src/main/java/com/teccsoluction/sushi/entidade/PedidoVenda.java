@@ -2,65 +2,39 @@ package com.teccsoluction.sushi.entidade;
 
 import com.teccsoluction.sushi.util.TipoPedido;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "PEDIDO_VENDA")
 public class PedidoVenda extends Pedido {
 
-    @Enumerated(EnumType.ORDINAL)
-    private TipoPedido tipo;
-
-    @ManyToOne
-    @JoinColumn
-    private Mesa mesa;
-
-    private double total;
-
-    @ManyToOne
-    @JoinColumn
-    private Garcon garcon;
-
+    //CLIENTE DO PEDIDO DE VENDA
     @ManyToOne
     @JoinColumn
     private Cliente cliente;
+    
+    //LISTA DE ITENS DO PEDIDO DE VENDA
+//    @OneToMany
+//    private List<Item> listaItensVenda;
+    
+    //lista de devoluções de compra
+    @OneToMany(mappedBy="pedidoVenda")
+    private List<DevolucaoVenda> listaDevolucao;
+    
+    
+    
+    
 
+    //CONSTRUTOR PADRÃO
     public PedidoVenda() {
+    	
+    	listaDevolucao = new ArrayList<>(); 
     }
 
-    public TipoPedido getTipo() {
-        return tipo;
-    }
 
-    public void setTipo(TipoPedido tipo) {
-        this.tipo = tipo;
-    }
-
-    public Mesa getMesa() {
-        return mesa;
-    }
-
-    public void setMesa(Mesa mesa) {
-        this.mesa = mesa;
-    }
-
-    @Override
-    public double getTotal() {
-        return total;
-    }
-
-    @Override
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
-    public Garcon getGarcon() {
-        return garcon;
-    }
-
-    public void setGarcon(Garcon garcon) {
-        this.garcon = garcon;
-    }
 
     public Cliente getCliente() {
         return cliente;
@@ -69,6 +43,30 @@ public class PedidoVenda extends Pedido {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+
+
+//
+//	public List<Item> getListaItensVenda() {
+//		return listaItensVenda;
+//	}
+//
+//
+//
+//	public void setListaItensVenda(List<Item> listaItensVenda) {
+//		this.listaItensVenda = listaItensVenda;
+//	}
+
+
+
+	public List<DevolucaoVenda> getListaDevolucao() {
+		return listaDevolucao;
+	}
+
+
+
+	public void setListaDevolucao(List<DevolucaoVenda> listaDevolucao) {
+		this.listaDevolucao = listaDevolucao;
+	}
     
 
 }

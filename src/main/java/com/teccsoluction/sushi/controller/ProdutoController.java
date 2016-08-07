@@ -9,11 +9,15 @@ import com.teccsoluction.sushi.entidade.Produto;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
+import com.teccsoluction.sushi.util.StatusPedido;
+import com.teccsoluction.sushi.util.TipoPedido;
 import com.teccsoluction.sushi.util.UnidadeMedida;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -62,29 +66,44 @@ public class ProdutoController extends AbstractController<Produto> {
 
     }
 
+//
+//    @RequestMapping(value = "cadastroproduto", method = RequestMethod.GET)
+//    public ModelAndView cadastroProduto() {
+//
+//        ModelAndView cadastroproduto = new ModelAndView("cadastroproduto");
+//
+//        //carregando enum de unidade de medida
+//        UnidadeMedida[] umList = UnidadeMedida.values();
+//        //carregando lista com fornecedores do banco de dados
+//        fornecedorList = fornecedorDao.getAll();
+//
+//        //carregando a lista de categorias
+//        categoriaList = categoriaDao.getAll();
+//
+//        //inserindo a lista de enum para o jsp
+//        cadastroproduto.addObject("umList", umList);
+//        //inserindo a lista de fornecedores para o jsp
+//        cadastroproduto.addObject("fornecedorList", fornecedorList);
+//        //inserindo categorias para a jsp
+//        cadastroproduto.addObject("categoriaList", categoriaList);
+//
+//
+//        return cadastroproduto;
+//    }
+    
+    @ModelAttribute
+    public void addAttributes(Model model) {
 
-    @RequestMapping(value = "cadastroproduto", method = RequestMethod.GET)
-    public ModelAndView cadastroProduto() {
-
-        ModelAndView cadastroproduto = new ModelAndView("cadastroproduto");
-
-        //carregando enum de unidade de medida
-        UnidadeMedida[] umList = UnidadeMedida.values();
-        //carregando lista com fornecedores do banco de dados
-        fornecedorList = fornecedorDao.getAll();
-
-        //carregando a lista de categorias
-        categoriaList = categoriaDao.getAll();
-
-        //inserindo a lista de enum para o jsp
-        cadastroproduto.addObject("umList", umList);
-        //inserindo a lista de fornecedores para o jsp
-        cadastroproduto.addObject("fornecedorList", fornecedorList);
-        //inserindo categorias para a jsp
-        cadastroproduto.addObject("categoriaList", categoriaList);
+        List<Categoria> categoriaList =categoriaDao.getAll();
+        List<Fornecedor> fornecedorList =fornecedorDao.getAll();
+        
+        UnidadeMedida[]  umList = UnidadeMedida.values();
+        
+        model.addAttribute("fornecedorList", fornecedorList);
+        model.addAttribute("categoriaList", categoriaList);
+        model.addAttribute("umList", umList);
 
 
-        return cadastroproduto;
     }
 
 

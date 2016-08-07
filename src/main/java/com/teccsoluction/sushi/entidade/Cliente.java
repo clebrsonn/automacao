@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "CLIENTE")
@@ -33,6 +34,14 @@ public class Cliente implements Serializable {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "data_nascimento")
     private Date dataNascimento;
+    
+    
+    // cliente pedido de venda
+    @OneToMany(mappedBy="cliente")
+    private List<PedidoVenda> listaPedidoVenda;
+    
+    @OneToMany
+    private List <DevolucaoVenda> listaDevolucaoVenda;
 
 
     public Cliente() {

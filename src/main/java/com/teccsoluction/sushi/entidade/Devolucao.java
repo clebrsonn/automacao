@@ -30,6 +30,7 @@ public abstract class Devolucao implements Serializable {
 
     @OneToMany(mappedBy = "devolucao")
     private List<Item> itens;
+    
 
     public Devolucao() {
         itens = new ArrayList<>();
@@ -69,7 +70,7 @@ public abstract class Devolucao implements Serializable {
 
     @Override
     public String toString() {
-        return "ID DEVOLUÇÃO:" + id;
+        return "ID DEVOLUCAO:" + id;
     }
 
 
