@@ -35,7 +35,7 @@
                 </datalist>
 
 
-                Descrição
+                Descricao
 
                 <input id="descricaoitem" name="descricao" type="text" list="produtos" class="descricaoitem"/>
 
