@@ -1,436 +1,438 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" " http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        " http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 
 <tiles-definitions>
 
     <definition name="defaultTemplate" template="/WEB-INF/template/template.jsp">
-<!--         <put-attribute name="barra_usuario_topo" value="/WEB-INF/views/barra_usuario_topo.jsp" /> -->
-        <put-attribute name="topo" value="/WEB-INF/views/topo.jsp" />
+        <!--         <put-attribute name="barra_usuario_topo" value="/WEB-INF/views/barra_usuario_topo.jsp" /> -->
+        <put-attribute name="topo" value="/WEB-INF/views/topo.jsp"/>
         <put-attribute name="menu" value="/WEB-INF/views/menu.jsp"/>
-        <put-attribute name="conteudo" value=""/>      
-        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+        <put-attribute name="conteudo" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
     </definition>
-    
-            <definition name="TemplateB" template="/WEB-INF/template/templatelogin.jsp">
-        <put-attribute name="login" value="" />
-		<put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
-    </definition>
-    
-    
-     <definition name="login" extends="TemplateB">
-             <put-attribute name="login" value="/WEB-INF/views/login.jsp" />
-     
-    </definition>
-    
-        <definition name="home" extends="defaultTemplate">
-             <put-attribute name="conteudo" value="/WEB-INF/views/home.jsp" />
-     		
+
+    <definition name="TemplateB" template="/WEB-INF/template/templatelogin.jsp">
+        <put-attribute name="login" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
     </definition>
 
 
-<!-- CADASTRO -->
+    <definition name="login" extends="TemplateB">
+        <put-attribute name="login" value="/WEB-INF/views/login.jsp"/>
 
-        <definition name="cadastro" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastro.jsp"/>      
     </definition>
-    
-     <definition name="cadastrocategoria" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrocategoria.jsp"/>      
-    </definition>
-    
-    
-               <definition name="cadastromesa" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastromesa.jsp"/>      
-    </definition>
-    
-    
-                <definition name="cadastrocliente" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrocliente.jsp"/>      
-    </definition>
-    
-    
-               <definition name="cadastrocomposicao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrocomposicao.jsp"/>      
-    </definition>
-    
-               <definition name="cadastrodesconto" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrodesconto.jsp"/>      
-    </definition>
-    
-               <definition name="cadastrodespesa" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrodespesa.jsp"/>      
-    </definition>
-    
-               <definition name="cadastrofornecedor" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrofornecedor.jsp"/>      
-    </definition>
-    
-               <definition name="cadastrogarcon" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrogarcon.jsp"/>      
-    </definition>
-    
-               <definition name="cadastropagamento" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastropagamento.jsp"/>      
-    </definition>
-    
-               <definition name="cadastroproduto" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastroproduto.jsp"/>      
-    </definition>
-    
-               <definition name="cadastropromocao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastropromocao.jsp"/>      
-    </definition>
-    
-               <definition name="cadastroreserva" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastroreserva.jsp"/>      
-    </definition>
-    
-    
-    
-    
-        <definition name="cadastroservico" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastroservico.jsp"/>      
+
+    <definition name="home" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/home.jsp"/>
+
     </definition>
 
 
-      <definition name="cadastrousuario" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrousuario.jsp"/>      
+    <!-- CADASTRO -->
+
+    <definition name="cadastro" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastro.jsp"/>
     </definition>
-    
-        <definition name="cadastropedido" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastropedido.jsp"/>      
+
+    <definition name="cadastrocategoria" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrocategoria.jsp"/>
     </definition>
-    
-       <definition name="cadastrovenda" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrovenda.jsp"/>      
+
+
+    <definition name="cadastromesa" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastromesa.jsp"/>
     </definition>
-           <definition name="cadastrovenda2" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrovenda.jsp"/>      
+
+
+    <definition name="cadastrocliente" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrocliente.jsp"/>
     </definition>
-    
-       <definition name="cadastrodevolucao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrodevolucao.jsp"/>      
+
+
+    <definition name="cadastrocomposicao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrocomposicao.jsp"/>
     </definition>
-    
-       <definition name="cadastrocompra" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrocompra.jsp"/>      
+
+    <definition name="cadastrodesconto" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrodesconto.jsp"/>
     </definition>
-    
-       <definition name="cadastrorecebimento" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrorecebimento.jsp"/>      
+
+    <definition name="cadastrodespesa" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrodespesa.jsp"/>
     </definition>
-    
-      <definition name="cadastrorecebimento2" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrorecebimento.jsp"/>      
+
+    <definition name="cadastrofornecedor" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrofornecedor.jsp"/>
     </definition>
- 
-<!-- MOVIMENTAÇÃO  -->
-         <definition name="movimentacao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacao.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+    <definition name="cadastrogarcon" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrogarcon.jsp"/>
     </definition>
-    
-             <definition name="movimentacaomesa" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaomesa.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+    <definition name="cadastropagamento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastropagamento.jsp"/>
     </definition>
- 
-        <definition name="movimentacaocategoria" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaocategoria.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+    <definition name="cadastroproduto" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastroproduto.jsp"/>
     </definition>
-    
-     
-        <definition name="movimentacaocliente" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaocliente.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+    <definition name="cadastropromocao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastropromocao.jsp"/>
     </definition>
-    
-    
-            <definition name="movimentacaocomposicao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaocomposicao.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+    <definition name="cadastroreserva" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastroreserva.jsp"/>
     </definition>
-    
-    
-    
-                <definition name="movimentacaodesconto" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaodesconto.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+
+    <definition name="cadastroservico" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastroservico.jsp"/>
     </definition>
-    
-    
-                   <definition name="movimentacaodespesa" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaodespesa.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+
+    <definition name="cadastrousuario" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrousuario.jsp"/>
     </definition>
-    
-                       <definition name="movimentacaofornecedor" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaofornecedor.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+    <definition name="cadastropedido" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastropedido.jsp"/>
     </definition>
-    
-                           <definition name="movimentacaogarcon" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaogarcon.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+
+    <definition name="cadastropedidocompra" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastropedidocompra.jsp"/>
     </definition>
-    
-                               <definition name="movimentacaopagamento" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaopagamento.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+    <definition name="cadastrovenda" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrovenda.jsp"/>
     </definition>
-    
-    
-                                 <definition name="movimentacaoproduto" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoproduto.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+    <definition name="cadastrovenda2" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrovenda.jsp"/>
     </definition>
-                                 <definition name="movimentacaopromocao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaopromocao.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+    <definition name="cadastrodevolucao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrodevolucao.jsp"/>
     </definition>
-                                 <definition name="movimentacaoreserva" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoreserva.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+    <definition name="cadastrodevolucaocompra" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrodevolucaocompra.jsp"/>
     </definition>
-                                 <definition name="movimentacaoservico" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoservico.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+
+    <definition name="cadastrocompra" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrocompra.jsp"/>
     </definition>
-    
-    
+
+    <definition name="cadastrorecebimento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrorecebimento.jsp"/>
+    </definition>
+
+    <definition name="cadastrorecebimento2" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrorecebimento.jsp"/>
+    </definition>
+
+    <!-- MOVIMENTAÇÃO  -->
+    <definition name="movimentacao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacao.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
+    <definition name="movimentacaomesa" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaomesa.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
+    <definition name="movimentacaocategoria" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaocategoria.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
+
+    <definition name="movimentacaocliente" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaocliente.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
+
+    <definition name="movimentacaocomposicao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaocomposicao.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
+
+    <definition name="movimentacaodesconto" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaodesconto.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
+
+    <definition name="movimentacaodespesa" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaodespesa.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
+    <definition name="movimentacaofornecedor" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaofornecedor.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
+    <definition name="movimentacaogarcon" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaogarcon.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
+    <definition name="movimentacaopagamento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaopagamento.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
+
+    <definition name="movimentacaoproduto" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoproduto.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+    <definition name="movimentacaopromocao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaopromocao.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+    <definition name="movimentacaoreserva" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoreserva.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+    <definition name="movimentacaoservico" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoservico.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
+
     <definition name="movimentacaousuario" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaousuario.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
-    </definition>   
-    
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaousuario.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
     <definition name="movimentacaopedido" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaopedido.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaopedido.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
     </definition>
-    
-    
-        <definition name="movimentacaocozinha" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaocozinha.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+
+    <definition name="movimentacaocozinha" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaocozinha.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
     </definition>
-        <definition name="movimentacaodelivery" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaodelivery.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+    <definition name="movimentacaodelivery" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaodelivery.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
     </definition>
-    
-        
-        <definition name="movimentacaoitem" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoitem.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+
+    <definition name="movimentacaoitem" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoitem.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
     </definition>
-    
-    
-            <definition name="movimentacaovenda" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaovenda.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+
+    <definition name="movimentacaovenda" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaovenda.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
     </definition>
-    
-             <definition name="movimentacaorecebimento" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaorecebimento.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+    <definition name="movimentacaorecebimento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaorecebimento.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
     </definition>
-    
+
     <!--     MOVIMENTAÇÃO/ADD -->
-    
-        
+
+
     <definition name="additem" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/add/additem.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/add/additem.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
     </definition>
-    
-        <definition name="additemvenda" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/add/additemvenda.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+    <definition name="additemvenda" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/add/additemvenda.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
     </definition>
- 
-    
-        <definition name="addformapagamento" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/add/addformapagamento.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+
+    <definition name="addformapagamento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/add/addformapagamento.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
     </definition>
-    
-    
-<!--     FINALIZAÇÕES -->
-    
-            <definition name="finalizacaocompra" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaocompra.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
-    </definition>            <definition name="finalizacaodevolucao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaodevolucao.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+
+    <!--     FINALIZAÇÕES -->
+
+    <definition name="finalizacaocompra" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaocompra.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
     </definition>
-    
-                <definition name="finalizacaovenda" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaovenda.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+    <definition name="finalizacaodevolucao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaodevolucao.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
     </definition>
-    
-    
-              <definition name="finalizacaorecebimento" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaorecebimento.jsp"/>      
-           <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>      
-   
+
+    <definition name="finalizacaovenda" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaovenda.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
     </definition>
-    
-    
-    
-<!--     EDITAR -->
+
+
+    <definition name="finalizacaorecebimento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaorecebimento.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
+
+    <!--     EDITAR -->
 
     <definition name="edicaocategoria" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaocategoria.jsp"/>      
-   		 </definition>
-
-
-	<definition name="edicaoproduto" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaoproduto.jsp"/>      
-   		 </definition>
-
-	<definition name="edicaousuario" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaousuario.jsp"/>      
-   		 </definition>
-
-	<definition name="edicaogarcon" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaogarcon.jsp"/>      
-   		 </definition>
-
-	<definition name="edicaodespesa" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaodespesa.jsp"/>      
-   		 </definition>
-
-
-	<definition name="edicaocliente" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaocliente.jsp"/>      
-   		 </definition>
-
-
-	<definition name="edicaofornecedor" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaofornecedor.jsp"/>      
-   		 </definition>
-   		 
-   		 	<definition name="edicaoservico" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaoservico.jsp"/>      
-   		 </definition>
-   		 
-   		 	<definition name="edicaomesa" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaomesa.jsp"/>      
-   		 </definition>
-
-
-
-            <definition name="edicaocomposicao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaocomposicao.jsp"/>      
-   		 </definition>
-   		 
-   		      <definition name="edicaodesconto" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaodesconto.jsp"/>      
-   		 </definition>
-   		 
-   		      <definition name="edicaopromocao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaopromocao.jsp"/>      
-   		 </definition>
-   		 
-   		      <definition name="edicaoreserva" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaoreserva.jsp"/>      
-   		 </definition>
-   		 
-   		 
-   		      <definition name="edicaopagamento" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaopagamento.jsp"/>      
-   		 </definition>
-   		 
-   		 
-      	<definition name="edicaopedido" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaopedido.jsp"/>      
-   		 </definition>
-   		 
-   		 
-   		  	<definition name="edicaocozinha" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaocozinha.jsp"/>      
-   		 </definition>
-   		 
-   		  	<definition name="edicaodelivery" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaodelivery.jsp"/>      
-   		 </definition>
-   		 
-   		    		  	<definition name="edicaoitem" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaoitem.jsp"/>      
-   		 </definition>
-   		 
-   		 
-   		        <definition name="edicaovenda" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaovenda.jsp"/>      
-    </definition>
-    
-       <definition name="edicaodevolucao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaodevolucao.jsp"/>      
-    </definition>
-    
-       <definition name="edicaocompra" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaocompra.jsp"/>      
-    </definition>
-    
-       <definition name="edicaorecebimento" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaorecebimento.jsp"/>      
-    </definition>
-   		 
-   		 
-   		 
-   		 
-<!--    		FINALIZAÇÕES  -->
-   		 
-   		 
-   		 
-       <definition name="finalizacaovenda" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaovenda.jsp"/>      
-    </definition>
-    
-       <definition name="finalizacaodevolucao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaodevolucao.jsp"/>      
-    </definition>
-    
-       <definition name="finalizacaocompra" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaocompra.jsp"/>      
-    </definition>
-    
-       <definition name="finalizacaorecebimento" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaorecebimento.jsp"/>      
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaocategoria.jsp"/>
     </definition>
 
 
+    <definition name="edicaoproduto" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaoproduto.jsp"/>
+    </definition>
+
+    <definition name="edicaousuario" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaousuario.jsp"/>
+    </definition>
+
+    <definition name="edicaogarcon" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaogarcon.jsp"/>
+    </definition>
+
+    <definition name="edicaodespesa" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaodespesa.jsp"/>
+    </definition>
+
+
+    <definition name="edicaocliente" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaocliente.jsp"/>
+    </definition>
+
+
+    <definition name="edicaofornecedor" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaofornecedor.jsp"/>
+    </definition>
+
+    <definition name="edicaoservico" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaoservico.jsp"/>
+    </definition>
+
+    <definition name="edicaomesa" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaomesa.jsp"/>
+    </definition>
+
+
+    <definition name="edicaocomposicao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaocomposicao.jsp"/>
+    </definition>
+
+    <definition name="edicaodesconto" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaodesconto.jsp"/>
+    </definition>
+
+    <definition name="edicaopromocao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaopromocao.jsp"/>
+    </definition>
+
+    <definition name="edicaoreserva" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaoreserva.jsp"/>
+    </definition>
+
+
+    <definition name="edicaopagamento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaopagamento.jsp"/>
+    </definition>
+
+
+    <definition name="edicaopedido" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaopedido.jsp"/>
+    </definition>
+
+
+    <definition name="edicaocozinha" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaocozinha.jsp"/>
+    </definition>
+
+    <definition name="edicaodelivery" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaodelivery.jsp"/>
+    </definition>
+
+    <definition name="edicaoitem" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaoitem.jsp"/>
+    </definition>
+
+
+    <definition name="edicaovenda" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaovenda.jsp"/>
+    </definition>
+
+    <definition name="edicaodevolucao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaodevolucao.jsp"/>
+    </definition>
+
+    <definition name="edicaocompra" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaocompra.jsp"/>
+    </definition>
+
+    <definition name="edicaorecebimento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaorecebimento.jsp"/>
+    </definition>
+
+
+    <!--    		FINALIZAÇÕES  -->
+
+
+    <definition name="finalizacaovenda" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaovenda.jsp"/>
+    </definition>
+
+    <definition name="finalizacaodevolucao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaodevolucao.jsp"/>
+    </definition>
+
+    <definition name="finalizacaocompra" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaocompra.jsp"/>
+    </definition>
+
+    <definition name="finalizacaorecebimento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaorecebimento.jsp"/>
+    </definition>
 
 
     <definition name="AddCategoria" extends="defaultTemplate">

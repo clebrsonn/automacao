@@ -36,8 +36,7 @@ public class Item {
     private Produto produto;
 
     @ManyToMany
-    @JoinTable(name = "item_has_cotacao", joinColumns = {@JoinColumn},
-            inverseJoinColumns = {@JoinColumn})
+    @JoinTable(name = "item_has_cotacao")
     private List<Cotacao> cotacoes;
 
 
