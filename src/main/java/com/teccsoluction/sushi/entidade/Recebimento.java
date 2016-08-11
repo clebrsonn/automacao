@@ -21,8 +21,10 @@ public class Recebimento implements Serializable {
 
     private String status;
 
-//	@OneToMany
-//	private List<Compra> compra;
+    
+	@OneToOne
+	@JoinColumn
+	private pedidoCompra pedidoCompra;
 
 
     //private Pagamento pagamento;
