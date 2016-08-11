@@ -71,7 +71,7 @@
 	</bean>
 
 	<bean class="java.net.URI" id="dbUrl">
-		<constructor-arg value="${DATABASE_URL}" />
+		<constructor-arg value="postgres://efokvhahhfdahx:b_2t1PBrPZMHwxsvo32PiTlmsy@ec2-54-243-201-3.compute-1.amazonaws.com:5432/d5v7deca4t65j5" />
 	</bean>
 
 	<bean class="org.apache.commons.dbcp.BasicDataSource"
