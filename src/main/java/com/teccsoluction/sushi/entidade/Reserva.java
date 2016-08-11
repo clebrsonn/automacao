@@ -1,101 +1,95 @@
 package com.teccsoluction.sushi.entidade;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 @Entity
-@Table(name="RESERVA")
+@Table(name = "RESERVA")
 public class Reserva implements Serializable {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -1943901563720349308L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID")
-	private long id;
-	
-	@Column(name="numero")
-	private String numero;
-	
-	@Column(name="data")
-	private Date data;
-	
-	@Column(name="mesa")
-	private String mesa;
-	
-	@Column(name="hora")
-	private String hora;
-	
-	
-	public Reserva() {
-		// TODO Auto-generated constructor stub
-	}
+    /**
+     *
+     */
+    private static final long serialVersionUID = -1943901563720349308L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private long id;
+
+    @Column(name = "numero")
+    private String numero;
 
 
-	public String getNumero() {
-		return numero;
-	}
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private Date data;
+
+    @Column(name = "mesa")
+    private String mesa;
+
+    @Temporal(TemporalType.TIME)
+    private Date hora;
 
 
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
+    public Reserva() {
+        // TODO Auto-generated constructor stub
+    }
 
 
-	public long getId() {
-		return id;
-	}
+    public String getNumero() {
+        return numero;
+    }
 
 
-	public Date getData() {
-		return data;
-	}
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
 
 
-	public void setData(Date data) {
-		this.data = data;
-	}
+    public long getId() {
+        return id;
+    }
 
 
-	public String getMesa() {
-		return mesa;
-	}
+    public Date getData() {
+        return data;
+    }
 
 
-	public void setMesa(String mesa) {
-		this.mesa = mesa;
-	}
+    public void setData(Date data) {
+        this.data = data;
+    }
 
 
-	public String getHora() {
-		return hora;
-	}
+    public String getMesa() {
+        return mesa;
+    }
 
 
-	public void setHora(String hora) {
-		this.hora = hora;
-	}
+    public void setMesa(String mesa) {
+        this.mesa = mesa;
+    }
 
 
-	@Override
-	public String toString() {
-		return "Reserva :"+data+hora+mesa;
-	}
-	
-	
-	
-	
-	
-	
+    public Date getHora() {
+        return hora;
+    }
+
+
+    public void setHora(Date hora) {
+        this.hora = hora;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Reserva :" + data + hora + mesa;
+    }
+
+
 }
 

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
@@ -11,56 +9,97 @@
 
 
 	<context:component-scan base-package="com.teccsoluction.sushi" />
-	
+
 	<mvc:annotation-driven></mvc:annotation-driven>
-	<mvc:resources location="/resources/" mapping="/resources/**"/>
+	<mvc:resources location="/resources/" mapping="/resources/**" />
 
-<!-- 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
-<!-- 		<property name="prefix" value="/WEB-INF/views/" /> -->
-<!-- 		<property name="suffix" value=".jsp" /> -->
-<!-- 	</bean> -->
-
-
-    <bean id="tilesViewResolver"
-     class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView" />
-       
-    </bean>
+	<!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
+	<!-- <property name="prefix" value="/WEB-INF/views/" /> -->
+	<!-- <property name="suffix" value=".jsp" /> -->
+	<!-- </bean> -->
 
 
-    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
-        <property name="definitions">
-            <list>
-                <value>/WEB-INF/tiles-defs/tiles-config.xml</value>
-            </list>
-        </property>
-    </bean> 
-    
-    <!-- MySQL Datasource with Commons DBCP connection pooling -->
-  <bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">
-    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-    <property name="url" value="jdbc:mysql://localhost:3306/sushi"/>
-    <property name="username" value="root"/>
-    <property name="password" value="123456"/>
+	<bean id="tilesViewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles2.TilesView" />
 
-  </bean>
-   
-  <!-- EntityManagerFactory -->
-  <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
-    <property name="persistenceUnitName" value="PU-SUSHI"/>
-    <property name="dataSource" ref="dataSource"/>
-          <property name="jpaVendorAdapter">
-         <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
-      </property>
-    
-  </bean>
-   
-  <!-- Transaction Manager -->
-  <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
-    <property name="entityManagerFactory" ref="entityManagerFactory"/>
-  </bean>
-   
-  <!-- Enable @Transactional annotation -->
-  <tx:annotation-driven/>
-	
+	</bean>
+
+
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles-defs/tiles-config.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- MySQL Datasource with Commons DBCP connection pooling 
+	<bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/sushi" />
+		<property name="username" value="root" />
+		<property name="password" value="123456" />
+
+	</bean>
+	-->
+
+	<!-- EntityManagerFactory 
+	<bean
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+		id="entityManagerFactory">
+		<property name="persistenceUnitName" value="PU-SUSHI" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+
+	</bean>
+-->
+
+	<bean
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+		id="entityManagerFactory">
+		<property name="persistenceUnitName" value="PU-SUSHI2" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+
+	</bean>
+
+	<bean class="java.net.URI" id="dbUrl">
+		<constructor-arg value="postgres://efokvhahhfdahx:b_2t1PBrPZMHwxsvo32PiTlmsy@ec2-54-243-201-3.compute-1.amazonaws.com:5432/d5v7deca4t65j5" />
+	</bean>
+
+	<bean class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close" id="dataSource">
+		<property name="driverClassName" value="${database.driverClassName}" />
+		<property name="url"
+			value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }" />
+		<property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }" />
+		<property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }" />
+		<property name="maxActive" value="10" />
+		<property name="maxIdle" value="5" />
+		<property name="minIdle" value="2" />
+		<property name="initialSize" value="5" />
+		<property name="removeAbandoned" value="true" />
+	</bean>
+
+	<!-- Transaction Manager -->
+	<bean class="org.springframework.orm.jpa.JpaTransactionManager"
+		id="transactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<!-- Enable @Transactional annotation -->
+	<tx:annotation-driven />
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="META-INF.messages" />
+	</bean>
+
 </beans>

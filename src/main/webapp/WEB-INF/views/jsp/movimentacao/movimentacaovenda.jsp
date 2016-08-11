@@ -3,26 +3,26 @@
 
 <div id="conteudo" class="conteudo">
 <div align="">
-            <h3>MovimentaÁ„o Venda</h3>
+            <h3>Movimenta√ß√£o Venda</h3>
             	<div id="content-table">
 	<form id="mainform"  action="cadastropedido">
 
       <table border="0" width="140%"cellpadding="0" cellspacing="0"  class="product-table">
     			<th class="table-header-check"><a id="toggle-all" ></a> </th>
                 <th class="table-header-repeat line-left "><a>Id</a></th>
-<!--                       <th class="table-header-repeat line-left minwidth-1"><a>CÛdigo de Barras</a></th> -->
+<!--                       <th class="table-header-repeat line-left minwidth-1"><a>C√≥digo de Barras</a></th> -->
                  <th class="table-header-repeat line-left minwidth-1"><a>Data </a></th> 
                    <th class="table-header-repeat line-left minwidth-1"><a>Tipo </a></th> 
             <th class="table-header-repeat line-left minwidth-1"><a>Mesa</a></th> 
              <th class="table-header-repeat line-left minwidth-1"><a>Status</a></th> 
-              <th class="table-header-repeat line-left minwidth-1"><a>GarÁon</a></th>
+              <th class="table-header-repeat line-left minwidth-1"><a>Gar√ßon</a></th>
                 <th class="table-header-repeat line-left minwidth-1"><a>Total</a></th>
 
 <!--                  <th class="table-header-repeat line-left minwidth-1"><a>Data Abertura</a></th>  -->
                            
 <!--                 <th class="table-header-repeat line-left minwidth-1"><a>Data Fechamento</a></th>             -->
                                   
-                <th class="table-header-repeat line-left"><a>Ac„o</a></th>
+                <th class="table-header-repeat line-left"><a>Ac√£o</a></th>
                  
                 <c:forEach var="pedido" items="${pedidoList}" varStatus="id">
 
@@ -43,12 +43,12 @@
 
                    
                     <td class="options-width">
-                        <a href="edicaopedido?id=${pedido.id}" class="icon-1 info-tooltip" title="Edit"></a>
+                        <a href="edicao?id=${pedido.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${pedido.id}" class="icon-40 info-tooltip" title="aaa"></a>
                          <a href="additem?id=${pedido.id}" class="icon-30 info-tooltip" title="Adicionar Item ao Pedido"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaopedido/delete?id=${pedido.id}" class="icon-5 info-tooltip" title="ccc"></a>
+                        <a href="delete?id=${pedido.id}" class="icon-5 info-tooltip" title="ccc"></a>
                     </td>
                 </tr>
   </c:when>
@@ -64,12 +64,12 @@
                     <td>${pedido.garcon}</td>                   
                     <td>${pedido.total}</td>
                     <td class="options-width">
-                        <a href="edicaopedido?id=${pedido.id}" class="icon-1 info-tooltip" title="Edit"></a>
+                        <a href="edicao?id=${pedido.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${pedido.id}" class="icon-40 info-tooltip" title="aaa"></a>
                          <a href="additem?id=${pedido.id}" class="icon-30 info-tooltip" title="Adicionar Item ao Pedido"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaopedido/delete?id=${pedido.id}" class="icon-5 info-tooltip" title="ccc"></a>
+                        <a href="delete?id=${pedido.id}" class="icon-5 info-tooltip" title="ccc"></a>
                     </td>
                 </tr>
   </c:when>

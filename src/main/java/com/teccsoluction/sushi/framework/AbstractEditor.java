@@ -5,32 +5,18 @@ import java.beans.PropertyEditorSupport;
 /**
  * Created by clebr on 17/07/2016.
  */
-public abstract class AbstractEditor<Entity> extends PropertyEditorSupport {
+public class AbstractEditor<Entity> extends PropertyEditorSupport {
 
-//    private final AbstractEntityDao<Entity> entityDao;
-//
-//    public AbstractEditor(AbstractEntityDao<Entity> entityDao) {
-//        this.entityDao = entityDao;
-//    }
+    private final AbstractEntityDao<Entity> dao;
 
-
-    protected abstract AbstractEntityDao<Entity> getDao();
-
-
-//    final CategoriaDAO categoriadao;
-
-
-//    public CategoriaEditor(AbstractEntityDao<Entity> entityDao, final CategoriaDAO dao) {
-//        this.entityDao = entityDao;
-//
-////        this.categoriadao =dao;
-//
-//    }
+    public AbstractEditor(final AbstractEntityDao<Entity> dao) {
+        this.dao = dao;
+    }
 
     @Override
     public void setAsText(final String id) {
 
-        final Entity entity = getDao().PegarPorId(Long.parseLong(id));
+        final Entity entity = dao.PegarPorId(Long.parseLong(id));
 
         this.setValue(entity);
 

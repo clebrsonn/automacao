@@ -1,131 +1,94 @@
 package com.teccsoluction.sushi.entidade;
 
+import javax.persistence.*;
 import java.io.Serializable;
-
 import java.util.ArrayList;
-
-
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.OneToMany;
-
 @Entity
-@Table(name="FORNECEDOR")
+@Table(name = "FORNECEDOR")
 public class Fornecedor implements Serializable {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID")
-	private long id;
-	
-	@Column(name="NOME_FANTASIA")
-	private String nomefantasia;
-	
-	@Column(name="RAZAO_SOCIAL")
-	private String razaoSocial;
-	
-	@Column(name="CNPJ")
-	private String cnpj;
-	
-	@Column(name="INSCRICAOESTADUAL")
-	private String inscricaoestadual;
-	
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-	@OneToMany
-	private List<Produto> produtos;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private long id;
 
-//	@OneToMany
-//	private List<Produto> ListaProdutoPorFornecedor;
-	
+    @Column(name = "NOME_FANTASIA")
+    private String nomefantasia;
 
-	
-	public Fornecedor() {
-		produtos = new ArrayList<Produto>();
-	}
+    @Column(name = "RAZAO_SOCIAL")
+    private String razaoSocial;
 
+    @Column(name = "CNPJ")
+    private String cnpj;
 
+    @Column(name = "INSCRICAOESTADUAL")
+    private String inscricaoestadual;
 
+    @OneToMany(mappedBy = "fornecedor")
+    private List<Produto> produtos;
 
+    public Fornecedor() {
+        produtos = new ArrayList<>();
+    }
 
-	public String getNomefantasia() {
-		return nomefantasia;
-	}
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
+    public String getNomefantasia() {
+        return nomefantasia;
+    }
 
+    public void setNomefantasia(String nomefantasia) {
+        this.nomefantasia = nomefantasia;
+    }
 
+    public String getRazaoSocial() {
+        return razaoSocial;
+    }
 
-	public void setNomefantasia(String nomefantasia) {
-		this.nomefantasia = nomefantasia;
-	}
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
+    }
 
+    public String getCnpj() {
+        return cnpj;
+    }
 
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
 
+    public String getInscricaoestadual() {
+        return inscricaoestadual;
+    }
 
+    public void setInscricaoestadual(String inscricaoestadual) {
+        this.inscricaoestadual = inscricaoestadual;
+    }
 
-	public long getId() {
-		return id;
-	}
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
 
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
 
-	public String getRazaoSocial() {
-		return razaoSocial;
-	}
+    @Override
+    public String toString() {
+        return nomefantasia;
+    }
 
-
-	public void setRazaoSocial(String razaoSocial) {
-		this.razaoSocial = razaoSocial;
-	}
-
-
-	public String getCnpj() {
-		return cnpj;
-	}
-
-
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
-	}
-
-
-	public String getInscricaoestadual() {
-		return inscricaoestadual;
-	}
-
-
-	public void setInscricaoestadual(String inscricaoestadual) {
-		this.inscricaoestadual = inscricaoestadual;
-	}
-
-
-	@Override
-	public String toString() {
-		return  nomefantasia;
-	}
-	
-	
-	public List<Produto> getProdutos() {
-		return produtos;
-	}
-
-
-	public void setProdutos(List<Produto> produtos) {
-		this.produtos = produtos;
-	}
-	
-	
-	
-	
 }

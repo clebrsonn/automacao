@@ -3,22 +3,22 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Edição de Servicos</h3>
+		<h3>EdiÃ§Ã£o de Servicos</h3>
 	
 
 	
 	<div id="form">
-	<form id="formServicos" action="movimentacaoservico/edicaoservico" method="POST">
+	<form id="formServicos" action="edicao" method="POST">
 
 
 		<p>Id do Servico:</p>
 		<input name="id" type="text" class="inp-form" readonly="readonly" value="${servico.id}"/>
 
-		<p>Numero do Serviço:</p>
+		<p>Numero do ServiÃ§o:</p>
 		<input name="numero" type="text" class="inp-form" value="${servico.numero}"/>
-		<p>Nome do Serviço:</p>
+		<p>Nome do ServiÃ§o:</p>
 		<input name="nome" type="text" class="inp-form" value="${servico.nome}"/>
-		<p>Preço do Serviço:</p>
+		<p>PreÃ§o do ServiÃ§o:</p>
 		<input name="preco" type="number" class="inp-form" value="${servico.preco}"/>
 			
 		

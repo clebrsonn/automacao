@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-	<h2>cadastro de usu·rio </h2>
+	<h2>cadastro de usu√°rio </h2>
 
 	
 

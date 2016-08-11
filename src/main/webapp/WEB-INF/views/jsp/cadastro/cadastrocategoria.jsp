@@ -3,24 +3,20 @@
 
 <div id="content" class="content">
 
-    <h3>Cadastro de Categorias</h3>
+    <h2>Cadastro de Categorias</h2>
 
 
     <div id="form">
-        <form id="formCategoria" action="AddCategoria" method="post">
-
-
-            <p>ID da Categoria:</p>
-            <input name="id" type="text" class="inp-form" readonly="readonly"/>
+        <form id="formCategoria" action="add" method="POST">
 
             <p> Categoria Pai:</p>
             <select id="catpai" name="catpai" id="files" class="inp-form">
-                    				<option value=""></option>
-            
+                <option value=""></option>
+
                 <optgroup label="Categoria Pai">
-                     			<c:forEach var="categoria" items="${categoriaList}">
-                     				<option value="${categoria.id}">${categoria.nome}</option>
-                     				</c:forEach>
+                    <c:forEach var="categoria" items="${categoriaList}">
+                        <option value="${categoria.id}">${categoria.nome}</option>
+                    </c:forEach>
 
                 </optgroup>
             </select>

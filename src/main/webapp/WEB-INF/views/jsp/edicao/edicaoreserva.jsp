@@ -3,11 +3,11 @@
 
 <div id="conteudo" class="conteudo">
 
-<h3>Edição de Reserva</h3>
+<h3>EdiÃ§Ã£o de Reserva</h3>
 	
 	
 	<div id="formm">
-	<form id="formReserva" action="movimentacaoreserva/edicaoreserva" method="POST">
+	<form id="formReserva" action="edicao" method="POST">
 
 
 		<p>ID da Reserva:</p>

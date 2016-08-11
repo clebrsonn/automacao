@@ -10,17 +10,17 @@
 <head>
 
 
-<script src="/resources/js/jquery/jquery-1.4.1.min.js"
+<script src="${pageContext.request.contextPath}/resources/js/jquery/jquery-1.4.1.min.js"
 	type="text/javascript"></script>
 
 
 
 
-<script src="/resources/js/default.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/js/default.js" type="text/javascript"></script>
 
 
 
-<link rel="stylesheet" href="/resources/css/screen.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/screen.css" type="text/css" />
 
 
 <script type="text/javascript">

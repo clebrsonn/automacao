@@ -1,8 +1,6 @@
 package com.teccsoluction.sushi.util;
 
-import com.teccsoluction.sushi.dao.CategoriaDAO;
 import com.teccsoluction.sushi.dao.ProdutoDAO;
-import com.teccsoluction.sushi.entidade.Categoria;
 import com.teccsoluction.sushi.entidade.Produto;
 
 import java.beans.PropertyEditorSupport;

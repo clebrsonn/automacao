@@ -18,7 +18,7 @@ spring-*/src/main/java/META-INF/MANIFEST.MF
 *.iml
 *.ipr
 *.iws
-out
+out/
 test-output
 atlassian-ide-plugin.xml
 .gradletasknamecache

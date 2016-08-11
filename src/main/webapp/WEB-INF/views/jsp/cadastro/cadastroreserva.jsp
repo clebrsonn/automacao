@@ -5,11 +5,11 @@
 		<div id="conteudo" class="conteudo">
 		
 
-		<h3>Cadastro de Reserva</h3>
+		<h2>Cadastro de Reserva</h2>
 	
 	
 	<div id="formm">
-	<form id="formReserva" action="AddReserva" method="POST">
+	<form id="formReserva" action="add" method="POST">
 
 
 		<p>ID da Reserva:</p>

@@ -3,21 +3,21 @@
 
 <div id="conteudo" class="conteudo">
 <div align="">
-            <h3>MovimentaÁ„o PromoÁ„o</h3>
+            <h3>Movimenta√ß√£o Promo√ß√£o</h3>
             	<div id="content-table">
 	<form id="mainform">
 
       <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table">
     			<th class="table-header-check"><a id="toggle-all" ></a> </th>
                 <th class="table-header-repeat line-left "><a>Id</a></th>
-                <th class="table-header-repeat line-left minwidth-1"><a>Numero PromoÁ„o</a></th>          
-                 <th class="table-header-repeat line-left minwidth-1"><a>Nome PromoÁ„o</a></th> 
-                 <th class="table-header-repeat line-left minwidth-1"><a>Data Inicio PromoÁ„o</a></th>          
-                 <th class="table-header-repeat line-left minwidth-1"><a>Data Fim PromoÁ„o</a></th>          
+                <th class="table-header-repeat line-left minwidth-1"><a>Numero Promo√ß√£o</a></th>          
+                 <th class="table-header-repeat line-left minwidth-1"><a>Nome Promo√ß√£o</a></th> 
+                 <th class="table-header-repeat line-left minwidth-1"><a>Data Inicio Promo√ß√£o</a></th>          
+                 <th class="table-header-repeat line-left minwidth-1"><a>Data Fim Promo√ß√£o</a></th>          
                           
 <!--                
  <th class="table-header-repeat line-left minwidth-1"><a>Projeto</a></th>                                -->
-                <th class="table-header-repeat line-left"><a>Ac„o</a></th>
+                <th class="table-header-repeat line-left"><a>Ac√£o</a></th>
                  
                 <c:forEach var="promocao" items="${promocaoList}" varStatus="id">
                 
@@ -52,12 +52,12 @@
                      <td>${promocao.datafim}</td>
                    
                     <td class="options-width">
-                        <a href="edicaopromocao?id=${promocao.id}" class="icon-1 info-tooltip" title="Edit"></a>
+                        <a href="edicao?id=${promocao.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${promocao.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${promocao.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaopromocao/delete?id=${promocao.id}" class="icon-5 info-tooltip" title="ccc"></a>
+                        <a href="delete?id=${promocao.id}" class="icon-5 info-tooltip" title="ccc"></a>
                     </td>
                 </tr>
   </c:when>
@@ -70,12 +70,12 @@
                      <td>${promocao.datainicio}</td>
                      <td>${promocao.datafim}</td>
                     <td class="options-width">
-                        <a href="edicaopromocao?id=${promocao.id}" class="icon-1 info-tooltip" title="Edit"></a>
+                        <a href="edicao?id=${promocao.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${promocao.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${promocao.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaopromocao/delete?id=${promocao.id}" class="icon-5 info-tooltip" title="ccc"></a>
+                        <a href="delete?id=${promocao.id}" class="icon-5 info-tooltip" title="ccc"></a>
                     </td>
                 </tr>
   </c:when>

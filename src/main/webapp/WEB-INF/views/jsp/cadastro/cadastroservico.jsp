@@ -1,42 +1,25 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Cadastro de Servicos</h3>
-	
+    <h2>Cadastro de Servi√ßos</h2>
 
-	
-	<div id="form">
-	<form id="formServicos" action="AddServicos" method="POST">
+    <div id="form">
+        <form id="formServicos" action="add" method="POST">
+            <p>Numero do Servi√ßo:</p>
+            <input name="numero" type="text" class="inp-form"/>
+            <p>Nome do Servi√ßo:</p>
+            <input name="nome" type="text" class="inp-form"/>
+            <p>Pre√ßo do Servi√ßo:</p>
+            <input name="preco" type="text" class="inp-form"/>
 
+            <div id="botoes">
+                <button class="button">Adicionar</button>
+                <button class="button">Apagar</button>
+            </div>
 
-		<p>Id do Servico:</p>
-		<input name="id" type="text" class="inp-form" readonly="readonly" />
+        </form>
 
-		<p>Numero do ServiÁo:</p>
-		<input name="numero" type="text" class="inp-form" />
-		<p>Nome do ServiÁo:</p>
-		<input name="nome" type="text" class="inp-form" />
-		<p>PreÁo do ServiÁo:</p>
-		<input name="preco" type="text" class="inp-form" />
-			
-		
-		
-		<div id="botoes">
-			<button class="button">Adicionar</button>
-			<button class="button">Apagar</button>
-		</div>
-		
-		</form>
-
+    </div>
 </div>
-
-
-
-
-
-
-
-
-

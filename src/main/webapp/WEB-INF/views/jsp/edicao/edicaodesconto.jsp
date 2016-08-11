@@ -3,11 +3,11 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Edição de Desconto</h3>
+		<h3>EdiÃ§Ã£o de Desconto</h3>
 	
 	
 	<div id="form">
-	<form id="formDesconto" action="movimentacaodesconto/edicaodesconto" method=POST>
+	<form id="formDesconto" action="edicao" method=POST>
 
 
 		<p>ID do Desconto:</p>
