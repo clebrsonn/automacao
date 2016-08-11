@@ -5,11 +5,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 
 @Entity
 @Table(name = "DEVOLUCAO_VENDA")
-public class DevolucaoVenda extends Devolucao {
+public class DevolucaoVenda extends Devolucao implements Serializable {
+	
+	private static final long serialVersionUID = 11L;
+
 	
 	@ManyToOne
 	@JoinColumn
