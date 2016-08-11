@@ -20,7 +20,7 @@ public class PedidoVenda extends Pedido {
 //    @OneToMany
 //    private List<Item> listaItensVenda;
     
-    //lista de devoluções de compra
+    //lista de devoluÃ§Ãµes de compra
     @OneToMany(mappedBy="pedidoVenda")
     private List<DevolucaoVenda> listaDevolucao;
     
@@ -28,7 +28,7 @@ public class PedidoVenda extends Pedido {
     
     
 
-    //CONSTRUTOR PADRÃO
+    //CONSTRUTOR PADRAO
     public PedidoVenda() {
     	
     	listaDevolucao = new ArrayList<>(); 
