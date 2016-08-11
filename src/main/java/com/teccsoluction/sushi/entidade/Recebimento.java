@@ -24,7 +24,7 @@ public class Recebimento implements Serializable {
     
 	@OneToOne
 	@JoinColumn
-	private pedidoCompra pedidoCompra;
+	private PedidoCompra pedidoCompra;
 
 
     //private Pagamento pagamento;
