@@ -19,10 +19,10 @@
 	<persistence-unit name="PU-SUSHI2" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sushi" />
-			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="123456" />
+			<property name="javax.persistence.jdbc.driver" value="${database.driverClassName}" />
+			<property name="javax.persistence.jdbc.url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }" />
+			<property name="javax.persistence.jdbc.user" value="#{ @dbUrl.getUserInfo().split(':')[0] }" />
+			<property name="javax.persistence.jdbc.password" value="#{ @dbUrl.getUserInfo().split(':')[1] }" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
