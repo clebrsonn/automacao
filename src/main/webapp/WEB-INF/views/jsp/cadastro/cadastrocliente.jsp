@@ -4,7 +4,7 @@
 
 <div id="conteudo" class="conteudo">
 
-    <h3>Cadastro de Clientes</h3>
+    <h2>Cadastro de Clientes</h2>
 
 
     <div id="form">

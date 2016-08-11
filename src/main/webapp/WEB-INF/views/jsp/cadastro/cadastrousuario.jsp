@@ -2,7 +2,7 @@
 <%@ page session="false" %>
 
 <div id="conteudo"  class="conteudo">
-<h3> Cadastro Usuario </h3> 
+<h2> Cadastro Usuario </h2> 
 <div id="form"> 
  
  <form id="formUsuario" action="add" method="POST">

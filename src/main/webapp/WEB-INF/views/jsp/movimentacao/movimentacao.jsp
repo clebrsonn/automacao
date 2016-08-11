@@ -8,9 +8,9 @@
 		
 		<button onclick="window.location.href='cadastrovenda'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/vendas.png">vendas</p></button>
 		<button onclick="window.location.href='cadastrorecebimento'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/recebimento.png">recebimento </p></button>
-		<button onclick="window.location.href='cadastrodevolucao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/devolucao.png">devolucao </p></button>
+		<button onclick="window.location.href='devolucao/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/devolucao.png">devolucao </p></button>
 		<button onclick="window.location.href='movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/estoque.png">estoque</p></button>
-		<button onclick="window.location.href='cadastrocompra'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/pedido.png">Compra</p></button>
+		<button onclick="window.location.href='pedidocompra/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/pedido.png">Compra</p></button>
 		
 		
 		

@@ -5,7 +5,7 @@
 <div id="conteudo" class="conteudo">
 
 
-    <h3>Cadastro de Despesa</h3>
+    <h2>Cadastro de Despesa</h2>
 
 
     <div id="formm">

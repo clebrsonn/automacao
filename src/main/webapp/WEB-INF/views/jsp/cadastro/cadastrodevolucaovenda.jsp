@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-    <h2>Cadastro de Devolucao de Compra</h2>
+    <h2>Cadastro de Devolucao de Venda</h2>
 
 
     <div id="form">

@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-    <h3>Cadastro de Serviços</h3>
+    <h2>Cadastro de Serviços</h2>
 
     <div id="form">
         <form id="formServicos" action="add" method="POST">

@@ -2,6 +2,8 @@ package com.teccsoluction.sushi.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.teccsoluction.sushi.dao.generic.DevolucaoDAO;
 import com.teccsoluction.sushi.entidade.Devolucao;
@@ -31,5 +33,20 @@ public class DevolucaoController extends AbstractController<Devolucao> {
 		// TODO Auto-generated method stub
 		return dao;
 	}
+	
+	
+
+//  @RequestMapping(value = "devolucaocompra/cadastro", method = RequestMethod.GET)
+//  public ModelAndView cadastrarEntity() {
+//
+//      ModelAndView cadastrocategoria = new ModelAndView("cadastrocategoria");
+//
+////      List<Categoria> categoriaList = getDao().getAll();
+////
+////      cadastrocategoria.addObject("categoriaList", categoriaList);
+//
+//
+//      return cadastrocategoria;
+//  }
 	
 }

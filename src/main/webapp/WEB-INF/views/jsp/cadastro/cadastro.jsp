@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="">
 	<div class="post">
-		<h1 class="title">Cadastros</h1>
+		<h2 class="title">Cadastros</h2>
 
 
 		<button onclick="window.location.href='categoria/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/categoria.png">categorias</p></button>

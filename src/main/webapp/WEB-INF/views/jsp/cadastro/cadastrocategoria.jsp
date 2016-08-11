@@ -3,7 +3,7 @@
 
 <div id="content" class="content">
 
-    <h3>Cadastro de Categorias</h3>
+    <h2>Cadastro de Categorias</h2>
 
 
     <div id="form">

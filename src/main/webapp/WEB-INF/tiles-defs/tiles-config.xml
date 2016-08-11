@@ -105,21 +105,43 @@
     <definition name="cadastropedidocompra" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastropedidocompra.jsp"/>
     </definition>
+    
+        <definition name="cadastropedidovenda" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastropedidovenda.jsp"/>
+    </definition>
 
     <definition name="cadastrovenda" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrovenda.jsp"/>
     </definition>
+    
+    
     <definition name="cadastrovenda2" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrovenda.jsp"/>
     </definition>
 
-    <definition name="cadastrodevolucao" extends="defaultTemplate">
+    <definition name="cadastrodevolucaovenda" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrodevolucaovenda.jsp"/>
+    </definition>
+    
+    
+        <definition name="devolucaovenda" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrodevolucaovenda.jsp"/>
+    </definition>
+    
+    
+    
+        <definition name="cadastrodevolucaocompra" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrodevolucaocompra.jsp"/>
+    </definition>
+    
+    
+        <definition name="cadastrodevolucao" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrodevolucao.jsp"/>
     </definition>
 
-    <definition name="cadastrodevolucaocompra" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrodevolucaocompra.jsp"/>
-    </definition>
+<!--     <definition name="cadastrodevolucaocompra" extends="defaultTemplate"> -->
+<!--         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrodevolucaocompra.jsp"/> -->
+<!--     </definition> -->
 
 
     <definition name="cadastrocompra" extends="defaultTemplate">
