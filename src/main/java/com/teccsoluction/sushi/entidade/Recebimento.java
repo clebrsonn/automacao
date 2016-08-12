@@ -1,112 +1,44 @@
 package com.teccsoluction.sushi.entidade;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-
 
 
 @Entity
-@Table(name="RECEBIMENTO")
+@Table(name = "RECEBIMENTO")
 public class Recebimento implements Serializable {
 
 
-	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID")
-	private long id;
-				
-	private Date data;
-			
-	private String status;
-	
-	private long compra;
-	
-	private long pagamento;
-	
-	private long fornecedor;
-	
-	
+    private static final long serialVersionUID = 1L;
 
-	public Recebimento() {
-		// TODO Auto-generated constructor stub
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private long id;
+
+    private Date data;
+
+    private String status;
+
+    
+	@OneToOne
+	@JoinColumn
+	private PedidoCompra pedidoCompra;
 
 
+    //private Pagamento pagamento;
 
-	public long getFornecedor() {
-		return fornecedor;
-	}
-
+    //private Fornecedor fornecedor;
 
 
-	public void setFornecedor(long fornecedor) {
-		this.fornecedor = fornecedor;
-	}
+    public Recebimento() {
+        // TODO Auto-generated constructor stub
+    }
 
-
-
-	public long getCompra() {
-		return compra;
-	}
-
-
-	public void setCompra(long compra) {
-		this.compra = compra;
-	}
-
-	public long getPagamento() {
-		return pagamento;
-	}
-
-
-	public void setPagamento(long pagamento) {
-		this.pagamento = pagamento;
-	}
-	public Date getData() {
-		return data;
-	}
-
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-
-
-	public String getStatus() {
-		return status;
-	}
-
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-
-
-
-	public long getId() {
-		return id;
-	}
-
-
-	@Override
-	public String toString() {
-		return "ID RECEBIMENTO:"+id;
-	}
-	
-	
-		
+    @Override
+    public String toString() {
+        return "ID RECEBIMENTO:" + id;
+    }
 
 }

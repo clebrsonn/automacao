@@ -6,61 +6,60 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="GARCON")
+@Table(name = "GARCON")
 public class Garcon implements Serializable {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID")
-	private long id;
-	
-	@Column(name="nome")
-	private String nome;
-	
-	@OneToMany
-	private List<Pedido> pedidos;
-	
-	
-	public Garcon() {
-		// TODO Auto-generated constructor stub
-		pedidos = new ArrayList<Pedido>();
-	}
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-	public String getNome() {
-		return nome;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private long id;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    @Column(name = "nome")
+    private String nome;
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	@Override
-	public String toString() {
-		return  nome;
-	}
-	
-	public List<Pedido> gePedidos() {
-		return pedidos;
-	}
+//    @OneToMany(mappedBy = "garcon")
+//    private List<PedidoVenda> pedidos;
 
 
-	public void setPedidos(List<Pedido> pedidos) {
-		this.pedidos = pedidos;
-	}
-	
-	
-	
+    public Garcon() {
+        // TODO Auto-generated constructor stub
+//        pedidos = new ArrayList<>();
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return nome;
+    }
+
+//    public List<PedidoVenda> gePedidos() {
+//        return pedidos;
+//    }
+//
+//
+//    public void setPedidos(List<PedidoVenda> pedidos) {
+//        this.pedidos = pedidos;
+//    }
+
+
 }

@@ -3,7 +3,7 @@
 
 <div id="content" class="content">
 
-    <h3>Cadastro de Categorias</h3>
+    <h2>Cadastro de Categorias</h2>
 
 
     <div id="form">
@@ -14,7 +14,7 @@
                 <option value=""></option>
 
                 <optgroup label="Categoria Pai">
-                    <c:forEach var="categoria" items="${entityList}">
+                    <c:forEach var="categoria" items="${categoriaList}">
                         <option value="${categoria.id}">${categoria.nome}</option>
                     </c:forEach>
 

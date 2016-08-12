@@ -1,139 +1,153 @@
 package com.teccsoluction.sushi.entidade;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name="ITEM")
+@Table(name = "ITEM")
 public class Item {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID")
-	private long id;
-	
-	private String codigo;
-	
-	private String descricao;
-	
-	private int qtd;
-	
-	private double precoUnitario;
-	
-	private double totalItem;
-	
-	@ManyToOne
-	private Pedido pedido;
-	
-	@ManyToOne
-	private Produto produto;
-	
-	
-	
-	public Item() {
-	}
-	
-	
-	public Item(Produto produto,Pedido pedido) {
-		
-		this.codigo=produto.getCodebar();
-		this.descricao=produto.getDescricao();
-		this.precoUnitario=produto.getPrecoVenda();
-		this.pedido=pedido;
-	}
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private long id;
+
+    private String codigo;
+
+    private String descricao;
+
+    private int qtd;
+
+    private double precoUnitario;
+
+    private double totalItem;
+
+    @ManyToOne
+    @JoinColumn
+    private Pedido pedido;
+
+    @ManyToOne
+    @JoinColumn
+    private Devolucao devolucao;
+
+    @ManyToOne
+    @JoinColumn
+    private Produto produto;
+
+    @ManyToMany
+    @JoinTable(name = "item_has_cotacao")
+    private List<Cotacao> cotacoes;
 
 
+    public Item() {
+        cotacoes = new ArrayList<>();
+    }
 
 
+    public Item(Produto produto, Pedido pedido) {
 
-	public Pedido getPedido() {
-		return pedido;
-	}
-
-
-	public void setProduto(Produto produto) {
-		this.produto = produto;
-	}
-
-	public Produto getProduto() {
-		return produto;
-	}
+        this.codigo = produto.getCodebar();
+        this.descricao = produto.getDescricao();
+        this.precoUnitario = produto.getPrecoVenda();
+        this.pedido = pedido;
+    }
 
 
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
-	}
+    public Pedido getPedido() {
+        return pedido;
+    }
 
 
-	public String getCodigo() {
-		return codigo;
-	}
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
 
 
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
 
 
-	public String getDescricao() {
-		return descricao;
-	}
+    public String getCodigo() {
+        return codigo;
+    }
 
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
 
 
-	public int getQtd() {
-		return qtd;
-	}
+    public String getDescricao() {
+        return descricao;
+    }
 
 
-	public void setQtd(int qtd) {
-		this.qtd = qtd;
-	}
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 
 
-	public double getPrecoUnitario() {
-		return precoUnitario;
-	}
+    public int getQtd() {
+        return qtd;
+    }
 
 
-	public void setPrecoUnitario(double precoUnitario) {
-		this.precoUnitario = precoUnitario;
-	}
+    public void setQtd(int qtd) {
+        this.qtd = qtd;
+    }
 
 
-	public double getTotalItem() {
-		return qtd*precoUnitario;
-	}
+    public double getPrecoUnitario() {
+        return precoUnitario;
+    }
 
 
-	public void setTotalItem(double totalItem) {
-		this.totalItem = totalItem;
-	}
+    public void setPrecoUnitario(double precoUnitario) {
+        this.precoUnitario = precoUnitario;
+    }
 
 
-	public long getId() {
-		return id;
-	}
+    public double getTotalItem() {
+        return qtd * precoUnitario;
+    }
 
 
-
-	@Override
-	public String toString() {
-		return descricao;
-	}
+    public void setTotalItem(double totalItem) {
+        this.totalItem = totalItem;
+    }
 
 
-	
-	
-	
+    public Devolucao getDevolucao() {
+        return devolucao;
+    }
+
+    public void setDevolucao(Devolucao devolucao) {
+        this.devolucao = devolucao;
+    }
+
+    public void setCotacoes(List<Cotacao> cotacoes) {
+        this.cotacoes = cotacoes;
+    }
+
+    public List<Cotacao> getCotacoes() {
+        return cotacoes;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+
+    @Override
+    public String toString() {
+        return descricao;
+    }
+
 
 }

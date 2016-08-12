@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-    <h3>Cadastro de Venda</h3>
+    <h2>Cadastro de Venda</h2>
 
 
     <div id="form">
@@ -35,7 +35,7 @@
                 </datalist>
 
 
-                Descrição
+                Descricao
 
                 <input id="descricaoitem" name="descricao" type="text" list="produtos" class="descricaoitem"/>
 

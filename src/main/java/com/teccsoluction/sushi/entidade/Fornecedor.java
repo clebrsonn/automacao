@@ -31,28 +31,12 @@ public class Fornecedor implements Serializable {
     @Column(name = "INSCRICAOESTADUAL")
     private String inscricaoestadual;
 
-
-    @OneToMany
+    @OneToMany(mappedBy = "fornecedor")
     private List<Produto> produtos;
 
-//	@OneToMany
-//	private List<Produto> ListaProdutoPorFornecedor;
-
-
     public Fornecedor() {
-        produtos = new ArrayList<Produto>();
+        produtos = new ArrayList<>();
     }
-
-
-    public String getNomefantasia() {
-        return nomefantasia;
-    }
-
-
-    public void setNomefantasia(String nomefantasia) {
-        this.nomefantasia = nomefantasia;
-    }
-
 
     public long getId() {
         return id;
@@ -62,50 +46,49 @@ public class Fornecedor implements Serializable {
         this.id = id;
     }
 
+    public String getNomefantasia() {
+        return nomefantasia;
+    }
+
+    public void setNomefantasia(String nomefantasia) {
+        this.nomefantasia = nomefantasia;
+    }
+
     public String getRazaoSocial() {
         return razaoSocial;
     }
-
 
     public void setRazaoSocial(String razaoSocial) {
         this.razaoSocial = razaoSocial;
     }
 
-
     public String getCnpj() {
         return cnpj;
     }
-
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
-
     public String getInscricaoestadual() {
         return inscricaoestadual;
     }
-
 
     public void setInscricaoestadual(String inscricaoestadual) {
         this.inscricaoestadual = inscricaoestadual;
     }
 
-
-    @Override
-    public String toString() {
-        return nomefantasia;
-    }
-
-
     public List<Produto> getProdutos() {
         return produtos;
     }
-
 
     public void setProdutos(List<Produto> produtos) {
         this.produtos = produtos;
     }
 
+    @Override
+    public String toString() {
+        return nomefantasia;
+    }
 
 }

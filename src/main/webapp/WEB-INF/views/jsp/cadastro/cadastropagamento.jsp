@@ -5,7 +5,7 @@
 <div id="conteudo" class="conteudo">
 
 
-    <h3>Cadastro de Formas de Pagamentos</h3>
+    <h2>Cadastro de Formas de Pagamentos</h2>
 
 
     <div id="formm">

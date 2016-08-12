@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-    <h2>Cadastro de Pedido</h2>
+    <h2 class="title">Cadastro de Pedido Compra</h2>
 
 
     <div id="form">
@@ -15,8 +15,8 @@
             <select name="tipo" id="files" class="inp-form">
                 <optgroup label="Tipo de Pedido">
 
-                    <c:forEach var="tipoPedido" items="${tipoList}">
-                        <option value="${tipoPedido}">${tipoPedido}</option>
+                    <c:forEach var="garcon" items="${tipoList}">
+                        <option value="${garcon.id}">${garcon.nome}</option>
                     </c:forEach>
 
 

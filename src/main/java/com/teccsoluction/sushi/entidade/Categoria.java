@@ -3,6 +3,7 @@ package com.teccsoluction.sushi.entidade;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
@@ -22,8 +23,11 @@ public class Categoria implements Serializable {
     @Column(name = "NOME")
     private String nome;
 
-    @ManyToOne    
+    @ManyToOne
     private Categoria catpai;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<Produto> produtos;
 
 
     //CONSTRUTOR PADRAO
@@ -73,5 +77,11 @@ public class Categoria implements Serializable {
 		this.catpai = catpai;
 	}
 
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
 
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
 }

@@ -1,156 +1,95 @@
 package com.teccsoluction.sushi.entidade;
 
-import java.io.Serializable;
+import com.teccsoluction.sushi.util.StatusPedido;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-import com.teccsoluction.sushi.util.StatusPedido;
-import com.teccsoluction.sushi.util.TipoPedido;
-
-
-
-
 @Entity
-@Table(name="PEDIDO")
-public class Pedido implements Serializable {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Pedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
+    protected long id;
+
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private Date data;
+
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
+
+    private double total;
+
+    @OneToMany(mappedBy = "pedido")
+    private List<Pagamento> pagamentos;
+
+    @OneToMany(mappedBy = "pedido")
+    private List<Item> items;
+
+    public Pedido() {
+        // TODO Auto-generated constructor stub
+        items = new ArrayList<>();
+        pagamentos = new ArrayList<>();
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public List<Pagamento> getPagamentos() {
+        return pagamentos;
+    }
+
+    public void setPagamentos(List<Pagamento> pagamentos) {
+        this.pagamentos = pagamentos;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
 
 
-	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID")
-	private long id;
-		
-//	private List<Item> listaItens;
-		
-	private Date data;
-	
-	@ManyToOne
-	private Mesa mesa;
-	
-	@Enumerated(EnumType.ORDINAL)
-	private TipoPedido tipo;
-	
-	@Enumerated(EnumType.ORDINAL)
-	private StatusPedido status;
-	
-	private double total;
-	
-	@ManyToOne
-	private Garcon garcon;
-	
-	@OneToMany
-	private List<Item> items;
-	
-	public Pedido() {
-		// TODO Auto-generated constructor stub
-		items = new ArrayList<Item>();
-	}
+    @Override
+    public String toString() {
 
-
-
-
-
-	public TipoPedido getTipo() {
-		return tipo;
-	}
-
-
-
-
-
-	public void setTipo(TipoPedido tipo) {
-		this.tipo = tipo;
-	}
-
-
-
-
-
-	public Date getData() {
-		return data;
-	}
-
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-
-	public Mesa getMesa() {
-		return mesa;
-	}
-
-
-	public void setMesa(Mesa mesa) {
-		this.mesa = mesa;
-	}
-
-
-	public StatusPedido getStatus() {
-		return status;
-	}
-
-
-	public void setStatus(StatusPedido status) {
-		this.status = status;
-	}
-
-
-	public double getTotal() {
-		return total;
-	}
-
-
-	public void setTotal(double total) {
-		this.total = total;
-	}
-
-
-	public Garcon getGarcon() {
-		return garcon;
-	}
-
-
-	public void setGarcon(Garcon garcon) {
-		this.garcon = garcon;
-	}
-	
-	public List<Item> getItems() {
-		return items;
-	}
-
-
-	public void setItems(List<Item> items) {
-		this.items = items;
-	}
-
-
-	public long getId() {
-		return id;
-	}
-
-
-	@Override
-	public String toString() {
-		
-		return String.valueOf(id);
-	}
-	
-	
-		
-
+        return String.valueOf(id);
+    }
 }

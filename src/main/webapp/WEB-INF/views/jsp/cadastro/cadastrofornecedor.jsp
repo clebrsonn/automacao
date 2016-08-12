@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-    <h3>Cadastro de Fornecedor</h3>
+    <h2>Cadastro de Fornecedor</h2>
 
     <div id="form">
         <form id="formFornecedor" action="add" method="POST">
