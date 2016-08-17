@@ -1,5 +1,7 @@
 package com.teccsoluction.sushi.entidade;
 
+import com.teccsoluction.sushi.util.OrigemPedido;
+import com.teccsoluction.sushi.util.StatusPedido;
 import com.teccsoluction.sushi.util.TipoPedido;
 
 import java.util.ArrayList;
@@ -16,11 +18,26 @@ public class PedidoVenda extends Pedido {
     @JoinColumn
     private Cliente cliente;
     
+    
+    // VENDA OOU COMPRA
+    @Enumerated(EnumType.ORDINAL)
+    private TipoPedido tipo;
+    
+    
+    // VENDA OOU COMPRA
+    @Enumerated(EnumType.ORDINAL)
+    private OrigemPedido origempedido;
+    
+    
     //LISTA DE ITENS DO PEDIDO DE VENDA
 //    @OneToMany
 //    private List<Item> listaItensVenda;
-    
-    //lista de devoluÃ§Ãµes de compra
+
+
+
+
+
+	//lista de devoluções de compra
     @OneToMany(mappedBy="pedidoVenda")
     private List<DevolucaoVenda> listaDevolucao;
     
@@ -28,13 +45,36 @@ public class PedidoVenda extends Pedido {
     
     
 
-    //CONSTRUTOR PADRAO
+    //CONSTRUTOR PADRÃO
     public PedidoVenda() {
     	
     	listaDevolucao = new ArrayList<>(); 
+    	tipo.VENDA.values();
     }
 
 
+    
+    public TipoPedido getTipo() {
+//    	TipoPedido tipovenda = tipo.VENDA;
+		return tipo;
+	}
+
+	public void setTipo(TipoPedido tipo) {
+		this.tipo = tipo;
+	}
+
+
+
+	public OrigemPedido getOrigemPedido() {
+		
+		return origempedido;
+	}
+
+
+
+	public void setOrigemPedido(OrigemPedido origem) {
+		this.origempedido = origem;
+	}
 
     public Cliente getCliente() {
         return cliente;

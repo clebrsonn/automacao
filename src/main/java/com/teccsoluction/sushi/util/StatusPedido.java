@@ -4,7 +4,7 @@ import java.util.List;
 
 public enum StatusPedido {
 	
-	AGUARDANDO_PREPARACAO, PENDENTE,CANCELADO;
+	AGUARDANDO_PREPARACAO, PENDENTE,CANCELADO,PRONTO;
 
 	
 	StatusPedido() {

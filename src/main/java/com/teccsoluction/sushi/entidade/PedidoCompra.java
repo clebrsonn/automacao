@@ -12,7 +12,8 @@ public class PedidoCompra extends Pedido {
     @JoinColumn
     private Fornecedor fornecedor;
 
-    @OneToOne(mappedBy = "pedidoCompra")
+    @OneToOne(orphanRemoval = true)
+    @JoinColumn
     private Recebimento recebimento;
 
     @OneToMany(mappedBy = "pedidoCompra")
