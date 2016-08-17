@@ -23,6 +23,8 @@ public abstract class Pedido {
 
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
+    
+    
 
     private double total;
 

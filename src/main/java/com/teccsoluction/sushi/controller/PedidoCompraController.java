@@ -1,18 +1,33 @@
 package com.teccsoluction.sushi.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
+import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.teccsoluction.sushi.dao.FornecedorDAO;
+import com.teccsoluction.sushi.dao.ProdutoDAO;
+import com.teccsoluction.sushi.dao.generic.ItemDAO;
 import com.teccsoluction.sushi.dao.generic.PedidoCompraDAO;
-
+import com.teccsoluction.sushi.entidade.Fornecedor;
+import com.teccsoluction.sushi.entidade.Item;
 import com.teccsoluction.sushi.entidade.PedidoCompra;
+import com.teccsoluction.sushi.entidade.PedidoVenda;
+import com.teccsoluction.sushi.entidade.Produto;
 import com.teccsoluction.sushi.framework.AbstractController;
-
+import com.teccsoluction.sushi.framework.AbstractEditor;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
+import com.teccsoluction.sushi.util.StatusPedido;
+import com.teccsoluction.sushi.util.TipoPedido;
 
 
 
@@ -24,8 +39,20 @@ public class PedidoCompraController extends AbstractController<PedidoCompra> {
 	private
 	final
 	AbstractEntityDao<PedidoCompra> pedidoCompraDao;
-//	private
-//	AbstractEntityDao<Mesa> mesaDao;
+	
+	
+	private
+	final
+	AbstractEntityDao<Fornecedor> fornecedorDao;
+	
+	private
+	final
+	AbstractEntityDao<Item> itemDao;
+	
+	
+	private
+	final
+	AbstractEntityDao<Produto> produtopedidovendaDao;
 //	private	
 //	AbstractEntityDao<Garcon> garconDao;
 		
@@ -40,11 +67,14 @@ public class PedidoCompraController extends AbstractController<PedidoCompra> {
 //	}
 	
 	@Autowired
-	public PedidoCompraController(PedidoCompraDAO dao){
+	public PedidoCompraController(PedidoCompraDAO dao, FornecedorDAO daofornecedor,ItemDAO daoitem,ProdutoDAO produtoDao){
 		
 		super("pedidocompra");
 		
 		this.pedidoCompraDao= dao;
+		this.fornecedorDao= daofornecedor;
+		this.itemDao = daoitem;
+		this.produtopedidovendaDao = produtoDao;
 
 	}
 
@@ -57,34 +87,96 @@ public class PedidoCompraController extends AbstractController<PedidoCompra> {
 	}  
 
 	
-//	  @InitBinder
-//    protected void initBinder(HttpServletRequest request,  ServletRequestDataBinder binder) {
-//
-//        binder.registerCustomEditor(Mesa.class, new AbstractEditor<Mesa>(this.mesaDao){
-//        });
-//
-//        binder.registerCustomEditor(Garcon.class, new AbstractEditor<Garcon>(this.garconDao) {
-//        });
-//
-//
-//    }
+	  @InitBinder
+    protected void initBinder(HttpServletRequest request,  ServletRequestDataBinder binder) {
+
+        binder.registerCustomEditor(Fornecedor.class, new AbstractEditor<Fornecedor>(this.fornecedorDao){
+        });
+
+        binder.registerCustomEditor(Item.class, new AbstractEditor<Item>(this.itemDao) {
+        });
+
+
+    }
 	  
 	    @ModelAttribute
 	    public void addAttributes(Model model) {
 
-//	        List<Garcon> garconList =garconDao.getAll();
+	        List<Fornecedor> fornecedorList =fornecedorDao.getAll();
 //	        List<Mesa> mesaList =mesaDao.getAll();
-//	       
-//	        TipoPedido[] tipoList  = TipoPedido.values();	
-//			StatusPedido[]tipoStatusList = StatusPedido.values();
-//			
-//	        model.addAttribute("garconList", garconList);
+	       
+	        TipoPedido[] tipoList  = TipoPedido.values();	
+			StatusPedido[]tipoStatusList = StatusPedido.values();
+			
+	        model.addAttribute("fornecedorList", fornecedorList);
 //	        model.addAttribute("mesaList", mesaList);
-//	        model.addAttribute("tipoList", tipoList);
-//	        model.addAttribute("tipoStatusList", tipoStatusList);
+	        model.addAttribute("tipoList", tipoList);
+	        model.addAttribute("tipoStatusList", tipoStatusList);
 	    }
 
+	    @RequestMapping(value = "additemcompra", method = RequestMethod.GET)
+		public ModelAndView  additemcompra(HttpServletRequest request){
+	    	
+	    	
+	    	long idf = Long.parseLong(request.getParameter("id"));
+	    	ModelAndView additemcompra = new ModelAndView("additemcompra");
+	    	List<Item> itemList = itemDao.getAllItens(idf);
+	    	
+	    	PedidoCompra pc = pedidoCompraDao.PegarPorId(idf);
+	    	
+	    	additemcompra.addObject("itemList", itemList);
+	    	
+	    	additemcompra.addObject("pc", pc);
 
+	    	
+	
+			return additemcompra;
+		}
+	    
+	    
+	    @RequestMapping(value = "/movimentacaopedidocompralista", method = RequestMethod.GET)
+		public ModelAndView  pedidocompralist(){
+	    	
+	    	
+	    	
+	    	ModelAndView movimentacaopedidocompralista = new ModelAndView("movimentacaopedidocompralista");
+	    	List<PedidoCompra> pedidoCompraList = pedidoCompraDao.getAll() ;
+	    	
+	    	movimentacaopedidocompralista.addObject("pedidoCompraList", pedidoCompraList);
+	    	
+	    	
+			
+			
+			
+			return movimentacaopedidocompralista;
+		}
+	    
+	    @RequestMapping(value = "AddItemCompra", method = RequestMethod.POST)
+		public ModelAndView  additemcompraa(HttpServletRequest request){
+	    	
+	    	
+	    	long idf = Long.parseLong(request.getParameter("idpedido"));
+	    	ModelAndView additemvenda = new ModelAndView("additemcompra");
+	    	
+	    	PedidoCompra pc = pedidoCompraDao.PegarPorId(idf);
+	    	
+	    	Item item = new Item();
+	    	
+	    	item.setPedido(pc);
+	    	
+	    	itemDao.add(item);
+	    	
+	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
+	    	List<Item> itemList = itemDao.getAllItens(idf);
+	    	
+	    	additemvenda.addObject("itemList", itemList);
+	    	additemvenda.addObject("produtoList", produtoList);
+	    	additemvenda.addObject("pc", pc);
 
+			
+			return additemvenda;
+		}
+	    
+	    
 
 }

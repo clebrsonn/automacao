@@ -22,7 +22,7 @@ public class Composicao extends Produto implements Serializable {
 	@Column(name="nome")
 	private String nome;
 	
-	// itens que formam uma composicao
+	// itens que formam uma composição
 	@OneToMany
 	private List<Item>listaItensComposicao;
 	

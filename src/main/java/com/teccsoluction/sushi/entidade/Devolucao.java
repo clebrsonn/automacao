@@ -24,7 +24,7 @@ public abstract class Devolucao implements Serializable {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date data;
-    
+
     private String status;
 
 

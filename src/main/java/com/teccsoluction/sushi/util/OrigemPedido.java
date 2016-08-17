@@ -2,12 +2,12 @@ package com.teccsoluction.sushi.util;
 
 import java.util.List;
 
-public enum TipoPedido {
+public enum OrigemPedido {
 	
-	COMPRA, VENDA;
+	BALCAO, MESA,INTERNET,TELEVENDAS;
 
 	
-	TipoPedido() {
+	OrigemPedido() {
 		// TODO Auto-generated constructor stub
 		
 //	}
