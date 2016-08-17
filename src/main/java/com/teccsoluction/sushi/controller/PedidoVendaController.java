@@ -10,31 +10,54 @@ import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.teccsoluction.sushi.dao.ProdutoDAO;
 import com.teccsoluction.sushi.dao.generic.GarconDAO;
+import com.teccsoluction.sushi.dao.generic.ItemDAO;
 import com.teccsoluction.sushi.dao.generic.MesaDAO;
+import com.teccsoluction.sushi.dao.generic.PagamentoDAO;
 import com.teccsoluction.sushi.dao.generic.PedidoDAO;
 import com.teccsoluction.sushi.dao.generic.PedidoVendaDAO;
 import com.teccsoluction.sushi.entidade.Categoria;
 import com.teccsoluction.sushi.entidade.Fornecedor;
 import com.teccsoluction.sushi.entidade.Garcon;
+import com.teccsoluction.sushi.entidade.Item;
 import com.teccsoluction.sushi.entidade.Mesa;
+import com.teccsoluction.sushi.entidade.Pagamento;
 import com.teccsoluction.sushi.entidade.Pedido;
 import com.teccsoluction.sushi.entidade.PedidoVenda;
+import com.teccsoluction.sushi.entidade.Produto;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
+import com.teccsoluction.sushi.util.OrigemPedido;
 import com.teccsoluction.sushi.util.StatusPedido;
 import com.teccsoluction.sushi.util.TipoPedido;
 
 
 @Controller
-@RequestMapping(value = "pedidovenda")
+@RequestMapping(value = "pedidovenda/")
 public class PedidoVendaController extends AbstractController<PedidoVenda> {
 
 	
 	private
 	final
 	AbstractEntityDao<PedidoVenda> pedidoVendaDao;
+	
+	
+	private
+	final
+	AbstractEntityDao<Item> itempedidovendaDao;
+	
+	private
+	final
+	AbstractEntityDao<Produto> produtopedidovendaDao;
+	
+	private
+	final
+	AbstractEntityDao<Pagamento> pagamentopedidovendaDao;
 //	private
 //	AbstractEntityDao<Mesa> mesaDao;
 //	private	
@@ -51,26 +74,29 @@ public class PedidoVendaController extends AbstractController<PedidoVenda> {
 //	}
 	
 	 @Autowired
-	public PedidoVendaController(PedidoVendaDAO dao){
+	public PedidoVendaController(PedidoVendaDAO dao,ItemDAO daoitem,ProdutoDAO produtodao,PagamentoDAO pagamentodao){
 	
 	super("pedidovenda");
 	this.pedidoVendaDao = dao;
+	this.itempedidovendaDao= daoitem;
+	this.produtopedidovendaDao = produtodao;
+	this.pagamentopedidovendaDao = pagamentodao;
 
 }
 
 
 	
-//	  @InitBinder
-//    protected void initBinder(HttpServletRequest request,  ServletRequestDataBinder binder) {
-//
-//        binder.registerCustomEditor(Mesa.class, new AbstractEditor<Mesa>(this.mesaDao){
-//        });
+	  @InitBinder
+    protected void initBinder(HttpServletRequest request,  ServletRequestDataBinder binder) {
+
+        binder.registerCustomEditor(Item.class, new AbstractEditor<Item>(this.itempedidovendaDao){
+        });
 //
 //        binder.registerCustomEditor(Garcon.class, new AbstractEditor<Garcon>(this.garconDao) {
 //        });
-//
-//
-//    }
+
+
+    }
 	  
 
 @Override
@@ -83,21 +109,159 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 	
 	    @ModelAttribute
 	    public void addAttributes(Model model) {
-
-//	        List<Garcon> garconList =garconDao.getAll();
+//
+	        List<PedidoVenda> pedidoVendaList = pedidoVendaDao.getAll();
 //	        List<Mesa> mesaList =mesaDao.getAll();
 //	       
-//	        TipoPedido[] tipoList  = TipoPedido.values();	
-//			StatusPedido[]tipoStatusList = StatusPedido.values();
+	        TipoPedido[] tipoList  = TipoPedido.values();	
+			StatusPedido[]tipoStatusList = StatusPedido.values();
+			
+			OrigemPedido[] origemPedidoList = OrigemPedido.values();
 //			
-//	        model.addAttribute("garconList", garconList);
-//	        model.addAttribute("mesaList", mesaList);
-//	        model.addAttribute("tipoList", tipoList);
-//	        model.addAttribute("tipoStatusList", tipoStatusList);
+	        model.addAttribute("pedidoVendaList", pedidoVendaList);
+	        model.addAttribute("origemPedidoList", origemPedidoList);
+	        model.addAttribute("tipoList", tipoList);
+	        model.addAttribute("tipoStatusList", tipoStatusList);
 	    }
 
+	    
+	    @RequestMapping(value = "additemvenda", method = RequestMethod.GET)
+		public ModelAndView  additemvenda(HttpServletRequest request){
+	    	
+	    	
+	    	Long idf = Long.parseLong(request.getParameter("id"));
+	    	ModelAndView additemvenda = new ModelAndView("additemvenda");
+	    	
+	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
+	    	
+	    	
+	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
+	    	List<Item> itemList = itempedidovendaDao.getAllItens(idf);
+	    	
+	    	additemvenda.addObject("itemList", itemList);
+	    	additemvenda.addObject("produtoList", produtoList);
+	    	additemvenda.addObject("pv", pv);
 
+			
+			return additemvenda;
+		}
+	    
+	    
+	    @RequestMapping(value = "AddItemVenda", method = RequestMethod.POST)
+		public ModelAndView  additemvendaa(HttpServletRequest request){
+	    	
+	    	
+	    	long idf = Long.parseLong(request.getParameter("idpedido"));
+	    	ModelAndView additemvenda = new ModelAndView("additemvenda");
+	    	
+	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
+	    	
+	    	Item item = new Item();
+	    	
+	    	item.setPedido(pv);
+	    	
+	    	itempedidovendaDao.add(item);
+	    	
+	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
+	    	List<Item> itemList = itempedidovendaDao.getAllItens(idf);
+	    	
+	    	additemvenda.addObject("itemList", itemList);
+	    	additemvenda.addObject("produtoList", produtoList);
+	    	additemvenda.addObject("pv", pv);
 
- 
+			
+			return additemvenda;
+		}
+	    
+	    // carrega a pagina de add forma
+	    @RequestMapping(value = "addformapagamento", method = RequestMethod.GET)
+		public ModelAndView  addFormaPagamento(HttpServletRequest request){
+	    	
+	    	
+	    	Long idf = Long.parseLong(request.getParameter("id"));
+	    	ModelAndView addformapagamento = new ModelAndView("addformapagamento");
+	    	
+	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
+	    	
+	    	
+	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
+	    	List<Item> itemList = itempedidovendaDao.getAllItens(idf);
+	    	List<Pagamento>pagamentoList = pagamentopedidovendaDao.getAllPagamento(idf);
+
+	    	
+	    	addformapagamento.addObject("itemList", itemList);
+	    	addformapagamento.addObject("produtoList", produtoList);
+	    	addformapagamento.addObject("pagamentoList", pagamentoList);
+
+	    	addformapagamento.addObject("pv", pv);
+
+			
+			return addformapagamento;
+		}
+	    
+	    // salva  forma pagamento
+	    @RequestMapping(value = "AddPagamentoVenda", method = RequestMethod.POST)
+		public ModelAndView  SalvarFormaPagamento(HttpServletRequest request){
+	    	
+	    	
+	    	long idf = Long.parseLong(request.getParameter("idpedido"));
+	    	ModelAndView addformapagamento = new ModelAndView("addformapagamento");
+	    	
+	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
+	    	
+	    	Pagamento pg = new Pagamento();
+	    	pg.setPedido(pv);
+	    	
+	    	
+	    	pagamentopedidovendaDao.add(pg);
+	    	
+	    	
+	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
+	    	List<Item> itemList = itempedidovendaDao.getAllItens(idf);
+	    	List<Pagamento>pagamentoList = pagamentopedidovendaDao.getAllPagamento(idf);
+
+	    	
+	    	addformapagamento.addObject("itemList", itemList);
+	    	addformapagamento.addObject("produtoList", produtoList);
+	    	addformapagamento.addObject("pagamentoList", pagamentoList);
+
+	    	addformapagamento.addObject("pv", pv);
+
+			
+			return addformapagamento;
+		}
+	    
+	    
+	    // salva  forma pagamento
+	    @RequestMapping(value = "finalizacaovenda", method = RequestMethod.GET)
+		public ModelAndView  FinalizarVenda(HttpServletRequest request){
+	    	
+	    	
+	    	long idf = Long.parseLong(request.getParameter("id"));
+	    	ModelAndView finalizacaovenda = new ModelAndView("finalizacaovenda");
+	    	
+//	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
+//	    	
+//	    	Pagamento pg = new Pagamento();
+//	    	pg.setPedido(pv);
+	    	
+	    	
+//	    	pagamentopedidovendaDao.add(pg);
+//	    	
+//	    	
+//	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
+//	    	List<Item> itemList = itempedidovendaDao.getAllItens(idf);
+//	    	List<Pagamento>pagamentoList = pagamentopedidovendaDao.getAllPagamento(idf);
+//
+//	    	
+//	    	finalizacaovenda.addObject("itemList", itemList);
+//	    	finalizacaovenda.addObject("produtoList", produtoList);
+//	    	finalizacaovenda.addObject("pagamentoList", pagamentoList);
+
+//	    	finalizacaovenda.addObject("pv", pv);
+
+			
+			return finalizacaovenda;
+		}
 
 }
