@@ -479,20 +479,36 @@
     </definition>
 
 
-    <definition name="edicaovenda" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaovenda.jsp"/>
+    <definition name="edicaocaixa" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaocaixa.jsp"/>
     </definition>
 
-    <definition name="edicaodevolucao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaodevolucao.jsp"/>
+    <definition name="edicaodevolucaocompra" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaodevolucaocompra.jsp"/>
+    </definition>
+    
+        <definition name="edicaodevolucaovenda" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaodevolucaovenda.jsp"/>
+    </definition>
+    
+        <definition name="edicaopedidovenda" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaopedidovenda.jsp"/>
     </definition>
 
-    <definition name="edicaocompra" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaocompra.jsp"/>
+    <definition name="edicaopedidocompra" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaopedidocompra.jsp"/>
     </definition>
 
     <definition name="edicaorecebimento" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaorecebimento.jsp"/>
+    </definition>
+    
+        <definition name="edicaocotacao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaocotacao.jsp"/>
+    </definition>
+    
+            <definition name="edicaoempresa" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaoempresa.jsp"/>
     </definition>
 
 
