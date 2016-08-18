@@ -21,8 +21,8 @@
 		<button onclick="window.location.href='promocao/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/promocao.png">promocao</p></button>
 		<button onclick="window.location.href='reserva/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/reserva.png">reservas</p></button>
 		<button onclick="window.location.href='pagamento/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/forma_pagamento.png">Pagamento</p></button>
-		<button onclick="window.location.href='categoria/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/mesa_disp.png">mesas</p></button>
-		<button onclick="window.location.href='categoria/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/mesa_disp.png">mesas</p></button>
+		<button onclick="window.location.href='empresa/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/mesa_disp.png">Empresa</p></button>
+		<button onclick="window.location.href='caixa/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/mesa_disp.png">Caixa</p></button>
 
 
 </div>

@@ -152,9 +152,23 @@
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrorecebimento.jsp"/>
     </definition>
 
-    <definition name="cadastrorecebimento2" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrorecebimento.jsp"/>
+    <definition name="cadastrorecebimentocompra" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrorecebimentocompra.jsp"/>
     </definition>
+
+
+    <definition name="cadastroempresa" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastroempresa.jsp"/>
+    </definition>
+    
+        <definition name="cadastrocaixa" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrocaixa.jsp"/>
+    </definition>
+    
+            <definition name="cadastrocotacao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrocotacao.jsp"/>
+    </definition>
+
 
     <!-- MOVIMENTAÇÃO  -->
     <definition name="movimentacao" extends="defaultTemplate">
@@ -287,6 +301,33 @@
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
     </definition>
+    
+        <definition name="movimentacaopedidovenda" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaopedidovenda.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+    
+        <definition name="movimentacaopedidocompra" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaopedidocompra.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
+
+
+        <definition name="movimentacaopedidocompralista" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaopedidocompralista.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+    
+            <definition name="movimentacaocotacao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaocotacao.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+
 
     <!--     MOVIMENTAÇÃO/ADD -->
 
@@ -299,6 +340,24 @@
 
     <definition name="additemvenda" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/add/additemvenda.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+    
+        <definition name="additemcompra" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/add/additemcompra.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+    
+            <definition name="additemcontacao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/add/additemcotacao.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
+    
+            <definition name="additemrecebimento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/add/additemrecebimento.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
     </definition>
