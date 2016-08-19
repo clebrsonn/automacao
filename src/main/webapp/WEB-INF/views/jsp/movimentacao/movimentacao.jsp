@@ -6,7 +6,7 @@
 		<h1 class="title">Movimentacao</h1>
 		
 		
-		<button onclick="window.location.href='caixa/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/vendas.png">vendas</p></button>
+		<button onclick="window.location.href='caixa/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/vendas.png">Caixa</p></button>
 		<button onclick="window.location.href='recebimento/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/recebimento.png">recebimento </p></button>
 		<button onclick="window.location.href='devolucao/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/devolucao.png">devolucao </p></button>
 		<button onclick="window.location.href='movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/estoque.png">estoque</p></button>
@@ -33,6 +33,8 @@
 		<button onclick="window.location.href='pedido/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/pedidoo.png">Pedidos</p></button>
 		<button onclick="window.location.href='cozinha/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/cozinha.png">Cozinha</p></button>
 		<button onclick="window.location.href='delivery/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/entregaa.png">Entregas</p></button>
+		<button onclick="window.location.href='empresa/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/entregaa.png">Empresa</p></button>
+<%-- 		<button onclick="window.location.href='caixa/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/entregaa.png">Caixa</p></button> --%>
 
 	
 </div>

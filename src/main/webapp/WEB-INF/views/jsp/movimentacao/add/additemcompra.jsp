@@ -7,13 +7,12 @@
 
 
 	<div id="formAddItem">
-		<form id="formAdd" action="additemcompra" method="GET">
+		<form id="formAdd" action="AddItemCompra" method="POST">
 
 
-			ID do Pedido de Compra: <input name="idpedido" type="text"
-				class="idpedido" /> Tipo: <input name="tipo" type="text"
-				class="tipo" /> Total: <input id="totalpedido" name="total"
-				type="text" class="totalpedido" />
+ID do Pedido de Compra: <input name="idpedidocompra" type="text"class="idpedido" value="${pc.id }" />
+<%-- 			 	  Tipo: <input name="tipo" type="text"	class="tipo" value="${pc.tipo }"/>  --%>
+			 	 Total: <input id="totalpedido" name="total"type="text" class="totalpedido" value="${pc.total }"/>
 
 			<p></p>
 

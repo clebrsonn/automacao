@@ -51,7 +51,7 @@
 										&nbsp;&nbsp;&nbsp;&nbsp; <a
 										href="cadastrovenda2?id=${pedidocompra.id}"
 										class="icon-40 info-tooltip" title="aaa"></a> <a
-										href="additemcompra?id=${pedidocompra.id}"
+										href="additemcompra?idpedidocompra=${pedidocompra.id}"
 										class="icon-30 info-tooltip" title="Adicionar Item ao Pedido"></a>
 										&nbsp;&nbsp;&nbsp;&nbsp; <a
 										href="delete?id=${pedidocompra.id}"
@@ -75,7 +75,7 @@
 										&nbsp;&nbsp;&nbsp;&nbsp; <a
 										href="/delete?id=${pedidocompra.id}"
 										class="icon-40 info-tooltip" title="aaa"></a> <a
-										href="additemcompra?id=${pedidocompra.id}"
+										href="additemcompra?idpedidocompra=${pedidocompra.id}"
 										class="icon-30 info-tooltip" title="Adicionar Item ao Pedido"></a>
 										&nbsp;&nbsp;&nbsp;&nbsp; <a
 										href="delete?id=${pedidocompra.id}"

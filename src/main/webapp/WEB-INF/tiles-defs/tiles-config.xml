@@ -327,6 +327,12 @@
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
     </definition>
+    
+                <definition name="movimentacaoempresa" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoempresa.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
 
 
     <!--     MOVIMENTAÇÃO/ADD -->
@@ -350,7 +356,7 @@
 
     </definition>
     
-            <definition name="additemcontacao" extends="defaultTemplate">
+            <definition name="additemcotacao" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/add/additemcotacao.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
