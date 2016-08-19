@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar  target/ci-spring-boot-0.0.1-SNAPSHOT.jar -Dspring.profiles.active=prod
+web:  java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT target/*.war
