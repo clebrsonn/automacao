@@ -190,6 +190,16 @@
             <version>4.7</version>
             <scope>test</scope>
         </dependency>
+
+        <!--Postgres-->
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4.1209.jre7</version>
+        </dependency>
+
+
     </dependencies>
     <build>
         <plugins>
@@ -236,7 +246,9 @@
                 <executions>
                     <execution>
                         <phase>package</phase>
-                        <goals><goal>copy</goal></goals>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
@@ -250,7 +262,6 @@
                     </execution>
                 </executions>
             </plugin>
-
 
 
         </plugins>
