@@ -4,7 +4,6 @@ package com.teccsoluction.sushi.entidade;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 
 @Entity
@@ -36,7 +35,7 @@ public class Empresa implements Serializable {
     @Column(name = "LOGO")
     private String logo;
 
-    @Column(name="DATAABERTURA")
+    @Column(name = "DATAABERTURA")
     private Date dataabertura;
 
 
@@ -45,7 +44,6 @@ public class Empresa implements Serializable {
     public Empresa() {
         // TODO Auto-generated constructor stub
     }
-
 
 
     //GETTERS AND SETTERS
@@ -60,11 +58,9 @@ public class Empresa implements Serializable {
     }
 
 
-
     public String getNomefantasia() {
         return nomefantasia;
     }
-
 
 
     public void setNomefantasia(String nomefantasia) {
@@ -72,11 +68,9 @@ public class Empresa implements Serializable {
     }
 
 
-
     public String getRazaosocial() {
         return razaosocial;
     }
-
 
 
     public void setRazaosocial(String razaosocial) {
@@ -84,11 +78,9 @@ public class Empresa implements Serializable {
     }
 
 
-
     public String getCnpj() {
         return cnpj;
     }
-
 
 
     public void setCnpj(String cnpj) {
@@ -96,11 +88,9 @@ public class Empresa implements Serializable {
     }
 
 
-
     public String getLogo() {
         return logo;
     }
-
 
 
     public void setLogo(String logo) {
@@ -108,11 +98,9 @@ public class Empresa implements Serializable {
     }
 
 
-
     public Date getDataabertura() {
         return dataabertura;
     }
-
 
 
     public void setDataabertura(Date dataabertura) {
@@ -122,7 +110,6 @@ public class Empresa implements Serializable {
     public String getInscricaoestadual() {
         return inscricaoestadual;
     }
-
 
 
     public void setInscricaoestadual(String inscricaoestadual) {
