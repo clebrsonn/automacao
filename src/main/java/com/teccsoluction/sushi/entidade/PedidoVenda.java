@@ -37,7 +37,7 @@ public class PedidoVenda extends Pedido {
 
 
 
-	//lista de devoluções de compra
+	//lista de devolucoes de compra
     @OneToMany(mappedBy="pedidoVenda")
     private List<DevolucaoVenda> listaDevolucao;
     

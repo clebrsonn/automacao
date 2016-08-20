@@ -129,7 +129,7 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 		public ModelAndView  additemvenda(HttpServletRequest request){
 	    	
 	    	
-	    	Long idf = Long.parseLong(request.getParameter("id"));
+	    	Long idf = Long.parseLong(request.getParameter("idpedidovenda"));
 	    	ModelAndView additemvenda = new ModelAndView("additemvenda");
 	    	
 	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
@@ -151,7 +151,7 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 		public ModelAndView  additemvendaa(HttpServletRequest request){
 	    	
 	    	
-	    	long idf = Long.parseLong(request.getParameter("idpedido"));
+	    	long idf = Long.parseLong(request.getParameter("idpedidovenda"));
 	    	ModelAndView additemvenda = new ModelAndView("additemvenda");
 	    	
 	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);

@@ -118,7 +118,7 @@ public class PedidoCompraController extends AbstractController<PedidoCompra> {
 		public ModelAndView  additemcompra(HttpServletRequest request){
 	    	
 	    	
-	    	long idf = Long.parseLong(request.getParameter("id"));
+	    	long idf = Long.parseLong(request.getParameter("idpedidocompra"));
 	    	ModelAndView additemcompra = new ModelAndView("additemcompra");
 	    	List<Item> itemList = itemDao.getAllItens(idf);
 	    	
@@ -155,7 +155,7 @@ public class PedidoCompraController extends AbstractController<PedidoCompra> {
 		public ModelAndView  additemcompraa(HttpServletRequest request){
 	    	
 	    	
-	    	long idf = Long.parseLong(request.getParameter("idpedido"));
+	    	long idf = Long.parseLong(request.getParameter("idpedidocompra"));
 	    	ModelAndView additemvenda = new ModelAndView("additemcompra");
 	    	
 	    	PedidoCompra pc = pedidoCompraDao.PegarPorId(idf);

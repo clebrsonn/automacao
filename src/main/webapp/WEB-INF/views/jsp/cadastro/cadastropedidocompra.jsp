@@ -8,20 +8,21 @@
 
     <div id="form">
         <form id="formPedido" action="add" method="POST">
+           
             <p>Data:</p>
             <input name="data" type="text" class="inp-form"/>
 
-            <p>Tipo de Pedido:</p>
-            <select name="tipo" id="files" class="inp-form">
-                <optgroup label="Tipo de Pedido">
+<!--             <p>Tipo de Pedido:</p> -->
+<!--             <select name="tipo" id="files" class="inp-form"> -->
+<!--                 <optgroup label="Tipo de Pedido"> -->
 
-                    <c:forEach var="garcon" items="${tipoList}">
-                        <option value="${garcon.id}">${garcon.nome}</option>
-                    </c:forEach>
+<%--                     <c:forEach var="garcon" items="${tipoList}"> --%>
+<%--                         <option value="${garcon.id}">${garcon.nome}</option> --%>
+<%--                     </c:forEach> --%>
 
 
-                </optgroup>
-            </select>
+<!--                 </optgroup> -->
+<!--             </select> -->
 
 
             <p>Mesa:</p>

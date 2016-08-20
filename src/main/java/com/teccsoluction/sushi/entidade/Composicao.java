@@ -23,6 +23,7 @@ public class Composicao extends Produto implements Serializable {
 	private String nome;
 	
 	// itens que formam uma composicao
+	
 	@OneToMany
 	private List<Item>listaItensComposicao;
 	
