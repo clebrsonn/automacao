@@ -14,7 +14,7 @@
 					<!--                       <th class="table-header-repeat line-left minwidth-1"><a>Código de Barras</a></th> -->
 					<th class="table-header-repeat line-left minwidth-1"><a>Data
 					</a></th>
-					<!--                    <th class="table-header-repeat line-left minwidth-1"><a>Tipo </a></th>  -->
+                   <th class="table-header-repeat line-left minwidth-1"><a>Fornecedor</a></th> 
 					<!--             <th class="table-header-repeat line-left minwidth-1"><a>Mesa</a></th>  -->
 					<th class="table-header-repeat line-left minwidth-1"><a>Status</a></th>
 					<!--               <th class="table-header-repeat line-left minwidth-1"><a>Garçon</a></th> -->
@@ -38,7 +38,7 @@
 									<td><input type="checkbox" /></td>
 									<td>${pedidocompra.id}</td>
 									<td>${pedidocompra.data}</td>
-									<%--                      <td>${pedidocompra.tipo}</td> --%>
+				                     <td>${pedidocompra.fornecedor}</td>
 									<%--                     <td>${pedidovenda.mesa}</td> --%>
 									<td>${pedidocompra.status}</td>
 									<%--                     <td>${pedidovenda.garcon}</td>                    --%>
@@ -46,15 +46,15 @@
 
 
 									<td class="options-width"><a
-										href="edicao?id=${pedidocompra.id}"
-										class="icon-1 info-tooltip" title="Edit"></a>
+										href='${pageContext.request.contextPath}/pedidocompra/edicao?id=${pedidocompra.id}' class="icon-1 info-tooltip"
+										title="Edit"></a>
 										&nbsp;&nbsp;&nbsp;&nbsp; <a
 										href="cadastrovenda2?id=${pedidocompra.id}"
 										class="icon-40 info-tooltip" title="aaa"></a> <a
 										href="additemcompra?idpedidocompra=${pedidocompra.id}"
 										class="icon-30 info-tooltip" title="Adicionar Item ao Pedido"></a>
 										&nbsp;&nbsp;&nbsp;&nbsp; <a
-										href="delete?id=${pedidocompra.id}"
+										href='${pageContext.request.contextPath}/pedidocompra/delete?id=${pedidocompra.id}'
 										class="icon-5 info-tooltip" title="ccc"></a></td>
 								</tr>
 							</c:when>
@@ -64,21 +64,21 @@
 
 									<td>${pedidocompra.id}</td>
 									<td>${pedidocompra.data}</td>
-									<%--                        <td>${pedidocompra.tipo}</td> --%>
+			                       <td>${pedidocompra.fornecedor}</td>
 									<%--                     <td>${pedidovenda.mesa}</td> --%>
 									<td>${pedidocompra.status}</td>
 									<%--                     <td>${pedidovenda.garcon}</td>                    --%>
 									<td>${pedidocompra.total}</td>
 									<td class="options-width"><a
-										href="edicao?id=${pedidocompra.id}"
-										class="icon-1 info-tooltip" title="Edit"></a>
+										href='${pageContext.request.contextPath}/pedidocompra/edicao?id=${pedidocompra.id}' class="icon-1 info-tooltip"
+										title="Edit"></a>
 										&nbsp;&nbsp;&nbsp;&nbsp; <a
 										href="/delete?id=${pedidocompra.id}"
 										class="icon-40 info-tooltip" title="aaa"></a> <a
 										href="additemcompra?idpedidocompra=${pedidocompra.id}"
 										class="icon-30 info-tooltip" title="Adicionar Item ao Pedido"></a>
 										&nbsp;&nbsp;&nbsp;&nbsp; <a
-										href="delete?id=${pedidocompra.id}"
+										href='${pageContext.request.contextPath}/pedidocompra/delete?id=${pedidocompra.id}'
 										class="icon-5 info-tooltip" title="ccc"></a></td>
 								</tr>
 							</c:when>
