@@ -14,7 +14,7 @@ public class Empresa implements Serializable {
     /**
      *
      */
-    private static final long serialVersionUID = 123L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,16 +26,16 @@ public class Empresa implements Serializable {
 
     @Column(name = "RAZAO_SOCIAL")
     private String razaosocial;
-    
+
     @Column(name = "CNPJ")
     private String cnpj;
-    
+
     @Column(name = "INSCRICAOESTADUAL")
     private String inscricaoestadual;
-    
-	@Column(name = "LOGO")
+
+    @Column(name = "LOGO")
     private String logo;
-    
+
     @Column(name="DATAABERTURA")
     private Date dataabertura;
 
@@ -61,77 +61,77 @@ public class Empresa implements Serializable {
 
 
 
-	public String getNomefantasia() {
-		return nomefantasia;
-	}
+    public String getNomefantasia() {
+        return nomefantasia;
+    }
 
 
 
-	public void setNomefantasia(String nomefantasia) {
-		this.nomefantasia = nomefantasia;
-	}
+    public void setNomefantasia(String nomefantasia) {
+        this.nomefantasia = nomefantasia;
+    }
 
 
 
-	public String getRazaosocial() {
-		return razaosocial;
-	}
+    public String getRazaosocial() {
+        return razaosocial;
+    }
 
 
 
-	public void setRazaosocial(String razaosocial) {
-		this.razaosocial = razaosocial;
-	}
+    public void setRazaosocial(String razaosocial) {
+        this.razaosocial = razaosocial;
+    }
 
 
 
-	public String getCnpj() {
-		return cnpj;
-	}
+    public String getCnpj() {
+        return cnpj;
+    }
 
 
 
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
-	}
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
 
 
 
-	public String getLogo() {
-		return logo;
-	}
+    public String getLogo() {
+        return logo;
+    }
 
 
 
-	public void setLogo(String logo) {
-		this.logo = logo;
-	}
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
 
 
 
-	public Date getDataabertura() {
-		return dataabertura;
-	}
+    public Date getDataabertura() {
+        return dataabertura;
+    }
 
 
 
-	public void setDataabertura(Date dataabertura) {
-		this.dataabertura = dataabertura;
-	}
+    public void setDataabertura(Date dataabertura) {
+        this.dataabertura = dataabertura;
+    }
 
-	  public String getInscricaoestadual() {
-			return inscricaoestadual;
-		}
+    public String getInscricaoestadual() {
+        return inscricaoestadual;
+    }
 
 
 
-		public void setInscricaoestadual(String inscricaoestadual) {
-			this.inscricaoestadual = inscricaoestadual;
-		}
-		
-	    @Override
-	    public String toString() {
-	        return nomefantasia;
-	    }
+    public void setInscricaoestadual(String inscricaoestadual) {
+        this.inscricaoestadual = inscricaoestadual;
+    }
+
+    @Override
+    public String toString() {
+        return nomefantasia;
+    }
 
 }
