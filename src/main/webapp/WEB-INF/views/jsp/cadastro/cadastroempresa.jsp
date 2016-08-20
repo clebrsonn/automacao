@@ -7,23 +7,10 @@
 
 
 	<div id="form">
-		<form id="formEmpresa" action="add" method="POST">
-		
-		
+		<form id="formGarcon" action="add" method="POST">
 			<p>Nome Fantasia:</p>
 			<input name="nomefantasia" type="text" class="inp-form" />
 
-			<p>Razao Social:</p>
-			<input name="razaosocial" type="text" class="inp-form" />
-
-			<p>CNPJ:</p>
-			<input name="cnpj" type="text" class="inp-form" />
-			
-			<p>Inscricao Estadual:</p>
-			<input name="inscricaoestadual" type="text" class="inp-form" />
-			
-				<p>Data Abertura:</p>
-			<input name="dataabertura" type="text" class="inp-form" />
 
 			<!--     <p>Líder do Projeto:</p> -->
 

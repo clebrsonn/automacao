@@ -49,6 +49,15 @@ public class Empresa implements Serializable {
 
     //GETTERS AND SETTERS
 
+    public String getNome() {
+        return nomefantasia;
+    }
+
+
+    public void setNome(String nome) {
+        this.nomefantasia = nome;
+    }
+
 
     public long getId() {
         return id;
@@ -58,6 +67,10 @@ public class Empresa implements Serializable {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return nomefantasia;
+    }
 
     public String getNomefantasia() {
         return nomefantasia;
