@@ -45,17 +45,11 @@
 
     </bean>
     -->
-
-    <bean class="java.net.URI" id="dbUrl">
-        <constructor-arg
-                value="postgres://efokvhahhfdahx:b_2t1PBrPZMHwxsvo32PiTlmsy@ec2-54-243-201-3.compute-1.amazonaws.com:5432/d5v7deca4t65j5"/>
-    </bean>
-
     <bean class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close" id="dataSource">
         <property name="driverClassName" value="org.postgresql.Driver"/>
         <property name="url"
-                  value="jdbc:postgresql://b_2t1PBrPZMHwxsvo32PiTlmsy@ec2-54-243-201-3.compute-1.amazonaws.com:5432/d5v7deca4t65j5"/>
+                  value="jdbc:postgresql://ec2-54-243-201-3.compute-1.amazonaws.com:5432/d5v7deca4t65j5"/>
         <property name="username" value="efokvhahhfdahx"/>
         <property name="password" value="b_2t1PBrPZMHwxsvo32PiTlmsy"/>
         <property name="maxActive" value="10"/>
