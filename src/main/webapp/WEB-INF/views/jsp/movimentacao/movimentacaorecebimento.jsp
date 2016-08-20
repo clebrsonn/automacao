@@ -95,7 +95,7 @@
             
             		<div id="botoes">
 				
-				<button class="button">Criar Pedido</button>
+				<button class="button">Criar Recebimento</button>
 							
 		
 		</div>
