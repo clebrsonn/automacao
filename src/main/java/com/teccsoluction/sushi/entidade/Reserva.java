@@ -16,7 +16,7 @@ public class Reserva implements Serializable {
     private static final long serialVersionUID = -1943901563720349308L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private long id;
 
