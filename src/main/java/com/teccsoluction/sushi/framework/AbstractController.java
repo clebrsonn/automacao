@@ -85,7 +85,7 @@ public abstract class AbstractController<Entity> {
     public ModelAndView editarEntity(HttpServletRequest request, Entity entity) {
 
 
-        Long idf = Long.parseLong(request.getParameter("id"));
+        long idf = Long.parseLong(request.getParameter("id"));
         getDao().editar(entity);
 
 

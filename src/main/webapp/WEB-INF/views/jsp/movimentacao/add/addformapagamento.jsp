@@ -7,7 +7,7 @@
 	
 	
 	<div id="formAddItem">
-	<form id="formAdd" action="movimentacaopagamento/addformapagamento" method="GET">
+	<form id="formAdd" action="AddPagamentoVenda" method="POST">
 
 
 		<div id="dadospedido" class="dadospedido">
