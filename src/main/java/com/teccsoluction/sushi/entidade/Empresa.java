@@ -35,6 +35,7 @@ public class Empresa implements Serializable {
     @Column(name = "LOGO")
     private String logo;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "DATAABERTURA")
     private Date dataabertura;
 
