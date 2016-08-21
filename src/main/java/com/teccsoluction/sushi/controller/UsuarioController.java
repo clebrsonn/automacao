@@ -14,10 +14,11 @@ public class UsuarioController extends AbstractController<Usuario> {
 
 
     private
-    @Autowired
+    final
     UsuarioDAO dao;
 
 
+    @Autowired
     public UsuarioController(UsuarioDAO dao) {
         super("usuario");
         this.dao = dao;
