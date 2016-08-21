@@ -67,11 +67,6 @@ public class Empresa implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return nomefantasia;
-    }
-
     public String getNomefantasia() {
         return nomefantasia;
     }
