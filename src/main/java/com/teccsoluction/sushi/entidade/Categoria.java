@@ -20,10 +20,11 @@ public class Categoria implements Serializable {
     @Column(name = "ID")
     private long id;
 
-    @Column(name = "NOME")
+    @Column(name = "NOME", nullable = false)
     private String nome;
 
-    @ManyToOne
+	@ManyToOne
+	@JoinColumn(name = "CAT_PAI", nullable = true)
     private Categoria catpai;
 
     @OneToMany(mappedBy = "categoria")
@@ -36,10 +37,10 @@ public class Categoria implements Serializable {
         // TODO Auto-generated constructor stub
     }
     
-    public Categoria(Categoria cat) {
-        // TODO Auto-generated constructor stub
-    	this.catpai=cat;
-    }
+//    public Categoria(Categoria cat) {
+//        // TODO Auto-generated constructor stub
+//    	this.catpai=cat;
+//    }
 
 
     //GETTERS AND SETTERS
