@@ -36,7 +36,7 @@ public abstract class AbstractEntityDao<Entity> {
         return result;
     }
     
-    //PEGA OS ITENS POR PEDIDO
+    //PEGA OS ITENS POR id do PEDIDO
     public List<Item> getAllItens(long id) {
         List<Item> result = manager.createQuery("SELECT p FROM Item p where pedido_ID="+id, Item.class).getResultList();
         return result;

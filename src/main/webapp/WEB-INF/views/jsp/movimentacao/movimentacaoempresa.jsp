@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 	<div align="">
-		<h3>Movimentacao Pedido Venda</h3>
+		<h3>Movimentacao Empresa</h3>
 		<div id="content-table">
 			<form id="mainform" action="cadastro">
 
@@ -49,9 +49,9 @@
 									<td class="options-width"><a
 										href="edicao?id=${pedidovenda.id}" class="icon-1 info-tooltip"
 										title="Edit"></a> &nbsp;&nbsp;&nbsp;&nbsp; <a
-										href="addformapagamento?id=${pedidovenda.id}"
+										href="cadastrovenda2?id=${pedidovenda.id}"
 										class="icon-40 info-tooltip" title="aaa"></a> <a
-										href="additemvenda?idpedidovenda=${pedidovenda.id}"
+										href="additem?id=${pedidovenda.id}"
 										class="icon-30 info-tooltip" title="Adicionar Item ao Pedido"></a>
 										&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${pedidovenda.id}"
 										class="icon-5 info-tooltip" title="ccc"></a></td>
@@ -71,9 +71,9 @@
 									<td class="options-width"><a
 										href="edicao?id=${pedidovenda.id}" class="icon-1 info-tooltip"
 										title="Edit"></a> &nbsp;&nbsp;&nbsp;&nbsp; <a
-										href="addformapagamento?id=${pedidovenda.id}"
+										href="/delete?id=${pedidovenda.id}"
 										class="icon-40 info-tooltip" title="aaa"></a> <a
-										href="additemvenda?id=${pedidovenda.id}"
+										href="additem?id=${pedidovenda.id}"
 										class="icon-30 info-tooltip" title="Adicionar Item ao Pedido"></a>
 										&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${pedidovenda.id}"
 										class="icon-5 info-tooltip" title="ccc"></a></td>
@@ -101,7 +101,7 @@
 
 				<div id="botoes">
 
-					<button class="button">Criar Pedido</button>
+					<button class="button">Criar Filial</button>
 
 
 				</div>

@@ -8,11 +8,26 @@
 
 	<div id="form">
 		<form id="formGarcon" action="add" method="POST">
+
+			<p>Razão Social:</p>
+			<input name="razaosocial" type="text" class="inp-form" required/>
+
 			<p>Nome Fantasia:</p>
-			<input name="nomefantasia" type="text" class="inp-form" />
+			<input name="nomefantasia" type="text" class="inp-form" required/>
+
+			<p>CNPJ:</p>
+			<input name="cnpj" type="text" class="inp-form" required/>
+
+			<p>Inscrição estadual:</p>
+			<input name="inscricaoestadual" type="text" class="inp-form" required/>
 
 
-			<!--     <p>L�der do Projeto:</p> -->
+            <p>Data de Abertura:</p>
+            <input name="dataabertura" type="text" class="inp-form" required/>
+
+
+
+            <!--     <p>L�der do Projeto:</p> -->
 
 
 			<!--     <select name="lider" id="files" class="inp-form"> -->

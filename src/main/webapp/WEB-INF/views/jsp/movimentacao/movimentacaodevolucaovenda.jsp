@@ -3,23 +3,25 @@
 
 <div id="conteudo" class="conteudo">
 
-	<h3>Add Item a Compra</h3>
+	<h2>Movimentacao Devolucao Venda </h2>
 
 
-	<div id="formAddItem">
-		<form id="formAdd" action="AddItemCompra" method="POST">
+	<div id="form">
+		<form id="formRecebimentos" action="add" method="GET">
+
+			<div id="dadospedido" class="dadospedido">
+
+				ID do Pedido: <input id="idpedidocompra" name="idpedidocompra"
+					type="text" class="idpedido" /> ID Cliente: <input name="tipo"
+					type="text" class="tipo" /> Total: <input id="totalpedido"
+					name="totalpedido" type="text" class="totalpedido" />
+
+			</div>
 
 
-ID do Pedido de Compra: <input name="idpedidocompra" type="text"class="idpedido" value="${pc.id }" />
-<%-- 			 	  Tipo: <input name="tipo" type="text"	class="tipo" value="${pc.tipo }"/>  --%>
-			 	 Total: <input id="totalpedido" name="total"type="text" class="totalpedido" value="${pc.total }"/>
-
-			<p></p>
+			<div id="item" class="item">
 
 
-
-
-			<p>
 				Cod Prod <input id="codigoitem" name="codigo" type="text" list="id"
 					class="codigoitem" />
 
@@ -33,10 +35,7 @@ ID do Pedido de Compra: <input name="idpedidocompra" type="text"class="idpedido"
 				</datalist>
 
 
-			</p>
-
-			<p>
-				Descrição <input id="descricaoitem" name="descricao" type="text"
+				Descricao <input id="descricaoitem" name="descricao" type="text"
 					list="produtos" class="descricaoitem" />
 
 
@@ -51,54 +50,49 @@ ID do Pedido de Compra: <input name="idpedidocompra" type="text"class="idpedido"
 
 				</datalist>
 
+			</div>
 
+			<div id="detalheitem" class="detalheitem">
 
-			</p>
-
-			<p>
 				Quantidade <input id="quantidadeitem" name="quantidade" type="text"
 					class="quantidadeitem" /> Valor Item <input id="valoritem"
 					name="valor" type="text" class="valoritem" /> Total Item <input
 					id="valortotal" name="valor" type="text" class="valortotal" />
 
-			</p>
+
+				SubTotal <input id="subtotal" name="subtotal" type="text"
+					class="subtotal" />
 
 
-			SubTotal <input id="subtotal" name="subtotal" type="text"
-				class="subtotal" />
-
-			</p>
-
-
+			</div>
 
 			<div id="botoes">
 				<button class="button">AdicionarItem</button>
-				<button class="button">Apagar</button>
-				<button class="button"
-					onclick="window.location.href='movimentacaopagamento'">Caixa</button>
+				<button class="button">ApagarItem</button>
+				<button class="button">
+					<a href="AddRecebimento?id=${pedido.id }">Efetuar Pagamento</a>
+				</button>
+				<%--                 <button class="button"><a href="finalizacaorecebimento?id=${pedido.id }">FinalizarPedido</a></button> --%>
+
 			</div>
 
-			</br>
 
-			<table border="0" width="140%" cellpadding="0" cellspacing="0"
-				class="product-table">
+			<table border="0" width="100%" cellpadding="0" cellspacing="0"
+				class="product-table2">
 				<th class="table-header-check"><a id="toggle-all"></a></th>
 				<th class="table-header-repeat line-left "><a>Id</a></th>
-				<th class="table-header-repeat line-left minwidth-1"><a>Pedido
-				</a></th>
-				<th class="table-header-repeat line-left minwidth-1"><a>Código
+				<th class="table-header-repeat line-left minwidth-1"><a></a></th>
+				<th class="table-header-repeat line-left minwidth-1"><a>Codigo
 						de Barras</a></th>
 				<th class="table-header-repeat line-left minwidth-1"><a>Descricao
 				</a></th>
-				<th class="table-header-repeat line-left minwidth-1"><a>Preço
+				<th class="table-header-repeat line-left minwidth-1"><a>Preco
 						Unitario</a></th>
 				<th class="table-header-repeat line-left minwidth-1"><a>Quantidade</a></th>
 				<th class="table-header-repeat line-left minwidth-1"><a>TotalItem</a></th>
-				<th class="table-header-repeat line-left"><a>Acão</a></th>
+				<th class="table-header-repeat line-left"><a>Acao</a></th>
 
 				<c:forEach var="item" items="${itemList}" varStatus="id">
-
-
 
 
 					<c:choose>
@@ -116,13 +110,14 @@ ID do Pedido de Compra: <input name="idpedidocompra" type="text"class="idpedido"
 
 
 								<td class="options-width"><a
-									href="edicaoitem?id=${item.id}" class="icon-1 info-tooltip"
-									title="Edit"></a> &nbsp;&nbsp;&nbsp;&nbsp; <a
-									href="/delete?id=${item.id}" class="icon-4 info-tooltip"
-									title="aaa"></a> <a href="/edit?id=${item.id}"
+									href="edicaodevolucao?id=${devolucao.id}"
+									class="icon-1 info-tooltip" title="Edit"></a>
+									&nbsp;&nbsp;&nbsp;&nbsp; <a href="/delete?id=${devolucao.id}"
+									class="icon-4 info-tooltip" title="aaa"></a> <a
+									href="cadastrodevolucao2?id=${devolucao.id}"
 									class="icon-3 info-tooltip" title="bbb"></a>
 									&nbsp;&nbsp;&nbsp;&nbsp; <a
-									href="movimentacaovenda/delete?id=${item.id}"
+									href="movimentacaodevolucao/delete?id=${devolucao.id}"
 									class="icon-5 info-tooltip" title="ccc"></a></td>
 							</tr>
 						</c:when>
@@ -140,13 +135,14 @@ ID do Pedido de Compra: <input name="idpedidocompra" type="text"class="idpedido"
 								<td>${item.totalItem}</td>
 
 								<td class="options-width"><a
-									href="edicaoitem?id=${item.id}" class="icon-1 info-tooltip"
-									title="Edit"></a> &nbsp;&nbsp;&nbsp;&nbsp; <a
-									href="/delete?id=${item.id}" class="icon-4 info-tooltip"
-									title="aaa"></a> <a href="/edit?id=${item.id}"
+									href="edicaodevolucao?id=${devolucao.id}"
+									class="icon-1 info-tooltip" title="Edit"></a>
+									&nbsp;&nbsp;&nbsp;&nbsp; <a href="/delete?id=${devolucao.id}"
+									class="icon-4 info-tooltip" title="aaa"></a> <a
+									href="cadastrodevolucao2?id=${devolucao.id}"
 									class="icon-3 info-tooltip" title="bbb"></a>
 									&nbsp;&nbsp;&nbsp;&nbsp; <a
-									href="movimentacaovenda/delete?id=${item.id}"
+									href="movimentacaodevolucao/delete?id=${devolucao.id}"
 									class="icon-5 info-tooltip" title="ccc"></a></td>
 							</tr>
 						</c:when>
@@ -162,4 +158,4 @@ ID do Pedido de Compra: <input name="idpedidocompra" type="text"class="idpedido"
 
 
 </div>
-<!--  end content-table-inner  -->
+<!-- end content-table-inner -->

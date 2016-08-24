@@ -35,17 +35,17 @@
 			</select>
 
 
-			<p>Mesa:</p>
-			<select name="mesa" id="files" class="inp-form">
-				<optgroup label="Mesas">
+<!-- 			<p>Mesa:</p> -->
+<!-- 			<select name="mesa" id="files" class="inp-form"> -->
+<!-- 				<optgroup label="Mesas"> -->
 
-					<c:forEach var="mesa" items="${mesaList}">
-						<option value="${mesa.id}">${mesa.numero}</option>
-					</c:forEach>
+<%-- 					<c:forEach var="mesa" items="${mesaList}"> --%>
+<%-- 						<option value="${mesa.id}">${mesa.numero}</option> --%>
+<%-- 					</c:forEach> --%>
 
 
-				</optgroup>
-			</select>
+<!-- 				</optgroup> -->
+<!-- 			</select> -->
 
 			<p>Status:</p>
 			<select name="status" id="files" class="inp-form">

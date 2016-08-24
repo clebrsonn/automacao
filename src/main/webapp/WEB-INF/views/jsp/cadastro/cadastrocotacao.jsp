@@ -12,7 +12,7 @@
 			<input name="nome" type="text" class="inp-form" />
 
 
-			<!--     <p>Líder do Projeto:</p> -->
+			<!--     <p>Lï¿½der do Projeto:</p> -->
 
 
 			<!--     <select name="lider" id="files" class="inp-form"> -->
