@@ -41,7 +41,7 @@
 			
 		</p>
 		
-		<p>Descrição
+		<p>Descricao
 		
 			<input id="descricaoitem" name="descricao" type="text" list="produtos" class="descricaoitem" />
 			
@@ -98,21 +98,21 @@
 		<div id="botoes">
 <button class="button">AdicionarItem</button>
 <button class="button">Apagar</button>
-<button class="button" onclick="window.location.href='movimentacaopagamento'">Caixa</button>
+<button class="button" onclick="window.location.href='${pageContext.request.contextPath}/pedidovenda/addformapagamento?id=${pedido.id}'">Caixa</button>
 </div>
 
 </br>
 		
-		      <table border="0" width="140%"cellpadding="0" cellspacing="0"  class="product-table">
+		      <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table">
     			 <th class="table-header-check"><a id="toggle-all" ></a> </th>
                  <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Pedido </a></th>         
-               	 <th class="table-header-repeat line-left minwidth-1"><a>Código de Barras</a></th>
+               	 <th class="table-header-repeat line-left minwidth-1"><a>Codigo de Barras</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Descricao </a></th> 
-	             <th class="table-header-repeat line-left minwidth-1"><a>Preço Unitario</a></th> 
+	             <th class="table-header-repeat line-left minwidth-1"><a>Preco Unitario</a></th> 
 	             <th class="table-header-repeat line-left minwidth-1"><a>Quantidade</a></th>             
 	             <th class="table-header-repeat line-left minwidth-1"><a>TotalItem</a></th>                                  
-                 <th class="table-header-repeat line-left"><a>Acão</a></th>
+                 <th class="table-header-repeat line-left"><a>Acao</a></th>
                  
 <c:forEach var="item" items="${itemList}" varStatus="id">
 
@@ -139,7 +139,7 @@
                         <a href="/delete?id=${item.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${item.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaovenda/delete?id=${item.id}" class="icon-5 info-tooltip" title="ccc"></a>
+                        <a href='${pageContext.request.contextPath}/item/delete?id=${item.id}' class="icon-5 info-tooltip" title="ccc"></a>
                     </td>
                 </tr>
   </c:when>
@@ -162,7 +162,7 @@
                         <a href="/delete?id=${item.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${item.id}" class="icon-3 info-tooltip" title="bbb"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaovenda/delete?id=${item.id}" class="icon-5 info-tooltip" title="ccc"></a>
+                        <a href='${pageContext.request.contextPath}/item/delete?id=${item.id}' class="icon-5 info-tooltip" title="ccc"></a>
                     </td>
                 </tr>
   </c:when>

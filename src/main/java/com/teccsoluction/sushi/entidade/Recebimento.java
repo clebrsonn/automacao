@@ -16,9 +16,12 @@ public class Recebimento implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private long id;
-
+    
+    @Temporal(TemporalType.DATE)
+    @Column(name="DATA")
     private Date data;
-
+    
+    @Column(name="STATUS")
     private String status;
 
 //	@OneToMany

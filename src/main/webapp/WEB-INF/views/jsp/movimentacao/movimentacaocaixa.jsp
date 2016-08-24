@@ -7,14 +7,14 @@
 
 
 	<div id="form">
-		<form id="formRecebimentos" action="add" method="GET">
+		<form id="formRecebimentos" action="AddItemVenda" method=GET>
 
 			<div id="dadospedido" class="dadospedido">
 
-				ID do Pedido: <input id="idpedidocompra" name="idpedidocompra"
-					type="text" class="idpedido" /> ID Cliente: <input name="tipo"
-					type="text" class="tipo" /> Total: <input id="totalpedido"
-					name="totalpedido" type="text" class="totalpedido" />
+				ID do Pedido: <input id="idpedidovenda" name="idpedidovenda"
+					type="text" class="idpedido" value="${pv.id }" /> ID Cliente: <input name="tipo"
+					type="text" class="tipo" value="${pv.cliente }"/> Total: <input id="totalpedido"
+					name="totalpedido" type="text" class="totalpedido" value="${pv.total }"/>
 
 			</div>
 
@@ -22,28 +22,28 @@
 			<div id="item" class="item">
 
 
-				Cod Prod <input id="codigoitem" name="codigo" type="text" list="id"
-					class="codigoitem" />
+				Cod Prod <input id="codigoitem" name="codigoitem" type="text" list="id"
+					class="codigoitem" values="${produto.codebar }"/>
 
 				<datalist id="id">
 
-					<c:forEach var="produto" items="${listProduto}" varStatus="id">
-						<option value="${produto.codebar}" />
+					<c:forEach var="produto2" items="${listProduto}" varStatus="id">
+						<option value="${produto2.codebar}" />
 					</c:forEach>
 
 
 				</datalist>
 
 
-				Descricao <input id="descricaoitem" name="descricao" type="text"
-					list="produtos" class="descricaoitem" />
+				Descricao <input id="descricaoitem" name="descricaoitem" type="text"
+					list="produtos" class="descricaoitem" value="${produto.descricao}"/>
 
 
 				<datalist id="produtos">
 
-					<c:forEach var="produto" items="${listProduto}" varStatus="id">
+					<c:forEach var="produto3" items="${listProduto}" varStatus="id">
 
-						<option value="${produto.descricao}" />
+						<option value="${produto3.descricao}" />
 
 					</c:forEach>
 
@@ -54,10 +54,10 @@
 
 			<div id="detalheitem" class="detalheitem">
 
-				Quantidade <input id="quantidadeitem" name="quantidade" type="text"
+				Quantidade <input id="quantidadeitem" name="quantidadeitem" type="text"
 					class="quantidadeitem" /> Valor Item <input id="valoritem"
-					name="valor" type="text" class="valoritem" /> Total Item <input
-					id="valortotal" name="valor" type="text" class="valortotal" />
+					name="valoritem" type="text" class="valoritem" value="${produto.precoVenda }" /> Total Item <input
+					id="valortotal" name="valortotal" type="text" class="valortotal" />
 
 
 				SubTotal <input id="subtotal" name="subtotal" type="text"
@@ -70,7 +70,7 @@
 				<button class="button">AdicionarItem</button>
 				<button class="button">ApagarItem</button>
 				<button class="button">
-					<a href="AddRecebimento?id=${pedido.id }">Efetuar Pagamento</a>
+					<a href="'${pageContext.request.contextPath}/pedidovenda/addformapagamento?id=${pedidovenda.id}'">Efetuar Pagamento</a>
 				</button>
 				<%--                 <button class="button"><a href="finalizacaorecebimento?id=${pedido.id }">FinalizarPedido</a></button> --%>
 
@@ -78,7 +78,7 @@
 
 
 			<table border="0" width="100%" cellpadding="0" cellspacing="0"
-				class="product-table2">
+				class="product-table">
 				<th class="table-header-check"><a id="toggle-all"></a></th>
 				<th class="table-header-repeat line-left "><a>Id</a></th>
 				<th class="table-header-repeat line-left minwidth-1"><a></a></th>

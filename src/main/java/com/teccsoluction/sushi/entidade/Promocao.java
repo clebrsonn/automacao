@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="PROMOCAO")
@@ -29,9 +31,11 @@ public class Promocao implements Serializable{
 	@Column(name="nome")
 	private String nome ;
 	
+	@Temporal(TemporalType.DATE) 
 	@Column(name="data_inicio")
 	private Date datainicio;
 	
+	@Temporal(TemporalType.DATE) 
 	@Column(name="data_fim")
 	private Date datafim;
 	
