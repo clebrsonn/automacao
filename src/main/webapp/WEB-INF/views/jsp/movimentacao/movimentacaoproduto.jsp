@@ -38,7 +38,7 @@
                     <td>${produto.descricao}</td>
                     <td>${produto.precoCusto}</td>
                     <td>${produto.precoVenda}</td>                   
-                    <td>${produto.um}</td>
+                    <td>${produto.un_medida}</td>
 					 <td>${produto.fornecedor}</td>
 					
                    
@@ -62,7 +62,7 @@
                      <td>${produto.descricao}</td>
                     <td>${produto.precoCusto}</td>
                     <td>${produto.precoVenda}</td>
-                    <td>${produto.um}</td>
+                    <td>${produto.un_medida}</td>
                     <td>${produto.fornecedor}</td>
                     
                     <td class="options-width">

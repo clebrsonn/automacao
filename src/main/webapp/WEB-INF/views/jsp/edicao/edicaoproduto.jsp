@@ -40,17 +40,17 @@
 		<input name="precoVenda" type="text" class="inp-form" value="${produto.precoVenda}"/>
 		
 			<p> Unidade de Medida:</p>
-            <select id="um" name="um" id="files" class="inp-form">           
+            <select id="un_medida" name="un_medida" id="files" class="inp-form">           
                 
-                		<option value="${produto.um}">${produto.um}</option>
+                		<option value="${produto.un_medida}">${produto.un_medida}</option>
                 
                 
                 <optgroup label="Tipos de Unidade de Medida">
            			
            			
-           			<c:forEach var="um" items="${umList}">
+           			<c:forEach var="un_medida" items="${umList}">
            			
-           				<option value="${um}">${um}</option>
+           				<option value="${un_medida}">${un_medida}</option>
            				      				
            				
        				</c:forEach>

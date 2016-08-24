@@ -27,23 +27,23 @@
            </select>
 		
 
-		<p>Descriï¿½ï¿½o do Produto:</p>
+		<p>Descrição do Produto:</p>
 		<input name="descricao" type="text" class="inp-form" />
 		
-		<p>Preï¿½o Custo do Produto:</p>
+		<p>Preço Custo do Produto:</p>
 		<input name="precoCusto" type="text" class="inp-form" />
 		
-		<p>Preï¿½o Venda do Produto:</p>
+		<p>Preço Venda do Produto:</p>
 		<input name="precoVenda" type="text" class="inp-form" />
 		
 				<p> Unidade de Medida:</p>
-            <select id="um" name="um" id="files" class="inp-form">           
+            <select id="un_medida" name="un_medida" id="files" class="inp-form">           
         
                 <optgroup label="Tipos de Unidade de Medida">
 
-           			<c:forEach var="um" items="${umList}">
+           			<c:forEach var="un_medida" items="${umList}">
            			
-           				<option value="${um}">${um}</option>
+           				<option value="${un_medida}">${un_medida}</option>
            				      				
            				
        				</c:forEach>
