@@ -7,14 +7,14 @@
 
 
 	<div id="form">
-		<form id="formRecebimentos" action="add" method="GET">
+		<form id="formRecebimentos" action="additemvenda" method="POST">
 
 			<div id="dadospedido" class="dadospedido">
 
-				ID do Pedido: <input id="idpedidocompra" name="idpedidocompra"
-					type="text" class="idpedido" /> ID Cliente: <input name="tipo"
-					type="text" class="tipo" /> Total: <input id="totalpedido"
-					name="totalpedido" type="text" class="totalpedido" />
+				ID do Pedido: <input id="idpedidovenda" name="idpedidovenda"
+					type="text" class="idpedidovenda" value="${pv.id}" /> ID Cliente: <input name="cliente"
+					type="text" class="cliente" value="${pv.cliente}"/> Total: <input id="totalpedido"
+					name="totalpedido" type="text" class="totalpedido" value="${pv.total}" />
 
 			</div>
 
