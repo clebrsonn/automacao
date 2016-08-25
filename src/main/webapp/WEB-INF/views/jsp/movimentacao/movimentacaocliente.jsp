@@ -31,7 +31,7 @@
                                     <td>${cliente.email}</td>
                                     <td>${cliente.telefone}</td>
                                     <td>
-                                        <fmt:formatDate pattern="yyyy-MM-dd" value="${cliente.dataNascimento}"/>
+                                        <fmt:formatDate pattern="dd/MM/yyyy" value="${cliente.dataNascimento}"/>
                                     </td>
 
                                         <%--                     <td>${gerente.projeto}</td> --%>

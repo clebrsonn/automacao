@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.context.annotation.SessionScope;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.teccsoluction.sushi.dao.generic.EmpresaDAO;
@@ -44,9 +45,10 @@ public class HomeController {
 		return movimentacao;
 	}
 
+
 	@ModelAttribute
 	public void addAttributes(Model model) {
-		Empresa empresaAtt = empresaDAO.PegarPorId(2);
+		Empresa empresaAtt = empresaDAO.PegarPorId(1);
 		model.addAttribute("empresaAtt", empresaAtt);
 	}
 
