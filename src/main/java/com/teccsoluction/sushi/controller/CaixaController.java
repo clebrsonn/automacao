@@ -179,5 +179,4 @@ public class CaixaController extends AbstractController<Caixa> {
 	}
     
     
-	    	movimentacaocaixa.addObject("produtoList", produtoList);
 }

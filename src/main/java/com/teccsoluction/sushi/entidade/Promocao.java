@@ -49,30 +49,6 @@ public class Promocao implements Serializable {
 	}
 
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
-    private long id;
-
-    @Column(name = "numero")
-    private String numero;
-
-    @Column(name = "nome")
-    private String nome;
-
-    @Column(name = "data_inicio")
-    private Date datainicio;
-
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    @Column(name = "data_fim")
-    private Date datafim;
-
-
-    public Promocao() {
-        // TODO Auto-generated constructor stub
-    }
-
     public String getNumero() {
         return numero;
     }
