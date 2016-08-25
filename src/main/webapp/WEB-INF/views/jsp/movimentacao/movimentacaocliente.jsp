@@ -17,7 +17,7 @@
                     <th class="table-header-repeat line-left minwidth-1"><a>Data Nascimento</a></th>
 
                     <!--                 <th class="table-header-repeat line-left minwidth-1"><a>Projeto</a></th>                                -->
-                    <th class="table-header-repeat line-left"><a>Ac�o</a></th>
+                    <th class="table-header-repeat line-left"><a>Acao</a></th>
 
                     <c:forEach var="cliente" items="${clienteList}" varStatus="id">
 

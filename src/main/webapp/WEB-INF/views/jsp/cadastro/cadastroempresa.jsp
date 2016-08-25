@@ -7,36 +7,36 @@
 
 
 	<div id="form">
-		<form id="formGarcon" action="add" method="POST">
+		<form id="formEmpresa" action="add" method="POST">
 
 			<p>Razão Social:</p>
-			<input name="razaosocial" type="text" class="inp-form" required/>
+			<input name="razaosocial" type="text" class="inp-form" required />
 
 			<p>Nome Fantasia:</p>
-			<input name="nomefantasia" type="text" class="inp-form" required/>
+			<input name="nomefantasia" type="text" class="inp-form" required />
 
 			<p>CNPJ:</p>
 			<input name="cnpj" type="text" class="inp-form" />
-			
+
 			<p>Inscricao Estadual:</p>
 			<input name="inscricaoestadual" type="text" class="inp-form" />
-			
-					<p>Logomarca:</p>
+
+			<p>Logomarca:</p>
 			<input name="logo" type="text" class="inp-form" />
-			
-				<p>Data Abertura:</p>
+
+			<p>Data Abertura:</p>
 			<input name="dataabertura" type="text" class="inp-form" />
 
-			<p>Inscrição estadual:</p>
-			<input name="inscricaoestadual" type="text" class="inp-form" required/>
+			<!-- <p>Inscrição estadual:</p>
+			<input name="inscricaoestadual" type="text" class="inp-form" required />
+ -->
 
-
-            <p>Data de Abertura:</p>
+			<!--              <p>Data de Abertura:</p>
             <input name="dataabertura" type="text" class="inp-form" required/>
+-->
 
 
-
-            <!--     <p>L�der do Projeto:</p> -->
+			<!--     <p>L�der do Projeto:</p> -->
 
 
 			<!--     <select name="lider" id="files" class="inp-form"> -->
