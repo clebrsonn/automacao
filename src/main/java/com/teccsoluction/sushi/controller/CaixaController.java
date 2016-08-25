@@ -102,8 +102,8 @@ public class CaixaController extends AbstractController<Caixa> {
 
 	    }
     
-    @RequestMapping(value = "AddItemVenda", method = RequestMethod.GET)
-  		public ModelAndView  additemvendaaa(HttpServletRequest request){
+    @RequestMapping(value = "carregarPedido", method = RequestMethod.POST)
+  		public ModelAndView  carregarPedidoCaixa(HttpServletRequest request){
   	    	
   	    
     	
@@ -130,7 +130,7 @@ public class CaixaController extends AbstractController<Caixa> {
     
     //POST
     
-    	@RequestMapping(value = "AddItemVenda", method = RequestMethod.POST)
+    	@RequestMapping(value = "AddItemVenda", method = RequestMethod.GET)
 		public ModelAndView  additemvendaPOST(HttpServletRequest request){
 
 	
@@ -138,21 +138,21 @@ public class CaixaController extends AbstractController<Caixa> {
   	    	
     		//convers�es
     		long idfprod = Long.parseLong(request.getParameter("codigoitem"));
-	    	long idf = Long.parseLong(request.getParameter("idpedidovenda"));
+	    	long idf = Long.parseLong(request.getParameter("pedidovendaid"));
 	    	double total = Double.parseDouble(request.getParameter("valortotal"));
 	    	int qtd = Integer.parseInt(request.getParameter("quantidadeitem"));
 	    	double precounitario = Double.parseDouble(request.getParameter("valoritem"));
 	    	
 	    	
 	    	//carregamento de objetos
-	    	Produto produto = produtopedidovendaDao.PegarPorId(idfprod);
+//	    	Produto produto = produtopedidovendaDao.PegarPorId(idfprod);
 
 	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
 	    	
 	    	//instancia de itens e set
 	    	Item item = new Item();
 	    	
-	    	item.setProduto(produto);
+//	    	item.setProduto(produto);
 	    	item.setDescricao(request.getParameter("descricaoitem"));
 //	    	item.setCodigo(produto.getCodebar());
 	    	item.setPrecoUnitario(precounitario);
