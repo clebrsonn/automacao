@@ -43,9 +43,6 @@ public class CaixaController extends AbstractController<Caixa> {
 	final
 	AbstractEntityDao<Item> itempedidovendaDao;
 	
-	
-    
-    
 
     @Autowired
     public CaixaController(CaixaDAO dao,PedidoVendaDAO daovenda,ProdutoDAO daoproduto,ItemDAO daoitem) {
