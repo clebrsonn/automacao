@@ -18,11 +18,12 @@ public class Recebimento implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private long id;
-
+    
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Column(name="DATA")
     private Date data;
-
+    
+    @Column(name="STATUS")
     private String status;
 
 //	@OneToMany

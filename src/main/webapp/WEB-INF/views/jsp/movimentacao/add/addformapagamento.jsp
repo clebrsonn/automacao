@@ -74,12 +74,11 @@
 		<div id="botoes">
 <button class="button">AdicionarFormadePagamento</button>
 <button class="button">Apagar</button>
-<a href="finalizacaovenda?id=3"><div class="button" >FinalizarVenda</div></a>
+<button class="button" >FinalizarVenda</button>
 </div>
 
-</br>
 		
-		      <table border="0" width="140%"cellpadding="0" cellspacing="0"  class="product-table">
+		      <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table">
     			 <th class="table-header-check"><a id="toggle-all" ></a> </th>
                  <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Pedido </a></th>         
@@ -88,7 +87,7 @@
 	             <th class="table-header-repeat line-left minwidth-1"><a>Valor da Parcela</a></th> 
 	             <th class="table-header-repeat line-left minwidth-1"><a>Total</a></th>             
 <!-- 	             <th class="table-header-repeat line-left minwidth-1"><a>TotalItem</a></th>                                   -->
-                 <th class="table-header-repeat line-left"><a>Acão</a></th>
+                 <th class="table-header-repeat line-left"><a>Acao</a></th>
                  
 <c:forEach var="pagamento" items="${pagamentoList}" varStatus="id">
 

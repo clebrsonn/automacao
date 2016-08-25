@@ -1,5 +1,6 @@
 package com.teccsoluction.sushi.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -119,6 +120,14 @@ public class PedidoCompraController extends AbstractController<PedidoCompra> {
 	    	
 	    	
 	    	long idf = Long.parseLong(request.getParameter("idpedidocompra"));
+	    	
+	    	// VERIFICAR SE O ID DO PEDIDO É NNULO OU BRANCO
+//	    	if((request.getParameter("idpedidocompra")== null) || (request.getParameter("idpedidocompra")== "")){
+//	    	
+//	    		
+//	    		
+//	    	}
+	    	
 	    	ModelAndView additemcompra = new ModelAndView("additemcompra");
 	    	List<Item> itemList = itemDao.getAllItens(idf);
 	    	
@@ -154,27 +163,54 @@ public class PedidoCompraController extends AbstractController<PedidoCompra> {
 	    @RequestMapping(value = "AddItemCompra", method = RequestMethod.POST)
 		public ModelAndView  additemcompraa(HttpServletRequest request){
 	    	
+   	
+//	    	List<Item> listaitens = null;
 	    	
 	    	long idf = Long.parseLong(request.getParameter("idpedidocompra"));
-	    	ModelAndView additemvenda = new ModelAndView("additemcompra");
+	    	ModelAndView movimentacaopedidocompra = new ModelAndView("movimentacaopedidocompra");
 	    	
 	    	PedidoCompra pc = pedidoCompraDao.PegarPorId(idf);
-	    	
+	    		    	
 	    	Item item = new Item();
 	    	
 	    	item.setPedido(pc);
+	    
+//	    	listaitens.add(item);
+//	    	pc.setItems(listaitens);
 	    	
 	    	itemDao.add(item);
 	    	
 	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
 	    	List<Item> itemList = itemDao.getAllItens(idf);
 	    	
-	    	additemvenda.addObject("itemList", itemList);
-	    	additemvenda.addObject("produtoList", produtoList);
-	    	additemvenda.addObject("pc", pc);
+	    	movimentacaopedidocompra.addObject("itemList", itemList);
+	    	movimentacaopedidocompra.addObject("produtoList", produtoList);
+	    	movimentacaopedidocompra.addObject("pc", pc);
 
 			
-			return additemvenda;
+			return movimentacaopedidocompra;
+		}
+	    
+	    @RequestMapping(value = "AddItemCompra", method = RequestMethod.GET)
+		public ModelAndView  additemcompraGET(HttpServletRequest request){
+	    	
+   	
+	    	
+	    	Long idf = Long.parseLong(request.getParameter("idpedidocompra"));
+	    	ModelAndView movimentacaopedidocompra = new ModelAndView("movimentacaopedidocompra");
+	    	
+	    	PedidoCompra pc = pedidoCompraDao.PegarPorId(idf);
+	    		    
+	    	
+	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
+	    	List<Item> itemList = itemDao.getAllItens(idf);
+	    	
+	    	movimentacaopedidocompra.addObject("itemList", itemList);
+	    	movimentacaopedidocompra.addObject("produtoList", produtoList);
+	    	movimentacaopedidocompra.addObject("pc", pc);
+
+			
+			return movimentacaopedidocompra;
 		}
 	    
 	    

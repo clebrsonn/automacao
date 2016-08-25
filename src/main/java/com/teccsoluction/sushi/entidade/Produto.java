@@ -12,142 +12,121 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Produto implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 
-    private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
+	private long id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
-    private long id;
+	@Column(name = "CODEBAR")
+	private String codebar;
 
-    @Column(name = "CODEBAR")
-    private String codebar;
+	@Column(name = "DESCRICAO")
+	private String descricao;
 
-    @Column(name = "DESCRICAO")
-    private String descricao;
+	@Column(name = "UN_MEDIDA")
+	@Enumerated(EnumType.STRING)
+	private UnidadeMedida un_medida;
 
-    @Column(name = "UM")
-    @Enumerated(EnumType.ORDINAL)
-    private UnidadeMedida um;
+	@Column(name = "PRECO_CUSTO")
+	private double precoCusto;
 
-    @Column(name = "PRECO_CUSTO")
-    private double precoCusto;
+	@Column(name = "PRECO_VENDA")
+	private double precoVenda;
 
-    @Column(name = "PRECO_VENDA")
-    private double precoVenda;
+	@ManyToOne
+	@JoinColumn
+	private Fornecedor fornecedor;
 
-    @ManyToOne
-    @JoinColumn
-    private Fornecedor fornecedor;
+	// @OneToMany(mappedBy = "produto")
+	// private List<Item> items;
 
+	@ManyToOne
+	@JoinColumn
+	private Categoria categoria;
 
-//    @OneToMany(mappedBy = "produto")
-//    private List<Item> items;
+	public Produto() {
+		// TODO Auto-generated constructor stub
+		// items = new ArrayList<Item>();
+	}
 
-    @ManyToOne
-    @JoinColumn
-    private Categoria categoria;
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
 
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
 
-    public Produto() {
-        // TODO Auto-generated constructor stub
-//        items = new ArrayList<Item>();
-    }
+	public Categoria getCategoria() {
+		return categoria;
+	}
 
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
 
-    public Fornecedor getFornecedor() {
-        return fornecedor;
-    }
+	public String getNumero() {
+		return codebar;
+	}
 
+	public void setCodebar(String codebar) {
+		this.codebar = codebar;
+	}
 
-    public void setFornecedor(Fornecedor fornecedor) {
-        this.fornecedor = fornecedor;
-    }
+	public long getId() {
+		return id;
+	}
 
+	public String getDescricao() {
+		return descricao;
+	}
 
-    public Categoria getCategoria() {
-        return categoria;
-    }
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
+	public void setUn_medida(UnidadeMedida un_medida) {
+		this.un_medida = un_medida;
+	}
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
+	public UnidadeMedida getUn_medida() {
+		return un_medida;
+	}
 
+	public double getPrecoCusto() {
+		return precoCusto;
+	}
 
-    public String getNumero() {
-        return codebar;
-    }
+	public void setPrecoCusto(double preco) {
+		this.precoCusto = preco;
+	}
 
+	public double getPrecoVenda() {
+		return precoVenda;
+	}
 
-    public void setCodebar(String codebar) {
-        this.codebar = codebar;
-    }
+	public void setPrecoVenda(double precoVenda) {
+		this.precoVenda = precoVenda;
+	}
 
+	public String getCodebar() {
+		return codebar;
+	}
 
-    public long getId() {
-        return id;
-    }
+	// public List<Item> getItems() {
+	// return items;
+	// }
+	//
+	//
+	// public void setItems(List<Item> items) {
+	// this.items = items;
+	// }
 
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-
-    public UnidadeMedida getUm() {
-        return um;
-    }
-
-
-    public void setUm(UnidadeMedida um) {
-        this.um = um;
-    }
-
-
-    public double getPrecoCusto() {
-        return precoCusto;
-    }
-
-
-    public void setPrecoCusto(double preco) {
-        this.precoCusto = preco;
-    }
-
-
-    public double getPrecoVenda() {
-        return precoVenda;
-    }
-
-
-    public void setPrecoVenda(double precoVenda) {
-        this.precoVenda = precoVenda;
-    }
-
-
-    public String getCodebar() {
-        return codebar;
-    }
-
-
-//    public List<Item> getItems() {
-//        return items;
-//    }
-//
-//
-//    public void setItems(List<Item> items) {
-//        this.items = items;
-//    }
-
-    @Override
-    public String toString() {
-        return descricao;
-    }
-
+	@Override
+	public String toString() {
+		return descricao;
+	}
 
 }

@@ -16,7 +16,16 @@
 			<input name="nomefantasia" type="text" class="inp-form" required/>
 
 			<p>CNPJ:</p>
-			<input name="cnpj" type="text" class="inp-form" required/>
+			<input name="cnpj" type="text" class="inp-form" />
+			
+			<p>Inscricao Estadual:</p>
+			<input name="inscricaoestadual" type="text" class="inp-form" />
+			
+					<p>Logomarca:</p>
+			<input name="logo" type="text" class="inp-form" />
+			
+				<p>Data Abertura:</p>
+			<input name="dataabertura" type="text" class="inp-form" />
 
 			<p>Inscrição estadual:</p>
 			<input name="inscricaoestadual" type="text" class="inp-form" required/>
