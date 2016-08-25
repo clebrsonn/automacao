@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.teccsoluction.sushi.dao.ProdutoDAO;
+import com.teccsoluction.sushi.dao.generic.ClienteDAO;
 import com.teccsoluction.sushi.dao.generic.GarconDAO;
 import com.teccsoluction.sushi.dao.generic.ItemDAO;
 import com.teccsoluction.sushi.dao.generic.MesaDAO;
@@ -21,6 +22,7 @@ import com.teccsoluction.sushi.dao.generic.PagamentoDAO;
 import com.teccsoluction.sushi.dao.generic.PedidoDAO;
 import com.teccsoluction.sushi.dao.generic.PedidoVendaDAO;
 import com.teccsoluction.sushi.entidade.Categoria;
+import com.teccsoluction.sushi.entidade.Cliente;
 import com.teccsoluction.sushi.entidade.Fornecedor;
 import com.teccsoluction.sushi.entidade.Garcon;
 import com.teccsoluction.sushi.entidade.Item;
@@ -60,8 +62,10 @@ public class PedidoVendaController extends AbstractController<PedidoVenda> {
 	AbstractEntityDao<Pagamento> pagamentopedidovendaDao;
 //	private
 //	AbstractEntityDao<Mesa> mesaDao;
-//	private	
-//	AbstractEntityDao<Garcon> garconDao;
+	
+	private	
+	final
+	AbstractEntityDao<Cliente> clienteDao;
 		
 		
 //	public PedidoVendaController(PedidoVendaDAO dao, MesaDAO daomesa, GarconDAO daogarcon){
@@ -74,13 +78,14 @@ public class PedidoVendaController extends AbstractController<PedidoVenda> {
 //	}
 	
 	 @Autowired
-	public PedidoVendaController(PedidoVendaDAO dao,ItemDAO daoitem,ProdutoDAO produtodao,PagamentoDAO pagamentodao){
+	public PedidoVendaController(PedidoVendaDAO dao,ItemDAO daoitem,ProdutoDAO produtodao,PagamentoDAO pagamentodao, ClienteDAO daocliente){
 	
 	super("pedidovenda");
 	this.pedidoVendaDao = dao;
 	this.itempedidovendaDao= daoitem;
 	this.produtopedidovendaDao = produtodao;
 	this.pagamentopedidovendaDao = pagamentodao;
+	this.clienteDao = daocliente;
 
 }
 
@@ -91,9 +96,9 @@ public class PedidoVendaController extends AbstractController<PedidoVenda> {
 
         binder.registerCustomEditor(Item.class, new AbstractEditor<Item>(this.itempedidovendaDao){
         });
-//
-//        binder.registerCustomEditor(Garcon.class, new AbstractEditor<Garcon>(this.garconDao) {
-//        });
+
+        binder.registerCustomEditor(Cliente.class, new AbstractEditor<Cliente>(this.clienteDao) {
+        });
 
 
     }
@@ -117,11 +122,15 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 			StatusPedido[]tipoStatusList = StatusPedido.values();
 			
 			OrigemPedido[] origemPedidoList = OrigemPedido.values();
+			
+			List <Cliente> clienteList =clienteDao.getAll();
 //			
 	        model.addAttribute("pedidoVendaList", pedidoVendaList);
 	        model.addAttribute("origemPedidoList", origemPedidoList);
 	        model.addAttribute("tipoList", tipoList);
 	        model.addAttribute("tipoStatusList", tipoStatusList);
+	        model.addAttribute("clienteList", clienteList);
+
 	    }
 
 	    

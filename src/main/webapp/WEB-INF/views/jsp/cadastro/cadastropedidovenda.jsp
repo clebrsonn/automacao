@@ -62,13 +62,14 @@
 			<p>Total:</p>
 			<input name="total" type="text" class="inp-form" disabled="disabled" />
 
-			<p>Garcon:</p>
+			<!--  -->
+			<p>Cliente :</p>
 
-			<select name="tipo" id="files" class="inp-form">
-				<optgroup label="GarÃ§on">
+			<select name="cliente" id="files" class="inp-form">
+				<optgroup label="Cliente">
 
-					<c:forEach var="garcon" items="${garconList}">
-						<option value="${garcon.id}">${garcon.nome}</option>
+					<c:forEach var="cliente" items="${clienteList}">
+						<option value="${cliente.id}">${cliente.nome}</option>
 					</c:forEach>
 
 
@@ -76,6 +77,7 @@
 			</select>
 
 
+			<!--  div botões -->
 			<div id="botoes">
 				<button class="button">Adicionar</button>
 				<button class="button">Apagar</button>

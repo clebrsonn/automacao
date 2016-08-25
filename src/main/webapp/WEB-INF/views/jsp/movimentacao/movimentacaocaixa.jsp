@@ -19,15 +19,15 @@
 			</div>
 			
 			<button class="button">CarregarPedido</button>
-			<button class="button">Novo Pedido</button>
+<!-- 			<button class="button">Novo Pedido</button> -->
 			
 		
 
 		</form>
 		
-	<form id="formRecebimentos" action="AddItemVenda" method=GET>
+	<form id="formRecebimentos" action="AddItemVenda" method=POST>
 	
-		Cod Pedido <input id="pedidovendaid" name="pedidovendaid" type="text" class="pedidovendaid" value="${pv.id }"/>
+		<input id="pedidovendaid" name="pedidovendaid" type="text" class="pedidovendaid" value="${pv.id }" hidden="true"/>
 		
 		
 	<div id="item" class="item">
@@ -75,9 +75,11 @@
 
 	<div id="botoes">
 		<button class="button">AdicionarItem</button>
-		<button class="button">ApagarItem</button>
-		<button class="button">	<a href="'${pageContext.request.contextPath}/pedidovenda/addformapagamento?id=${pedidovenda.id}'">Efetuar Pagamento</a>
-		</button>
+<!-- 		<button class="button">ApagarItem</button> -->
+				<button class="button" formaction="addformapagamento" formmethod="post">Efetuar Pagamento</button>
+		
+<%-- 		<button class="button">	<a href="'${pageContext.request.contextPath}/pedidovenda/addformapagamento?id=${pedidovenda.id}'">Efetuar Pagamento</a> --%>
+		
 
 	</div> <!-- fecha div botões -->
 

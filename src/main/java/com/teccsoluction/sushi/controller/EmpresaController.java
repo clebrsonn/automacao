@@ -27,4 +27,6 @@ public class EmpresaController extends AbstractController<Empresa> {
     protected AbstractEntityDao<Empresa> getDao() {
         return dao;
     }
+    
+    
 }

@@ -24,10 +24,13 @@ public class Pagamento implements Serializable {
     private String tipo;
 
     private int parcelas;
-
-    @ManyToOne(optional = false)
-    @JoinColumn
+//
+    @ManyToOne
+    @JoinColumn(name="pedido_id",nullable = true)
     private Pedido pedido;
+//    
+//    private String 
+    
 
     public Pagamento() {
         // TODO Auto-generated constructor stub

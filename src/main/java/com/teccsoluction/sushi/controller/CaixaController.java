@@ -5,12 +5,14 @@ import com.teccsoluction.sushi.dao.generic.CaixaDAO;
 import com.teccsoluction.sushi.dao.generic.ClienteDAO;
 import com.teccsoluction.sushi.dao.generic.GarconDAO;
 import com.teccsoluction.sushi.dao.generic.ItemDAO;
+import com.teccsoluction.sushi.dao.generic.PagamentoDAO;
 import com.teccsoluction.sushi.dao.generic.PedidoVendaDAO;
 import com.teccsoluction.sushi.entidade.Caixa;
 import com.teccsoluction.sushi.entidade.Cliente;
 import com.teccsoluction.sushi.entidade.Fornecedor;
 import com.teccsoluction.sushi.entidade.Garcon;
 import com.teccsoluction.sushi.entidade.Item;
+import com.teccsoluction.sushi.entidade.Pagamento;
 import com.teccsoluction.sushi.entidade.PedidoCompra;
 import com.teccsoluction.sushi.entidade.PedidoVenda;
 import com.teccsoluction.sushi.entidade.Produto;
@@ -58,6 +60,11 @@ public class CaixaController extends AbstractController<Caixa> {
 	private
 	final
 	AbstractEntityDao<Produto> produtopedidovendaDao;
+	
+	
+	private
+	final
+	AbstractEntityDao<Pagamento> pagamentoDao;
     
 //	@Autowired
 //    public CaixaController() {
@@ -67,14 +74,14 @@ public class CaixaController extends AbstractController<Caixa> {
 	
 
     @Autowired
-    public CaixaController(CaixaDAO dao,ProdutoDAO daoprod,ItemDAO daoitem,ClienteDAO daocli,PedidoVendaDAO daopedido) {
+    public CaixaController(CaixaDAO dao,ProdutoDAO daoprod,ItemDAO daoitem,ClienteDAO daocli,PedidoVendaDAO daopedido,PagamentoDAO daopag) {
         super("caixa");
         this.dao = dao;
-        
         this.clienteDao =daocli;
         this.itemDao = daoitem;
         this.produtopedidovendaDao = daoprod;
         this.pedidoVendaDao =daopedido;
+        this.pagamentoDao = daopag;
     } 
 
     @Override
@@ -128,7 +135,7 @@ public class CaixaController extends AbstractController<Caixa> {
     
     //POST
     
-    	@RequestMapping(value = "AddItemVenda", method = RequestMethod.GET)
+    	@RequestMapping(value = "AddItemVenda", method = RequestMethod.POST)
 		public ModelAndView  additemvendaPOST(HttpServletRequest request){
 
 	
@@ -152,7 +159,7 @@ public class CaixaController extends AbstractController<Caixa> {
 	    	
 //	    	item.setProduto(produto);
 	    	item.setDescricao(request.getParameter("descricaoitem"));
-//	    	item.setCodigo(produto.getCodebar());
+	    	item.setCodigo(request.getParameter("codigoitem"));
 	    	item.setPrecoUnitario(precounitario);
 	    	item.setQtd(qtd);
 	    	item.setTotalItem(precounitario*qtd);
@@ -175,6 +182,64 @@ public class CaixaController extends AbstractController<Caixa> {
 		
 	    		return movimentacaocaixa;
 	}
+    	
+    	 // carrega a pagina de add forma
+	    @RequestMapping(value = "addformapagamento", method = RequestMethod.POST)
+		public ModelAndView  addFormaPagamento(HttpServletRequest request){
+	    	
+	    	
+	    	Long idf = Long.parseLong(request.getParameter("pedidovendaid"));
+	    	ModelAndView addformapagamento = new ModelAndView("addformapagamento");
+	    	
+	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
+	    	
+	    	
+	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
+	    	List<Item> itemList = itemDao.getAllItens(idf);
+	    	List<Pagamento>pagamentoList =pagamentoDao.getAll();
+
+	    	
+	    	addformapagamento.addObject("itemList", itemList);
+	    	addformapagamento.addObject("produtoList", produtoList);
+	    	addformapagamento.addObject("pagamentoList", pagamentoList);
+
+	    	addformapagamento.addObject("pv", pv);
+
+			
+			return addformapagamento;
+		}
+	    
+	    // salva  forma pagamento
+	    @RequestMapping(value = "AddPagamentoVenda", method = RequestMethod.POST)
+		public ModelAndView  SalvarFormaPagamento(HttpServletRequest request){
+	    	
+	    	
+	    	long idf = Long.parseLong(request.getParameter("idpedido"));
+	    	ModelAndView addformapagamento = new ModelAndView("addformapagamento");
+	    	
+	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
+	    	
+	    	Pagamento pg = new Pagamento();
+//	    	pg.setPedido(pv);
+	    	
+	    	
+	    	pagamentoDao.add(pg);
+	    	
+	    	
+	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
+	    	List<Item> itemList = itemDao.getAllItens(idf);
+	    	List<Pagamento>pagamentoList = pagamentoDao.getAllPagamento(idf);
+
+	    	
+	    	addformapagamento.addObject("itemList", itemList);
+	    	addformapagamento.addObject("produtoList", produtoList);
+	    	addformapagamento.addObject("pagamentoList", pagamentoList);
+
+	    	addformapagamento.addObject("pv", pv);
+
+			
+			return addformapagamento;
+		}
     
     
 }
