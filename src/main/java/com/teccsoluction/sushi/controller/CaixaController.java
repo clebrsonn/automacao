@@ -136,7 +136,7 @@ public class CaixaController extends AbstractController<Caixa> {
 	
     		ModelAndView movimentacaocaixa = new ModelAndView("movimentacaocaixa");
   	    	
-    		//conversões
+    		//conversï¿½es
     		long idfprod = Long.parseLong(request.getParameter("codigoitem"));
 	    	long idf = Long.parseLong(request.getParameter("idpedidovenda"));
 	    	double total = Double.parseDouble(request.getParameter("valortotal"));
@@ -171,7 +171,6 @@ public class CaixaController extends AbstractController<Caixa> {
 	    	
 	    	// add objetos na view
 	    	movimentacaocaixa.addObject("itemList", itemList);
-	    	movimentacaocaixa.addObject("produtoList", produtoList);
 	    	movimentacaocaixa.addObject("pv", pv);
 //	    	movimentacaocaixa.addObject("produto", produto);
 
@@ -180,4 +179,5 @@ public class CaixaController extends AbstractController<Caixa> {
 	}
     
     
+	    	movimentacaocaixa.addObject("produtoList", produtoList);
 }

@@ -45,7 +45,7 @@ public class PedidoVenda extends Pedido {
     
     
 
-    //CONSTRUTOR PADRAO
+    //CONSTRUTOR PADRÃO
     public PedidoVenda() {
     	
     	listaDevolucao = new ArrayList<>(); 
@@ -108,6 +108,5 @@ public class PedidoVenda extends Pedido {
 		this.listaDevolucao = listaDevolucao;
 	}
     
-	
 
 }

@@ -1,5 +1,8 @@
 package com.teccsoluction.sushi.entidade;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -13,8 +16,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="PROMOCAO")
-public class Promocao implements Serializable{
+@Table(name = "PROMOCAO")
+public class Promocao implements Serializable {
 
 
 	private static final long serialVersionUID = 1L;
@@ -45,51 +48,72 @@ public class Promocao implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getNumero() {
-		return numero;
-	}
 
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
+    private long id;
 
-	public long getId() {
-		return id;
-	}
+    @Column(name = "numero")
+    private String numero;
 
-	
-	public String getNome() {
-		return nome;
-	}
+    @Column(name = "nome")
+    private String nome;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    @Column(name = "data_inicio")
+    private Date datainicio;
 
-	public Date getDatainicio() {
-		return datainicio;
-	}
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Column(name = "data_fim")
+    private Date datafim;
 
-	public void setDatainicio(Date datainicio) {
-		this.datainicio = datainicio;
-	}
 
-	public Date getDatafim() {
-		return datafim;
-	}
+    public Promocao() {
+        // TODO Auto-generated constructor stub
+    }
 
-	public void setDatafim(Date datafim) {
-		this.datafim = datafim;
-	}
+    public String getNumero() {
+        return numero;
+    }
 
-	@Override
-	public String toString() {
-		return nome;
-	}
-	
-	
-	
-	
-	
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Date getDatainicio() {
+        return datainicio;
+    }
+
+    public void setDatainicio(Date datainicio) {
+        this.datainicio = datainicio;
+    }
+
+    public Date getDatafim() {
+        return datafim;
+    }
+
+    public void setDatafim(Date datafim) {
+        this.datafim = datafim;
+    }
+
+    @Override
+    public String toString() {
+        return nome;
+    }
+
 
 }

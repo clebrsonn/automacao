@@ -1,13 +1,7 @@
 package com.teccsoluction.sushi.entidade;
 
+import javax.persistence.*;
 import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 @Table(name="DESPESA")
@@ -21,7 +15,7 @@ public class Despesa implements Serializable {
 	private static final long serialVersionUID = -6185354829701934086L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ID")
 	private long id;
 	

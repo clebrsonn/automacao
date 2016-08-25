@@ -11,42 +11,36 @@
 
 
 		<p>ID do Pedido:</p>
-		<input name="id"type="text" class="inp-form" readonly="readonly" value="${pedidovenda.id }"/>
+		<input name="id"type="text" class="inp-form" readonly="readonly" value="${pedido.id }"/>
 		
 		<p>Data:</p>
-		<input name="data"type="text" class="inp-form" value="${pedidovenda.data }"/>
+		<input name="data"type="text" class="inp-form" value="${pedido.data }"/>
 		
 				
-							<p>Tipo de Pedido:</p>
-			<select name="tipo" id="files" class="inp-form">
-				<optgroup label="Tipo de Pedido">
+				<p>Tipo:</p>
+				<select name="tipo" id="files" class="inp-form">
+			        <option value="${pedido.tipo }">${pedido.tipo }</option>
+				
+				
+			<optgroup label="Tipo de Pedido">
+				       
+				        <option value="Mesa">Mesa</option>
+				        <option value="Balcao">Balcao</option>
+				        <option value="Delivery">Delivery</option>
+				         
+			
+				        
+					
+			</optgroup>
+		</select>
 
-					<c:forEach var="tipo" items="${tipoList}">
-						<option value="${tipo}">${tipo}</option>
-					</c:forEach>
-
-
-				</optgroup>
-			</select>
-
-			<p>Origem do Pedido:</p>
-			<select name="origempedido" id="files" class="inp-form">
-				<optgroup label="Origem do Pedido">
-
-					<c:forEach var="origempedido" items="${origemPedidoList}">
-						<option value="${origempedido}">${origempedido}</option>
-					</c:forEach>
-
-				</optgroup>
-			</select>
-
-<!-- 		<p>Mesa:</p> -->
-<%-- 		<input name="mesa" type="text" class="inp-form" value="${pedido.mesa }"/> --%>
+		<p>Mesa:</p>
+		<input name="mesa" type="text" class="inp-form" value="${pedido.mesa }"/>
 		
 		<p>Status:</p>
 		
 						<select name="status" id="files" class="inp-form">
-					        <option value="${pedidovenda.status }">${pedidovenda.status }</option>
+					        <option value="${pedido.status }">${pedido.status }</option>
 					
 			<optgroup label="Status">
 				       
@@ -66,10 +60,10 @@
 		</select>
 		
 		<p>Total:</p>
-		<input name="total" type="text" class="inp-form" value="${pedidovenda.total }"/>
+		<input name="total" type="text" class="inp-form" value="${pedido.total }"/>
 		
-<!-- 		<p> Garcon:</p> -->
-<%-- 		<input name="garcon" type="text" class="inp-form" value="${pedido.garcon }"/> --%>
+		<p> Garcon:</p>
+		<input name="garcon" type="text" class="inp-form" value="${pedido.garcon }"/>
 
 
 

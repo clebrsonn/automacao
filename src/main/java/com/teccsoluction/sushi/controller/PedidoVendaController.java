@@ -183,7 +183,7 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 	    	Long idf = Long.parseLong(request.getParameter("id"));
 	    	ModelAndView addformapagamento = new ModelAndView("addformapagamento");
 	    	
-	    	PedidoVenda pedido = pedidoVendaDao.PegarPorId(idf);
+	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
 	    	
 	    	
 	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
@@ -195,7 +195,7 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 	    	addformapagamento.addObject("produtoList", produtoList);
 	    	addformapagamento.addObject("pagamentoList", pagamentoList);
 
-	    	addformapagamento.addObject("pedido", pedido);
+	    	addformapagamento.addObject("pv", pv);
 
 			
 			return addformapagamento;
