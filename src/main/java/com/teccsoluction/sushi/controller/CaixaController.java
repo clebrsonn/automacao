@@ -107,7 +107,7 @@ public class CaixaController extends AbstractController<Caixa> {
 
 	    }
     
-    @RequestMapping(value = "carregarPedido", method = RequestMethod.POST)
+    @RequestMapping(value = "carregarPedido", method = RequestMethod.GET)
   		public ModelAndView  carregarPedidoCaixa(HttpServletRequest request){
   	    	
   	    
