@@ -196,7 +196,7 @@ public class CaixaController extends AbstractController<Caixa> {
 	    	
 	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
 	    	List<Item> itemList = itemDao.getAllItens(idf);
-	    	List<Pagamento>pagamentoList =pagamentoDao.getAll();
+	    	List<Pagamento>pagamentoList =pagamentoDao.getAllPagamento(idf);
 
 	    	
 	    	addformapagamento.addObject("itemList", itemList);
@@ -220,7 +220,7 @@ public class CaixaController extends AbstractController<Caixa> {
 	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
 	    	
 	    	Pagamento pg = new Pagamento();
-//	    	pg.setPedido(pv);
+	    	pg.setPedido(pv);
 	    	
 	    	
 	    	pagamentoDao.add(pg);
