@@ -3,18 +3,18 @@
 
 <div id="conteudo" class="conteudo">
 
-    <h3>Edição de Categoria</h3>
+    <h3>${acao} de Categoria</h3>
 
     <div id="form">
-        <form id="formCategoria" action="edicao" method="POST">
+        <form id="formCategoria" action="${acao}" method="POST">
 
 
-            <p>ID da Categoria:</p>
+            <p>ID da categoria:</p>
             <input name="id" type="text" class="inp-form" readonly="readonly" value="${categoria.id}"/>
 
             <p>Categoria Pai:</p>
             <select name="catpai" id="files" class="inp-form">
-                <option value="${categoria.catpai}">${categoria.catpai.nome}</option>
+                <option value="${categoria.catpai.id}">${categoria.catpai.nome}</option>
 
                 <optgroup label="Categoria Pai">
                     <c:forEach var="categoria" items="${categoriaList}">
