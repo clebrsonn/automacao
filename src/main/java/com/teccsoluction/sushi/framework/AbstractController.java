@@ -1,18 +1,12 @@
 package com.teccsoluction.sushi.framework;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.teccsoluction.sushi.entidade.Garcon;
-import com.teccsoluction.sushi.entidade.Mesa;
-import com.teccsoluction.sushi.util.StatusPedido;
-import com.teccsoluction.sushi.util.TipoPedido;
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 
 public abstract class AbstractController<Entity> {
@@ -30,7 +24,8 @@ public abstract class AbstractController<Entity> {
     @RequestMapping(value = "cadastro", method = RequestMethod.GET)
     public ModelAndView cadastrarEntity() {
     	
-    	ModelAndView cadastro = new ModelAndView("cadastro" + entityAlias);
+    	ModelAndView cadastro = new ModelAndView("edicao" + entityAlias);
+        cadastro.addObject("acao", "add");
 
 //    	 List<Entity> entityList = getDao().getAll();
 //    	 
@@ -75,6 +70,8 @@ public abstract class AbstractController<Entity> {
         ModelAndView edicao = new ModelAndView("edicao" + entityAlias);
         entity = getDao().PegarPorId(idf);
         edicao.addObject(entityAlias, entity);
+        edicao.addObject("acao", "edicao");
+
 
 
         return edicao;
@@ -85,9 +82,10 @@ public abstract class AbstractController<Entity> {
     public ModelAndView editarEntity(HttpServletRequest request, Entity entity) {
 
 
-        Long idf = Long.parseLong(request.getParameter("id"));
+//        Long idf = Long.parseLong(request.getParameter("id"));
         getDao().editar(entity);
 
+        
 
         return new ModelAndView("redirect:/" + entityAlias + "/"+"movimentacao");
     }
