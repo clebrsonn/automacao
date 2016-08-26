@@ -220,7 +220,19 @@ public class CaixaController extends AbstractController<Caixa> {
 	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
 	    	
 	    	Pagamento pg = new Pagamento();
+	    	
+	    	//convertendo as strings da view
+	    	
+//	    	String nome = Long.parseLong();
+	    	int parcela = Integer.parseInt(request.getParameter("qtdparcela"));
+//	    	long nome = Long.parseLong(request.getParameter(""));
+//	    	long nome = Long.parseLong(request.getParameter(""));
+
 	    	pg.setPedido(pv);
+	    	pg.setNome(request.getParameter("nome"));
+	    	pg.setNumero(request.getParameter("numero"));
+	    	pg.setParcelas(parcela);
+	    	pg.setTipo(request.getParameter("tipo"));;
 	    	
 	    	
 	    	pagamentoDao.add(pg);

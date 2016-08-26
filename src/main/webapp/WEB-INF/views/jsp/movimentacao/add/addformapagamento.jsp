@@ -90,7 +90,7 @@
                     <td>${pagamento.nome}</td>
                     <td>${pagamento.parcelas}</td>
                     <td>5.00</td>
-                    <td>100.00</td>
+                    <td>100</td>
 
 
                    
