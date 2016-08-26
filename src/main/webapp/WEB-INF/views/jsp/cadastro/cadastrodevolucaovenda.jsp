@@ -13,12 +13,12 @@
 
 		<div id="dadospedido" class="dadospedido">
 
-            ID do Pedido Compra:  <input id="idpedidocompra" name="idpedidocompra" type="text" class="idpedido" value="${pc.id }"/>
+            ID do Pedido Venda:  <input id="idpedidovenda" name="idpedidovenda" type="text" class="idpedido" value="${pv.id }"/>
 
-				<button class="button"formaction="CarregarPedidoCompra" formmethod="get">carregarPedidoCompra</button>
+				<button class="button"formaction="CarregarPedidoVenda" formmethod="get">carregarPedidoVenda</button>
 
 </br>
-            ID Fornecedor:	<input name="idfornecedor" type="text" class="tipo" value="${pc.fornecedor }"/>
+            ID Cliente:	<input name="idcliente" type="text" class="tipo" value="${pv.cliente }"/>
 			
 <!-- 			Total: -->
 <!-- 			<input id="totalpedido" name="totalpedido" type="text" class="totalpedido" /> -->
@@ -28,7 +28,7 @@
 				Status:
 				<select name="status" id="status" class="status">
 					<optgroup label="Status do Pedido">
-								<option value="${pc.status}">${pc.status}</option>
+								<option value="${pv.status}">${pv.status}</option>
 						
 	
 	
@@ -36,15 +36,16 @@
 				</select>
 				
 			Data Compra
-			<input id="datacompra" name="datacompra"  type="date" value="${pc.data}" />
+			<input id="datacompra" name="datacompra"  type="date" value="${pv.data}" />
            </br>
 			
 			
-					Data Recebimento
+			Data Devolucao
+<%--            <fmt:formatDate id="data" name="data"value="" type="both" pattern="dd/MM/yyyy" dateStyle="full"/> --%>
+					
 			<input id="data" name="data"  type="date" value=""/>
            </br>
 <!--    					Data Recebimento -->
-<%--            <fmt:formatDate value="" type="both" pattern="dd/MM/yyyy" dateStyle="full"/> --%>
            
 			
 		</div>

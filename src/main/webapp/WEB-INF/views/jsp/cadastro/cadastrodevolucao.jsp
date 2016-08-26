@@ -164,7 +164,7 @@
     <!-- </div> -->
 
     <div class="postt">
-        <h2 class="title">Cadastros de Devoluções</h2>
+        <h2 class="title">Cadastros de Devolucoes</h2>
 
 
         <button onclick="window.location.href='${pageContext.request.contextPath}/devolucaovenda/cadastro'"><p><img

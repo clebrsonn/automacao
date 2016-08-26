@@ -40,7 +40,7 @@
            </br>
 			
 			
-					Data Recebimento
+					Data Devolucao
 			<input id="data" name="data"  type="date" value=""/>
            </br>
 <!--    					Data Recebimento -->

@@ -24,10 +24,10 @@ public abstract class AbstractController<Entity> {
     @RequestMapping(value = "cadastro", method = RequestMethod.GET)
     public ModelAndView cadastrarEntity() {
     	
-    	ModelAndView cadastro = new ModelAndView("edicao" + entityAlias);
-        cadastro.addObject("acao", "add");
+    	ModelAndView cadastro = new ModelAndView("cadastro" + entityAlias);
+//        cadastro.addObject("acao", "add");
 
-//    	 List<Entity> entityList = getDao().getAll();
+    	 List<Entity> entityList = getDao().getAll();
 //    	 
 //    	 cadastro.addObject("entityList", entityList);
     	 
@@ -82,7 +82,7 @@ public abstract class AbstractController<Entity> {
     public ModelAndView editarEntity(HttpServletRequest request, Entity entity) {
 
 
-//        Long idf = Long.parseLong(request.getParameter("id"));
+        Long idf = Long.parseLong(request.getParameter("id"));
         getDao().editar(entity);
 
         
