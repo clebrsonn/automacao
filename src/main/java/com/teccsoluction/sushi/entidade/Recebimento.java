@@ -1,7 +1,5 @@
 package com.teccsoluction.sushi.entidade;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -25,21 +23,99 @@ public class Recebimento implements Serializable {
     
     @Column(name="STATUS")
     private String status;
+    
+    @Column(name="id_fornecedor")
+    private Fornecedor fornecedor;
+    
+    @OneToOne(mappedBy="recebimento")
+    private PedidoCompra pedidocompra;
 
 //	@OneToMany
 //	private List<Compra> compra;
 
 
     //private Pagamento pagamento;
-
-    //private Fornecedor fornecedor;
+    
 
 
     public Recebimento() {
         // TODO Auto-generated constructor stub
     }
+    
+    
+    
 
-    @Override
+    public long getId() {
+		return id;
+	}
+
+
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+
+
+	public Date getData() {
+		return data;
+	}
+
+
+
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+
+
+
+	public String getStatus() {
+		return status;
+	}
+
+
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
+
+
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+
+
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+
+
+
+
+	public PedidoCompra getPedidocompra() {
+		return pedidocompra;
+	}
+
+
+
+
+	public void setPedidocompra(PedidoCompra pedidocompra) {
+		this.pedidocompra = pedidocompra;
+	}
+
+
+
+
+	@Override
     public String toString() {
         return "ID RECEBIMENTO:" + id;
     }

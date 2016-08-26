@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 <div align="">
-            <h3>Movimentação Delivery</h3>
+            <h3>Movimentacao Delivery</h3>
             	<div id="content-table">
 	<form id="mainform"  action="cadastropedido">
 

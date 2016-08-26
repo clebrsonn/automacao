@@ -31,8 +31,8 @@
 		<button onclick="window.location.href='reserva/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/reserva.png">reservas</p></button>
 		<button onclick="window.location.href='pagamento/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/forma_pagamento.png">Pagamento</p></button>
 		<button onclick="window.location.href='pedido/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/pedidoo.png">Pedidos</p></button>
-		<button onclick="window.location.href='cozinha/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/cozinha.png">Cozinha</p></button>
-		<button onclick="window.location.href='delivery/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/entregaa.png">Entregas</p></button>
+		<button onclick="window.location.href='cozinha/carregarPedidoEmPreparacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/cozinha.png">Cozinha</p></button>
+		<button onclick="window.location.href='delivery/carregarPedidoDelivery'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/entregaa.png">Entregas</p></button>
 		<button onclick="window.location.href='empresa/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/entregaa.png">Empresa</p></button>
 <%-- 		<button onclick="window.location.href='caixa/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/entregaa.png">Caixa</p></button> --%>
 

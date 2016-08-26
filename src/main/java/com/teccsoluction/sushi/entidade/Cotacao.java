@@ -24,9 +24,9 @@ public class Cotacao {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date data;
 
-    @ManyToOne
-    @JoinColumn
-    private PedidoCompra pedidoCompra;
+//    @ManyToOne
+//    @JoinColumn
+//    private PedidoCompra pedidoCompra;
 
     public Cotacao() {
         itens = new ArrayList<>();
@@ -56,11 +56,11 @@ public class Cotacao {
         this.data = data;
     }
 
-    public PedidoCompra getPedidoCompra() {
-        return pedidoCompra;
-    }
-
-    public void setPedidoCompra(PedidoCompra pedidoCompra) {
-        this.pedidoCompra = pedidoCompra;
-    }
+//    public PedidoCompra getPedidoCompra() {
+//        return pedidoCompra;
+//    }
+//
+//    public void setPedidoCompra(PedidoCompra pedidoCompra) {
+//        this.pedidoCompra = pedidoCompra;
+//    }
 }

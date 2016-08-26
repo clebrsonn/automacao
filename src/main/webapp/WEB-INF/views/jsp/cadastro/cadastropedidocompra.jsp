@@ -25,12 +25,12 @@
 <!--             </select> -->
 
 
-            <p>Mesa:</p>
-            <select name="mesa" id="files" class="inp-form">
-                <optgroup label="Mesas">
+            <p>Fornecedor:</p>
+            <select name="fornecedor" id="files" class="inp-form">
+                <optgroup label="fornecedor">
 
-                    <c:forEach var="mesa" items="${mesaList}">
-                        <option value="${mesa.id}">${mesa.numero}</option>
+                    <c:forEach var="fornecedor" items="${fornecedorList}">
+                        <option value="${fornecedor.id}">${fornecedor.nomefantasia}</option>
                     </c:forEach>
 
 
@@ -52,18 +52,18 @@
             <p>Total:</p>
             <input name="total" type="text" class="inp-form" disabled="disabled"/>
 
-            <p> Garcon:</p>
+<!--             <p> Garcon:</p> -->
 
-            <select name="tipo" id="files" class="inp-form">
-                <optgroup label="Garçon">
+<!--             <select name="tipo" id="files" class="inp-form"> -->
+<!--                 <optgroup label="Garçon"> -->
 
-                    <c:forEach var="garcon" items="${garconList}">
-                        <option value="${garcon.id}">${garcon.nome}</option>
-                    </c:forEach>
+<%--                     <c:forEach var="garcon" items="${garconList}"> --%>
+<%--                         <option value="${garcon.id}">${garcon.nome}</option> --%>
+<%--                     </c:forEach> --%>
 
 
-                </optgroup>
-            </select>
+<!--                 </optgroup> -->
+<!--             </select> -->
 
 
             <div id="botoes">

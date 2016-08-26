@@ -4,7 +4,7 @@
 
 <div id="conteudo" class="conteudo">
     <div align="">
-        <h3>Movimentação Cliente</h3>
+        <h3>Movimentacao Cliente</h3>
         <div id="content-table">
             <form id="mainform">
 

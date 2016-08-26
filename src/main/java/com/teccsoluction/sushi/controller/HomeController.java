@@ -48,7 +48,7 @@ public class HomeController {
 
 	@ModelAttribute
 	public void addAttributes(Model model) {
-		Empresa empresaAtt = empresaDAO.PegarPorId(1);
+		Empresa empresaAtt = empresaDAO.PegarPorId(2);
 		model.addAttribute("empresaAtt", empresaAtt);
 	}
 
