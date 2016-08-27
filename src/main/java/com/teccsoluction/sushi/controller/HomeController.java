@@ -52,6 +52,39 @@ public class HomeController {
 		return home;
 	}
 
+	@RequestMapping(value = "/marketing", method = RequestMethod.GET)
+	public ModelAndView marketing() {
+
+		ModelAndView marketing = new ModelAndView("marketing");
+
+		return marketing;
+	}
+
+	@RequestMapping(value = "/financeiro", method = RequestMethod.GET)
+	public ModelAndView financeiro() {
+
+		ModelAndView financeiro = new ModelAndView("financeiro");
+
+		return financeiro;
+	}
+	
+	
+	@RequestMapping(value = "/relatorio", method = RequestMethod.GET)
+	public ModelAndView relatorio() {
+
+		ModelAndView relatorio = new ModelAndView("relatorio");
+
+		return relatorio;
+	}
+
+	@RequestMapping(value = "/suporte", method = RequestMethod.GET)
+	public ModelAndView suporte() {
+
+		ModelAndView suporte = new ModelAndView("suporte");
+
+		return suporte;
+	}
+	
 	@RequestMapping(value = "/cadastro", method = RequestMethod.GET)
 	public ModelAndView cadastro() {
 
@@ -59,7 +92,7 @@ public class HomeController {
 
 		return cadastro;
 	}
-
+	
 	@RequestMapping(value = "/movimentacao", method = RequestMethod.GET)
 	public ModelAndView movimentacao() {
 

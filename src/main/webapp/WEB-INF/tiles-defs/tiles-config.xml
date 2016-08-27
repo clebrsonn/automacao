@@ -551,10 +551,29 @@
     <definition name="finalizacaorecebimento" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/finalizacao/finalizacaorecebimento.jsp"/>
     </definition>
+<!-- MARKETING -->
+
+    <definition name="marketing" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/marketing/marketing.jsp"/>
+    </definition>
+    
+<!-- FINANCEIRO -->
+
+    <definition name="financeiro" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/financeiro/financeiro.jsp"/>
+    </definition>
+
+<!-- RELATÓRIOS -->
+
+    <definition name="relatorio" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/relatorio/relatorio.jsp"/>
+    </definition>
+
+<!-- SUPORTE -->
 
 
-    <definition name="AddCategoria" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrocategoria.jsp"/>
+    <definition name="suporte" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/suporte/suporte.jsp"/>
     </definition>
 
 </tiles-definitions>
