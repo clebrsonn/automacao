@@ -25,7 +25,7 @@ public class PedidoVenda extends Pedido {
     
     
     // VENDA OOU COMPRA
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private OrigemPedido origempedido;
     
     

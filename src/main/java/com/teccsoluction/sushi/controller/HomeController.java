@@ -11,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.teccsoluction.sushi.dao.generic.EmpresaDAO;
 import com.teccsoluction.sushi.entidade.Empresa;
+import com.teccsoluction.sushi.entidade.PedidoVenda;
+import com.teccsoluction.sushi.framework.AbstractEntityDao;
 
 /**
  * Handles requests for the application home page.
@@ -18,13 +20,34 @@ import com.teccsoluction.sushi.entidade.Empresa;
 @Controller
 public class HomeController {
 
-	@Autowired
-	private EmpresaDAO empresaDAO;
+	private
+	final
+	AbstractEntityDao<Empresa> empresaDao;
+	
+	
+	
+	public HomeController(EmpresaDAO daoempresa) {
+		super();
+		this.empresaDao = daoempresa;
+		// TODO Auto-generated constructor stub
+	}
+	
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView home() {
 
 		ModelAndView home = new ModelAndView("home");
+		Empresa empresaAtt = new Empresa();
+		empresaAtt.setCnpj("123456");
+		empresaAtt.setInscricaoestadual("123456789");
+		empresaAtt.setNome("New");
+		empresaAtt.setNomefantasia("Newsss");
+		empresaAtt.setRazaosocial("rosangelaME");
+		empresaAtt.setLogo("logo3.png");
+		
+		empresaDao.add(empresaAtt);
+		
+		home.addObject("empresaAtt", empresaAtt);
 
 		return home;
 	}
@@ -48,7 +71,7 @@ public class HomeController {
 
 	@ModelAttribute
 	public void addAttributes(Model model) {
-		Empresa empresaAtt = empresaDAO.PegarPorId(2);
+		Empresa empresaAtt = empresaDao.PegarPorId(1);
 		model.addAttribute("empresaAtt", empresaAtt);
 	}
 

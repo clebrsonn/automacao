@@ -14,7 +14,7 @@
 		<button onclick="window.location.href='${pageContext.request.contextPath}/cliente/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/cliente.png">cliente</p></button>
 		<button onclick="window.location.href='${pageContext.request.contextPath}/fornecedor/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/fornecedor.png">fornecedor</p></button>
 		<button onclick="window.location.href='${pageContext.request.contextPath}/servico/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/servico.png">servicos</p></button>
-		<div><p></p></div>
+<!-- 		<div><p></p></div> -->
 		<button onclick="window.location.href='${pageContext.request.contextPath}/mesa/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/mesa_disp.png">mesas</p></button>
 		<button onclick="window.location.href='${pageContext.request.contextPath}/composicao/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/composicao.png">Composicao</p></button>
 		<button onclick="window.location.href='${pageContext.request.contextPath}/desconto/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/desconto.png">desconto</p></button>
@@ -23,7 +23,7 @@
 		<button onclick="window.location.href='${pageContext.request.contextPath}/pagamento/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/forma_pagamento.png">Pagamento</p></button>
 		<button onclick="window.location.href='${pageContext.request.contextPath}/empresa/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/mesa_disp.png">Empresa</p></button>
 		<button onclick="window.location.href='${pageContext.request.contextPath}/caixa/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/mesa_disp.png">Caixa</p></button>
-
+		<button onclick="window.location.href='${pageContext.request.contextPath}/estoque/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/mesa_disp.png">Estoque</p></button>
 
 </div>
 </div>

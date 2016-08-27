@@ -15,7 +15,7 @@ public class Despesa implements Serializable {
 	private static final long serialVersionUID = -6185354829701934086L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID")
 	private long id;
 	

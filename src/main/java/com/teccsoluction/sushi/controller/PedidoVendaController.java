@@ -244,11 +244,11 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 	    
 	    
 	    // salva  forma pagamento
-	    @RequestMapping(value = "finalizacaovenda", method = RequestMethod.GET)
+	    @RequestMapping(value = "finalizacaovenda", method = RequestMethod.POST)
 		public ModelAndView  FinalizarVenda(HttpServletRequest request){
 	    	
 	    	
-	    	long idf = Long.parseLong(request.getParameter("id"));
+	    	long idf = Long.parseLong(request.getParameter("idpedido"));
 	    	ModelAndView finalizacaovenda = new ModelAndView("finalizacaovenda");
 	    	
 //	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);

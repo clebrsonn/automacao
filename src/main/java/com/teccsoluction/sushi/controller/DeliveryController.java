@@ -19,6 +19,7 @@ import com.teccsoluction.sushi.entidade.Produto;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
+import com.teccsoluction.sushi.util.OrigemPedido;
 
 import java.util.Date;
 import java.util.List;
@@ -123,6 +124,9 @@ public class DeliveryController {
 	    	movimentacaodelivery.addObject("pedidovendaList", pedidovendaList);
 //	    	movimentacaodelivery.addObject("pv", pv);
 //	    	movimentacaocaixa.addObject("produto", produto);
+	    	
+	    	PedidoVenda pv = new PedidoVenda();
+	    	pv.setOrigemPedido(OrigemPedido.INTERNET);
 
 
 			

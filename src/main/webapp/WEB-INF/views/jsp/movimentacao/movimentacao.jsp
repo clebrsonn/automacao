@@ -9,7 +9,7 @@
 		<button onclick="window.location.href='${pageContext.request.contextPath}/caixa/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/vendas.png">Caixa</p></button>
 		<button onclick="window.location.href='${pageContext.request.contextPath}/recebimento/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/recebimento.png">recebimento </p></button>
 		<button onclick="window.location.href='${pageContext.request.contextPath}/devolucao/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/devolucao.png">devolucao </p></button>
-		<button onclick="window.location.href='${pageContext.request.contextPath}/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/estoque.png">estoque</p></button>
+		<button onclick="window.location.href='${pageContext.request.contextPath}/estoque/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/estoque.png">estoque</p></button>
 		<button onclick="window.location.href='${pageContext.request.contextPath}/pedidocompra/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/pedido.png">Compra</p></button>
 		<button onclick="window.location.href='${pageContext.request.contextPath}/cotacao/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/pedido.png">Cotacao</p></button>
 		

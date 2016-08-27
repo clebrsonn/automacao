@@ -20,6 +20,7 @@ public class PedidoCompra extends Pedido {
     private List<DevolucaoCompra> devolucaoCompra;
     
     
+    
 
     public PedidoCompra() {
         devolucaoCompra = new ArrayList<>();

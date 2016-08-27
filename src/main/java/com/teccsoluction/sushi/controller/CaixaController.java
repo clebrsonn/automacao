@@ -252,6 +252,38 @@ public class CaixaController extends AbstractController<Caixa> {
 			
 			return addformapagamento;
 		}
+	    
+	    // salva  forma pagamento
+	    @RequestMapping(value = "finalizacaovenda", method = RequestMethod.POST)
+		public ModelAndView  FinalizarVenda(HttpServletRequest request){
+	    	
+	    	
+	    	long idf = Long.parseLong(request.getParameter("id"));
+	    	ModelAndView finalizacaovenda = new ModelAndView("finalizacaovenda");
+	    	
+//	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
+//	    	
+//	    	Pagamento pg = new Pagamento();
+//	    	pg.setPedido(pv);
+	    	
+	    	
+//	    	pagamentopedidovendaDao.add(pg);
+//	    	
+//	    	
+//	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
+//	    	List<Item> itemList = itempedidovendaDao.getAllItens(idf);
+//	    	List<Pagamento>pagamentoList = pagamentopedidovendaDao.getAllPagamento(idf);
+//
+//	    	
+//	    	finalizacaovenda.addObject("itemList", itemList);
+//	    	finalizacaovenda.addObject("produtoList", produtoList);
+//	    	finalizacaovenda.addObject("pagamentoList", pagamentoList);
+
+//	    	finalizacaovenda.addObject("pv", pv);
+
+			
+			return finalizacaovenda;
+		}
     
     
 }

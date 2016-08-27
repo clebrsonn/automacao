@@ -1,7 +1,7 @@
 <div id="logo">
 	<h1>
 		<img alt="logo"
-			src="${pageContext.request.contextPath}/${empresaAtt.logo}"/>
+			src="${pageContext.request.contextPath}/resources/images/${empresaAtt.logo}"/>
 			<a href="#">${empresaAtt.nomefantasia}</a>
 	</h1>
 	<h2>
