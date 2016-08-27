@@ -8,10 +8,11 @@
 
 	<div id="form">
 		<form id="formPedido" action="add" method="POST">
-			<p>Data:</p>
-			<input name="data" type="text" class="inp-form" />
-
-			<p>Tipo de Pedido:</p>
+			<p>Data:
+				<input name="data" type="text" class="inp-form" />
+			</p>
+			
+		<p>Tipo de Pedido:
 			<select name="tipo" id="files" class="inp-form">
 				<optgroup label="Tipo de Pedido">
 
@@ -22,8 +23,9 @@
 
 				</optgroup>
 			</select>
+		</p>
 
-			<p>Origem do Pedido:</p>
+		<p>Origem do Pedido:
 			<select name="origempedido" id="files" class="inp-form">
 				<optgroup label="Origem do Pedido">
 
@@ -33,7 +35,7 @@
 
 				</optgroup>
 			</select>
-
+		</p>
 
 <!-- 			<p>Mesa:</p> -->
 <!-- 			<select name="mesa" id="files" class="inp-form"> -->
@@ -47,7 +49,7 @@
 <!-- 				</optgroup> -->
 <!-- 			</select> -->
 
-			<p>Status:</p>
+		<p>Status:
 			<select name="status" id="files" class="inp-form">
 				<optgroup label="Status do Pedido">
 
@@ -58,13 +60,14 @@
 
 				</optgroup>
 			</select>
+		</p>
 
-			<p>Total:</p>
+		<p>Total:
 			<input name="total" type="text" class="inp-form" disabled="disabled" />
-
+		</p>
 			<!--  -->
-			<p>Cliente :</p>
-
+		
+		<p>Cliente:
 			<select name="cliente" id="files" class="inp-form">
 				<optgroup label="Cliente">
 
@@ -75,7 +78,7 @@
 
 				</optgroup>
 			</select>
-
+		</p>
 
 			<!--  div botões -->
 			<div id="botoes">

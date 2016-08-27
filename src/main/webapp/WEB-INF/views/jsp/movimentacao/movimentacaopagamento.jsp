@@ -11,7 +11,7 @@
     			<th class="table-header-check"><a id="toggle-all" ></a> </th>
                 <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Nome Forma de Pagamento</a></th> 
-                 <th class="table-header-repeat line-left minwidth-1"><a>Número Forma de Pagamento</a></th>
+                 <th class="table-header-repeat line-left minwidth-1"><a>Numero Forma de Pagamento</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Tipo de Forma de Pagamento</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Parcelas da Forma de Pagamento</a></th>
                     

@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <%@ page session="false"%>
 
 <div id="conteudo" class="conteudo">
@@ -40,7 +42,7 @@
 									<td>${empresa.razaosocial}</td>
 									<td>${empresa.cnpj}</td>
 									<td>${empresa.inscricaoestadual}</td>
-									<td>${empresa.dataabertura}</td>
+                   					<td><fmt:formatDate type="date"  value="${empresa.dataabertura}" /></td>
 									<td>${empresa.logo}</td>
 
 

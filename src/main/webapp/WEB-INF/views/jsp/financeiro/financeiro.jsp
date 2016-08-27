@@ -6,11 +6,11 @@
 		<h1 class="title">Financeiro</h1>
 
 
-		<button onclick="window.location.href='${pageContext.request.contextPath}/categoria/cadastro'"><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/categoria.png">Contas</button>
-		<button onclick="window.location.href='${pageContext.request.contextPath}/produto/cadastro'"><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/produto.png">Bancos</button>
-		<button onclick="window.location.href='${pageContext.request.contextPath}/usuario/cadastro'"><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/user.png">a Pagar</button>
-		<button onclick="window.location.href='${pageContext.request.contextPath}/garcon/cadastro'"><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/garcon.png">a Receber</button>
-		<button onclick="window.location.href='${pageContext.request.contextPath}/despesa/cadastro'"><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/despesa.png">Fechar Caixa</button>
+		<button onclick="window.location.href='${pageContext.request.contextPath}/categoria/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/categoria.png">Cadastro Contas</p></button>
+		<button onclick="window.location.href='${pageContext.request.contextPath}/produto/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/produto.png">Cadastro Bancos</p></button>
+		<button onclick="window.location.href='${pageContext.request.contextPath}/usuario/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/user.png">Contas a Pagar</p></button>
+		<button onclick="window.location.href='${pageContext.request.contextPath}/garcon/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/garcon.png">Contas a Receber</p></button>
+		<button onclick="window.location.href='${pageContext.request.contextPath}/despesa/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/despesa.png">Fechar Caixa</p></button>
 <%-- 		<button onclick="window.location.href='${pageContext.request.contextPath}/cliente/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/cliente.png">cliente</p></button> --%>
 <%-- 		<button onclick="window.location.href='${pageContext.request.contextPath}/fornecedor/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/fornecedor.png">fornecedor</p></button> --%>
 <%-- 		<button onclick="window.location.href='${pageContext.request.contextPath}/servico/cadastro'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/servico.png">servicos</p></button> --%>

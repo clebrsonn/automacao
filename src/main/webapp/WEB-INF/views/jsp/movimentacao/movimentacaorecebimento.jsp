@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <%@ page session="false" %>
 
 <div id="conteudo" class="conteudo">
@@ -34,7 +36,7 @@
     <tr class="alternate-row">
                 <td><input  type="checkbox"/></td>
                     <td>${recebimento.id}</td>
-                     <td>${recebimento.data}</td>
+                     <td><fmt:formatDate type="date"  value="${recebimento.data}" /></td>
                      <td>${recebimento.fornecedor}</td>
 <%--                     <td>${recebimento.mesa}</td> --%>
                     <td>${recebimento.status}</td>
@@ -57,7 +59,7 @@
                 <td><input  type="checkbox"/></td>
              
                         <td>${recebimento.id}</td>
-                     <td>${recebimento.data}</td>
+                     <td><fmt:formatDate type="date"  value="${recebimento.data}" /></td>
                      <td>${recebimento.fornecedor.nomefantasia}</td>
 <%--                     <td>${recebimento.mesa}</td> --%>
                     <td>${recebimento.status}</td>

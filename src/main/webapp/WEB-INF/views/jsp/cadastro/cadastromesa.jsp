@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-    <h2>Cadastro de Mesa</h2>
+    <h1>Cadastro de Mesa</h1>
 
 
     <div id="form">
