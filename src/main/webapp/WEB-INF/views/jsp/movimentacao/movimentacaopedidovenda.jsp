@@ -73,7 +73,7 @@
 										title="Edit"></a> &nbsp;&nbsp;&nbsp;&nbsp; <a
 										href="addformapagamento?id=${pedidovenda.id}"
 										class="icon-40 info-tooltip" title="aaa"></a> <a
-										href="additemvenda?id=${pedidovenda.id}"
+										href="additemvenda?idpedidovenda=${pedidovenda.id}"
 										class="icon-30 info-tooltip" title="Adicionar Item ao Pedido"></a>
 										&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${pedidovenda.id}"
 										class="icon-5 info-tooltip" title="ccc"></a></td>

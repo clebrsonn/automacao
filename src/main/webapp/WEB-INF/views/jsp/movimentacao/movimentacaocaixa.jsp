@@ -27,13 +27,13 @@
 		
 	<form id="formRecebimentos" action="AddItemVenda" method=POST>
 	
-		<input id="pedidovendaid" name="pedidovendaid" type="text" class="pedidovendaid" value="${pv.id }" hidden="true"/>
+		<input id="pedidovendaid" name="idpedidovenda" type="text" class="pedidovendaid" value="${pv.id }" hidden="true"/>
 		
 		
 	<div id="item" class="item">
 
 
-		Cod Prod <input id="codigoitem" name="codigoitem" type="text" list="id" class="codigoitem" value="${produto.codebar }"/>
+		Cod Prod <input id="codigoitem" name="codigo" type="text" list="id" class="codigoitem" value="${produto.codebar }"/>
 
 		<datalist id="id">
 
@@ -47,7 +47,7 @@
 		</datalist>
 
 
-		Descricao <input id="descricaoitem" name="descricaoitem" type="text" list="produtos" class="descricaoitem" value="${produto.descricao}"/>
+		Descricao <input id="descricaoitem" name="descricao" type="text" list="produtos" class="descricaoitem" value="${produto.descricao}"/>
 
 
 		<datalist id="produtos">
@@ -65,9 +65,9 @@
 
 	<div id="detalheitem" class="detalheitem">
 
-		Quantidade <input id="quantidadeitem" name="quantidadeitem" type="text"	class="quantidadeitem" /> 
-		Valor Item <input id="valoritem" name="valoritem" type="text" class="valoritem" value="${produto.precoVenda }" />
-		Total Item <input id="valortotal" name="valortotal" type="text" class="valortotal" />
+		Quantidade <input id="quantidadeitem" name="quantidade" type="text"	class="quantidadeitem" /> 
+		Valor Item <input id="valoritem" name="valor" type="text" class="valoritem" value="${produto.precoVenda }" />
+		Total Item <input id="valortotal" name="valor" type="text" class="valortotal" />
 		SubTotal <input id="subtotal" name="subtotal" type="text" class="subtotal" />
 
 

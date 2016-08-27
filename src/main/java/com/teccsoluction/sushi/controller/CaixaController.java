@@ -141,12 +141,12 @@ public class CaixaController extends AbstractController<Caixa> {
 	
     		ModelAndView movimentacaocaixa = new ModelAndView("movimentacaocaixa");
   	    	
-    		//convers�es
-    		long idfprod = Long.parseLong(request.getParameter("codigoitem"));
-	    	long idf = Long.parseLong(request.getParameter("pedidovendaid"));
-	    	double total = Double.parseDouble(request.getParameter("valortotal"));
-	    	int qtd = Integer.parseInt(request.getParameter("quantidadeitem"));
-	    	double precounitario = Double.parseDouble(request.getParameter("valoritem"));
+    		//conversoes
+    		long idfprod = Long.parseLong(request.getParameter("codigo"));
+	    	long idf = Long.parseLong(request.getParameter("idpedidovenda"));
+	    	double total = Double.parseDouble(request.getParameter("valor"));
+	    	int qtd = Integer.parseInt(request.getParameter("quantidade"));
+	    	double precounitario = Double.parseDouble(request.getParameter("valor"));
 	    	
 	    	
 	    	//carregamento de objetos
@@ -158,8 +158,8 @@ public class CaixaController extends AbstractController<Caixa> {
 	    	Item item = new Item();
 	    	
 //	    	item.setProduto(produto);
-	    	item.setDescricao(request.getParameter("descricaoitem"));
-	    	item.setCodigo(request.getParameter("codigoitem"));
+	    	item.setDescricao(request.getParameter("descricao"));
+	    	item.setCodigo(request.getParameter("codigo"));
 	    	item.setPrecoUnitario(precounitario);
 	    	item.setQtd(qtd);
 	    	item.setTotalItem(precounitario*qtd);
@@ -258,7 +258,7 @@ public class CaixaController extends AbstractController<Caixa> {
 		public ModelAndView  FinalizarVenda(HttpServletRequest request){
 	    	
 	    	
-	    	long idf = Long.parseLong(request.getParameter("id"));
+	    	long idf = Long.parseLong(request.getParameter("idpedido"));
 	    	ModelAndView finalizacaovenda = new ModelAndView("finalizacaovenda");
 	    	
 //	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);

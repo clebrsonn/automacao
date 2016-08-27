@@ -7,7 +7,7 @@
 
 
 	<div id="form">
-		<form id="formRecebimentos" action="AddItemCompra" method="POST">
+		<form id="formPedidoCompra" action="AddItemCompra" method="POST">
 
 			<div id="dadospedido" class="dadospedido">
 
@@ -17,6 +17,8 @@
 					name="totalpedido" type="text" class="totalpedido" value="${pc.total }"/>
 
 			</div>
+						<button class="button" formaction="carregarPedidoCompra" formmethod="get">CarregarPedido</button>
+			
 
 
 			<div id="item" class="item">

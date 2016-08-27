@@ -162,12 +162,29 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 		public ModelAndView  additemvendaa(HttpServletRequest request){
 	    	
 	    	
-	    	long idf = Long.parseLong(request.getParameter("idpedidovenda"));
+//	    	long idf = Long.parseLong(request.getParameter("idpedidovenda"));
 	    	ModelAndView additemvenda = new ModelAndView("additemvenda");
 	    	
-	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
 	    	
+	    	//conversoes
+    		long idfprod = Long.parseLong(request.getParameter("codigo"));
+	    	long idf = Long.parseLong(request.getParameter("idpedidovenda"));
+	    	double total = Double.parseDouble(request.getParameter("valor"));
+	    	int qtd = Integer.parseInt(request.getParameter("quantidade"));
+	    	double precounitario = Double.parseDouble(request.getParameter("valor"));
+	    	
+	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
+
 	    	Item item = new Item();
+	    	
+	    	//setando os valores dos itens
+	    	item.setDescricao(request.getParameter("descricao"));
+	    	item.setCodigo(request.getParameter("codigo"));
+	    	item.setPrecoUnitario(precounitario);
+	    	item.setQtd(qtd);
+	    	item.setTotalItem(precounitario*qtd);
+	    	pv.setTotal(pv.getTotal()+(precounitario*qtd));
+
 	    	
 	    	item.setPedido(pv);
 	    	

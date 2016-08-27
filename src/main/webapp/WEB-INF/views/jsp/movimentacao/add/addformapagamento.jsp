@@ -61,7 +61,7 @@
 			<div id="botoes">
 				<button class="button">AdicionarFormadePagamento</button>
 <!-- 				<button class="button">Apagar</button> -->
-				<button class="button" formaction="finalizarvenda" formmethod="POST">FinalizarVenda</button>
+				<button class="button" formaction="finalizacaovenda" formmethod="POST">FinalizarVenda</button>
 			</div>
 
 		
