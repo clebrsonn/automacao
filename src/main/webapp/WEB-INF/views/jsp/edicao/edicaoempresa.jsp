@@ -9,21 +9,23 @@
         <form id="formFornecedor" action="edicao" method="POST">
 
 
-            <p>ID do Fornecedor:</p>
-            <input type="text" class="inp-form" name="id" value="${fornecedor.id }"/>
+            <p>ID Empresa:</p>
+            <input type="text" class="inp-form" name="id" value="${empresa.id }"/>
 
             <p>Nome Fantasia :</p>
-            <input name="nomefantasia" type="text" class="inp-form" value="${fornecedor.nomefantasia }"/>
+            <input name="nomefantasia" type="text" class="inp-form" value="${empresa.nomefantasia }"/>
 
             <p>Razao Social:</p>
-            <input name="razaoSocial" type="text" class="inp-form" value="${fornecedor.razaoSocial }"/>
+            <input name="razaoSocial" type="text" class="inp-form" value="${empresa.razaosocial }"/>
 
             <p>cnpj:</p>
-            <input name="cnpj" type="text" class="inp-form" value="${fornecedor.cnpj }"/>
+            <input name="cnpj" type="text" class="inp-form" value="${empresa.cnpj }"/>
 
             <p>Inscricao Estadual:</p>
-            <input name="inscricaoestadual" type="text" class="inp-form" value="${fornecedor.inscricaoestadual }"/>
-
+            <input name="inscricaoestadual" type="text" class="inp-form" value="${empresa.inscricaoestadual }"/>
+			
+			 <p>Data Abertura:</p>
+            <input name="dataabertura" type="date" class="inp-form" value="${empresa.dataabertura }"/>
 
             <!-- 		<p>Tipo de Objeto:</p> -->
 

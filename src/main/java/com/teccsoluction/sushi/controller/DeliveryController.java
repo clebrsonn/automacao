@@ -125,8 +125,7 @@ public class DeliveryController {
 //	    	movimentacaodelivery.addObject("pv", pv);
 //	    	movimentacaocaixa.addObject("produto", produto);
 	    	
-	    	PedidoVenda pv = new PedidoVenda();
-	    	pv.setOrigemPedido(OrigemPedido.INTERNET);
+	
 
 
 			

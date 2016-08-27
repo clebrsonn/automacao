@@ -15,14 +15,14 @@
                  <th class="table-header-repeat line-left minwidth-1"><a>Tipo </a></th> 
 <!--             <th class="table-header-repeat line-left minwidth-1"><a>Mesa</a></th>  -->
              <th class="table-header-repeat line-left minwidth-1"><a>Status</a></th> 
-              <th class="table-header-repeat line-left minwidth-1"><a>OrigemPedido</a></th>
+<!--               <th class="table-header-repeat line-left minwidth-1"><a>OrigemPedido</a></th> -->
                 <th class="table-header-repeat line-left minwidth-1"><a>Total</a></th>
 
 <!--                  <th class="table-header-repeat line-left minwidth-1"><a>Data Abertura</a></th>  -->
                            
 <!--                 <th class="table-header-repeat line-left minwidth-1"><a>Data Fechamento</a></th>             -->
                                   
-                <th class="table-header-repeat line-left"><a>Acão</a></th>
+                <th class="table-header-repeat line-left"><a>Acao</a></th>
                  
                 <c:forEach var="pedido" items="${pedidovendaList}" varStatus="id">
 
@@ -38,7 +38,7 @@
                      <td>${pedido.tipo}</td>
 <%--                     <td>${pedido.mesa}</td> --%>
                     <td>${pedido.status}</td>
-<%--                     <td>${pedido.origempedido.INTERNET}</td>                    --%>
+<%--                     <td>${pedido.origempedido}</td>                    --%>
                     <td>${pedido.total}</td>
 
                    

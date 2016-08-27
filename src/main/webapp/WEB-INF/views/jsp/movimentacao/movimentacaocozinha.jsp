@@ -30,7 +30,7 @@
 
 
 <c:choose>
-  <c:when test="${pedido.status != 'CANCELADO'}">
+  <c:when test="${pedido.status == 'AGUARDANDO_PREPARACAO'}">
   
   
 			    <tr class="alternate-row">
@@ -41,7 +41,7 @@
 <%-- 			                    <td>${pedido.mesa}</td> --%>
 			                    <td>${pedido.status}</td>
 <%-- 			                    <td>${pedido.garcon}</td>                    --%>
-<%-- 			                    <td>${pedido.total}</td> --%>
+			                    <td>${pedido.cliente}</td>
 			
 			                   
 			                    <td class="options-width">

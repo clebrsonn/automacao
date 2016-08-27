@@ -12,7 +12,7 @@
 					<th class="table-header-check"><a id="toggle-all"></a></th>
 					<th class="table-header-repeat line-left "><a>Id</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a>Nome Fantasia</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a>Razão Social</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a>Razao Social</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a>Cnpj</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a>Inscrição Estadual</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a>Data Abertura</a></th>

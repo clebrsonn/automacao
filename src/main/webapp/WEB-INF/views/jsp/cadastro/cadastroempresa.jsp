@@ -9,7 +9,7 @@
 	<div id="form">
 		<form id="formEmpresa" action="add" method="POST">
 
-			<p>Razão Social:</p>
+			<p>Razao Social:</p>
 			<input name="razaosocial" type="text" class="inp-form" required />
 
 			<p>Nome Fantasia:</p>
@@ -25,7 +25,7 @@
 			<input name="logo" type="text" class="inp-form" />
 
 			<p>Data Abertura:</p>
-			<input name="dataabertura" type="text" class="inp-form" />
+			<input name="dataabertura" type="date" class="inp-form" />
 
 			<!-- <p>Inscrição estadual:</p>
 			<input name="inscricaoestadual" type="text" class="inp-form" required />
