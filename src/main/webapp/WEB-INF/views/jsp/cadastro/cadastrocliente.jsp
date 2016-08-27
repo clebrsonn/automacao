@@ -14,18 +14,19 @@
             <%--<p>ID do Cliente:</p>--%>
             <%--<input name="id"type="text" class="inp-form" readonly="readonly" />--%>
 
-            <p>Nome do Cliente:</p>
-            <input name="nome" type="text" class="inp-form"/>
+            <p>Nome do Cliente:
+            <input name="nome" type="text" class="inp-form"/></p>
 
-            <p>Data Nascimento do Cliente:</p>
-            <input name="dataNascimento" type="text" class="inp-form" />
+            <p>Data Nascimento :
+            <input name="dataNascimento" type="date" class="inp-form"
+            <fmt:formatDate type="date"  value="${cliente.dataNascimento}" pattern="dd/MM/yyyy"/> /> </p>
 
 
-            <p>Email do Cliente:</p>
-            <input name="email" type="email" class="inp-form"/>
+            <p>Email do Cliente:
+            <input name="email" type="email" class="inp-form"/></p>
 
-            <p>Telefone do Cliente:</p>
-            <input name="telefone" type="tel" class="inp-form"/>
+            <p>Telefone do Cliente:
+            <input name="telefone" type="tel" class="inp-form"/></p>
 
 
             <!-- 		<p>Projeto:</p> -->

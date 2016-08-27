@@ -24,6 +24,9 @@
             <p>Inscricao Estadual:</p>
             <input name="inscricaoestadual" type="text" class="inp-form" value="${empresa.inscricaoestadual }"/>
 			
+			 <p>Logo:</p>
+            <input id="logo"name="logo" type="text" class="inp-form" value="${empresa.logo }"/>
+			
 			 <p>Data Abertura:</p>
             <input name="dataabertura" type="date" class="inp-form" value="${empresa.dataabertura }"/>
 

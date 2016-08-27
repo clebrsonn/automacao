@@ -9,11 +9,13 @@
     <div id="form">
         <form id="formComposicao" action="add" method="POST">
 
-            <p>Numero da Composicao:</p>
-            <input name="numero" type="text" class="inp-form"/>
+            <p>Numero da Composicao:
+            	<input name="numero" type="text" class="inp-form"/>
+            </p>
 
-            <p>Nome da Composicao:</p>
-            <input name="nome" type="text" class="inp-form"/>
+            <p>Nome da Composicao:
+            	<input name="nome" type="text" class="inp-form"/>
+            </p>
 
 
             <div id="botoes">

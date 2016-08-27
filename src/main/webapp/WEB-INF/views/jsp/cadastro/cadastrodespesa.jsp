@@ -11,11 +11,13 @@
     <div id="formm">
         <form id="formDespesa" action="add" method="POST">
 
-            <p>Nome da Despesa:</p>
+            <p>Nome da Despesa:
             <input name="nome" type="text" class="inp-form"/>
+            </p>
 
-            <p>Valor da Despesa:</p>
+            <p>Valor da Despesa:
             <input name="valor" type="text" class="inp-form"/>
+            </p>
 
             <div id="botoes">
 

@@ -10,8 +10,9 @@
 		<form id="formEstoque" action="add" method="POST">
 			
 			
-			<p>Nome :</p>
-			<input id="nome"name="nome" type="text" class="inp-form"  />
+			<p>Nome :
+				<input id="nome"name="nome" type="text" class="inp-form"  />
+			</p>
 
 
 			<!--     <p>L�der do Projeto:</p> -->

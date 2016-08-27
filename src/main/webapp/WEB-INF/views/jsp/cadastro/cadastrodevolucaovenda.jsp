@@ -17,7 +17,7 @@
 
 				<button class="button"formaction="CarregarPedidoVenda" formmethod="get">carregarPedidoVenda</button>
 
-</br>
+					</br>
             ID Cliente:	<input name="idcliente" type="text" class="tipo" value="${pv.cliente }"/>
 			
 <!-- 			Total: -->

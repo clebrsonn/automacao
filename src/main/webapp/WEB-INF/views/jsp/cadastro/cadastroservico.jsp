@@ -7,12 +7,16 @@
 
     <div id="form">
         <form id="formServicos" action="add" method="POST">
-            <p>Numero do Serviço:</p>
-            <input name="numero" type="text" class="inp-form"/>
-            <p>Nome do Serviço:</p>
-            <input name="nome" type="text" class="inp-form"/>
-            <p>Preço do Serviço:</p>
-            <input name="preco" type="text" class="inp-form"/>
+            <p>Numero do Servico:
+            	<input name="numero" type="text" class="inp-form"/>
+            </p>
+            <p>Nome do Servico:
+            	<input name="nome" type="text" class="inp-form"/>
+            </p>
+            <p>Preco do Servico:
+            	<input name="preco" type="text" class="inp-form"/>
+            </p>
+            
 
             <div id="botoes">
                 <button class="button">Adicionar</button>

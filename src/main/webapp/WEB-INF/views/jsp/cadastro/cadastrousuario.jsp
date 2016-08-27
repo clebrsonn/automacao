@@ -7,39 +7,40 @@
  
  <form id="formUsuario" action="add" method="POST">
 
-			<p>Id Usuario</p>
-			<input id="id" name="id" type="text" readonly="readonly"/>
+			<p>Id Usuario
+				<input id="id" name="id" type="text" readonly="readonly"/>
+			</p>
 			
+			<p>Nome
+				<input id="nome" name="nome" type="text" />
+			</p>
+			<p>Senha
+				<input id="senha" name="senha" type="text" />
+			</p>
 			
-			<p>Nome</p>
-			<input id="nome" name="nome" type="text" />
-			
-			<p>Senha</p>
-			<input id="senha" name="senha" type="text" />
-			
-            <p> Tipo:</p>
-            <select id="tipo" name="tipo" id="files" class="inp-form">           
-                <optgroup label="Tipos de Usuario">
-           			<c:forEach var="tipo" items="${tipoList}">
-           			
-           				<option value="${tipo}">${tipo}</option>
-           				      				
-           				
-       				</c:forEach>
-                </optgroup>
-            </select>
-			
-			<p>Email</p>
-			<input id="email" name="email" type="text" />
-			
+            <p> Tipo:
+	            <select id="tipo" name="tipo" id="files" class="inp-form">           
+	                <optgroup label="Tipos de Usuario">
+	           			<c:forEach var="tipo" items="${tipoList}">
+	           			
+	           				<option value="${tipo}">${tipo}</option>
+	           				      				
+	           				
+	       				</c:forEach>
+	                </optgroup>
+	            </select>
+			</p>
+			<p>Email
+				<input id="email" name="email" type="text" />
+			</p>
 	
 			
 
 				
-<div id="botoes">
-<button class="button">Adicionar</button>
-<button class="button">Apagar</button>
-</div>
+			<div id="botoes">
+				<button class="button">Adicionar</button>
+				<button class="button">Apagar</button>
+			</div>
 				
 
 </form>

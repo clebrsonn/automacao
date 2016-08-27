@@ -16,7 +16,7 @@
 					<th class="table-header-repeat line-left minwidth-1"><a>Cnpj</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a>Inscrição Estadual</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a>Data Abertura</a></th>
-<!-- 					<th class="table-header-repeat line-left minwidth-1"><a>Garçon</a></th> -->
+					<th class="table-header-repeat line-left minwidth-1"><a>Logo</a></th>
 <!-- 					<th class="table-header-repeat line-left minwidth-1"><a>Total</a></th> -->
 
 					<!--                  <th class="table-header-repeat line-left minwidth-1"><a>Data Abertura</a></th>  -->
@@ -41,7 +41,7 @@
 									<td>${empresa.cnpj}</td>
 									<td>${empresa.inscricaoestadual}</td>
 									<td>${empresa.dataabertura}</td>
-<%-- 									<td>${empresa.total}</td> --%>
+									<td>${empresa.logo}</td>
 
 
 									<td class="options-width"><a
@@ -65,7 +65,7 @@
 									<td>${empresa.cnpj}</td>
 									<td>${empresa.inscricaoestadual}</td>
 									<td>${empresa.dataabertura}</td>
-<%-- 									<td>${empresa.total}</td> --%>
+									<td>${empresa.logo}</td>
 
 									<td class="options-width"><a
 										href="edicao?id=${empresa.id}" class="icon-1 info-tooltip"

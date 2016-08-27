@@ -10,15 +10,29 @@
 
     <div id="formm">
         <form id="formPagamento" action="add" method="POST">
-            <p>Numero d Pagamento:</p>
-            <input name="numero" type="text" class="inp-form"/>
+            <p>Numero:
+            	<input name="numero" type="text" class="inp-form"/>
+            </p>
 
-            <p>Nome da Forma de Pagamento:</p>
-            <input name="nome" type="text" class="inp-form"/>
-            <p>Tipo de Forma de Pagamento:</p>
-            <input name="tipo" type="text" class="inp-form"/>
-            <p>Parcelas da Forma de Pagamento:</p>
-            <input name="parcelas" type="text" class="inp-form"/>
+            <p>Nome:
+            	<input name="nome" type="text" class="inp-form"/>
+            </p>
+            <p>
+            Tipo:
+	            <select id="tipo" name="tipo" id="files" class="inp-form">
+	                <optgroup label="Tipo Forma Pagamento">
+	
+	                    <option value="DINHEIRO">DINHEIRO</option>
+	                    <option value="CREDITO">CREDITO</option>
+	                    <option value="DEBITO">DEBITO</option>
+	
+	
+	                </optgroup>
+	            </select>
+            </p>
+            <p>Parcelas:
+            	<input name="parcelas" type="number" class="inp-form"/>
+            </p>
 
 
             <div id="botoes">

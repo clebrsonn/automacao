@@ -9,21 +9,23 @@
     <div id="form">
         <form id="formCategoria" action="add" method="POST">
 
-            <p> Categoria Pai:</p>
-            <select id="catpai" name="catpai" id="files" class="inp-form">
-                <option value=""></option>
+            <p> Categoria Pai:
+	            <select id="catpai" name="catpai" id="files" class="inp-form">
+	                <option value=""></option>
+	
+	                <optgroup label="Categoria Pai">
+	                    <c:forEach var="categoria" items="${categoriaList}">
+	                        <option value="${categoria.id}">${categoria.nome}</option>
+	                    </c:forEach>
+	
+	                </optgroup>
+            	</select>
+            </p>
 
-                <optgroup label="Categoria Pai">
-                    <c:forEach var="categoria" items="${categoriaList}">
-                        <option value="${categoria.id}">${categoria.nome}</option>
-                    </c:forEach>
 
-                </optgroup>
-            </select>
-
-
-            <p>Nome da Categoria:</p>
-            <input name="nome" type="text" class="inp-form"/>
+            <p>Nome da Categoria:
+            	<input name="nome" type="text" class="inp-form"/>
+            </p>
 
 
             <div id="botoes">

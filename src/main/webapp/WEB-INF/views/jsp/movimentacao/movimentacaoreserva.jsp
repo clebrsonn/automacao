@@ -1,20 +1,22 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <%@ page session="false" %>
 
 <div id="conteudo" class="conteudo">
 <div align="">
-            <h3>Movimentação Reserva</h3>
+            <h3>Movimentacao Reserva</h3>
             	<div id="content-table">
 	<form id="mainform">
 
       <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table">
     			<th class="table-header-check"><a id="toggle-all" ></a> </th>
                 <th class="table-header-repeat line-left "><a>Id</a></th>
-                 <th class="table-header-repeat line-left minwidth-1"><a>Número Reserva</a></th>
+                 <th class="table-header-repeat line-left minwidth-1"><a>Numero Reserva</a></th>
                 <th class="table-header-repeat line-left minwidth-1"><a>Data Reserva</a></th> 
                  <th class="table-header-repeat line-left minwidth-1"><a>Hora Reserva</a></th>           
                 <th class="table-header-repeat line-left minwidth-1"><a>Mesa Reserva</a></th>
-                <th class="table-header-repeat line-left"><a>Acão</a></th>
+                <th class="table-header-repeat line-left"><a>Acao</a></th>
                  
                 <c:forEach var="reserva" items="${reservaList}" varStatus="id">
                 
@@ -28,8 +30,8 @@
                 <td><input  type="checkbox"/></td>
                     <td>${reserva.id}</td>
                      <td>${reserva.numero}</td>
-                    <td>${reserva.data}</td>
-                    <td>${reserva.hora}</td>
+                    <td><fmt:formatDate type="date"  value="${reserva.data}" /></td>
+                    <td><fmt:formatDate type="time"  value="${reserva.hora}" /></td>
                     <td>${reserva.mesa}</td>
                    
                     <td class="options-width">
@@ -47,8 +49,8 @@
                 <td><input  type="checkbox"/></td>
              <td>${reserva.id}</td>
                      <td>${reserva.numero}</td>
-                    <td>${reserva.data}</td>
-                    <td>${reserva.hora}</td>
+                    <td><fmt:formatDate type="date"  value="${reserva.data}" /></td>
+                    <td><fmt:formatDate type="time"  value="${reserva.hora}" /></td>
                     <td>${reserva.mesa}</td>
                     
                     <td class="options-width">

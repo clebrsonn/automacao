@@ -9,23 +9,31 @@
 	<div id="form">
 		<form id="formEmpresa" action="add" method="POST">
 
-			<p>Razao Social:</p>
-			<input name="razaosocial" type="text" class="inp-form" required />
+			<p>Razao Social:
+				<input name="razaosocial" type="text" class="inp-form" required />
+			</p>
 
-			<p>Nome Fantasia:</p>
-			<input name="nomefantasia" type="text" class="inp-form" required />
+			<p>Nome Fantasia:
+				<input name="nomefantasia" type="text" class="inp-form" required />
+			</p>
 
-			<p>CNPJ:</p>
-			<input name="cnpj" type="text" class="inp-form" />
+			<p>CNPJ:
+				<input name="cnpj" type="text" class="inp-form" />
+			</p>
 
-			<p>Inscricao Estadual:</p>
-			<input name="inscricaoestadual" type="text" class="inp-form" />
+			<p>Inscricao Estadual:
+				<input name="inscricaoestadual" type="text" class="inp-form" />
+			</p>
 
-			<p>Logomarca:</p>
-			<input name="logo" type="text" class="inp-form" />
+			<p>Logomarca:
+				<input name="logo" type="text" class="inp-form" />
+			</p>
 
-			<p>Data Abertura:</p>
-			<input name="dataabertura" type="date" class="inp-form" />
+			<p>Data Abertura:
+				<input name="dataabertura" type="date" class="inp-form" 
+					<fmt:formatDate type="date"  value="${empresa.dataabertura}" pattern="dd/MM/yyyy"/>
+				/>
+			</p>
 
 			<!-- <p>Inscrição estadual:</p>
 			<input name="inscricaoestadual" type="text" class="inp-form" required />

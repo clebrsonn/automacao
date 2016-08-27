@@ -8,20 +8,22 @@
 
     <div id="form">
         <form id="formMesa" action="add" method="POST">
-            <p>Numero da Mesa:</p>
-            <input name="numero" type="text" class="inp-form"/>
+            <p>Numero da Mesa:
+            	<input name="numero" type="text" class="inp-form"/>
+            </p>
 
-            <p>Status:</p>
-            <select id="status" name="status" id="files" class="inp-form">
-                <optgroup label="Tipo de Pedido">
-
-                    <option value="Disponivel">Disponivel</option>
-                    <option value="Indisponivel">Indisponivel</option>
-                    <option value="Avariada">Avariada</option>
-
-
-                </optgroup>
-            </select>
+            <p>Status:
+	            <select id="status" name="status" id="files" class="inp-form">
+	                <optgroup label="Status Mesa">
+	
+	                    <option value="Disponivel">Disponivel</option>
+	                    <option value="Indisponivel">Indisponivel</option>
+	                    <option value="Avariada">Avariada</option>
+	
+	
+	                </optgroup>
+	            </select>
+            </p>
 
             <!-- 		<p> Projeto:</p> -->
 

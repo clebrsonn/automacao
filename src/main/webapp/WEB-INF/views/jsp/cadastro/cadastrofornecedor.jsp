@@ -8,17 +8,21 @@
     <div id="form">
         <form id="formFornecedor" action="add" method="POST">
 
-            <p>Nome Fantasia :</p>
-            <input name="nomefantasia" type="text" class="inp-form"/>
+            <p>Nome Fantasia :
+            	<input name="nomefantasia" type="text" class="inp-form"/>
+            </p>
 
-            <p>Razao Social:</p>
-            <input name="razaoSocial" type="text" class="inp-form"/>
+            <p>Razao Social:
+            	<input name="razaoSocial" type="text" class="inp-form"/>
+            </p>
 
-            <p>cnpj:</p>
-            <input name="cnpj" type="text" class="inp-form"/>
+            <p>cnpj:
+           	 	<input name="cnpj" type="text" class="inp-form"/>
+            </p>
 
-            <p>Inscricao Estadual:</p>
-            <input name="inscricaoestadual" type="text" class="inp-form"/>
+            <p>Inscricao Estadual:
+            	<input name="inscricaoestadual" type="text" class="inp-form"/>
+            </p>
 
 
             <!-- 		<p>Tipo de Objeto:</p> -->

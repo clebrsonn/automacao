@@ -9,15 +9,18 @@
     <div id="form">
         <form id="formDesconto" action="add" method=POST>
 
-            <p>Numero do Desconto:</p>
-            <input name="numero" type="text" class="inp-form"/>
+            <p>Numero do Desconto:
+            	<input name="numero" type="text" class="inp-form"/>
+            </p>
 
 
-            <p>Nome do Desconto:</p>
+            <p>Nome do Desconto:
             <input name="nome" type="text" class="inp-form"/>
+            </p>
 
-            <p>Valor do Desconto:</p>
+            <p>Valor do Desconto:
             <input name="valor" type="text" class="inp-form"/>
+            </p>
 
 
             <div id="clear">&nbsp;</div>

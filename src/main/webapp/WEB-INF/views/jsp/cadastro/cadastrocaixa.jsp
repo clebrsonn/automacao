@@ -8,8 +8,8 @@
 
 	<div id="form">
 		<form id="formGarcon" action="add" method="POST">
-			<p>Nome do Caixa:</p>
-			<input name="nome" type="text" class="inp-form" />
+			<p>Nome do Caixa:
+			<input name="nome" type="text" class="inp-form" /></p>
 
 
 			<!--     <p>Líder do Projeto:</p> -->

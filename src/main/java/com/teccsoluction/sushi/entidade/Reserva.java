@@ -23,20 +23,26 @@ public class Reserva implements Serializable {
     @Column(name = "numero")
     private String numero;
 
-
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @DateTimeFormat(pattern ="dd/MM/yyyy")
     private Date data;
 
-    @Column(name = "mesa")
-    private String mesa;
+    @Column(name="mesa")
+    private Mesa mesa;
 
     @Temporal(TemporalType.TIME)
+    @DateTimeFormat(pattern="HH:mm")
     private Date hora;
 
-
+    
     public Reserva() {
+		// TODO Auto-generated constructor stub
+	}
+    
+
+    public Reserva(Mesa mesa) {
         // TODO Auto-generated constructor stub
+    	this.mesa = mesa;
     }
 
 
@@ -65,12 +71,12 @@ public class Reserva implements Serializable {
     }
 
 
-    public String getMesa() {
+    public Mesa getMesa() {
         return mesa;
     }
 
 
-    public void setMesa(String mesa) {
+    public void setMesa(Mesa mesa) {
         this.mesa = mesa;
     }
 
