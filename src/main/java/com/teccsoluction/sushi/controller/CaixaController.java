@@ -188,7 +188,7 @@ public class CaixaController extends AbstractController<Caixa> {
 		public ModelAndView  addFormaPagamento(HttpServletRequest request){
 	    	
 	    	
-	    	Long idf = Long.parseLong(request.getParameter("pedidovendaid"));
+	    	Long idf = Long.parseLong(request.getParameter("idpedidovenda"));
 	    	ModelAndView addformapagamento = new ModelAndView("addformapagamento");
 	    	
 	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
