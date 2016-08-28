@@ -10,14 +10,61 @@
 
     <div id="formm">
         <form id="formDespesa" action="add" method="POST">
+        
+        
 
-            <p>Nome da Despesa:
-            <input name="nome" type="text" class="inp-form"/>
-            </p>
+<!-- 				DADOS DO REGISTRO DIVIDIDOS EM DOIS PARAGRAFOS	 -->
+			
+			<fieldset>
+				<legend>Dados do Registro</legend>
+			
+			
+				<p>Data Criacao:
+					<input name="datacriacao" type="date" class="inp-form" />
+					<fmt:formatDate type="date"  value="${registro.data}" pattern="dd/MM/yyyy"/>
+				
+				
+				Usuario Criou:
+				<input name="usuario" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+			
+				Data Ultima Modificacao:
+				<input name="datamodificacao" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.datamodificacao}" pattern="dd/MM/yyyy"/>
+				
+				</p>
+				
+				<p>
+				
+				Usuario Modificou:
+				<input name="usuario" type="text" class="inp-form"/>
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+				
+				Status:
+				<input name="status" type="text" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.status}" pattern="dd/MM/yyyy"/>
+				
+			</p>
+			
+			</fieldset>
+			
 
-            <p>Valor da Despesa:
-            <input name="valor" type="text" class="inp-form"/>
-            </p>
+
+     		<fieldset>
+				<legend>Dados da Despesa</legend>
+			   
+
+		            <p>Nome:
+		            <input name="nome" type="text" class="inp-form"/>
+		            </p>
+		
+		            <p>Valor:
+		            <input name="valor" type="text" class="inp-form"/>
+		            </p>
+            
+      		</fieldset>
 
             <div id="botoes">
 
@@ -32,21 +79,8 @@
     </div>
 
 
-    <!-- <div id="clear">&nbsp;</div> -->
-    <!-- <div id="clear">&nbsp;</div> -->
-    <!-- <div id="clear">&nbsp;</div> -->
-    <!-- <div id="clear">&nbsp;</div> -->
-    <!-- <div id="clear">&nbsp;</div> -->
-    <!-- <div id="clear">&nbsp;</div> -->
+</div> 
 
-</div>
-<!-- end content-table-inner -->
-
-
-<!-- <div id="clear">&nbsp;</div> -->
-<!-- <div id="clear">&nbsp;</div> -->
-<!-- <div id="clear">&nbsp;</div> -->
-<!-- <div id="clear">&nbsp;</div> -->
 
 
 	

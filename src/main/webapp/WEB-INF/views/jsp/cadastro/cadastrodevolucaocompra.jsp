@@ -11,54 +11,58 @@
 	<div id="form">
 	<form id="formRecebimentos" action="add" method="POST">
 
-		<div id="dadospedido" class="dadospedido">
-
-            ID do Pedido Compra:  <input id="idpedidocompra" name="idpedidocompra" type="text" class="idpedido" value="${pc.id }"/>
-
-				<button class="button"formaction="CarregarPedidoCompra" formmethod="get">carregarPedidoCompra</button>
-
-</br>
-            ID Fornecedor:	<input name="idfornecedor" type="text" class="tipo" value="${pc.fornecedor }"/>
-			
-<!-- 			Total: -->
-<!-- 			<input id="totalpedido" name="totalpedido" type="text" class="totalpedido" /> -->
-
-
-
-				Status:
-				<select name="status" id="status" class="status">
-					<optgroup label="Status do Pedido">
-								<option value="${pc.status}">${pc.status}</option>
-						
-	
-	
-					</optgroup>
-				</select>
+		<fieldset>
+				<legend>Detalhes do Pedido de Compra</legend>
 				
-			Data Compra
-			<input id="datacompra" name="datacompra"  type="date" value="${pc.data}" />
-           </br>
-			
-			
-					Data Devolucao
-			<input id="data" name="data"  type="date" value=""/>
-           </br>
-<!--    					Data Recebimento -->
-<%--            <fmt:formatDate value="" type="both" pattern="dd/MM/yyyy" dateStyle="full"/> --%>
-           
+						<div id="dadospedido" class="dadospedido">
+				
+				            ID do Pedido Compra:
+				            <input id="idpedidocompra" name="idpedidocompra" type="text" class="idpedido" value="${pc.id }"/>
+				
+							<button class="button"formaction="CarregarPedidoCompra" formmethod="get">carregarPedidoCompra</button>
+				
+								
+				            ID Fornecedor:	<input name="idfornecedor" type="text" class="tipo" value="${pc.fornecedor }"/>
+							
+				<!-- 			Total: -->
+				<!-- 			<input id="totalpedido" name="totalpedido" type="text" class="totalpedido" /> -->
+				
+				
+				
+							Status:
+							<select name="status" id="status" class="status">
+								<optgroup label="Status do Pedido">
+									
+									<option value="${pc.status}">${pc.status}</option>
+		
+								</optgroup>
+							</select>
+								
+							Data Compra
+							<input id="datacompra" name="datacompra"  type="date" value="${pc.datacompra}"
+							<fmt:formatDate pattern="dd/MM/yyyy" value="${pc.data}"/> />
+				           
+				           
+           </fieldset>
+							
+		<fieldset>
+				<legend>Dados da Devolucao de Compra</legend>
+				
+							
+							Data Devolucao
+							<input id="data" name="data"  type="date" value=""
+							<fmt:formatDate pattern="dd/MM/yyyy" value="${devolucaocompra.data}"/>/>
+				         
+				
+		</fieldset>
+						</div>
+		
+		
 			
 		</div>
 		
 		
-<!-- 				Fornecedor -->
-<%-- 			<input id="fornecedor" name="fornecedor"  type="number" value="${pc.fornecedor.id }"/> --%>
-<!--            </br> -->
-			
-		</div>
 		
-
-		
-			
 			<div id="botoes">
 			
 				<button class="button">Adicionar</button>
@@ -67,15 +71,7 @@
 			</div>
 			
 					
-		</div>
-		
 
-		
-		
-	
-
-</br>
-		
 		      <table border="0" width="70%"cellpadding="0" cellspacing="0"  class="product-table2">
     			 <th class="table-header-check"><a id="toggle-all" ></a> </th>
                  <th class="table-header-repeat line-left "><a>Id</a></th>
@@ -146,12 +142,6 @@
             </table>
 
 
-	</form>
-</div>
-
-
-</div>
-<!--  end content-table-inner  -->
 
 
 

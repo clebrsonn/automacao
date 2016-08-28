@@ -7,61 +7,67 @@
 
 
 	<div id="form">
+	
 		<form id="formRecebimentoss" action="carregarPedido" method=GET>
-
-			<div id="dadospedido" class="dadospedido">
-
-				ID do Pedido: <input id="idpedidovenda" name="idpedidovenda"
-					type="text" class="idpedido" value="${pv.id }" /> ID Cliente: <input name="tipo"
-					type="text" class="tipo" value="${pv.cliente }"/> Total: <input id="totalpedido"
-					name="totalpedido" type="text" class="totalpedido" value="${pv.total }"/>
-
-			</div>
-			
-			<button class="button">CarregarPedido</button>
-<!-- 			<button class="button">Novo Pedido</button> -->
-			
+	
+			<fieldset>
+				<legend>Detalhes do Pedido de Venda</legend>
+					<div id="dadospedido" class="dadospedido">
 		
+						ID do Pedido: <input id="idpedidovenda" name="idpedidovenda"
+							type="text" class="idpedido" value="${pv.id }" /> ID Cliente: <input name="tipo"
+							type="text" class="tipo" value="${pv.cliente }"/> Total: <input id="totalpedido"
+							name="totalpedido" type="text" class="totalpedido" value="${pv.total }"/>
+		
+					</div>
+			
+					<button class="button">CarregarPedido</button>
+	<!-- 			<button class="button">Novo Pedido</button> -->
+			
+			</fieldset>
 
 		</form>
 		
 	<form id="formRecebimentos" action="AddItemVenda" method=POST>
 	
-		<input id="pedidovendaid" name="idpedidovenda" type="text" class="pedidovendaid" value="${pv.id }" hidden="true"/>
+		<fieldset>
+			<legend>Dados do Item</legend>
+	
+				<input id="pedidovendaid" name="idpedidovenda" type="text" class="pedidovendaid" value="${pv.id }" hidden="true"/>
 		
 		
-	<div id="item" class="item">
-
-
-		Cod Prod <input id="codigoitem" name="codigo" type="text" list="id" class="codigoitem" value="${produto.codebar }"/>
-
-		<datalist id="id">
-
-			<c:forEach var="produto2" items="${listProduto}" varStatus="id">
+				<div id="item" class="item">
 			
-				<option value="${produto2.codebar}" />
-				
-			</c:forEach>
-
-
-		</datalist>
-
-
-		Descricao <input id="descricaoitem" name="descricao" type="text" list="produtos" class="descricaoitem" value="${produto.descricao}"/>
-
-
-		<datalist id="produtos">
-
-			<c:forEach var="produto3" items="${listProduto}" varStatus="id">
-
-				<option value="${produto3.descricao}" />
-
-			</c:forEach>
-
-
-		</datalist>
-
-	</div> <!--fecha div item  --> 
+			
+					Cod Prod <input id="codigoitem" name="codigo" type="text" list="id" class="codigoitem" value="${produto.codebar }"/>
+			
+					<datalist id="id">
+			
+						<c:forEach var="produto2" items="${listProduto}" varStatus="id">
+						
+							<option value="${produto2.codebar}" />
+							
+						</c:forEach>
+			
+			
+					</datalist>
+			
+			
+					Descricao <input id="descricaoitem" name="descricao" type="text" list="produtos" class="descricaoitem" value="${produto.descricao}"/>
+			
+			
+					<datalist id="produtos">
+			
+						<c:forEach var="produto3" items="${listProduto}" varStatus="id">
+			
+							<option value="${produto3.descricao}" />
+			
+						</c:forEach>
+			
+			
+					</datalist>
+			
+				</div> <!--fecha div item  --> 
 
 	<div id="detalheitem" class="detalheitem">
 
@@ -72,6 +78,8 @@
 
 
 	</div> <!-- fecha detalhes itens -->
+	
+	</fieldset>
 
 	<div id="botoes">
 		<button class="button">AdicionarItem</button>

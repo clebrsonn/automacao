@@ -314,7 +314,7 @@ hr {
 }
 
 button {
-	width: 8em;
+	width: 8.5em;
 	height:8em ;
 	background: #FFFFFF url(../images/img01.gif) repeat-x;
 	
@@ -734,4 +734,13 @@ margin: 2em;
 	
 	color: blue;
 	font-size: 1.3em;
+}
+form {
+	
+/* 	border: thick; */
+/* 	border-color: gray; */
+/* 	border-bottom-style:dotted; */
+/* 	border-bottom-width: 0.5em;  */
+	
+	
 }

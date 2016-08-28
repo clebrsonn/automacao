@@ -7,6 +7,53 @@
 
     <div id="form">
         <form id="formFornecedor" action="add" method="POST">
+        
+        
+        
+ <!-- 				DADOS DO REGISTRO DIVIDIDOS EM DOIS PARAGRAFOS	 -->
+			
+			<fieldset>
+				
+				<legend>Dados do Registro</legend>
+			
+			
+				<p>Data Criacao:
+					<input name="datacriacao" type="date" class="inp-form" />
+					<fmt:formatDate type="date"  value="${registro.data}" pattern="dd/MM/yyyy"/>
+				
+				
+				Usuario Criou:
+				<input name="usuario" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+			
+				Data Ultima Modificacao:
+				<input name="datamodificacao" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.datamodificacao}" pattern="dd/MM/yyyy"/>
+				
+				</p>
+				
+				<p>
+				
+				Usuario Modificou:
+				<input name="usuario" type="text" class="inp-form"/>
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+				
+				Status:
+				<input name="status" type="text" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.status}" pattern="dd/MM/yyyy"/>
+				
+			</p>
+			
+			</fieldset>	
+ 
+ 
+ 		<fieldset>
+				
+				<legend>Dados do Fornecedor</legend>
+			
+ 
 
             <p>Nome Fantasia :
             	<input name="nomefantasia" type="text" class="inp-form"/>
@@ -41,7 +88,7 @@
             <%--     NOME: ${obj.nome} Name: ${obj.tipo}<br/> --%>
             <%--   	</c:forEach> --%>
 
-
+	</fieldset>
             <div id="botoes">
                 <button class="button">Adicionar</button>
                 <button class="button">Apagar</button>
