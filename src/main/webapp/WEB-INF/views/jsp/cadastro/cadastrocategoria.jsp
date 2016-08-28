@@ -49,6 +49,7 @@
 <!-- 			FIM DADOS DO REGISTRO -->
 
 	<fieldset>
+		<legend>Dados da Categoria</legend>
 
             <p>Categoria Pai:
 	            <select id="catpai" name="catpai" id="files" class="inp-form">
