@@ -64,11 +64,11 @@
 		<input name="numero" type="text" class="inp-form" value="${reserva.numero}"/> </p>
 		
 			<p>Data da Reserva:
-		<input name="data" type="date" class="inp-form" 
+		<input name="data" type="text" class="inp-form" 
 		<fmt:formatDate type="date"  value="${reserva.data}" pattern="dd/MM/yyyy"/> /> </p>
 		
 			<p>Hora da Reserva:
-		<input name="hora" type="time" class="inp-form"
+		<input name="hora" type="text" class="inp-form"
 		<fmt:formatDate type="time"  value="${reserva.hora}" /> /> </p>
 		
 			<p> Mesa:
@@ -83,13 +83,15 @@
 	                </optgroup>
             	</select>
             </p>
+            
+			<div id="botoes">
+				<button class="button">Adicionar</button>
+				<button class="button">Apagar</button>
+			</div>
 		
 	</fieldset>
 
-		<div id="botoes">
-		<button class="button">Adicionar</button>
-		<button class="button">Apagar</button>
-		</div>
+
 
 	</form>
 

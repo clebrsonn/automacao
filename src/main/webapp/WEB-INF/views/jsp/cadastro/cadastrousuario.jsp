@@ -80,13 +80,14 @@
 			</p>
 	
 			
-
-	</fieldset>
-				
 			<div id="botoes">
 				<button class="button">Adicionar</button>
 				<button class="button">Apagar</button>
 			</div>
+			
+	</fieldset>
+				
+
 				
 
 </form>

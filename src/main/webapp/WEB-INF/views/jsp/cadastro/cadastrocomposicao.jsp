@@ -61,14 +61,16 @@
 			            <p>Nome da Composicao:
 			            	<input name="nome" type="text" class="inp-form"/>
 			            </p>
+			            
+			            <div id="botoes">
+			                <button class="button">Adicionar</button>
+			                <button class="button">Apagar</button>
+			                <button class="button">AddItem</button>
+			                
+			            </div>
 			</fieldset>
 
-            <div id="botoes">
-                <button class="button">Adicionar</button>
-                <button class="button">Apagar</button>
-                <button class="button">AddItem</button>
-                
-            </div>
+
             
         
 		

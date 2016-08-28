@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity
 @Table(name = "EMPRESA")
@@ -43,8 +45,10 @@ public class Empresa implements Serializable {
     @Column(name = "LOGO")
     private String logo;
     
-	@Temporal(TemporalType.DATE) 	
+	@Temporal(TemporalType.DATE)   
+	@DateTimeFormat(pattern = "dd/MM/yyyy")	
     @Column(name="DATAABERTURA")
+	
     private Date dataabertura;
 
 

@@ -62,6 +62,14 @@
 <!--    					Data Recebimento -->
 <%--            <fmt:formatDate value="" type="both" pattern="dd/MM/yyyy" dateStyle="full"/> --%>
            
+           
+           			<div id="botoes">
+			
+				<button class="button">Adicionar</button>
+				<button class="button">Apagar</button>
+				
+				</div>
+           
 			</fieldset>
 		
 <!-- 				Fornecedor -->
@@ -73,12 +81,7 @@
 		
 			
 		</div>
-				<div id="botoes">
-			
-				<button class="button">Adicionar</button>
-				<button class="button">Apagar</button>
-				
-				</div>
+	
 		
 <table border="0" width="70%"cellpadding="0" cellspacing="0"  class="product-table2">
 	 <th class="table-header-check"><a id="toggle-all" ></a> </th>

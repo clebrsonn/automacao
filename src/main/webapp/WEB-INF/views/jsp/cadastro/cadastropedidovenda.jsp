@@ -126,12 +126,17 @@
 				</optgroup>
 			</select>
 		</p>
-</fieldset>
-			<!--  div botões -->
+		
+		
 			<div id="botoes">
 				<button class="button">Adicionar</button>
 				<button class="button">Apagar</button>
 			</div>
+		
+		
+</fieldset>
+			<!--  div botões -->
+	
 
 		</form>
 	</div>

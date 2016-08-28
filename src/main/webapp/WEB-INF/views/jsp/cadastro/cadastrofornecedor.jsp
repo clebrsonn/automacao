@@ -87,12 +87,13 @@
             <%-- 	<c:forEach var="obj" items="${objeto}"> --%>
             <%--     NOME: ${obj.nome} Name: ${obj.tipo}<br/> --%>
             <%--   	</c:forEach> --%>
-
-	</fieldset>
+            
             <div id="botoes">
                 <button class="button">Adicionar</button>
                 <button class="button">Apagar</button>
             </div>
+	</fieldset>
+
 
         </form>
 

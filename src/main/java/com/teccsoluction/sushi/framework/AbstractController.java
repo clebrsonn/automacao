@@ -39,13 +39,17 @@ public abstract class AbstractController<Entity> {
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public ModelAndView AdicionarEntity(@ModelAttribute Entity entity) {
 
-//        ModelAndView cadastroEntity = new ModelAndView("cadastro" + entityAlias);
+        ModelAndView cadastroEntity = new ModelAndView("cadastro" + entityAlias);
 
         getDao().add(entity);
+//        getDao().PegarPorId(entity);
         
-//        return cadastroEntity;
+//        cadastroEntity.addObject("entity", entity);
+        
         System.out.println(entityAlias);
-        return new ModelAndView("redirect:/" + entityAlias + "/cadastro");
+        return cadastroEntity;
+       
+//        return new ModelAndView("redirect:/" + entityAlias + "/cadastro");
     }
 
 

@@ -321,9 +321,9 @@ button {
 }
 
 .button{
-	width: 10em;
+	width: 8em;
 	height:3em ;
-	background: #FFFFFF url(../images/img01.gif) repeat-x;
+	background: #FFFFFF url(../images/buttonf.png) no-repeat;
 	margins: 2em;
 	font: italic;
 	color: red;
@@ -657,10 +657,12 @@ a:hover.icon-5 {
 }
 
 #botoes {
-width:70%;
-height: 100%;
-background-color: gray;
-margin: 2em;	
+	
+
+
+
+/* width:auto; */
+/* height: 100%; */
 	
 	
 }
@@ -727,6 +729,7 @@ margin: 2em;
 
 .product-table2{
 /* overflow-y:scroll;	 */
+margin-left: 5em;
 	
 }
 

@@ -53,7 +53,7 @@
 
             <p>Categoria Pai:
 	            <select id="catpai" name="catpai" id="files" class="inp-form">
-	                <option value=""></option>
+	                <option value="${categoria.catpai }"></option>
 	
 	                <optgroup label="Categoria Pai">
 	                    <c:forEach var="categoria" items="${categoriaList}">
@@ -66,10 +66,9 @@
 
 
             <p>Nome da Categoria:
-            	<input name="nome" type="text" class="inp-form"/>
+            	<input name="nome" type="text" class="inp-form" value="${categoria.nome }"/>
             </p>
-	</fieldset>
-
+            
             <div id="botoes">
 
                 <button class="button">Adicionar</button>
@@ -77,6 +76,9 @@
 
 
             </div>
+	</fieldset>
+
+            
 
         </form>
     </div>

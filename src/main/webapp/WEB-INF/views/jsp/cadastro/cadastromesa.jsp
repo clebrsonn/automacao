@@ -89,8 +89,7 @@
             <!-- 		</select> -->
 
             <!-- 		<button class="form-submit">Add</button> -->
-
-		</fieldset>
+            
             <div id="botoes">
 
                 <button class="button">Adicionar</button>
@@ -98,6 +97,8 @@
 
 
             </div>
+		</fieldset>
+
 
         </form>
     </div>

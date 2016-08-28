@@ -59,19 +59,21 @@
             	<input name="nome" type="text" class="inp-form"/>
             </p>
             <p>Data de Inicio da Promocao:
-            	<input name="datainicio" type="date" class="inp-form"
-            	<fmt:formatDate type="date"  value="${promocao.datainicio}" pattern="dd/MM/yyyy"/>/>
+            	<input name="datainicio" type="text" class="inp-form"/>
+            	<fmt:formatDate type="date"  value="${promocao.datainicio}" pattern="dd/MM/yyyy"/>
             </p>
             <p>Data Fim da Promocao:
-            	<input name="datafim" type="date" class="inp-form"
-            	<fmt:formatDate type="date"  value="${promocao.datafim}" pattern="dd/MM/yyyy"/>/>
+            	<input name="datafim" type="text" class="inp-form"/>
+            	<fmt:formatDate type="date"  value="${promocao.datafim}" pattern="dd/MM/yyyy"/>
             </p>
-
-	</fieldset>
-            <div id="botoes">
+            
+             <div id="botoes">
                 <button class="button">Adicionar</button>
                 <button class="button">Apagar</button>
             </div>
+
+	</fieldset>
+
 
         </form>
     </div>

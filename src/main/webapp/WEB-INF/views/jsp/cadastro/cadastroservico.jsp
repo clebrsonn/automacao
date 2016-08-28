@@ -61,12 +61,15 @@
             <p>Preco do Servico:
             	<input name="preco" type="text" class="inp-form"/>
             </p>
-          </fieldset>  
-
-            <div id="botoes">
+            
+             <div id="botoes">
                 <button class="button">Adicionar</button>
                 <button class="button">Apagar</button>
             </div>
+            
+          </fieldset>  
+
+
 
         </form>
 

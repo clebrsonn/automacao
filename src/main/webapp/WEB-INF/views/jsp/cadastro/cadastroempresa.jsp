@@ -77,9 +77,9 @@
 			</p>
 
 			<p>Data Abertura:
-				<input name="dataabertura" type="date" class="inp-form" 
+				<input name="dataabertura" type="text" class="inp-form" />
 					<fmt:formatDate type="date"  value="${empresa.dataabertura}" pattern="dd/MM/yyyy"/>
-				/>
+				
 			</p>
 
 			<!-- <p>Inscrição estadual:</p>
@@ -106,12 +106,15 @@
 			<%--         </c:forEach>  --%>
 			<!--       </optgroup> -->
 			<!--     </select> -->
-
-	</fieldset>
+			
+			
 			<div id="botoes">
 				<button class="button">Adicionar</button>
 				<button class="button">Apagar</button>
 			</div>
+			
+	</fieldset>
+
 
 		</form>
 	</div>

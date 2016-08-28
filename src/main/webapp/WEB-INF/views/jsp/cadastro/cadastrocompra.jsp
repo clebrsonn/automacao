@@ -81,9 +81,7 @@
 			SubTotal					
 			<input id="subtotal"name="subtotal" type="text" class="subtotal" />
 	</div>
-		
-		</fieldset>
-		
+	
 		<div id="botoes">
 			<button class="button">AdicionarItemCompra</button>
 			<button class="button">Apagar</button>
@@ -91,6 +89,10 @@
 			<button class="button" formaction="addformapagamento?id=${pedido.id }">FinalizarCompra</button>
 
 		</div>
+		
+		</fieldset>
+		
+
 
 		
      	 <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table2">

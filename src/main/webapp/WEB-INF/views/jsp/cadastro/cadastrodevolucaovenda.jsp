@@ -49,25 +49,29 @@
 		<legend>Dados da Devolucao</legend>
 				
 				Data Devolucao		
-				<input id="data" name="data"  type="date" value="${pv.data}"
-				<fmt:formatDate pattern="dd/MM/yyyy" value="${pv.data}"/>/>
+				<input id="data" name="data"  type="date" value="${pv.data}"/>
+				<fmt:formatDate pattern="dd/MM/yyyy" value="${pv.data}"/>
     
-      </fieldset>   
-	
-		</div>
-		
-			<div id="botoes">
+    			<div id="botoes">
 			
 				<button class="button">Adicionar</button>
 				<button class="button">Apagar</button>
 				
 			</div>
+      </fieldset> 
+      
+      </br>
+      </br>  
+	
+		</div>
+		
+
 			
 					
 		</div>
 
 		
-		      <table border="0" width="70%"cellpadding="0" cellspacing="0"  class="product-table2">
+		      <table border="0" width="75%"cellpadding="0" cellspacing="0"  class="product-table2">
     			 <th class="table-header-check"><a id="toggle-all" ></a> </th>
                  <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Pedido Compra </a></th>         

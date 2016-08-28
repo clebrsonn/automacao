@@ -79,22 +79,29 @@
 
 	</div> <!-- fecha detalhes itens -->
 	
-	</fieldset>
-
+	
 	<div id="botoes">
 		<button class="button">AdicionarItem</button>
-<!-- 		<button class="button">ApagarItem</button> -->
-				<button class="button" formaction="addformapagamento" formmethod="post">Efetuar Pagamento</button>
+		<button class="button" formaction="addformapagamento" formmethod="post">Efetuar Pagamento</button>
 		
 <%-- 		<button class="button">	<a href="'${pageContext.request.contextPath}/pedidovenda/addformapagamento?id=${pedidovenda.id}'">Efetuar Pagamento</a> --%>
 		
 
 	</div> <!-- fecha div botões -->
+	
+	
+	
+	
+	</fieldset>
+	
+	</br>
+	</br>
 
+	
 <!-- Tabela dos itens do pedido -->
 
 
-	<table border="0" width="100%" cellpadding="0" cellspacing="0"	class="product-table">
+	<table border="0" width="100%" cellpadding="0" cellspacing="0"	class="product-table2">
 		
 		<th class="table-header-check"><a id="toggle-all"></a></th>
 		<th class="table-header-repeat line-left "><a>Id</a></th>
@@ -176,5 +183,5 @@
 
 
 </div>
-<!-- end content-table-inner -->
+
 

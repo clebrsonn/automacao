@@ -66,14 +66,14 @@
             <input name="valor" type="text" class="inp-form"/>
             </p>
 
-
-            <div id="clear">&nbsp;</div>
-
-</fieldset>
             <div id="botoes">
                 <button class="button">Adicionar</button>
                 <button class="button">Apagar</button>
-            </div>
+               </div>
+     
+
+</fieldset>
+   
 
         </form>
     </div>

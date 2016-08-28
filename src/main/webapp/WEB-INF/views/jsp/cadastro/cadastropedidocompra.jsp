@@ -58,7 +58,7 @@
            
             <p>Data:
 	            <input name="data" type="text" class="inp-form"/>
-				<fmt:formatDate type="date"  value="${registro.status}" pattern="dd/MM/yyyy"/>			
+				<fmt:formatDate type="date"  value="${pedidocompra.status}" pattern="dd/MM/yyyy"/>			
 			</p>
 <!--             <p>Tipo de Pedido:</p> -->
 <!--             <select name="tipo" id="files" class="inp-form"> -->
@@ -114,12 +114,14 @@
 <!--                 </optgroup> -->
 <!--             </select> -->
 
-		</fieldset>
-
             <div id="botoes">
                 <button class="button">Adicionar</button>
                 <button class="button">Apagar</button>
             </div>
+            
+		</fieldset>
+
+
 
         </form>
     </div>

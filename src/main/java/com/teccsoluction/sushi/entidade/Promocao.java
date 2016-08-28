@@ -34,11 +34,13 @@ public class Promocao implements Serializable {
 	@Column(name="nome")
 	private String nome ;
 	
-	@Temporal(TemporalType.DATE) 
+	@Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Column(name="data_inicio")
 	private Date datainicio;
 	
-	@Temporal(TemporalType.DATE) 
+	@Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Column(name="data_fim")
 	private Date datafim;
 	

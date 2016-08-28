@@ -114,14 +114,16 @@
                 </optgroup>
             </select>
            </p>
-            
+           
+    		<div id="botoes">
+				<button class="button">Adicionar</button>
+				<button class="button">Apagar</button>
+			</div>   
+			     
 	</fieldset>
 
 
-			<div id="botoes">
-			<button class="button">Adicionar</button>
-			<button class="button">Apagar</button>
-			</div>
+	
 
 	</form>
 </div>

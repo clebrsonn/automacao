@@ -19,7 +19,7 @@
 				            ID do Pedido Compra:
 				            <input id="idpedidocompra" name="idpedidocompra" type="text" class="idpedido" value="${pc.id }"/>
 				
-							<button class="button"formaction="CarregarPedidoCompra" formmethod="get">carregarPedidoCompra</button>
+							<button class="button"formaction="CarregarPedidoCompra" formmethod="get">CarregarPedido</button>
 				
 								
 				            ID Fornecedor:	<input name="idfornecedor" type="text" class="tipo" value="${pc.fornecedor }"/>
@@ -39,7 +39,7 @@
 							</select>
 								
 							Data Compra
-							<input id="datacompra" name="datacompra"  type="date" value="${pc.datacompra}"
+							<input id="datacompra" name="datacompra"  type="date" value="${pc.data}"
 							<fmt:formatDate pattern="dd/MM/yyyy" value="${pc.data}"/> />
 				           
 				           
@@ -53,26 +53,32 @@
 							<input id="data" name="data"  type="date" value=""
 							<fmt:formatDate pattern="dd/MM/yyyy" value="${devolucaocompra.data}"/>/>
 				         
-				
-		</fieldset>
-						</div>
-		
-		
-			
-		</div>
-		
-		
-		
 			<div id="botoes">
 			
 				<button class="button">Adicionar</button>
 				<button class="button">Apagar</button>
 				
-			</div>
+			</div>	
+			
+			
+		</fieldset>
+		
+		</br>
+		</br>
+		
+	</div>
+		
+		
+			
+</div>
+		
+		
+		
+
 			
 					
 
-		      <table border="0" width="70%"cellpadding="0" cellspacing="0"  class="product-table2">
+		      <table border="0" width="75%"cellpadding="0" cellspacing="0"  class="product-table2">
     			 <th class="table-header-check"><a id="toggle-all" ></a> </th>
                  <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Pedido Compra </a></th>         
