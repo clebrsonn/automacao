@@ -123,10 +123,21 @@ public class CaixaController extends AbstractController<Caixa> {
 	    	List<Item> itemList = itemDao.getAllItens(idf);
 //	    	Produto produto = produtopedidovendaDao.PegarPorId(idfprod);
 	    	
+	    	//VARIÁVEL QUE RECEBERA O VALOR TOTAL DE CADA ITEM
+	    	double totalpedido = 0;
+	    	
+	    	
+	    	//PERCORRE A LISTA DE ITEM PEGANDO O VALOR TOTAL DE CADA ITEM PARA OBTER O VALOR TOTAL
+	    	for (Item itempedido : itemList) {
+	    		
+	    		totalpedido += itempedido.getTotalItem();
+				
+			}
+	    	
 	    	movimentacaocaixa.addObject("itemList", itemList);
 	    	movimentacaocaixa.addObject("produtoList", produtoList);
 	    	movimentacaocaixa.addObject("pv", pv);
-//	    	movimentacaocaixa.addObject("produto", produto);
+	    	movimentacaocaixa.addObject("totalpedido", totalpedido);
 
 
 			
@@ -166,7 +177,7 @@ public class CaixaController extends AbstractController<Caixa> {
 
 	    	item.setPedido(pv);
 	    	// ajustando o total do pedido pra ser o total + qtd*precovenda do item
-	    	pv.setTotal(pv.getTotal()+(precounitario*qtd));
+	    	pv.setTotal(pv.getTotal()+(item.getTotalItem()));
 	    	
 	    	itemDao.add(item);
 	    	
@@ -174,10 +185,22 @@ public class CaixaController extends AbstractController<Caixa> {
 	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
 	    	List<Item> itemList = itemDao.getAllItens(idf);
 	    	
+	    	
+	    	//VARIÁVEL QUE RECEBERA O VALOR TOTAL DE CADA ITEM
+	    	double totalpedido = 0;
+	    	
+	    	
+	    	//PERCORRE A LISTA DE ITEM PEGANDO O VALOR TOTAL DE CADA ITEM PARA OBTER O VALOR TOTAL
+	    	for (Item itempedido : itemList) {
+	    		
+	    		totalpedido += itempedido.getTotalItem();
+				
+			}
+	    	
 	    	// add objetos na view
 	    	movimentacaocaixa.addObject("itemList", itemList);
 	    	movimentacaocaixa.addObject("pv", pv);
-//	    	movimentacaocaixa.addObject("produto", produto);
+	    	movimentacaocaixa.addObject("totalpedido", totalpedido);
 
 		
 	    		return movimentacaocaixa;

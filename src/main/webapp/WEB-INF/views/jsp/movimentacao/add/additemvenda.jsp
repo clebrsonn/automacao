@@ -18,7 +18,7 @@
 <%-- 		<input name="tipo" type="text" class="tipo" value="${pv.tipo }"/> --%>
 		
 		Total:
-		<input id="totalpedido" name="total" type="text" class="totalpedido" value="${pv.total }"/>
+		<input id="totalpedido" name="total" type="text" class="totalpedido" value="${totalpedido }"/>
 		
 		<p></p>
 		

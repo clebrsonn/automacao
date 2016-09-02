@@ -149,9 +149,22 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
 	    	List<Item> itemList = itempedidovendaDao.getAllItens(idf);
 	    	
+	    	//VARIÁVEL QUE RECEBERA O VALOR TOTAL DE CADA ITEM
+	    	double totalpedido = 0;
+	    	
+	    	
+	    	//PERCORRE A LISTA DE ITEM PEGANDO O VALOR TOTAL DE CADA ITEM PARA OBTER O VALOR TOTAL
+	    	for (Item itempedido : itemList) {
+	    		
+	    		totalpedido += itempedido.getTotalItem();
+				
+			}
+	    	
+	    	
 	    	additemvenda.addObject("itemList", itemList);
 	    	additemvenda.addObject("produtoList", produtoList);
 	    	additemvenda.addObject("pv", pv);
+	    	additemvenda.addObject("totalpedido", totalpedido);
 
 			
 			return additemvenda;
@@ -183,7 +196,7 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 	    	item.setPrecoUnitario(precounitario);
 	    	item.setQtd(qtd);
 	    	item.setTotalItem(precounitario*qtd);
-	    	pv.setTotal(pv.getTotal()+(precounitario*qtd));
+	    	pv.setTotal(pv.getTotal()+ item.getTotalItem());
 
 	    	
 	    	item.setPedido(pv);
@@ -193,9 +206,22 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
 	    	List<Item> itemList = itempedidovendaDao.getAllItens(idf);
 	    	
+	    	
+	    	//VARIÁVEL QUE RECEBERA O VALOR TOTAL DE CADA ITEM
+	    	double totalpedido = 0;
+	    	
+	    	
+	    	//PERCORRE A LISTA DE ITEM PEGANDO O VALOR TOTAL DE CADA ITEM PARA OBTER O VALOR TOTAL
+	    	for (Item itempedido : itemList) {
+	    		
+	    		totalpedido += itempedido.getTotalItem();
+				
+			}
+	    	
 	    	additemvenda.addObject("itemList", itemList);
 	    	additemvenda.addObject("produtoList", produtoList);
 	    	additemvenda.addObject("pv", pv);
+	    	additemvenda.addObject("totalpedido", totalpedido);
 
 			
 			return additemvenda;

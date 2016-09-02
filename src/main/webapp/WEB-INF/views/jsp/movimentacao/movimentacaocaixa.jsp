@@ -17,7 +17,7 @@
 						ID do Pedido: <input id="idpedidovenda" name="idpedidovenda"
 							type="text" class="idpedido" value="${pv.id }" /> ID Cliente: <input name="tipo"
 							type="text" class="tipo" value="${pv.cliente }"/> Total: <input id="totalpedido"
-							name="totalpedido" type="text" class="totalpedido" value="${pv.total }"/>
+							name="totalpedido" type="text" class="totalpedido" value="${totalpedido }"/>
 		
 					</div>
 			
