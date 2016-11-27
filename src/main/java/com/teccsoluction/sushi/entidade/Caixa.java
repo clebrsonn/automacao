@@ -34,10 +34,10 @@ public class Caixa implements Serializable {
     public Caixa() {
         // TODO Auto-generated constructor stub
     }
-    
+
     public Caixa(Caixa cat) {
         // TODO Auto-generated constructor stub
-    
+
     }
 
 
@@ -65,7 +65,6 @@ public class Caixa implements Serializable {
     public String toString() {
         return nome;
     }
-
 
 
 }

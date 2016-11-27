@@ -11,17 +11,16 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-	
-	
-	public HomeController() {
-		super();
-	}
-	
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView home() {
+    public HomeController() {
+        super();
+    }
 
-		ModelAndView home = new ModelAndView("home");
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ModelAndView home() {
+
+        ModelAndView home = new ModelAndView("home");
 //		Empresa empresaAtt = new Empresa();
 //		empresaAtt.setCnpj("123456");
 //		empresaAtt.setInscricaoestadual("123456789");
@@ -34,58 +33,57 @@ public class HomeController {
 //
 //		home.addObject("empresaAtt", empresaAtt);
 
-		return home;
-	}
+        return home;
+    }
 
-	@RequestMapping(value = "/marketing", method = RequestMethod.GET)
-	public ModelAndView marketing() {
+    @RequestMapping(value = "/marketing", method = RequestMethod.GET)
+    public ModelAndView marketing() {
 
-		ModelAndView marketing = new ModelAndView("marketing");
+        ModelAndView marketing = new ModelAndView("marketing");
 
-		return marketing;
-	}
+        return marketing;
+    }
 
-	@RequestMapping(value = "/financeiro", method = RequestMethod.GET)
-	public ModelAndView financeiro() {
+    @RequestMapping(value = "/financeiro", method = RequestMethod.GET)
+    public ModelAndView financeiro() {
 
-		ModelAndView financeiro = new ModelAndView("financeiro");
+        ModelAndView financeiro = new ModelAndView("financeiro");
 
-		return financeiro;
-	}
-	
-	
-	@RequestMapping(value = "/relatorio", method = RequestMethod.GET)
-	public ModelAndView relatorio() {
+        return financeiro;
+    }
 
-		ModelAndView relatorio = new ModelAndView("relatorio");
 
-		return relatorio;
-	}
+    @RequestMapping(value = "/relatorio", method = RequestMethod.GET)
+    public ModelAndView relatorio() {
 
-	@RequestMapping(value = "/suporte", method = RequestMethod.GET)
-	public ModelAndView suporte() {
+        ModelAndView relatorio = new ModelAndView("relatorio");
 
-		ModelAndView suporte = new ModelAndView("suporte");
+        return relatorio;
+    }
 
-		return suporte;
-	}
-	
-	@RequestMapping(value = "/cadastro", method = RequestMethod.GET)
-	public ModelAndView cadastro() {
+    @RequestMapping(value = "/suporte", method = RequestMethod.GET)
+    public ModelAndView suporte() {
 
-		ModelAndView cadastro = new ModelAndView("cadastro");
+        ModelAndView suporte = new ModelAndView("suporte");
 
-		return cadastro;
-	}
-	
-	@RequestMapping(value = "/movimentacao", method = RequestMethod.GET)
-	public ModelAndView movimentacao() {
+        return suporte;
+    }
 
-		ModelAndView movimentacao = new ModelAndView("movimentacao");
+    @RequestMapping(value = "/cadastro", method = RequestMethod.GET)
+    public ModelAndView cadastro() {
 
-		return movimentacao;
-	}
+        ModelAndView cadastro = new ModelAndView("cadastro");
 
+        return cadastro;
+    }
+
+    @RequestMapping(value = "/movimentacao", method = RequestMethod.GET)
+    public ModelAndView movimentacao() {
+
+        ModelAndView movimentacao = new ModelAndView("movimentacao");
+
+        return movimentacao;
+    }
 
 
 }

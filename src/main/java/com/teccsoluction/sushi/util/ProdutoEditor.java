@@ -6,24 +6,23 @@ import com.teccsoluction.sushi.entidade.Produto;
 import java.beans.PropertyEditorSupport;
 
 
-
 public class ProdutoEditor extends PropertyEditorSupport {
 
-	 final ProdutoDAO produtodao;
-	
-	
-	public ProdutoEditor(final ProdutoDAO dao) {
+    final ProdutoDAO produtodao;
 
-	this.produtodao =dao;
-	
-	}
-	
-	@Override
+
+    public ProdutoEditor(final ProdutoDAO dao) {
+
+        this.produtodao = dao;
+
+    }
+
+    @Override
     public void setAsText(final String id) {
- 
+
         final Produto produto = this.produtodao.PegarPorId(Long.parseLong(id));
- 
+
         this.setValue(produto);
 
-}
+    }
 }

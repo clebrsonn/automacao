@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "GARCON")
+//@XmlRootElement(name = "garcon")
 public class Garcon implements Serializable {
 
     /**

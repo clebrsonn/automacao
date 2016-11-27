@@ -18,9 +18,7 @@ public class PedidoCompra extends Pedido {
 
     @OneToMany(mappedBy = "pedidoCompra")
     private List<DevolucaoCompra> devolucaoCompra;
-    
-    
-    
+
 
     public PedidoCompra() {
         devolucaoCompra = new ArrayList<>();

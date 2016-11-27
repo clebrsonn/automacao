@@ -16,18 +16,18 @@ public class Recebimento implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private long id;
-    
+
     @Temporal(TemporalType.DATE)
-    @Column(name="DATA")
+    @Column(name = "DATA")
     private Date data;
-    
-    @Column(name="STATUS")
+
+    @Column(name = "STATUS")
     private String status;
-    
-    @Column(name="id_fornecedor")
+
+    @Column(name = "id_fornecedor")
     private Fornecedor fornecedor;
-    
-    @OneToOne(mappedBy="recebimento")
+
+    @OneToOne(mappedBy = "recebimento")
     private PedidoCompra pedidocompra;
 
 //	@OneToMany
@@ -35,87 +35,64 @@ public class Recebimento implements Serializable {
 
 
     //private Pagamento pagamento;
-    
 
 
     public Recebimento() {
         // TODO Auto-generated constructor stub
     }
-    
-    
-    
+
 
     public long getId() {
-		return id;
-	}
+        return id;
+    }
 
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public Date getData() {
+        return data;
+    }
 
 
+    public void setData(Date data) {
+        this.data = data;
+    }
 
 
-	public Date getData() {
-		return data;
-	}
+    public String getStatus() {
+        return status;
+    }
 
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
 
-	public void setData(Date data) {
-		this.data = data;
-	}
+    public Fornecedor getFornecedor() {
+        return fornecedor;
+    }
 
 
+    public void setFornecedor(Fornecedor fornecedor) {
+        this.fornecedor = fornecedor;
+    }
 
 
-	public String getStatus() {
-		return status;
-	}
+    public PedidoCompra getPedidocompra() {
+        return pedidocompra;
+    }
 
 
+    public void setPedidocompra(PedidoCompra pedidocompra) {
+        this.pedidocompra = pedidocompra;
+    }
 
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-
-
-
-	public Fornecedor getFornecedor() {
-		return fornecedor;
-	}
-
-
-
-
-	public void setFornecedor(Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
-	}
-
-
-
-
-	public PedidoCompra getPedidocompra() {
-		return pedidocompra;
-	}
-
-
-
-
-	public void setPedidocompra(PedidoCompra pedidocompra) {
-		this.pedidocompra = pedidocompra;
-	}
-
-
-
-
-	@Override
+    @Override
     public String toString() {
         return "ID RECEBIMENTO:" + id;
     }

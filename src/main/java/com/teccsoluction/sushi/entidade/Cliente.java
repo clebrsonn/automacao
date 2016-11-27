@@ -34,14 +34,14 @@ public class Cliente implements Serializable {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "data_nascimento")
     private Date dataNascimento;
-    
-    
+
+
     // cliente pedido de venda
-    @OneToMany(mappedBy="cliente")
+    @OneToMany(mappedBy = "cliente")
     private List<PedidoVenda> listaPedidoVenda;
-    
+
     @OneToMany
-    private List <DevolucaoVenda> listaDevolucaoVenda;
+    private List<DevolucaoVenda> listaDevolucaoVenda;
 
 
     public Cliente() {
@@ -53,21 +53,17 @@ public class Cliente implements Serializable {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     public String getEmail() {
         return email;
     }
 
-
     public void setEmail(String email) {
         this.email = email;
     }
-
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
 
     public long getId() {
         return id;

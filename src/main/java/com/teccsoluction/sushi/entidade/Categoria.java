@@ -23,8 +23,8 @@ public class Categoria implements Serializable {
     @Column(name = "NOME", nullable = false)
     private String nome;
 
-	@ManyToOne
-	@JoinColumn(name = "CAT_PAI", nullable = true)
+    @ManyToOne
+    @JoinColumn(name = "CAT_PAI", nullable = true)
     private Categoria catpai;
 
     @OneToMany(mappedBy = "categoria")
@@ -36,7 +36,7 @@ public class Categoria implements Serializable {
     public Categoria() {
         // TODO Auto-generated constructor stub
     }
-    
+
 //    public Categoria(Categoria cat) {
 //        // TODO Auto-generated constructor stub
 //    	this.catpai=cat;
@@ -60,21 +60,20 @@ public class Categoria implements Serializable {
     }
 
 
-
     @Override
     public String toString() {
         return nome;
     }
 
 
-	public Categoria getCatpai() {
-		return catpai;
-	}
+    public Categoria getCatpai() {
+        return catpai;
+    }
 
 
-	public void setCatpai(Categoria catpai) {
-		this.catpai = catpai;
-	}
+    public void setCatpai(Categoria catpai) {
+        this.catpai = catpai;
+    }
 
     public List<Produto> getProdutos() {
         return produtos;

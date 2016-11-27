@@ -23,8 +23,7 @@ public class CategoriaController extends AbstractController<Categoria> {
     private
     final
     AbstractEntityDao<Categoria> dao;
-    
-    
+
 
     @Autowired
     public CategoriaController(CategoriaDAO dao) {
