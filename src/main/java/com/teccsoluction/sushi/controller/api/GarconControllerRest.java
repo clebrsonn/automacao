@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "Garcon")
 public class GarconControllerRest {
@@ -47,6 +49,11 @@ public class GarconControllerRest {
         } catch (Exception e) {
             return new ResponseEntity<>(e, HttpStatus.SERVICE_UNAVAILABLE);
         }
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public List<Garcon> listarEntity() {
+        return getDao().getAll();
 
     }
 
