@@ -48,6 +48,8 @@ public class GarconControllerRest {
         } catch (Exception e) {
             return new ResponseEntity<>(e, HttpStatus.SERVICE_UNAVAILABLE);
         }
+            return new ResponseEntity<>(entity, HttpStatus.OK);
+
     }
 
     @RequestMapping(method = RequestMethod.GET)
