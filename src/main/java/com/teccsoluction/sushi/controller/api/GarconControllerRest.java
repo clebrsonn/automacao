@@ -51,7 +51,7 @@ public class GarconControllerRest {
         }
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public List<Garcon> listarEntity() {
         return getDao().getAll();
 
