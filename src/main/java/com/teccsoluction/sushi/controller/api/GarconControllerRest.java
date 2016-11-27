@@ -54,8 +54,6 @@ public class GarconControllerRest {
     public List<Garcon> listarEntity() {
         return getDao().getAll();
 
-        return new ResponseEntity<>(entity, HttpStatus.OK);
-
     }
 
 }
