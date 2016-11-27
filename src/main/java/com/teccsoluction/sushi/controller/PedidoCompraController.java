@@ -116,7 +116,7 @@ public class PedidoCompraController extends AbstractController<PedidoCompra> {
 
         long idf = Long.parseLong(request.getParameter("idpedidocompra"));
 
-        // VERIFICAR SE O ID DO PEDIDO � NNULO OU BRANCO
+        // VERIFICAR SE O ID DO PEDIDO E NNULO OU BRANCO
 //	    	if((request.getParameter("idpedidocompra")== null) || (request.getParameter("idpedidocompra")== "")){
 //	    	
 //	    		
@@ -207,7 +207,7 @@ public class PedidoCompraController extends AbstractController<PedidoCompra> {
 //	    		    
 //	    	
 //	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
-//	    	List<Item> itemList = itemDao.getAllItens(idf);
+//          List<Item> itemList = itemDao.getAllItens(idf);
 //	    	
 //	    	movimentacaopedidocompra.addObject("itemList", itemList);
 //	    	movimentacaopedidocompra.addObject("produtoList", produtoList);

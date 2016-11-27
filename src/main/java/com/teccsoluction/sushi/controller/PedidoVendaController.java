@@ -132,7 +132,7 @@ public class PedidoVendaController extends AbstractController<PedidoVenda> {
         List<Produto> produtoList = produtopedidovendaDao.getAll();
         List<Item> itemList = itempedidovendaDao.getAllItens(idf);
 
-        //VARI�VEL QUE RECEBERA O VALOR TOTAL DE CADA ITEM
+        //VARIAVEL QUE RECEBERA O VALOR TOTAL DE CADA ITEM
         double totalpedido = 0;
 
 
@@ -190,7 +190,7 @@ public class PedidoVendaController extends AbstractController<PedidoVenda> {
         List<Item> itemList = itempedidovendaDao.getAllItens(idf);
 
 
-        //VARI�VEL QUE RECEBERA O VALOR TOTAL DE CADA ITEM
+        //VARIAVEL QUE RECEBERA O VALOR TOTAL DE CADA ITEM
         double totalpedido = 0;
 
 
