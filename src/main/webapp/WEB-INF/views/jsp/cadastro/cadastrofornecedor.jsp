@@ -7,18 +7,69 @@
 
     <div id="form">
         <form id="formFornecedor" action="add" method="POST">
+        
+        
+        
+ <!-- 				DADOS DO REGISTRO DIVIDIDOS EM DOIS PARAGRAFOS	 -->
+			
+			<fieldset>
+				
+				<legend>Dados do Registro</legend>
+			
+			
+				<p>Data Criacao:
+					<input name="datacriacao" type="date" class="inp-form" />
+					<fmt:formatDate type="date"  value="${registro.data}" pattern="dd/MM/yyyy"/>
+				
+				
+				Usuario Criou:
+				<input name="usuario" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+			
+				Data Ultima Modificacao:
+				<input name="datamodificacao" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.datamodificacao}" pattern="dd/MM/yyyy"/>
+				
+				</p>
+				
+				<p>
+				
+				Usuario Modificou:
+				<input name="usuario" type="text" class="inp-form"/>
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+				
+				Status:
+				<input name="status" type="text" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.status}" pattern="dd/MM/yyyy"/>
+				
+			</p>
+			
+			</fieldset>	
+ 
+ 
+ 		<fieldset>
+				
+				<legend>Dados do Fornecedor</legend>
+			
+ 
 
-            <p>Nome Fantasia :</p>
-            <input name="nomefantasia" type="text" class="inp-form"/>
+            <p>Nome Fantasia :
+            	<input name="nomefantasia" type="text" class="inp-form"/>
+            </p>
 
-            <p>Razao Social:</p>
-            <input name="razaoSocial" type="text" class="inp-form"/>
+            <p>Razao Social:
+            	<input name="razaoSocial" type="text" class="inp-form"/>
+            </p>
 
-            <p>cnpj:</p>
-            <input name="cnpj" type="text" class="inp-form"/>
+            <p>cnpj:
+           	 	<input name="cnpj" type="text" class="inp-form"/>
+            </p>
 
-            <p>Inscricao Estadual:</p>
-            <input name="inscricaoestadual" type="text" class="inp-form"/>
+            <p>Inscricao Estadual:
+            	<input name="inscricaoestadual" type="text" class="inp-form"/>
+            </p>
 
 
             <!-- 		<p>Tipo de Objeto:</p> -->
@@ -36,12 +87,13 @@
             <%-- 	<c:forEach var="obj" items="${objeto}"> --%>
             <%--     NOME: ${obj.nome} Name: ${obj.tipo}<br/> --%>
             <%--   	</c:forEach> --%>
-
-
+            
             <div id="botoes">
                 <button class="button">Adicionar</button>
                 <button class="button">Apagar</button>
             </div>
+	</fieldset>
+
 
         </form>
 

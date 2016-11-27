@@ -9,41 +9,46 @@
 	<div id="form">
 	<form id="formCompra" action="add" method="GET">
 
+		<fieldset>
+			<legend>Dados do Pedido de Compra</legend>
 
-
-		<div id="dadospedido" class="dadospedido">
-
-		ID do Pedido:
-		<input id="idpedidocompra"name="idpedidocompra"type="text" class="idpedido" />
+			<div id="dadospedido" class="dadospedido">
+	
+				ID do Pedido:
+				<input id="idpedidocompra"name="idpedidocompra"type="text" class="idpedido" />
+				
 		
-
-		ID FORNECEDOR:
-		<input name="tipo" type="text" class="tipo"/>
-		
-		Total:
-		<input id="totalpedido" name="totalpedido" type="text" class="totalpedido" />
-		
-</div>
-		
-		
-				<div id="item" class="item">
-		
-		Cod Prod
-		
-			<input id="codigoitem"name="codigo" type="text" list="id" class="codigoitem" />
+				ID Forcedor:
+				<input name="tipo" type="text" class="tipo"/>
+				
+				Total:
+				<input id="totalpedido" name="totalpedido" type="text" class="totalpedido" />
 			
-			<datalist id="id">
+			</div>
+		</fieldset>
+		
+		
+		
+		<fieldset>
+			<legend>Detalhe dos Itens</legend>
 			
-			   			<c:forEach var="produto" items="${listProduto}" varStatus="id">
-						 	 	<option value="${produto.codebar}" />
-                		</c:forEach>		
-			
-
-			</datalist>
+			<div id="item" class="item">
+		
+				Cod Prod
+				<input id="codigoitem"name="codigo" type="text" list="id" class="codigoitem" />
+				
+				<datalist id="id">
+				
+				   			<c:forEach var="produto" items="${listProduto}" varStatus="id">
+							 	 	<option value="${produto.codebar}" />
+	                		</c:forEach>		
+				
+	
+				</datalist>
 			
 		
 		
-		Descrição
+		Descricao
 		
 			<input id="descricaoitem" name="descricao" type="text" list="produtos" class="descricaoitem" />
 			
@@ -60,116 +65,99 @@
 					</datalist>
 
 					
-</div>
-				<div id="detalheitem" class="detalheitem">
-		Quantidade
-			
+			</div>
+		
+		
+	<div id="detalheitem" class="detalheitem">
+			Quantidade
 			<input id="quantidadeitem" name="quantidade" type="text" class="quantidadeitem" />
 
-		
-		
-		
-		
-		
-		
-			Valor Item
-					
+			Valor Item			
 			<input id="valoritem"name="valor" type="text" class="valoritem" />
-		
-		
-		
-		
-		
-		
-			Total Item
-					
+	
+			Total Item					
 			<input id="valortotal"name="valor" type="text" class="valortotal" />
-		
-		
-		
-		
-					SubTotal
-					
+
+			SubTotal					
 			<input id="subtotal"name="subtotal" type="text" class="subtotal" />
 	</div>
-		
-		
-		
+	
 		<div id="botoes">
-<button class="button">AdicionarItemCompra</button>
-<button class="button">Apagar</button>
-<button class="button"><a href="AddRecebimento?id=${pedido.id }">Salvar</a></button>
-<button class="button" formaction="addformapagamento?id=${pedido.id }">FinalizarCompra</button>
+			<button class="button">AdicionarItemCompra</button>
+			<button class="button">Apagar</button>
+			<button class="button"><a href="AddRecebimento?id=${pedido.id }">Salvar</a></button>
+			<button class="button" formaction="addformapagamento?id=${pedido.id }">FinalizarCompra</button>
 
-</div>
-
-</br>
+		</div>
 		
-		      <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table2">
+		</fieldset>
+		
+
+
+		
+     	 <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table2">
     			 <th class="table-header-check"><a id="toggle-all" ></a> </th>
                  <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Pedido Compra </a></th>         
-               	 <th class="table-header-repeat line-left minwidth-1"><a>Código de Barras</a></th>
+               	 <th class="table-header-repeat line-left minwidth-1"><a>Codigo de Barras</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Descricao </a></th> 
-	             <th class="table-header-repeat line-left minwidth-1"><a>Preço Unitario</a></th> 
+	             <th class="table-header-repeat line-left minwidth-1"><a>Preco Unitario</a></th> 
 	             <th class="table-header-repeat line-left minwidth-1"><a>Quantidade</a></th>             
 	             <th class="table-header-repeat line-left minwidth-1"><a>TotalItem</a></th>                                  
-                 <th class="table-header-repeat line-left"><a>Acão</a></th>
+                 <th class="table-header-repeat line-left"><a>Acao</a></th>
                  
-<c:forEach var="item" items="${itemList}" varStatus="id">
+					<c:forEach var="item" items="${itemList}" varStatus="id">
 
-
-
-
-<c:choose>
-  <c:when test="${item.id % 2 == 0}">
-    <tr class="alternate-row">
-                <td><input  type="checkbox"/></td>
-                    <td>${item.id}</td>
-                    <td>${item.pedido}</td>
-                    
-                     <td>${item.codigo}</td>
-                    <td>${item.descricao}</td>
-                    <td>${item.precoUnitario}</td>
-                    <td>${item.qtd}</td>                   
-                    <td>${item.totalItem}</td>
-
-                   
-                <td class="options-width">
-                        <a href="edicaodevolucao?id=${devolucao.id}" class="icon-1 info-tooltip" title="Edit"></a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="/delete?id=${devolucao.id}" class="icon-4 info-tooltip" title="aaa"></a>
-                         <a href="cadastrodevolucao2?id=${devolucao.id}" class="icon-3 info-tooltip" title="bbb"></a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaodevolucao/delete?id=${devolucao.id}" class="icon-5 info-tooltip" title="ccc"></a>
-                    </td>
-                </tr>
-  </c:when>
-  <c:when test="${item.id % 2 != 0}">
-           <tr>
-                <td><input  type="checkbox"/></td>
-             
-                    <td>${item.id}</td>
-                                        <td>${item.pedido}</td>
-                    
-                     <td>${item.codigo}</td>
-                    <td>${item.descricao}</td>
-                    <td>${item.precoUnitario}</td>
-                    <td>${item.qtd}</td>                   
-                    <td>${item.totalItem}</td>
-                    
-                    <td class="options-width">
-                        <a href="edicaodevolucao?id=${devolucao.id}" class="icon-1 info-tooltip" title="Edit"></a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="/delete?id=${devolucao.id}" class="icon-4 info-tooltip" title="aaa"></a>
-                         <a href="cadastrodevolucao2?id=${devolucao.id}" class="icon-3 info-tooltip" title="bbb"></a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="movimentacaodevolucao/delete?id=${devolucao.id}" class="icon-5 info-tooltip" title="ccc"></a>
-                    </td>
-                </tr>
-  </c:when>
-
-</c:choose>
+						<c:choose>
+						  <c:when test="${item.id % 2 == 0}">
+						    <tr class="alternate-row">
+						                <td><input  type="checkbox"/></td>
+						                    <td>${item.id}</td>
+						                    <td>${item.pedido}</td>
+						                    
+						                     <td>${item.codigo}</td>
+						                    <td>${item.descricao}</td>
+						                    <td>${item.precoUnitario}</td>
+						                    <td>${item.qtd}</td>                   
+						                    <td>${item.totalItem}</td>
+						
+						                   
+							                <td class="options-width">
+							                        <a href="edicaodevolucao?id=${devolucao.id}" class="icon-1 info-tooltip" title="Edit"></a>
+							                        &nbsp;&nbsp;&nbsp;&nbsp;
+							                        <a href="/delete?id=${devolucao.id}" class="icon-4 info-tooltip" title="aaa"></a>
+							                         <a href="cadastrodevolucao2?id=${devolucao.id}" class="icon-3 info-tooltip" title="bbb"></a>
+							                        &nbsp;&nbsp;&nbsp;&nbsp;
+							                        <a href="movimentacaodevolucao/delete?id=${devolucao.id}" class="icon-5 info-tooltip" title="ccc"></a>
+						                    </td>
+			                </tr>
+			                
+						  </c:when>
+						  <c:when test="${item.id % 2 != 0}">
+						           <tr>
+						                <td><input  type="checkbox"/></td>
+						             
+						                    <td>${item.id}</td>
+						                                        <td>${item.pedido}</td>
+						                    
+						                     <td>${item.codigo}</td>
+						                    <td>${item.descricao}</td>
+						                    <td>${item.precoUnitario}</td>
+						                    <td>${item.qtd}</td>                   
+						                    <td>${item.totalItem}</td>
+						                    
+						                    <td class="options-width">
+						                        <a href="edicaodevolucao?id=${devolucao.id}" class="icon-1 info-tooltip" title="Edit"></a>
+						                        &nbsp;&nbsp;&nbsp;&nbsp;
+						                        <a href="/delete?id=${devolucao.id}" class="icon-4 info-tooltip" title="aaa"></a>
+						                         <a href="cadastrodevolucao2?id=${devolucao.id}" class="icon-3 info-tooltip" title="bbb"></a>
+						                        &nbsp;&nbsp;&nbsp;&nbsp;
+						                        <a href="movimentacaodevolucao/delete?id=${devolucao.id}" class="icon-5 info-tooltip" title="ccc"></a>
+						                    </td>
+						                </tr>
+						  </c:when>
+						
+						</c:choose>
 
                 </c:forEach>             
             </table>

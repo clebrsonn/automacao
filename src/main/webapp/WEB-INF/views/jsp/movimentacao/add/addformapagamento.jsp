@@ -13,26 +13,25 @@
 		<div id="dadospedido" class="dadospedido">
 
 		ID do Pedido:
-		<input name="idpedido"type="text" class="idpedido" value="${pedido.id }"/>
+		<input name="idpedido"type="text" class="idpedido" value="${pv.id }"/>
 		
 
 		Tipo:
-		<input name="tipo" type="text" class="tipo" value="${pedido.tipo }"/>
+		<input name="tipo" type="text" class="tipo" value="${pv.tipo }"/>
 		
 		
 		
 		Total:
-		<input id="totalpedido" name="total" type="text" class="totalpedido" value="${pedido.total }"/>
+		<input id="totalpedido" name="total" type="text" class="totalpedido" value="${pv.total }"/>
 		
 		</div>
 		
 	
 		
 		
-				<div id="item" class="item">
+		<div id="item" class="item">
 		
 			Nome Forma de Pagamento
-		
 			<input id="nome"name="nome" type="text" list="formapagamento" class="formapagamento" />
 			
 			<datalist id="formapagamento">
@@ -40,55 +39,42 @@
 			   			<c:forEach var="pagamento" items="${pagamentoList}" varStatus="id">
 						 	 	<option value="${pagamento.nome}" />
                 		</c:forEach>		
-			
-
+		
 			</datalist>
 			
 		
 		
-			Qtd Parcelas
-					
+			Qtd Parcelas	
 			<input id="qtdparcela"name="qtdparcela" type="text" class="valoritem" />
-		
-			Valor Pagamento
-					
+			
+			Valor Pagamento	
 			<input id="valorpagamento"name="valorpagamento" type="text" class="valorpagamento" />
 		
-		
-		
-		
-		
-			Restante
-					
+			Restante	
 			<input id="subtotal"name="subtotal" type="text" class="subtotal" />
-		
-		
-		
-			Troco
-					
+
+			Troco	
 			<input id="troco"name="troco" type="text" class="subtotal" />
 		
 		</div>
 		
-		
-		<div id="botoes">
-<button class="button">AdicionarFormadePagamento</button>
-<button class="button">Apagar</button>
-<a href="finalizacaovenda?id=3"><div class="button" >FinalizarVenda</div></a>
-</div>
+			<div id="botoes">
+				<button class="button">AdicionarFormadePagamento</button>
+<!-- 				<button class="button">Apagar</button> -->
+				<button class="button" formaction="finalizacaovenda" formmethod="POST">FinalizarVenda</button>
+			</div>
 
-</br>
 		
-		      <table border="0" width="140%"cellpadding="0" cellspacing="0"  class="product-table">
+		      <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table">
     			 <th class="table-header-check"><a id="toggle-all" ></a> </th>
                  <th class="table-header-repeat line-left "><a>Id</a></th>
-                 <th class="table-header-repeat line-left minwidth-1"><a>Pedido </a></th>         
+                 <th class="table-header-repeat line-left minwidth-1"><a>Pedido Venda </a></th>         
                	 <th class="table-header-repeat line-left minwidth-1"><a>Nome da Forma de Pagamento</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Parcela </a></th> 
 	             <th class="table-header-repeat line-left minwidth-1"><a>Valor da Parcela</a></th> 
 	             <th class="table-header-repeat line-left minwidth-1"><a>Total</a></th>             
 <!-- 	             <th class="table-header-repeat line-left minwidth-1"><a>TotalItem</a></th>                                   -->
-                 <th class="table-header-repeat line-left"><a>Acão</a></th>
+                 <th class="table-header-repeat line-left"><a>Acao</a></th>
                  
 <c:forEach var="pagamento" items="${pagamentoList}" varStatus="id">
 
@@ -104,7 +90,7 @@
                     <td>${pagamento.nome}</td>
                     <td>${pagamento.parcelas}</td>
                     <td>5.00</td>
-                    <td>100.00</td>
+                    <td>100</td>
 
 
                    

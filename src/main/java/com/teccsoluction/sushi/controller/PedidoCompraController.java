@@ -1,5 +1,6 @@
 package com.teccsoluction.sushi.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -114,11 +115,21 @@ public class PedidoCompraController extends AbstractController<PedidoCompra> {
 	        model.addAttribute("tipoStatusList", tipoStatusList);
 	    }
 
+	    
+	    
 	    @RequestMapping(value = "additemcompra", method = RequestMethod.GET)
 		public ModelAndView  additemcompra(HttpServletRequest request){
 	    	
 	    	
 	    	long idf = Long.parseLong(request.getParameter("idpedidocompra"));
+	    	
+	    	// VERIFICAR SE O ID DO PEDIDO É NNULO OU BRANCO
+//	    	if((request.getParameter("idpedidocompra")== null) || (request.getParameter("idpedidocompra")== "")){
+//	    	
+//	    		
+//	    		
+//	    	}
+	    	
 	    	ModelAndView additemcompra = new ModelAndView("additemcompra");
 	    	List<Item> itemList = itemDao.getAllItens(idf);
 	    	
@@ -154,29 +165,94 @@ public class PedidoCompraController extends AbstractController<PedidoCompra> {
 	    @RequestMapping(value = "AddItemCompra", method = RequestMethod.POST)
 		public ModelAndView  additemcompraa(HttpServletRequest request){
 	    	
-	    	
+    	
 	    	long idf = Long.parseLong(request.getParameter("idpedidocompra"));
-	    	ModelAndView additemvenda = new ModelAndView("additemcompra");
+	    	ModelAndView movimentacaopedidocompra = new ModelAndView("movimentacaopedidocompra");
+	    	
+	    	//conversoes
+//    		long idfprod = Long.parseLong(request.getParameter("codigoitem"));
+//	    	long idf = Long.parseLong(request.getParameter("idpedidovenda"));
+	    	double total = Double.parseDouble(request.getParameter("valor"));
+	    	int qtd = Integer.parseInt(request.getParameter("quantidade"));
+	    	double precounitario = Double.parseDouble(request.getParameter("valor"));
+	    	
 	    	
 	    	PedidoCompra pc = pedidoCompraDao.PegarPorId(idf);
-	    	
+	    		    	
 	    	Item item = new Item();
 	    	
+	    	item.setDescricao(request.getParameter("descricao"));
+	    	item.setCodigo(request.getParameter("codigo"));
+	    	item.setPrecoUnitario(precounitario);
+	    	item.setQtd(qtd);
+	    	item.setTotalItem(total);
+	    	pc.setTotal(pc.getTotal()+total);
+	    	
+	    	
 	    	item.setPedido(pc);
+	    
+//	    	listaitens.add(item);
+//	    	pc.setItems(listaitens);
 	    	
 	    	itemDao.add(item);
 	    	
 	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
 	    	List<Item> itemList = itemDao.getAllItens(idf);
 	    	
-	    	additemvenda.addObject("itemList", itemList);
-	    	additemvenda.addObject("produtoList", produtoList);
-	    	additemvenda.addObject("pc", pc);
+	    	movimentacaopedidocompra.addObject("itemList", itemList);
+	    	movimentacaopedidocompra.addObject("produtoList", produtoList);
+	    	movimentacaopedidocompra.addObject("pc", pc);
 
 			
-			return additemvenda;
+			return movimentacaopedidocompra;
 		}
 	    
+//	    @RequestMapping(value = "AddItemCompra", method = RequestMethod.GET)
+//		public ModelAndView  additemcompraGET(HttpServletRequest request){
+//	    	
+//   	
+//	    	
+//	    	Long idf = Long.parseLong(request.getParameter("idpedidocompra"));
+//	    	ModelAndView movimentacaopedidocompra = new ModelAndView("movimentacaopedidocompra");
+//	    	
+//	    	PedidoCompra pc = pedidoCompraDao.PegarPorId(idf);
+//	    		    
+//	    	
+//	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
+//	    	List<Item> itemList = itemDao.getAllItens(idf);
+//	    	
+//	    	movimentacaopedidocompra.addObject("itemList", itemList);
+//	    	movimentacaopedidocompra.addObject("produtoList", produtoList);
+//	    	movimentacaopedidocompra.addObject("pc", pc);
+//
+//			
+//			return movimentacaopedidocompra;
+//		}
 	    
+	    @RequestMapping(value = "carregarPedidoCompra", method = RequestMethod.GET)
+  		public ModelAndView  carregarPedidoCompra(HttpServletRequest request){
+  	    	
+  	    
+    	
+    		ModelAndView movimentacaopedidocompra = new ModelAndView("movimentacaopedidocompra");
+
+  	    	long idf = Long.parseLong(request.getParameter("idpedidocompra"));
+//  	    	long idfprod = Long.parseLong(request.getParameter("codigoitem"));
+	    	PedidoCompra pc = pedidoCompraDao.PegarPorId(idf);
+	    	
+	    	
+	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
+	    	List<Item> itemList = itemDao.getAllItens(idf);
+//	    	Produto produto = produtopedidovendaDao.PegarPorId(idfprod);
+	    	
+	    	movimentacaopedidocompra.addObject("itemList", itemList);
+	    	movimentacaopedidocompra.addObject("produtoList", produtoList);
+	    	movimentacaopedidocompra.addObject("pc", pc);
+//	    	movimentacaocaixa.addObject("produto", produto);
+
+
+			
+			return movimentacaopedidocompra;
+    	}   
 
 }

@@ -19,7 +19,7 @@ body {
 }
 
 h1, h2, h3 {
-	text-transform: lowercase;
+	text-transform: capitalize;
 	color: #292929;
 }
 
@@ -39,9 +39,9 @@ h3 {
 }
 
 p, ul, ol {
-	margin-bottom: 2em;
-	text-align: justify;
-	line-height: 200%;
+	margin-bottom: 1em;
+	text-align: left;
+	line-height: 100%;
 }
 
 p {
@@ -115,8 +115,8 @@ hr {
 /* Menu */
 
 #menu {
-	width: 919px;
-	height: 50px;
+	width: 100%;
+	height: 4em;
 	margin: 0 auto;
 }
 
@@ -173,7 +173,7 @@ hr {
 	float: left;
 	width: 100%;
 /* 	padding: 0 0 0 24px; */
-	margin-left: 3EM;
+	margin-left: 3em;
 }
 #content h1 {
 	margin: 45px 0 20px 0;
@@ -273,8 +273,8 @@ hr {
 	padding: 35px 0;
 	background: url(../images/img08.gif) no-repeat center top;
 	font-size: 12px;
-float: left;
-width: 100%;
+	float: left;
+	width: 100%;
 }
 
 #footer p {
@@ -282,8 +282,8 @@ width: 100%;
 }
 
 .mesa{
-	width:10em ;
-	height:10em ;
+	width:9em ;
+	height:9em ;
 	background: #FFFFFF url(../images/img01.gif) repeat-x;	margin: 1em;
 	position: relative;
 	float: left;
@@ -314,16 +314,16 @@ width: 100%;
 }
 
 button {
-	width: 10em;
-	height:10em ;
+	width: 9em;
+	height:8em ;
 	background: #FFFFFF url(../images/img01.gif) repeat-x;
 	
 }
 
 .button{
-	width: 10em;
+	width: 8em;
 	height:3em ;
-	background: #FFFFFF url(../images/img01.gif) repeat-x;
+	background: #FFFFFF url(../images/buttonf.png) no-repeat;
 	margins: 2em;
 	font: italic;
 	color: red;
@@ -342,8 +342,8 @@ button p{
 	font: italic;
 	color: white;
 	text-transform: uppercase;
-	margin-top: 30%;
-	margin-left: 30%;
+	margin-top: 20%;
+	margin-left: 20%;
 	
 }
 .conteudo{
@@ -657,10 +657,12 @@ a:hover.icon-5 {
 }
 
 #botoes {
-width:70%;
-height: 100%;
-background-color: gray;
-margin: 2em;	
+	
+
+
+
+/* width:auto; */
+/* height: 100%; */
 	
 	
 }
@@ -727,6 +729,7 @@ margin: 2em;
 
 .product-table2{
 /* overflow-y:scroll;	 */
+margin-left: 5em;
 	
 }
 
@@ -734,4 +737,13 @@ margin: 2em;
 	
 	color: blue;
 	font-size: 1.3em;
+}
+form {
+	
+/* 	border: thick; */
+/* 	border-color: gray; */
+/* 	border-bottom-style:dotted; */
+/* 	border-bottom-width: 0.5em;  */
+	
+	
 }

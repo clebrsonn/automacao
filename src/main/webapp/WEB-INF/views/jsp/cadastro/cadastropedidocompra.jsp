@@ -8,10 +8,58 @@
 
     <div id="form">
         <form id="formPedido" action="add" method="POST">
+        
+        
+ 		
+<!-- 				DADOS DO REGISTRO DIVIDIDOS EM DOIS PARAGRAFOS	 -->
+			
+			<fieldset>
+				
+				<legend>Dados do Registro</legend>
+			
+			
+				<p>Data Criacao:
+					<input name="datacriacao" type="date" class="inp-form" />
+					<fmt:formatDate type="date"  value="${registro.data}" pattern="dd/MM/yyyy"/>
+				
+				
+				Usuario Criou:
+				<input name="usuario" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+			
+				Data Ultima Modificacao:
+				<input name="datamodificacao" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.datamodificacao}" pattern="dd/MM/yyyy"/>
+				
+				</p>
+				
+				<p>
+				
+				Usuario Modificou:
+				<input name="usuario" type="text" class="inp-form"/>
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+				
+				Status:
+				<input name="status" type="text" class="inp-form" />
+				
+				
+			</p>
+			
+			</fieldset>
+			
+			
+			
+			<fieldset>
+				
+				<legend>Dados do Pedido de Compra</legend>
+			      
            
-            <p>Data:</p>
-            <input name="data" type="text" class="inp-form"/>
-
+            <p>Data:
+	            <input name="data" type="text" class="inp-form"/>
+				<fmt:formatDate type="date"  value="${pedidocompra.status}" pattern="dd/MM/yyyy"/>			
+			</p>
 <!--             <p>Tipo de Pedido:</p> -->
 <!--             <select name="tipo" id="files" class="inp-form"> -->
 <!--                 <optgroup label="Tipo de Pedido"> -->
@@ -25,19 +73,19 @@
 <!--             </select> -->
 
 
-            <p>Mesa:</p>
-            <select name="mesa" id="files" class="inp-form">
-                <optgroup label="Mesas">
+            <p>Fornecedor:
+            <select name="fornecedor" id="files" class="inp-form">
+                <optgroup label="fornecedor">
 
-                    <c:forEach var="mesa" items="${mesaList}">
-                        <option value="${mesa.id}">${mesa.numero}</option>
+                    <c:forEach var="fornecedor" items="${fornecedorList}">
+                        <option value="${fornecedor.id}">${fornecedor.nomefantasia}</option>
                     </c:forEach>
 
 
                 </optgroup>
             </select>
-
-            <p>Status:</p>
+			</p>
+            <p>Status:
             <select name="status" id="files" class="inp-form">
                 <optgroup label="Status do Pedido">
 
@@ -48,28 +96,32 @@
 
                 </optgroup>
             </select>
+			</p>
+			
+            <p>Total:
+            	<input name="total" type="text" class="inp-form" disabled="disabled"/>
+			</p>
+<!--             <p> Garcon:</p> -->
 
-            <p>Total:</p>
-            <input name="total" type="text" class="inp-form" disabled="disabled"/>
+<!--             <select name="tipo" id="files" class="inp-form"> -->
+<!--                 <optgroup label="Garçon"> -->
 
-            <p> Garcon:</p>
-
-            <select name="tipo" id="files" class="inp-form">
-                <optgroup label="Garçon">
-
-                    <c:forEach var="garcon" items="${garconList}">
-                        <option value="${garcon.id}">${garcon.nome}</option>
-                    </c:forEach>
+<%--                     <c:forEach var="garcon" items="${garconList}"> --%>
+<%--                         <option value="${garcon.id}">${garcon.nome}</option> --%>
+<%--                     </c:forEach> --%>
 
 
-                </optgroup>
-            </select>
-
+<!--                 </optgroup> -->
+<!--             </select> -->
 
             <div id="botoes">
                 <button class="button">Adicionar</button>
                 <button class="button">Apagar</button>
             </div>
+            
+		</fieldset>
+
+
 
         </form>
     </div>

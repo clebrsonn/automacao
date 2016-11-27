@@ -3,19 +3,19 @@
 
 <div id="conteudo" class="conteudo">
 <div align="">
-            <h3>Movimentação Serviço</h3>
+            <h3>Movimentacao Servico</h3>
             	<div id="content-table">
 	<form id="mainform">
 
       <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table">
     			<th class="table-header-check"><a id="toggle-all" ></a> </th>
                 <th class="table-header-repeat line-left "><a>Id</a></th>
-                 <th class="table-header-repeat line-left minwidth-1"><a>Número do Serviço</a></th> 
-                                  <th class="table-header-repeat line-left minwidth-1"><a>Nome do Serviço</a></th>
-                                                   <th class="table-header-repeat line-left minwidth-1"><a>Preço do Serviço</a></th>
+                 <th class="table-header-repeat line-left minwidth-1"><a>Numero </a></th> 
+                                  <th class="table-header-repeat line-left minwidth-1"><a>Nome </a></th>
+                                                   <th class="table-header-repeat line-left minwidth-1"><a>Preco</a></th>
                                                             
 <!--                 <th class="table-header-repeat line-left minwidth-1"><a>Projeto</a></th>                               -->
-                <th class="table-header-repeat line-left"><a>Acão</a></th>
+                <th class="table-header-repeat line-left"><a>Acao</a></th>
                  
                 <c:forEach var="servico" items="${servicoList}" varStatus="id">
                 

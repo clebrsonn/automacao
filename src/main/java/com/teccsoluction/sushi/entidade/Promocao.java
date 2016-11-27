@@ -6,37 +6,50 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 @Entity
 @Table(name = "PROMOCAO")
 public class Promocao implements Serializable {
 
 
-    private static final long serialVersionUID = 1L;
-
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
-    private long id;
-
-    @Column(name = "numero")
-    private String numero;
-
-    @Column(name = "nome")
-    private String nome;
-
-    @Column(name = "data_inicio")
-    private Date datainicio;
-
-    @Temporal(TemporalType.DATE)
+	private static final long serialVersionUID = 1L;
+	
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ID")
+	private long id;
+	
+	@Column(name="numero")
+	private String numero;
+	
+	@Column(name="nome")
+	private String nome ;
+	
+	@Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    @Column(name = "data_fim")
-    private Date datafim;
+	@Column(name="data_inicio")
+	private Date datainicio;
+	
+	@Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+	@Column(name="data_fim")
+	private Date datafim;
+	
+	
+	
+	public Promocao() {
+		// TODO Auto-generated constructor stub
+	}
 
-
-    public Promocao() {
-        // TODO Auto-generated constructor stub
-    }
 
     public String getNumero() {
         return numero;

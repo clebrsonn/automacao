@@ -1,10 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 
-		<div id="content">
-			<div id="about" class="post">
-				<h1 class="title">Movimentação de Mesas</h1>
-				<div class="entry">
+		<div id="conteudo" class="conteudo" >
+		
+				<h1 class="title">Movimentacao de Mesas</h1>
+				
 				
 				
 				
@@ -58,5 +58,5 @@
 
 
 				</div>
-			</div>
+			
 

@@ -3,25 +3,25 @@
 
 <div id="conteudo" class="conteudo">
 <div align="">
-            <h3>Movimentação Produto</h3>
+            <h3>Movimentacao Produto</h3>
             	<div id="content-table">
 	<form id="mainform">
 
       <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table">
     			<th class="table-header-check"><a id="toggle-all" ></a> </th>
                 <th class="table-header-repeat line-left "><a>Id</a></th>
-                <th class="table-header-repeat line-left minwidth-1"><a>Código de Barras</a></th>
+                <th class="table-header-repeat line-left minwidth-1"><a>Codigo de Barras</a></th>
                 <th class="table-header-repeat line-left minwidth-1"><a>Categoria</a></th>
                 <th class="table-header-repeat line-left minwidth-1"><a>Descricao </a></th> 
-           		<th class="table-header-repeat line-left minwidth-1"><a>Preço de Custo</a></th> 
-             	<th class="table-header-repeat line-left minwidth-1"><a>Preço de Venda</a></th> 
+           		<th class="table-header-repeat line-left minwidth-1"><a>Preco de Custo</a></th> 
+             	<th class="table-header-repeat line-left minwidth-1"><a>Preco de Venda</a></th> 
                 <th class="table-header-repeat line-left minwidth-1"><a>Um</a></th>
                 <th class="table-header-repeat line-left minwidth-1"><a>Fornecedor</a></th>
 <!--                  <th class="table-header-repeat line-left minwidth-1"><a>Data Abertura</a></th>  -->
                            
 <!--                 <th class="table-header-repeat line-left minwidth-1"><a>Data Fechamento</a></th>             -->
                                   
-                <th class="table-header-repeat line-left"><a>Acão</a></th>
+                <th class="table-header-repeat line-left"><a>Acao</a></th>
                  
                 <c:forEach var="produto" items="${produtoList}" varStatus="id">
 
@@ -38,7 +38,7 @@
                     <td>${produto.descricao}</td>
                     <td>${produto.precoCusto}</td>
                     <td>${produto.precoVenda}</td>                   
-                    <td>${produto.um}</td>
+                    <td>${produto.un_medida}</td>
 					 <td>${produto.fornecedor}</td>
 					
                    
@@ -62,7 +62,7 @@
                      <td>${produto.descricao}</td>
                     <td>${produto.precoCusto}</td>
                     <td>${produto.precoVenda}</td>
-                    <td>${produto.um}</td>
+                    <td>${produto.un_medida}</td>
                     <td>${produto.fornecedor}</td>
                     
                     <td class="options-width">

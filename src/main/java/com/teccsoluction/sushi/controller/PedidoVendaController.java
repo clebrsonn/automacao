@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.teccsoluction.sushi.dao.ProdutoDAO;
+import com.teccsoluction.sushi.dao.generic.ClienteDAO;
 import com.teccsoluction.sushi.dao.generic.GarconDAO;
 import com.teccsoluction.sushi.dao.generic.ItemDAO;
 import com.teccsoluction.sushi.dao.generic.MesaDAO;
@@ -21,6 +22,7 @@ import com.teccsoluction.sushi.dao.generic.PagamentoDAO;
 import com.teccsoluction.sushi.dao.generic.PedidoDAO;
 import com.teccsoluction.sushi.dao.generic.PedidoVendaDAO;
 import com.teccsoluction.sushi.entidade.Categoria;
+import com.teccsoluction.sushi.entidade.Cliente;
 import com.teccsoluction.sushi.entidade.Fornecedor;
 import com.teccsoluction.sushi.entidade.Garcon;
 import com.teccsoluction.sushi.entidade.Item;
@@ -60,8 +62,10 @@ public class PedidoVendaController extends AbstractController<PedidoVenda> {
 	AbstractEntityDao<Pagamento> pagamentopedidovendaDao;
 //	private
 //	AbstractEntityDao<Mesa> mesaDao;
-//	private	
-//	AbstractEntityDao<Garcon> garconDao;
+	
+	private	
+	final
+	AbstractEntityDao<Cliente> clienteDao;
 		
 		
 //	public PedidoVendaController(PedidoVendaDAO dao, MesaDAO daomesa, GarconDAO daogarcon){
@@ -74,13 +78,14 @@ public class PedidoVendaController extends AbstractController<PedidoVenda> {
 //	}
 	
 	 @Autowired
-	public PedidoVendaController(PedidoVendaDAO dao,ItemDAO daoitem,ProdutoDAO produtodao,PagamentoDAO pagamentodao){
+	public PedidoVendaController(PedidoVendaDAO dao,ItemDAO daoitem,ProdutoDAO produtodao,PagamentoDAO pagamentodao, ClienteDAO daocliente){
 	
 	super("pedidovenda");
 	this.pedidoVendaDao = dao;
 	this.itempedidovendaDao= daoitem;
 	this.produtopedidovendaDao = produtodao;
 	this.pagamentopedidovendaDao = pagamentodao;
+	this.clienteDao = daocliente;
 
 }
 
@@ -91,9 +96,9 @@ public class PedidoVendaController extends AbstractController<PedidoVenda> {
 
         binder.registerCustomEditor(Item.class, new AbstractEditor<Item>(this.itempedidovendaDao){
         });
-//
-//        binder.registerCustomEditor(Garcon.class, new AbstractEditor<Garcon>(this.garconDao) {
-//        });
+
+        binder.registerCustomEditor(Cliente.class, new AbstractEditor<Cliente>(this.clienteDao) {
+        });
 
 
     }
@@ -117,16 +122,22 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 			StatusPedido[]tipoStatusList = StatusPedido.values();
 			
 			OrigemPedido[] origemPedidoList = OrigemPedido.values();
+			
+			List <Cliente> clienteList =clienteDao.getAll();
 //			
 	        model.addAttribute("pedidoVendaList", pedidoVendaList);
 	        model.addAttribute("origemPedidoList", origemPedidoList);
 	        model.addAttribute("tipoList", tipoList);
 	        model.addAttribute("tipoStatusList", tipoStatusList);
+	        model.addAttribute("clienteList", clienteList);
+
 	    }
 
 	    
 	    @RequestMapping(value = "additemvenda", method = RequestMethod.GET)
 		public ModelAndView  additemvenda(HttpServletRequest request){
+	    	
+	    	
 	    	
 	    	
 	    	Long idf = Long.parseLong(request.getParameter("idpedidovenda"));
@@ -138,9 +149,22 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
 	    	List<Item> itemList = itempedidovendaDao.getAllItens(idf);
 	    	
+	    	//VARIÁVEL QUE RECEBERA O VALOR TOTAL DE CADA ITEM
+	    	double totalpedido = 0;
+	    	
+	    	
+	    	//PERCORRE A LISTA DE ITEM PEGANDO O VALOR TOTAL DE CADA ITEM PARA OBTER O VALOR TOTAL
+	    	for (Item itempedido : itemList) {
+	    		
+	    		totalpedido += itempedido.getTotalItem();
+				
+			}
+	    	
+	    	
 	    	additemvenda.addObject("itemList", itemList);
 	    	additemvenda.addObject("produtoList", produtoList);
 	    	additemvenda.addObject("pv", pv);
+	    	additemvenda.addObject("totalpedido", totalpedido);
 
 			
 			return additemvenda;
@@ -151,12 +175,29 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 		public ModelAndView  additemvendaa(HttpServletRequest request){
 	    	
 	    	
-	    	long idf = Long.parseLong(request.getParameter("idpedidovenda"));
+//	    	long idf = Long.parseLong(request.getParameter("idpedidovenda"));
 	    	ModelAndView additemvenda = new ModelAndView("additemvenda");
 	    	
-	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
 	    	
+	    	//conversoes
+    		long idfprod = Long.parseLong(request.getParameter("codigo"));
+	    	long idf = Long.parseLong(request.getParameter("idpedidovenda"));
+	    	double total = Double.parseDouble(request.getParameter("valor"));
+	    	int qtd = Integer.parseInt(request.getParameter("quantidade"));
+	    	double precounitario = Double.parseDouble(request.getParameter("valor"));
+	    	
+	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
+
 	    	Item item = new Item();
+	    	
+	    	//setando os valores dos itens
+	    	item.setDescricao(request.getParameter("descricao"));
+	    	item.setCodigo(request.getParameter("codigo"));
+	    	item.setPrecoUnitario(precounitario);
+	    	item.setQtd(qtd);
+	    	item.setTotalItem(precounitario*qtd);
+	    	pv.setTotal(pv.getTotal()+ item.getTotalItem());
+
 	    	
 	    	item.setPedido(pv);
 	    	
@@ -165,9 +206,22 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
 	    	List<Item> itemList = itempedidovendaDao.getAllItens(idf);
 	    	
+	    	
+	    	//VARIÁVEL QUE RECEBERA O VALOR TOTAL DE CADA ITEM
+	    	double totalpedido = 0;
+	    	
+	    	
+	    	//PERCORRE A LISTA DE ITEM PEGANDO O VALOR TOTAL DE CADA ITEM PARA OBTER O VALOR TOTAL
+	    	for (Item itempedido : itemList) {
+	    		
+	    		totalpedido += itempedido.getTotalItem();
+				
+			}
+	    	
 	    	additemvenda.addObject("itemList", itemList);
 	    	additemvenda.addObject("produtoList", produtoList);
 	    	additemvenda.addObject("pv", pv);
+	    	additemvenda.addObject("totalpedido", totalpedido);
 
 			
 			return additemvenda;
@@ -181,7 +235,7 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 	    	Long idf = Long.parseLong(request.getParameter("id"));
 	    	ModelAndView addformapagamento = new ModelAndView("addformapagamento");
 	    	
-	    	PedidoVenda pedido = pedidoVendaDao.PegarPorId(idf);
+	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
 	    	
 	    	
 	    	List<Produto> produtoList = produtopedidovendaDao.getAll();
@@ -193,7 +247,7 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 	    	addformapagamento.addObject("produtoList", produtoList);
 	    	addformapagamento.addObject("pagamentoList", pagamentoList);
 
-	    	addformapagamento.addObject("pedido", pedido);
+	    	addformapagamento.addObject("pv", pv);
 
 			
 			return addformapagamento;
@@ -233,11 +287,11 @@ protected AbstractEntityDao<PedidoVenda> getDao() {
 	    
 	    
 	    // salva  forma pagamento
-	    @RequestMapping(value = "finalizacaovenda", method = RequestMethod.GET)
+	    @RequestMapping(value = "finalizacaovenda", method = RequestMethod.POST)
 		public ModelAndView  FinalizarVenda(HttpServletRequest request){
 	    	
 	    	
-	    	long idf = Long.parseLong(request.getParameter("id"));
+	    	long idf = Long.parseLong(request.getParameter("idpedido"));
 	    	ModelAndView finalizacaovenda = new ModelAndView("finalizacaovenda");
 	    	
 //	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);

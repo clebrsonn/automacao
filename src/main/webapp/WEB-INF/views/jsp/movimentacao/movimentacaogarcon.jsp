@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 <div align="">
-            <h3>Movimentação Garçon</h3>
+            <h3>Movimentacao Garcon</h3>
             	<div id="content-table">
 	<form id="mainform">
 
@@ -12,7 +12,7 @@
                 <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Nome</a></th>          
 <!--                 <th class="table-header-repeat line-left minwidth-1"><a>Projeto</a></th>                               -->
-                <th class="table-header-repeat line-left"><a>Acão</a></th>
+                <th class="table-header-repeat line-left"><a>Acao</a></th>
                  
                 <c:forEach var="garcon" items="${garconList}" varStatus="id">
                 

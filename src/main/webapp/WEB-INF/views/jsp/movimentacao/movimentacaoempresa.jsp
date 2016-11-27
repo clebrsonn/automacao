@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <%@ page session="false"%>
 
 <div id="conteudo" class="conteudo">
@@ -11,12 +13,12 @@
 					class="product-table">
 					<th class="table-header-check"><a id="toggle-all"></a></th>
 					<th class="table-header-repeat line-left "><a>Id</a></th>
-					<!--                       <th class="table-header-repeat line-left minwidth-1"><a>Código de Barras</a></th> -->
 					<th class="table-header-repeat line-left minwidth-1"><a>Nome Fantasia</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a>Razao Social</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a>Cnpj</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a>Inscricao Estadual</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a>Data de Abertura</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a>Inscrição Estadual</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a>Data Abertura</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a>Logo</a></th>
 <!-- 					<th class="table-header-repeat line-left minwidth-1"><a>Total</a></th> -->
 
 					<!--                  <th class="table-header-repeat line-left minwidth-1"><a>Data Abertura</a></th>  -->
@@ -40,12 +42,12 @@
 									<td>${empresa.razaosocial}</td>
 									<td>${empresa.cnpj}</td>
 									<td>${empresa.inscricaoestadual}</td>
-									<td>${empresa.dataabertura}</td>
-<%-- 									<td>${pedido.total}</td> --%>
+                   					<td><fmt:formatDate type="date"  value="${empresa.dataabertura}" /></td>
+									<td>${empresa.logo}</td>
 
 
 									<td class="options-width"><a
-										href='${pageContext.request.contextPath}/empresa/edicao?id=${empresa.id}" class="icon-1 info-tooltip'
+										href="edicao?id=${empresa.id}" class="icon-1 info-tooltip"
 										title="Edit"></a> &nbsp;&nbsp;&nbsp;&nbsp; <a
 										href="cadastrovenda2?id=${empresa.id}"
 										class="icon-40 info-tooltip" title="aaa"></a> <a
@@ -65,29 +67,42 @@
 									<td>${empresa.cnpj}</td>
 									<td>${empresa.inscricaoestadual}</td>
 									<td>${empresa.dataabertura}</td>
-<%-- 									<td>${pedido.total}</td> --%>
+									<td>${empresa.logo}</td>
 
 									<td class="options-width"><a
-										href='${pageContext.request.contextPath}/empresa/edicao?id=${empresa.id}" class="icon-1 info-tooltip'
+										href="edicao?id=${empresa.id}" class="icon-1 info-tooltip"
 										title="Edit"></a> &nbsp;&nbsp;&nbsp;&nbsp; <a
-										href="/delete?id=${pedidovenda.id}"
+										href="/delete?id=${empresa.id}"
 										class="icon-40 info-tooltip" title="aaa"></a> <a
-										href="additem?id=${pedidovenda.id}"
+										href="additem?id=${empresa.id}"
 										class="icon-30 info-tooltip" title="Adicionar Item ao Pedido"></a>
-										&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${pedidovenda.id}"
+										&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${empresa.id}"
 										class="icon-5 info-tooltip" title="ccc"></a></td>
 								</tr>
 							</c:when>
 
 						</c:choose>
-					
+						<!--                 <tr> -->
+						<!--                 <td><input  type="checkbox"/></td> -->
+						<%--                     <td>${objeto.id}</td> --%>
+						<%--                     <td>${objeto.nome}</td> --%>
+						<%--                     <td>${objeto.tipo}</td> --%>
+						<!--                     <td class="options-width"> -->
+						<%--                         <a href="/edit?id=${objeto.id}" class="icon-1 info-tooltip" title="Edit"></a> --%>
+						<!--                         &nbsp;&nbsp;&nbsp;&nbsp; -->
+						<%--                         <a href="/delete?id=${objeto.id}" class="icon-4 info-tooltip" title="aaa"></a> --%>
+						<%--                          <a href="/edit?id=${objeto.id}" class="icon-3 info-tooltip" title="bbb"></a> --%>
+						<!--                         &nbsp;&nbsp;&nbsp;&nbsp; -->
+						<%--                         <a href="/delete?id=${objeto.id}" class="icon-5 info-tooltip" title="ccc"></a> --%>
+						<!--                     </td> -->
+						<!--                 </tr> -->
 					</c:forEach>
 				</table>
 
 
 				<div id="botoes">
 
-					<button class="button">Adicionar Filial</button>
+					<button class="button">Criar Filial</button>
 
 
 				</div>

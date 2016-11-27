@@ -3,25 +3,74 @@
 
 <div id="conteudo" class="conteudo">
 
-    <h2>Cadastro de Mesa</h2>
+    <h1>Cadastro de Mesa</h1>
 
 
     <div id="form">
         <form id="formMesa" action="add" method="POST">
-            <p>Numero da Mesa:</p>
-            <input name="numero" type="text" class="inp-form"/>
+        
+        
+   <!-- 				DADOS DO REGISTRO DIVIDIDOS EM DOIS PARAGRAFOS	 -->
+			
+			<fieldset>
+				
+				<legend>Dados do Registro</legend>
+			
+			
+				<p>Data Criacao:
+					<input name="datacriacao" type="date" class="inp-form" />
+					<fmt:formatDate type="date"  value="${registro.data}" pattern="dd/MM/yyyy"/>
+				
+				
+				Usuario Criou:
+				<input name="usuario" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+			
+				Data Ultima Modificacao:
+				<input name="datamodificacao" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.datamodificacao}" pattern="dd/MM/yyyy"/>
+				
+				</p>
+				
+				<p>
+				
+				Usuario Modificou:
+				<input name="usuario" type="text" class="inp-form"/>
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+				
+				Status:
+				<input name="status" type="text" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.status}" pattern="dd/MM/yyyy"/>
+				
+			</p>
+			
+			</fieldset>       
+        
+        
+        
+        <fieldset>
+				
+				<legend>Dados da Mesa</legend>
+			
+        
+            <p>Numero da Mesa:
+            	<input name="numero" type="text" class="inp-form"/>
+            </p>
 
-            <p>Status:</p>
-            <select id="status" name="status" id="files" class="inp-form">
-                <optgroup label="Tipo de Pedido">
-
-                    <option value="Disponivel">Disponivel</option>
-                    <option value="Indisponivel">Indisponivel</option>
-                    <option value="Avariada">Avariada</option>
-
-
-                </optgroup>
-            </select>
+            <p>Status:
+	            <select id="status" name="status" id="files" class="inp-form">
+	                <optgroup label="Status Mesa">
+	
+	                    <option value="Disponivel">Disponivel</option>
+	                    <option value="Indisponivel">Indisponivel</option>
+	                    <option value="Avariada">Avariada</option>
+	
+	
+	                </optgroup>
+	            </select>
+            </p>
 
             <!-- 		<p> Projeto:</p> -->
 
@@ -40,8 +89,7 @@
             <!-- 		</select> -->
 
             <!-- 		<button class="form-submit">Add</button> -->
-
-
+            
             <div id="botoes">
 
                 <button class="button">Adicionar</button>
@@ -49,6 +97,8 @@
 
 
             </div>
+		</fieldset>
+
 
         </form>
     </div>

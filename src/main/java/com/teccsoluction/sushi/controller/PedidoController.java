@@ -1,18 +1,7 @@
 package com.teccsoluction.sushi.controller;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.ServletRequestDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
 import com.teccsoluction.sushi.dao.generic.GarconDAO;
 import com.teccsoluction.sushi.dao.generic.MesaDAO;
 import com.teccsoluction.sushi.dao.generic.PedidoDAO;
-import com.teccsoluction.sushi.entidade.Categoria;
-import com.teccsoluction.sushi.entidade.Fornecedor;
 import com.teccsoluction.sushi.entidade.Garcon;
 import com.teccsoluction.sushi.entidade.Mesa;
 import com.teccsoluction.sushi.entidade.Pedido;
@@ -21,6 +10,16 @@ import com.teccsoluction.sushi.framework.AbstractEditor;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import com.teccsoluction.sushi.util.StatusPedido;
 import com.teccsoluction.sushi.util.TipoPedido;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 
 @Controller
@@ -36,7 +35,7 @@ public class PedidoController extends AbstractController<Pedido> {
 	private	
 	AbstractEntityDao<Garcon> garconDao;
 		
-		
+	@Autowired
 	public PedidoController(PedidoDAO dao, MesaDAO daomesa, GarconDAO daogarcon){
 		
 		super("pedido");

@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 <div align="">
-            <h3>Movimentação Delivery</h3>
+            <h3>Movimentacao Delivery</h3>
             	<div id="content-table">
 	<form id="mainform"  action="cadastropedido">
 
@@ -13,32 +13,32 @@
 <!--                       <th class="table-header-repeat line-left minwidth-1"><a>Código de Barras</a></th> -->
                  <th class="table-header-repeat line-left minwidth-1"><a>Data </a></th> 
                  <th class="table-header-repeat line-left minwidth-1"><a>Tipo </a></th> 
-            <th class="table-header-repeat line-left minwidth-1"><a>Mesa</a></th> 
+<!--             <th class="table-header-repeat line-left minwidth-1"><a>Mesa</a></th>  -->
              <th class="table-header-repeat line-left minwidth-1"><a>Status</a></th> 
-              <th class="table-header-repeat line-left minwidth-1"><a>Garçon</a></th>
+<!--               <th class="table-header-repeat line-left minwidth-1"><a>OrigemPedido</a></th> -->
                 <th class="table-header-repeat line-left minwidth-1"><a>Total</a></th>
 
 <!--                  <th class="table-header-repeat line-left minwidth-1"><a>Data Abertura</a></th>  -->
                            
 <!--                 <th class="table-header-repeat line-left minwidth-1"><a>Data Fechamento</a></th>             -->
                                   
-                <th class="table-header-repeat line-left"><a>Acão</a></th>
+                <th class="table-header-repeat line-left"><a>Acao</a></th>
                  
-                <c:forEach var="pedido" items="${pedidoList}" varStatus="tipo">
+                <c:forEach var="pedido" items="${pedidovendaList}" varStatus="id">
 
 
 
 
 <c:choose>
-  <c:when test="${pedido.tipo == 'DELIVERY' }">
+  <c:when test="${pedido.id!= null }">
     <tr class="alternate-row">
                 <td><input  type="checkbox"/></td>
                     <td>${pedido.id}</td>
                      <td>${pedido.data}</td>
                      <td>${pedido.tipo}</td>
-                    <td>${pedido.mesa}</td>
+<%--                     <td>${pedido.mesa}</td> --%>
                     <td>${pedido.status}</td>
-                    <td>${pedido.garcon}</td>                   
+<%--                     <td>${pedido.origempedido}</td>                    --%>
                     <td>${pedido.total}</td>
 
                    

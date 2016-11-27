@@ -11,10 +11,11 @@
 
 			<div id="dadospedido" class="dadospedido">
 
-				ID do Pedido: <input id="idpedidocompra" name="idpedidocompra"
-					type="text" class="idpedido" /> ID Cliente: <input name="tipo"
-					type="text" class="tipo" /> Total: <input id="totalpedido"
-					name="totalpedido" type="text" class="totalpedido" />
+				ID do Pedido Compra: <input id="idpedidocompra" name="idpedidocompra"
+					type="text" class="idpedido" value="${pc.id }" /> 
+				ID Fornecedor: <input name="fornecedor"
+					type="text" class="tipo" value="${pc.fornecedor }"/> Total: <input id="totalpedido"
+					name="totalpedido" type="text" class="totalpedido" value="${pc.total }" />
 
 			</div>
 

@@ -1,5 +1,6 @@
 package com.teccsoluction.sushi.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,7 +18,7 @@ public class DescontoController extends AbstractController<Desconto> {
 	final 
 	DescontoDAO dao;
 	
-	
+	@Autowired
 	public DescontoController(DescontoDAO dao){
 		
 		super("desconto");

@@ -7,12 +7,12 @@
 
 
 	<div id="formAddItem">
-		<form id="formAdd" action="AddItemCompra" method="POST">
+		<form id="formAddItem" action="AddItemCompra" method="POST">
 
 
-ID do Pedido de Compra: <input name="idpedidocompra" type="text"class="idpedido" value="${pc.id }" />
+				ID do Pedido de Compra: <input id="idpedidocompra"name="idpedidocompra" type="text"class="idpedido" value="${pc.id }" />
 <%-- 			 	  Tipo: <input name="tipo" type="text"	class="tipo" value="${pc.tipo }"/>  --%>
-			 	 Total: <input id="totalpedido" name="total"type="text" class="totalpedido" value="${pc.total }"/>
+			 	 Total: <input id="totalpedido" name="totalpedido"type="text" class="totalpedido" value="${pc.total }"/>
 
 			<p></p>
 
@@ -80,7 +80,7 @@ ID do Pedido de Compra: <input name="idpedidocompra" type="text"class="idpedido"
 
 			</br>
 
-			<table border="0" width="140%" cellpadding="0" cellspacing="0"
+			<table border="0" width="100%" cellpadding="0" cellspacing="0"
 				class="product-table">
 				<th class="table-header-check"><a id="toggle-all"></a></th>
 				<th class="table-header-repeat line-left "><a>Id</a></th>

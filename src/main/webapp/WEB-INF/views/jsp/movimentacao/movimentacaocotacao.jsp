@@ -47,12 +47,12 @@
 
 
 									<td class="options-width"><a
-										href='${pageContext.request.contextPath}/cotacao/edicao?id=${cotacao.id}' class="icon-1 info-tooltip"
+										href="edicao?id=${cotacao.id}" class="icon-1 info-tooltip"
 										title="Edit"></a> &nbsp;&nbsp;&nbsp;&nbsp; <a
-										href="/delete?id=${cotacao.id}"
+										href="cadastrovenda2?id=${cotacao.id}"
 										class="icon-40 info-tooltip" title="aaa"></a> <a
-										href='${pageContext.request.contextPath}/cotacao/additemcotacao?id=${cotacao.id}'
-										class="icon-30 info-tooltip" title="Adicionar Item a Cotacao"></a>
+										href="additem?id=${cotacao.id}"
+										class="icon-30 info-tooltip" title="Adicionar Item ao Pedido"></a>
 										&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${cotacao.id}"
 										class="icon-5 info-tooltip" title="ccc"></a></td>
 								</tr>
@@ -68,13 +68,15 @@
 <%-- 									<td>${pedidovenda.status}</td> --%>
 <%-- 									<td>${pedidovenda.garcon}</td> --%>
 <%-- 									<td>${pedidovenda.total}</td> --%>
+									
+									
 									<td class="options-width"><a
-										href='${pageContext.request.contextPath}/cotacao/edicao?id=${cotacao.id}' class="icon-1 info-tooltip"
+										href="edicao?id=${cotacao.id}" class="icon-1 info-tooltip"
 										title="Edit"></a> &nbsp;&nbsp;&nbsp;&nbsp; <a
 										href="/delete?id=${cotacao.id}"
 										class="icon-40 info-tooltip" title="aaa"></a> <a
-										href='${pageContext.request.contextPath}/cotacao/additemcotacao?id=${cotacao.id}'
-										class="icon-30 info-tooltip" title="Adicionar Item a Cotacao"></a>
+										href="additem?id=${cotacao.id}"
+										class="icon-30 info-tooltip" title="Adicionar Item ao Pedido"></a>
 										&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${cotacao.id}"
 										class="icon-5 info-tooltip" title="ccc"></a></td>
 								</tr>

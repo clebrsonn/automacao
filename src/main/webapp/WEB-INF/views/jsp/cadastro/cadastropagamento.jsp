@@ -10,21 +10,82 @@
 
     <div id="formm">
         <form id="formPagamento" action="add" method="POST">
-            <p>Numero d Pagamento:</p>
-            <input name="numero" type="text" class="inp-form"/>
+        
+        
+    <!-- 				DADOS DO REGISTRO DIVIDIDOS EM DOIS PARAGRAFOS	 -->
+			
+			<fieldset>
+				
+				<legend>Dados do Registro</legend>
+			
+			
+				<p>Data Criacao:
+					<input name="datacriacao" type="date" class="inp-form" />
+					<fmt:formatDate type="date"  value="${registro.data}" pattern="dd/MM/yyyy"/>
+				
+				
+				Usuario Criou:
+				<input name="usuario" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+			
+				Data Ultima Modificacao:
+				<input name="datamodificacao" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.datamodificacao}" pattern="dd/MM/yyyy"/>
+				
+				</p>
+				
+				<p>
+				
+				Usuario Modificou:
+				<input name="usuario" type="text" class="inp-form"/>
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+				
+				Status:
+				<input name="status" type="text" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.status}" pattern="dd/MM/yyyy"/>
+				
+			</p>
+			
+			</fieldset>         
+        <fieldset>
+				
+				<legend>Dados do Pagamento</legend>
+			
+ 
+            <p>Numero:
+            	<input name="numero" type="text" class="inp-form"/>
+            </p>
 
-            <p>Nome da Forma de Pagamento:</p>
-            <input name="nome" type="text" class="inp-form"/>
-            <p>Tipo de Forma de Pagamento:</p>
-            <input name="tipo" type="text" class="inp-form"/>
-            <p>Parcelas da Forma de Pagamento:</p>
-            <input name="parcelas" type="text" class="inp-form"/>
-
-
+            <p>Nome:
+            	<input name="nome" type="text" class="inp-form"/>
+            </p>
+            <p>
+            Tipo:
+	            <select id="tipo" name="tipo" id="files" class="inp-form">
+	                <optgroup label="Tipo Forma Pagamento">
+	
+	                    <option value="DINHEIRO">DINHEIRO</option>
+	                    <option value="CREDITO">CREDITO</option>
+	                    <option value="DEBITO">DEBITO</option>
+	
+	
+	                </optgroup>
+	            </select>
+            </p>
+            <p>Parcelas:
+            	<input name="parcelas" type="number" class="inp-form"/>
+            </p>
+            
             <div id="botoes">
                 <button class="button">Adicionar</button>
                 <button class="button">Apagar</button>
             </div>
+            
+	</fieldset>
+
+
 
         </form>
 

@@ -1,23 +1,12 @@
 package com.teccsoluction.sushi.controller;
 
 
-import com.teccsoluction.sushi.dao.ProdutoDAO;
 import com.teccsoluction.sushi.dao.generic.ItemDAO;
-import com.teccsoluction.sushi.dao.generic.PedidoVendaDAO;
 import com.teccsoluction.sushi.entidade.Item;
-import com.teccsoluction.sushi.entidade.PedidoVenda;
-import com.teccsoluction.sushi.entidade.Produto;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
-
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created by clebr on 06/07/2016.
@@ -26,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ItemController extends AbstractController<Item> {
 
 
-    private @Autowired
+    private
     ItemDAO dao;
     
 //	private
@@ -44,11 +33,12 @@ public class ItemController extends AbstractController<Item> {
 //        this.pedidovendaDao = pedidovendaDao;
 //        this.produtoDao = produtodao;
 //    }
-    
+
+    @Autowired
     public ItemController(ItemDAO itemdao) {
         super("item");
         this.dao=itemdao;
- 
+
     }
 
     @Override

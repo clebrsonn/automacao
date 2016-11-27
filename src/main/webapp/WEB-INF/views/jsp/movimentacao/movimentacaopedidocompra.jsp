@@ -3,21 +3,35 @@
 
 <div id="conteudo" class="conteudo">
 
-	<h2>Movimentacao Pedido Compra aVULSO</h2>
+	<h2>Movimentacao Pedido Compra AVULSO</h2>
 
 
 	<div id="form">
-		<form id="formRecebimentos" action="add" method="GET">
+		<form id="formPedidoCompra" action="AddItemCompra" method="POST">
+		
+		
+		<fieldset>
+		
+		<legend>Dados do Pedido de Compra</legend>
 
 			<div id="dadospedido" class="dadospedido">
 
-				ID do Pedido: <input id="idpedidocompra" name="idpedidocompra"
-					type="text" class="idpedido" /> ID Cliente: <input name="tipo"
-					type="text" class="tipo" /> Total: <input id="totalpedido"
-					name="totalpedido" type="text" class="totalpedido" />
+				ID do Pedido:
+				<input id="idpedidocompra" name="idpedidocompra"type="text" class="idpedido" value="${pc.id }"/>
+				ID Fornecedor:
+				<input name="fornecedor"type="text" class="tipo" value="${pc.fornecedor }"/>
+				Total:
+				<input id="totalpedido"name="totalpedido" type="text" class="totalpedido" value="${pc.total }"/>
+				
+				<button class="button" formaction="carregarPedidoCompra" formmethod="get">CarregarPedido</button>
 
 			</div>
-
+			
+		</fieldset>
+		
+		<fieldset>
+		
+		<legend>Dados dos Itens</legend>
 
 			<div id="item" class="item">
 
@@ -65,6 +79,8 @@
 
 
 			</div>
+			
+			</fieldset>
 
 			<div id="botoes">
 				<button class="button">AdicionarItem</button>
