@@ -46,7 +46,7 @@
     <!--</bean>-->
 
 
-    ">
+
 
     <bean class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close" id="dataSource">
