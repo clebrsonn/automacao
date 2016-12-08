@@ -1,6 +1,10 @@
 package com.teccsoluction.sushi.entidade;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +39,7 @@ public class Item {
     @JoinColumn
     private Produto produto;
 
+    @LazyCollection(LazyCollectionOption.FALSE)
     @ManyToMany
     @JoinTable(name = "item_has_cotacao")
     private List<Cotacao> cotacoes;

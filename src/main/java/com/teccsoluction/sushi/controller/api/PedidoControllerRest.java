@@ -1,8 +1,7 @@
 package com.teccsoluction.sushi.controller.api;
 
-import com.teccsoluction.sushi.dao.generic.GarconDAO;
-import com.teccsoluction.sushi.entidade.Garcon;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,37 +10,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.teccsoluction.sushi.dao.generic.PedidoDAO;
+import com.teccsoluction.sushi.entidade.Pedido;
+import com.teccsoluction.sushi.framework.AbstractEntityDao;
 
 @RestController
-@RequestMapping(value = "Garcon")
-public class GarconControllerRest {
+@RequestMapping(value = "Pedido")
+public class PedidoControllerRest {
 
     private
     final
-    GarconDAO dao;
+    PedidoDAO dao;
 
     @Autowired
-    public GarconControllerRest(GarconDAO dao) {
+    public PedidoControllerRest(PedidoDAO dao) {
         this.dao = dao;
     }
 
 
-    protected AbstractEntityDao<Garcon> getDao() {
+    protected AbstractEntityDao<Pedido> getDao() {
         return dao;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Garcon> buscarEntity(@PathVariable long id) {
-        Garcon garcon = getDao().PegarPorId(id);
-        if (garcon == null) {
+    public ResponseEntity<Pedido> buscarEntity(@PathVariable long id) {
+    	Pedido pedido = getDao().PegarPorId(id);
+        if (pedido == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(garcon, HttpStatus.OK);
+        return new ResponseEntity<>(pedido, HttpStatus.OK);
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public ResponseEntity AdicionarEntity(Garcon entity) {
+    public ResponseEntity AdicionarEntity(Pedido entity) {
 
         try {
             getDao().add(entity);
@@ -52,7 +53,7 @@ public class GarconControllerRest {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Garcon> listarEntity() {
+    public List<Pedido> listarEntity() {
         return getDao().getAll();
 
     }

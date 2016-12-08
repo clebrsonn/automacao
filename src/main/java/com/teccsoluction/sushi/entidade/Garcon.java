@@ -19,6 +19,10 @@ public class Garcon implements Serializable {
 
     @Column(name = "nome")
     private String nome;
+    
+    @Column(name = "senha")
+    private String senha;    
+    
 
 //    @OneToMany(mappedBy = "garcon")
 //    private List<PedidoVenda> pedidos;
@@ -45,10 +49,15 @@ public class Garcon implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return nome;
-    }
+
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
 //    public List<PedidoVenda> gePedidos() {
 //        return pedidos;
@@ -58,6 +67,10 @@ public class Garcon implements Serializable {
 //    public void setPedidos(List<PedidoVenda> pedidos) {
 //        this.pedidos = pedidos;
 //    }
-
+	
+    @Override
+    public String toString() {
+        return nome;
+    }
 
 }

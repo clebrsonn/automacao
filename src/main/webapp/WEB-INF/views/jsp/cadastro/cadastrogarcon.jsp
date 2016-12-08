@@ -58,6 +58,10 @@
             <p>Nome do Garcon:
             	<input name="nome" type="text" class="inp-form"/>
             </p>
+            
+                <p>Senha:
+            	<input name="senha" type="text" class="inp-form"/>
+            </p>
 
 
             <!-- 		<p>Líder do Projeto:</p> -->

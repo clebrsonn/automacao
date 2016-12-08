@@ -1,6 +1,10 @@
 package com.teccsoluction.sushi.entidade;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +34,8 @@ public class Fornecedor implements Serializable {
 
     @Column(name = "INSCRICAOESTADUAL")
     private String inscricaoestadual;
-
+    
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "fornecedor")
     private List<Produto> produtos;
 

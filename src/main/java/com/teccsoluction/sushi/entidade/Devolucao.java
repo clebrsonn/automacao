@@ -1,5 +1,7 @@
 package com.teccsoluction.sushi.entidade;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -27,7 +29,7 @@ public abstract class Devolucao implements Serializable {
 
     private String status;
 
-
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "devolucao")
     private List<Item> itens;
     
