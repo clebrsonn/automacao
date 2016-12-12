@@ -36,14 +36,10 @@ public class Categoria implements Serializable {
 
     @Column(name = "NOME", nullable = false)
     private String nome;
-<<<<<<< HEAD
 
-    @ManyToOne
-    @JoinColumn(name = "CAT_PAI", nullable = true)
-=======
-    
     @JsonIgnore
->>>>>>> fae67ff... Reconfiguracao e Atualização Projeto
+	@ManyToOne
+	@JoinColumn(name = "CAT_PAI", nullable = true)
     private Categoria catpai;
     
     @JsonIgnore
