@@ -1,11 +1,13 @@
 package com.teccsoluction.sushi.entidade;
 
-import javax.persistence.*;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,16 +26,8 @@ public class Composicao extends Produto implements Serializable {
     @Column(name = "numero")
     private String numero;
 
-	@Column(name="nome")
-	private String nome;
-	
-	// itens que formam uma composicao
-	
-	@JsonIgnore
-	@LazyCollection(LazyCollectionOption.FALSE)
-	@OneToMany
-	private List<Item>listaItensComposicao;
-	
+    @Column(name = "nome")
+    private String nome;
 
     // itens que formam uma composicao
 
