@@ -1,13 +1,21 @@
 package com.teccsoluction.sushi.entidade;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "PEDIDO_COMPRA")
 public class PedidoCompra extends Pedido {
-
+	
+	 @JsonIgnore
+	 @LazyCollection(LazyCollectionOption.TRUE)
     @ManyToOne
     @JoinColumn
     private Fornecedor fornecedor;
@@ -16,6 +24,8 @@ public class PedidoCompra extends Pedido {
     @JoinColumn
     private Recebimento recebimento;
 
+    @JsonIgnore
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "pedidoCompra")
     private List<DevolucaoCompra> devolucaoCompra;
 

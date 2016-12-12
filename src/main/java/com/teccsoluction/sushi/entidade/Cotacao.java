@@ -1,6 +1,8 @@
 package com.teccsoluction.sushi.entidade;
 
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -16,7 +18,8 @@ public class Cotacao {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
-
+    
+    @LazyCollection(LazyCollectionOption.FALSE)
     @ManyToMany(mappedBy = "cotacoes")
     private List<Item> itens;
 

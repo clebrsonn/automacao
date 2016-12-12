@@ -6,11 +6,18 @@ import javax.persistence.*;
 @Entity
 @Table(name = "DEVOLUCAO_VENDA")
 public class DevolucaoVenda extends Devolucao {
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-    @ManyToOne
-    @JoinColumn
-    private PedidoVenda pedidoVenda;
-
+	
+	@ManyToOne
+	@JoinColumn
+	private PedidoVenda pedidoVenda;
+	
     @OneToOne
     @JoinColumn
     private Estoque estoque;

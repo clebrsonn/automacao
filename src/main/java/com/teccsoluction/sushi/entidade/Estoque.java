@@ -1,6 +1,10 @@
 package com.teccsoluction.sushi.entidade;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +23,8 @@ public class Estoque implements Serializable {
 
     @Column(name = "nome")
     private String nome;
-
+   
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany
     private List<Item> items;
 
