@@ -1,23 +1,14 @@
 package com.teccsoluction.sushi.controller.api;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.teccsoluction.sushi.dao.generic.ClienteDAO;
-import com.teccsoluction.sushi.dao.generic.GarconDAO;
 import com.teccsoluction.sushi.entidade.Cliente;
-import com.teccsoluction.sushi.entidade.Garcon;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
+import java.util.List;
+
 
 @RestController
-@RequestMapping(value = "Cliente")
+@RequestMapping(value = "cliente")
 public class ClienteControllerRest {
 
     private
@@ -43,7 +34,7 @@ public class ClienteControllerRest {
         return new ResponseEntity<>(cliente, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "add", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity AdicionarEntity(Cliente entity) {
 
         try {
