@@ -1,6 +1,5 @@
 package com.teccsoluction.sushi.dao.generic;
 
-import com.teccsoluction.sushi.entidade.DevolucaoCompra;
 import com.teccsoluction.sushi.entidade.DevolucaoVenda;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.stereotype.Repository;

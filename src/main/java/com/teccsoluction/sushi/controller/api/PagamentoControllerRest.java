@@ -41,6 +41,7 @@ public class PagamentoControllerRest {
     }
 
     @RequestMapping(method = RequestMethod.POST)
+
     public ResponseEntity AdicionarEntity(Pagamento entity) {
 
         try {

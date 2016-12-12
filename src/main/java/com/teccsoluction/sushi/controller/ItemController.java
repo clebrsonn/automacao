@@ -17,7 +17,7 @@ public class ItemController extends AbstractController<Item> {
 
     private
     ItemDAO dao;
-    
+
 //	private
 //	final
 //	AbstractEntityDao<PedidoVenda> pedidovendaDao;
@@ -37,7 +37,7 @@ public class ItemController extends AbstractController<Item> {
     @Autowired
     public ItemController(ItemDAO itemdao) {
         super("item");
-        this.dao=itemdao;
+        this.dao = itemdao;
 
     }
 
@@ -45,9 +45,8 @@ public class ItemController extends AbstractController<Item> {
     protected AbstractEntityDao<Item> getDao() {
         return dao;
     }
-    
-    
-    
+
+
 //    @RequestMapping(value = "additemvenda/", method = RequestMethod.GET)
 //	public ModelAndView  additemvenda(HttpServletRequest request){
 //    	
@@ -68,6 +67,6 @@ public class ItemController extends AbstractController<Item> {
 //		
 //		return additemvenda;
 //	}
-    
-    
+
+
 }

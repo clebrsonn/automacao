@@ -4,72 +4,61 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="DESPESA")
+@Table(name = "DESPESA")
 public class Despesa implements Serializable {
-	
 
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6185354829701934086L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -6185354829701934086L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID")
-	private long id;
-	
-	@Column(name="nome")
-	private String nome;
-	
-	@Column(name="valor")
-	private Double valor;
-	
-	
-	
-	public Despesa() {
-		// TODO Auto-generated constructor stub
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
+    private long id;
+
+    @Column(name = "nome")
+    private String nome;
+
+    @Column(name = "valor")
+    private Double valor;
 
 
-
-	public String getNome() {
-		return nome;
-	}
-
+    public Despesa() {
+        // TODO Auto-generated constructor stub
+    }
 
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public String getNome() {
+        return nome;
+    }
 
 
-
-	public long getId() {
-		return id;
-	}
-
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
 
-	public Double getValor() {
-		return valor;
-	}
+    public long getId() {
+        return id;
+    }
 
 
-
-	public void setValor(Double valor) {
-		this.valor = valor;
-	}
-
+    public Double getValor() {
+        return valor;
+    }
 
 
-	@Override
-	public String toString() {
-		return nome;
-	}
-	
-	
-	
-	
-	
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+
+    @Override
+    public String toString() {
+        return nome;
+    }
+
+
 }

@@ -37,13 +37,35 @@
     </bean>
 
     <!-- MySQL Datasource with Commons DBCP connection pooling -->
-    <bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/sushi"/>
-        <property name="username" value="root"/>
-        <property name="password" value="123456"/>
+    <!--<bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">-->
+    <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+    <!--<property name="url" value="jdbc:mysql://localhost:3306/sushi"/>-->
+    <!--<property name="username" value="root"/>-->
+    <!--<property name="password" value="123456"/>-->
 
+    <!--</bean>-->
+
+
+
+
+    <bean class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close" id="dataSource">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url"
+                  value="jdbc:postgresql://ec2-54-243-201-3.compute-1.amazonaws.com:5432/d5v7deca4t65j5"/>
+        <property name="username" value="efokvhahhfdahx"/>
+        <property name="password" value="b_2t1PBrPZMHwxsvo32PiTlmsy"/>
+        <property name="maxActive" value="10"/>
+        <property name="maxIdle" value="5"/>
+        <property name="minIdle" value="2"/>
+        <property name="initialSize" value="5"/>
+        <!--<property name="maxActive" value="10"/>-->
+        <!--<property name="maxIdle" value="5"/>-->
+        <!--<property name="minIdle" value="2"/>-->
+        <!--<property name="initialSize" value="5"/>-->
+        <property name="removeAbandoned" value="true"/>
     </bean>
+
 
     <!-- EntityManagerFactory -->
     <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
@@ -65,6 +87,16 @@
 
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="META-INF.messages"/>
+    </bean>
+
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="defaultContentType" value="application/json"/>
+        <property name="mediaTypes">
+            <value>
+                json=application/json
+                <!--xml=application/xml-->
+            </value>
+        </property>
     </bean>
 
 </beans>

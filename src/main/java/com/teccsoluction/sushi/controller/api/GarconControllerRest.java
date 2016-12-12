@@ -3,6 +3,7 @@ package com.teccsoluction.sushi.controller.api;
 import com.teccsoluction.sushi.dao.generic.GarconDAO;
 import com.teccsoluction.sushi.entidade.Garcon;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
+
 import com.teccsoluction.sushi.framework.AbstractRestController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,7 @@ public class GarconControllerRest extends AbstractRestController<Garcon> {
     protected AbstractEntityDao<Garcon> getDao() {
         return dao;
     }
+
 
     @Override
     protected void validateSave(Garcon garcon) {
@@ -75,5 +77,4 @@ public class GarconControllerRest extends AbstractRestController<Garcon> {
 //        return getDao().getAll();
 //
 //    }
-
 }

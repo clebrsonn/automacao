@@ -2,9 +2,9 @@ package com.teccsoluction.sushi.entidade;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.teccsoluction.sushi.util.OrigemPedido;
-import com.teccsoluction.sushi.util.StatusPedido;
 import com.teccsoluction.sushi.util.TipoPedido;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,18 +21,18 @@ public class PedidoVenda extends Pedido {
     @ManyToOne
     @JoinColumn
     private Cliente cliente;
-    
-    
+
+
     // VENDA OOU COMPRA
     @Enumerated(EnumType.ORDINAL)
     private TipoPedido tipo;
-    
-    
+
+
     // VENDA OOU COMPRA
     @Enumerated(EnumType.STRING)
     private OrigemPedido origempedido;
-    
-    
+
+
     //LISTA DE ITENS DO PEDIDO DE VENDA
 //    @OneToMany
 //    private List<Item> listaItensVenda;
@@ -46,41 +46,35 @@ public class PedidoVenda extends Pedido {
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy="pedidoVenda")
     private List<DevolucaoVenda> listaDevolucao;
-    
-    
-    
-    
+
 
     //CONSTRUTOR PADRÃO
     public PedidoVenda() {
-    	
-    	listaDevolucao = new ArrayList<>(); 
-    	tipo.VENDA.values();
+
+        listaDevolucao = new ArrayList<>();
+        tipo.VENDA.values();
     }
 
 
-    
     public TipoPedido getTipo() {
 //    	TipoPedido tipovenda = tipo.VENDA;
-		return tipo;
-	}
+        return tipo;
+    }
 
-	public void setTipo(TipoPedido tipo) {
-		this.tipo = tipo;
-	}
-
-
-
-	public OrigemPedido getOrigemPedido() {
-		
-		return origempedido;
-	}
+    public void setTipo(TipoPedido tipo) {
+        this.tipo = tipo;
+    }
 
 
+    public OrigemPedido getOrigemPedido() {
 
-	public void setOrigemPedido(OrigemPedido origem) {
-		this.origempedido = origem;
-	}
+        return origempedido;
+    }
+
+
+    public void setOrigemPedido(OrigemPedido origem) {
+        this.origempedido = origem;
+    }
 
     public Cliente getCliente() {
         return cliente;
@@ -103,16 +97,14 @@ public class PedidoVenda extends Pedido {
 //	}
 
 
-
-	public List<DevolucaoVenda> getListaDevolucao() {
-		return listaDevolucao;
-	}
-
+    public List<DevolucaoVenda> getListaDevolucao() {
+        return listaDevolucao;
+    }
 
 
-	public void setListaDevolucao(List<DevolucaoVenda> listaDevolucao) {
-		this.listaDevolucao = listaDevolucao;
-	}
-    
+    public void setListaDevolucao(List<DevolucaoVenda> listaDevolucao) {
+        this.listaDevolucao = listaDevolucao;
+    }
+
 
 }
