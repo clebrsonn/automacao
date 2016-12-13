@@ -37,6 +37,7 @@ public class Categoria implements Serializable {
     @Column(name = "NOME", nullable = false)
     private String nome;
 
+    
     @JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "CAT_PAI", nullable = true)
