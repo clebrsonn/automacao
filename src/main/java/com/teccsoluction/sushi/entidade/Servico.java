@@ -4,81 +4,71 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="SERVICO")
+@Table(name = "SERVICO")
 public class Servico implements Serializable {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID")
-	private long id;
-	
-	@Column(name="numero")
-	private String numero;	
-	
-	@Column(name="nome")
-	private String nome;
-	
-	@Column(name="preco")
-	private double preco;
-	
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-	
-	public Servico() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
+    private long id;
 
-	public String getNome() {
-		return nome;
-	}
+    @Column(name = "numero")
+    private String numero;
+
+    @Column(name = "nome")
+    private String nome;
+
+    @Column(name = "preco")
+    private double preco;
 
 
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
+    public Servico() {
+        // TODO Auto-generated constructor stub
+    }
 
 
-	public double getPreco() {
-		return preco;
-	}
+    public String getNome() {
+        return nome;
+    }
 
 
-
-	public void setPreco(double preco) {
-		this.preco = preco;
-	}
-
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
 
-	public String getNumero() {
-		return numero;
-	}
-
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
-
-	public long getId() {
-		return id;
-	}
+    public double getPreco() {
+        return preco;
+    }
 
 
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
 
-	@Override
-	public String toString() {
-		return  nome ;
-	}
-	
-	
-	
-	
-	
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+
+    @Override
+    public String toString() {
+        return nome;
+    }
+
+
 }

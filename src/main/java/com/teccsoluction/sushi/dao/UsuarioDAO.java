@@ -8,7 +8,7 @@ import javax.persistence.TypedQuery;
 
 
 @Service
-public class UsuarioDAO extends AbstractEntityDao<Usuario>{
+public class UsuarioDAO extends AbstractEntityDao<Usuario> {
 
 
     public UsuarioDAO() {

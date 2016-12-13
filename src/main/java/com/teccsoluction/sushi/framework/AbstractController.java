@@ -14,24 +14,23 @@ public abstract class AbstractController<Entity> {
 
     private final String entityAlias;
 
-    protected abstract AbstractEntityDao<Entity> getDao();
-
-
     public AbstractController(String entityAlias) {
         this.entityAlias = entityAlias;
     }
 
+    protected abstract AbstractEntityDao<Entity> getDao();
+
     @RequestMapping(value = "cadastro", method = RequestMethod.GET)
     public ModelAndView cadastrarEntity() {
-    	
-    	ModelAndView cadastro = new ModelAndView("cadastro" + entityAlias);
+
+        ModelAndView cadastro = new ModelAndView("cadastro" + entityAlias);
 //        cadastro.addObject("acao", "add");
 
-    	 List<Entity> entityList = getDao().getAll();
+        List<Entity> entityList = getDao().getAll();
 //    	 
 //    	 cadastro.addObject("entityList", entityList);
-    	 
-    	 return cadastro;
+
+        return cadastro;
 
 //        return new ModelAndView("cadastro" + entityAlias);
     }
@@ -43,9 +42,9 @@ public abstract class AbstractController<Entity> {
 
         getDao().add(entity);
 //        getDao().PegarPorId(entity);
-        
+
 //        cadastroEntity.addObject("entity", entity);
-        
+
         System.out.println(entityAlias);
         return "redirect:cadastro";//cadastroEntity;
        
@@ -77,7 +76,6 @@ public abstract class AbstractController<Entity> {
         edicao.addObject("acao", "edicao");
 
 
-
         return edicao;
     }
 
@@ -89,9 +87,8 @@ public abstract class AbstractController<Entity> {
         Long idf = Long.parseLong(request.getParameter("id"));
         getDao().editar(entity);
 
-        
 
-        return new ModelAndView("redirect:/" + entityAlias + "/"+"movimentacao");
+        return new ModelAndView("redirect:/" + entityAlias + "/" + "movimentacao");
     }
 
 
@@ -106,8 +103,6 @@ public abstract class AbstractController<Entity> {
 
         return new ModelAndView("redirect:/" + entityAlias + "/movimentacao");
     }
-
-
 
 
 }

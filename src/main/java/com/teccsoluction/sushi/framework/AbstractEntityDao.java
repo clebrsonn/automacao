@@ -1,10 +1,9 @@
 package com.teccsoluction.sushi.framework;
 
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.teccsoluction.sushi.entidade.Item;
 import com.teccsoluction.sushi.entidade.Pagamento;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -35,16 +34,16 @@ public abstract class AbstractEntityDao<Entity> {
         List<Entity> result = manager.createQuery("SELECT p FROM " + entityAlias + " p", entityClass).getResultList();
         return result;
     }
-    
+
     //PEGA OS ITENS POR id do PEDIDO
     public List<Item> getAllItens(long id) {
-        List<Item> result = manager.createQuery("SELECT p FROM Item p where pedido_ID="+id, Item.class).getResultList();
+        List<Item> result = manager.createQuery("SELECT p FROM Item p where pedido_ID=" + id, Item.class).getResultList();
         return result;
     }
-    
+
     //PEGA OS ITENS POR PEDIDO
     public List<Pagamento> getAllPagamento(long id) {
-        List<Pagamento> result = manager.createQuery("SELECT p FROM Pagamento p where pedido_ID="+id, Pagamento.class).getResultList();
+        List<Pagamento> result = manager.createQuery("SELECT p FROM Pagamento p where pedido_ID=" + id, Pagamento.class).getResultList();
         return result;
     }
 
