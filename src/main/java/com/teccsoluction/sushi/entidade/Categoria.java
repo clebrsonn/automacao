@@ -1,9 +1,23 @@
 package com.teccsoluction.sushi.entidade;
 
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -16,16 +30,20 @@ public class Categoria implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private long id;
 
-    @Column(name = "NOME")
+    @Column(name = "NOME", nullable = false)
     private String nome;
-
-    @ManyToOne
+    
+    @JsonIgnore
+	@ManyToOne
+	@JoinColumn(name = "CAT_PAI", nullable = true)
     private Categoria catpai;
-
+    
+    @JsonIgnore
+	@LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "categoria")
     private List<Produto> produtos;
 
@@ -36,10 +54,10 @@ public class Categoria implements Serializable {
         // TODO Auto-generated constructor stub
     }
     
-    public Categoria(Categoria cat) {
-        // TODO Auto-generated constructor stub
-    	this.catpai=cat;
-    }
+//    public Categoria(Categoria cat) {
+//        // TODO Auto-generated constructor stub
+//    	this.catpai=cat;
+//    }
 
 
     //GETTERS AND SETTERS
@@ -58,9 +76,7 @@ public class Categoria implements Serializable {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+
 
     @Override
     public String toString() {

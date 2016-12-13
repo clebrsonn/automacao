@@ -13,18 +13,18 @@ import com.teccsoluction.sushi.framework.AbstractEntityDao;
 @RequestMapping(value = "empresa/")
 public class EmpresaController extends AbstractController<Empresa> {
 
-    private
-    final
-    EmpresaDAO dao;
+	private final EmpresaDAO dao;
 
-    @Autowired
-    public EmpresaController(EmpresaDAO dao) {
-        super("empresa");
-        this.dao = dao;
-    }
+	@Autowired
+	public EmpresaController(EmpresaDAO dao) {
+		super("empresa");
+		this.dao = dao;
+	}
 
-    @Override
-    protected AbstractEntityDao<Empresa> getDao() {
-        return dao;
-    }
+	@Override
+	protected AbstractEntityDao<Empresa> getDao() {
+		return dao;
+	}
+
+
 }

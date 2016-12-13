@@ -1,6 +1,8 @@
 package com.teccsoluction.sushi.entidade;
 
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -13,10 +15,11 @@ import java.util.List;
 public class Cotacao {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
-
+    
+    @LazyCollection(LazyCollectionOption.FALSE)
     @ManyToMany(mappedBy = "cotacoes")
     private List<Item> itens;
 
@@ -24,9 +27,9 @@ public class Cotacao {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date data;
 
-    @ManyToOne
-    @JoinColumn
-    private PedidoCompra pedidoCompra;
+//    @ManyToOne
+//    @JoinColumn
+//    private PedidoCompra pedidoCompra;
 
     public Cotacao() {
         itens = new ArrayList<>();
@@ -56,11 +59,11 @@ public class Cotacao {
         this.data = data;
     }
 
-    public PedidoCompra getPedidoCompra() {
-        return pedidoCompra;
-    }
-
-    public void setPedidoCompra(PedidoCompra pedidoCompra) {
-        this.pedidoCompra = pedidoCompra;
-    }
+//    public PedidoCompra getPedidoCompra() {
+//        return pedidoCompra;
+//    }
+//
+//    public void setPedidoCompra(PedidoCompra pedidoCompra) {
+//        this.pedidoCompra = pedidoCompra;
+//    }
 }

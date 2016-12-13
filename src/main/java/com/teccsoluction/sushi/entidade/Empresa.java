@@ -1,9 +1,19 @@
 package com.teccsoluction.sushi.entidade;
 
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
@@ -16,7 +26,7 @@ public class Empresa implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private long id;
 
@@ -34,9 +44,11 @@ public class Empresa implements Serializable {
 
     @Column(name = "LOGO")
     private String logo;
-
-    @Temporal(TemporalType.DATE)
-    @Column(name = "DATAABERTURA")
+    
+	@Temporal(TemporalType.DATE)   
+	@DateTimeFormat(pattern = "dd/MM/yyyy")	
+    @Column(name="DATAABERTURA")
+	
     private Date dataabertura;
 
 

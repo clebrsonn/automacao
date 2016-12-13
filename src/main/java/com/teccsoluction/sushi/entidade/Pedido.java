@@ -1,6 +1,10 @@
 package com.teccsoluction.sushi.entidade;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.teccsoluction.sushi.util.StatusPedido;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -23,14 +27,16 @@ public abstract class Pedido {
 
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
-    
-    
 
     private double total;
-
+    
+    @JsonIgnore
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "pedido")
     private List<Pagamento> pagamentos;
 
+    @JsonIgnore
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "pedido")
     private List<Item> items;
 

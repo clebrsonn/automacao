@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 <div align="">
-            <h3>Movimentação Categoria</h3>
+            <h3>Movimentacao Categoria</h3>
             	<div id="content-table">
 	<form id="mainform">
 

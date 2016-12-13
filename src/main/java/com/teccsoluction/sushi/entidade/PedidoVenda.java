@@ -1,5 +1,6 @@
 package com.teccsoluction.sushi.entidade;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.teccsoluction.sushi.util.OrigemPedido;
 import com.teccsoluction.sushi.util.StatusPedido;
 import com.teccsoluction.sushi.util.TipoPedido;
@@ -8,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 @Table(name = "PEDIDO_VENDA")
@@ -25,7 +29,7 @@ public class PedidoVenda extends Pedido {
     
     
     // VENDA OOU COMPRA
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private OrigemPedido origempedido;
     
     
@@ -38,6 +42,8 @@ public class PedidoVenda extends Pedido {
 
 
 	//lista de devolucoes de compra
+    @JsonIgnore
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy="pedidoVenda")
     private List<DevolucaoVenda> listaDevolucao;
     

@@ -1,6 +1,10 @@
 package com.teccsoluction.sushi.entidade;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,7 +21,7 @@ public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private long id;
 
@@ -35,11 +39,14 @@ public class Cliente implements Serializable {
     @Column(name = "data_nascimento")
     private Date dataNascimento;
     
-    
+    @JsonIgnore
+    @LazyCollection(LazyCollectionOption.FALSE)
     // cliente pedido de venda
     @OneToMany(mappedBy="cliente")
     private List<PedidoVenda> listaPedidoVenda;
-    
+   
+    @JsonIgnore
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany
     private List <DevolucaoVenda> listaDevolucaoVenda;
 

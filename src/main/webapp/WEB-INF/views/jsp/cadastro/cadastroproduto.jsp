@@ -8,48 +8,97 @@
 	
 	<div id="form">
 	<form id="formProduto" action="add" method="POST">
+	
+	
 
+   <!-- 				DADOS DO REGISTRO DIVIDIDOS EM DOIS PARAGRAFOS	 -->
+			
+			<fieldset>
+				
+				<legend>Dados do Registro</legend>
+			
+			
+				<p>Data Criacao:
+					<input name="datacriacao" type="date" class="inp-form" />
+					<fmt:formatDate type="date"  value="${registro.data}" pattern="dd/MM/yyyy"/>
+				
+				
+				Usuario Criou:
+				<input name="usuario" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+			
+				Data Ultima Modificacao:
+				<input name="datamodificacao" type="date" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.datamodificacao}" pattern="dd/MM/yyyy"/>
+				
+				</p>
+				
+				<p>
+				
+				Usuario Modificou:
+				<input name="usuario" type="text" class="inp-form"/>
+				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/>
+				
+				
+				Status:
+				<input name="status" type="text" class="inp-form" />
+				<fmt:formatDate type="date"  value="${registro.status}" pattern="dd/MM/yyyy"/>
+				
+			</p>
+			
+			</fieldset>  
 
-		<p>ID do Produto:</p>
-		<input name="id"type="text" class="inp-form" readonly="readonly" />
+	<fieldset>
+				
+				<legend>Dados do Produto</legend>
+			
+		<p>Codigo:
+			<input name="id"type="text" class="inp-form" readonly="readonly" />
+		</p>
 		
-		<p>Codigo de Barra do Produto:</p>
-		<input name="codebar"type="text" class="inp-form" />
+		<p>Barra:
+			<input name="codebar"type="text" class="inp-form" />
+		</p>
         
-        <p> Categoria:</p>
-          <select id="categoria" name="categoria" id="files" class="inp-form">           
-                <optgroup label="Selecione uma Categoria">
-                    <c:forEach var="categoria" items="${categoriaList}">
-                        <option value="${categoria.id}">${categoria.nome}</option>
-                    </c:forEach>
+        <p> Categoria:
+	          <select id="categoria" name="categoria" id="files" class="inp-form">           
+	                <optgroup label="Selecione uma Categoria">
+	                    <c:forEach var="categoria" items="${categoriaList}">
+	                        <option value="${categoria.id}">${categoria.nome}</option>
+	                    </c:forEach>
+	
+	                </optgroup>
+	           </select>
+		</p>
 
-                </optgroup>
-           </select>
+		<p>Descrição:
+			<input name="descricao" type="text" class="inp-form" />
+		</p>
 		
-
-		<p>Descriï¿½ï¿½o do Produto:</p>
-		<input name="descricao" type="text" class="inp-form" />
+		<p>Preço Custo:
+			<input name="precoCusto" type="text" class="inp-form" />
+		</p>
+		<p>Preço Venda:
+			<input name="precoVenda" type="text" class="inp-form" />
+		</p>
 		
-		<p>Preï¿½o Custo do Produto:</p>
-		<input name="precoCusto" type="text" class="inp-form" />
-		
-		<p>Preï¿½o Venda do Produto:</p>
-		<input name="precoVenda" type="text" class="inp-form" />
-		
-				<p> Unidade de Medida:</p>
-            <select id="um" name="um" id="files" class="inp-form">           
+			<p> Unidade de Medida:
+            <select id="un_medida" name="un_medida" id="files" class="inp-form">           
         
                 <optgroup label="Tipos de Unidade de Medida">
 
-           			<c:forEach var="um" items="${umList}">
+           			<c:forEach var="un_medida" items="${umList}">
            			
-           				<option value="${um}">${um}</option>
+           				<option value="${un_medida}">${un_medida}</option>
            				      				
            				
        				</c:forEach>
                 </optgroup>
             </select>
-            <p> Fornecedor:</p>
+            </p>
+           
+            <p> Fornecedor:
             <select id="fornecedor" name="fornecedor" id="files" class="inp-form">           
         
                 <optgroup label="Lista de Fornecedores">
@@ -64,14 +113,17 @@
        				</c:forEach>
                 </optgroup>
             </select>
-            
+           </p>
+           
+    		<div id="botoes">
+				<button class="button">Adicionar</button>
+				<button class="button">Apagar</button>
+			</div>   
+			     
+	</fieldset>
 
 
-
-<div id="botoes">
-<button class="button">Adicionar</button>
-<button class="button">Apagar</button>
-</div>
+	
 
 	</form>
 </div>

@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Add Item ao Venda</h3>
+		<h3>Add Item a Recebimento</h3>
 	
 	
 	<div id="formAddItem">
@@ -103,7 +103,7 @@
 
 </br>
 		
-		      <table border="0" width="140%"cellpadding="0" cellspacing="0"  class="product-table">
+		      <table border="0" width="100%"cellpadding="0" cellspacing="0"  class="product-table">
     			 <th class="table-header-check"><a id="toggle-all" ></a> </th>
                  <th class="table-header-repeat line-left "><a>Id</a></th>
                  <th class="table-header-repeat line-left minwidth-1"><a>Pedido Compra </a></th>         

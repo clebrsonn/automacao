@@ -1,18 +1,12 @@
 package com.teccsoluction.sushi.framework;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.teccsoluction.sushi.entidade.Garcon;
-import com.teccsoluction.sushi.entidade.Mesa;
-import com.teccsoluction.sushi.util.StatusPedido;
-import com.teccsoluction.sushi.util.TipoPedido;
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 
 public abstract class AbstractController<Entity> {
@@ -31,8 +25,9 @@ public abstract class AbstractController<Entity> {
     public ModelAndView cadastrarEntity() {
     	
     	ModelAndView cadastro = new ModelAndView("cadastro" + entityAlias);
+//        cadastro.addObject("acao", "add");
 
-//    	 List<Entity> entityList = getDao().getAll();
+    	 List<Entity> entityList = getDao().getAll();
 //    	 
 //    	 cadastro.addObject("entityList", entityList);
     	 
@@ -42,15 +37,19 @@ public abstract class AbstractController<Entity> {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public ModelAndView AdicionarEntity(@ModelAttribute Entity entity) {
+    public String AdicionarEntity(@ModelAttribute Entity entity) {
 
 //        ModelAndView cadastroEntity = new ModelAndView("cadastro" + entityAlias);
 
         getDao().add(entity);
+//        getDao().PegarPorId(entity);
         
-//        return cadastroEntity;
+//        cadastroEntity.addObject("entity", entity);
+        
         System.out.println(entityAlias);
-        return new ModelAndView("redirect:/" + entityAlias + "/cadastro");
+        return "redirect:cadastro";//cadastroEntity;
+       
+//        return new ModelAndView("redirect:/" + entityAlias + "/cadastro");
     }
 
 
@@ -75,6 +74,8 @@ public abstract class AbstractController<Entity> {
         ModelAndView edicao = new ModelAndView("edicao" + entityAlias);
         entity = getDao().PegarPorId(idf);
         edicao.addObject(entityAlias, entity);
+        edicao.addObject("acao", "edicao");
+
 
 
         return edicao;
@@ -88,6 +89,7 @@ public abstract class AbstractController<Entity> {
         Long idf = Long.parseLong(request.getParameter("id"));
         getDao().editar(entity);
 
+        
 
         return new ModelAndView("redirect:/" + entityAlias + "/"+"movimentacao");
     }
@@ -104,6 +106,8 @@ public abstract class AbstractController<Entity> {
 
         return new ModelAndView("redirect:/" + entityAlias + "/movimentacao");
     }
+
+
 
 
 }
