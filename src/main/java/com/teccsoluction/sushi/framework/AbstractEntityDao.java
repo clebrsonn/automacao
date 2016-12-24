@@ -2,6 +2,8 @@ package com.teccsoluction.sushi.framework;
 
 import com.teccsoluction.sushi.entidade.Item;
 import com.teccsoluction.sushi.entidade.Pagamento;
+import com.teccsoluction.sushi.entidade.Produto;
+
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -46,6 +48,13 @@ public abstract class AbstractEntityDao<Entity> {
         List<Pagamento> result = manager.createQuery("SELECT p FROM Pagamento p where pedido_ID=" + id, Pagamento.class).getResultList();
         return result;
     }
+    
+    //pega os produtos de uma determinada categoria 
+    
+    public List<Produto> getAllProdutosCategoria(long id) { 
+        List<Produto> result = manager.createQuery("SELECT p FROM Produto p where categoria_ID="+id, Produto.class).getResultList(); 
+        return result; 
+    } 
 
     @Transactional
     public void add(Entity entity) {
