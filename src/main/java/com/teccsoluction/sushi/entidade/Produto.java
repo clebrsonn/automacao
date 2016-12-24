@@ -1,5 +1,6 @@
 package com.teccsoluction.sushi.entidade;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.teccsoluction.sushi.util.UnidadeMedida;
 
 import javax.persistence.*;
@@ -34,7 +35,7 @@ public class Produto implements Serializable {
 
 	@Column(name = "PRECO_VENDA")
 	private double precoVenda;
-
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn
 	private Fornecedor fornecedor;
