@@ -56,5 +56,11 @@ public class ProdutoControllerRest {
         return getDao().getAll();
 
     }
+    
+    @RequestMapping(value = "/{categoria_ID}" ,method = RequestMethod.GET)
+    public List<Produto> listarProdutoCategoria(@PathVariable long id) {
+        return getDao().getAllProdutosCategoria(id);
+
+    }
 
 }

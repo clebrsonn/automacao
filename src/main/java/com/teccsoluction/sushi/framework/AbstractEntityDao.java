@@ -5,6 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.teccsoluction.sushi.entidade.Item;
 import com.teccsoluction.sushi.entidade.Pagamento;
+import com.teccsoluction.sushi.entidade.Produto;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -39,6 +40,13 @@ public abstract class AbstractEntityDao<Entity> {
     //PEGA OS ITENS POR id do PEDIDO
     public List<Item> getAllItens(long id) {
         List<Item> result = manager.createQuery("SELECT p FROM Item p where pedido_ID="+id, Item.class).getResultList();
+        return result;
+    }
+    
+    //pega os produtos de uma determinada categoria
+    
+    public List<Produto> getAllProdutosCategoria(long id) {
+        List<Produto> result = manager.createQuery("SELECT p FROM Produto p where categoria_ID="+id, Produto.class).getResultList();
         return result;
     }
     

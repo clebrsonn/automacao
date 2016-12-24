@@ -7,7 +7,6 @@
 				
 				
 				
-				
 				<c:forEach var="mesa" items="${mesaList}" varStatus="status">
                 	
                 	<c:choose>
