@@ -19,9 +19,9 @@ public class Cotacao {
     @Column(name = "ID")
     private Long id;
     
-    @LazyCollection(LazyCollectionOption.FALSE)
-    @ManyToMany(mappedBy = "cotacoes")
-    private List<Item> itens;
+//    @LazyCollection(LazyCollectionOption.FALSE)
+//    @ManyToMany(mappedBy = "cotacoes")
+//    private List<Item> itens;
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
@@ -32,7 +32,7 @@ public class Cotacao {
 //    private PedidoCompra pedidoCompra;
 
     public Cotacao() {
-        itens = new ArrayList<>();
+       // itens = new ArrayList<>();
     }
 
     public Long getId() {
@@ -43,13 +43,13 @@ public class Cotacao {
         this.id = id;
     }
 
-    public List<Item> getItens() {
-        return itens;
-    }
-
-    public void setItens(List<Item> itens) {
-        this.itens = itens;
-    }
+//    public List<Item> getItens() {
+//        return itens;
+//    }
+//
+//    public void setItens(List<Item> itens) {
+//        this.itens = itens;
+//    }
 
     public Date getData() {
         return data;

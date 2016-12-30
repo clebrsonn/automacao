@@ -40,7 +40,7 @@ public class Fornecedor implements Serializable {
     private List<Produto> produtos;
 
     public Fornecedor() {
-        produtos = new ArrayList<>();
+    //    produtos = new ArrayList<>();
     }
 
     public long getId() {

@@ -24,15 +24,15 @@ public class Estoque implements Serializable {
     @Column(name = "nome")
     private String nome;
    
-    @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany
-    private List<Item> items;
+//    @LazyCollection(LazyCollectionOption.FALSE)
+//    @OneToMany
+//    private List<Item> items;
 
 
     public Estoque() {
         // TODO Auto-generated constructor stub
 
-        items = new ArrayList<>();
+       // items = new ArrayList<>();
     }
 
 
@@ -54,11 +54,11 @@ public class Estoque implements Serializable {
         this.id = id;
     }
 
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
+//    public List<Item> getItems() {
+//        return items;
+//    }
+//
+//    public void setItems(List<Item> items) {
+//        this.items = items;
+//    }
 }

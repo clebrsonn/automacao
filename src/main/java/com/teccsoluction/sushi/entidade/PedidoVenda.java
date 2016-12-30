@@ -51,7 +51,7 @@ public class PedidoVenda extends Pedido {
     //CONSTRUTOR PADRÃO
     public PedidoVenda() {
 
-        listaDevolucao = new ArrayList<>();
+     //   listaDevolucao = new ArrayList<>();
         tipo.VENDA.values();
     }
 

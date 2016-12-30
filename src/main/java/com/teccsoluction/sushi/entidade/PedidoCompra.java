@@ -31,7 +31,7 @@ public class PedidoCompra extends Pedido {
 
 
     public PedidoCompra() {
-        devolucaoCompra = new ArrayList<>();
+      //  devolucaoCompra = new ArrayList<>();
     }
 
     public Fornecedor getFornecedor() {
