@@ -48,11 +48,11 @@ public class Cliente implements Serializable {
     private List<PedidoVenda> listaPedidoVenda;
 
    
-    @JsonIgnore
-    @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany
-    private List<DevolucaoVenda> listaDevolucaoVenda;
-
+//    @JsonIgnore
+//    @LazyCollection(LazyCollectionOption.FALSE)
+//    @OneToMany
+//    private List<DevolucaoVenda> listaDevolucaoVenda;
+//
 
     public Cliente() {
         // TODO Auto-generated constructor stub
