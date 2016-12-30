@@ -58,8 +58,8 @@ public class CategoriaControllerRest {
 
     }
     
-    @RequestMapping(value="/pai",method = RequestMethod.GET)
-    public List<Categoria> listarCategoriaPai(long id) {
+    @RequestMapping(value="/pai/{id}",method = RequestMethod.GET)
+    public List<Categoria> listarCategoriaPai(@PathVariable long id) {
         return getDao().getAllCategoriaPai(id);
 
     }
