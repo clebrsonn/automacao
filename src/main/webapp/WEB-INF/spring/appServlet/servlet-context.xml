@@ -52,9 +52,9 @@
           destroy-method="close" id="dataSource">
         <property name="driverClassName" value="org.postgresql.Driver"/>
         <property name="url"
-                  value="jdbc:postgresql://ec2-54-243-201-3.compute-1.amazonaws.com:5432/d5v7deca4t65j5"/>
-        <property name="username" value="efokvhahhfdahx"/>
-        <property name="password" value="b_2t1PBrPZMHwxsvo32PiTlmsy"/>
+                  value="jdbc:postgresql://ec2-54-163-234-20.compute-1.amazonaws.com:5432/d6a1i65ufrsul6"/>
+        <property name="username" value="bnhfucwfgxcprl"/>
+        <property name="password" value="c88bf1e19c7bd91578416abd0a21f34f67ec766b83002a8eddd57679ceebc3b4"/>
         <property name="maxActive" value="10"/>
         <property name="maxIdle" value="5"/>
         <property name="minIdle" value="2"/>
