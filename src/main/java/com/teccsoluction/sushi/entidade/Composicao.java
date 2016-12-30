@@ -30,15 +30,15 @@ public class Composicao extends Produto implements Serializable {
 	
 	// itens que formam uma composicao
 	
-	@JsonIgnore
-	@LazyCollection(LazyCollectionOption.FALSE)
-	@OneToMany
-	private List<Item>listaItensComposicao;
-	
+//	@JsonIgnore
+//	@LazyCollection(LazyCollectionOption.FALSE)
+//	@OneToMany
+//	private List<Item>listaItensComposicao;
+//	
 
     public Composicao() {
         // TODO Auto-generated constructor stub
-        listaItensComposicao = new ArrayList<>();
+       // listaItensComposicao = new ArrayList<>();
     }
 
 
@@ -57,14 +57,14 @@ public class Composicao extends Produto implements Serializable {
 //	}
 
 
-    public List<Item> getListaItensComposicao() {
-        return listaItensComposicao;
-    }
-
-
-    public void setListaItensComposicao(List<Item> listaItensComposicao) {
-        this.listaItensComposicao = listaItensComposicao;
-    }
+//    public List<Item> getListaItensComposicao() {
+//        return listaItensComposicao;
+//    }
+//
+//
+//    public void setListaItensComposicao(List<Item> listaItensComposicao) {
+//        this.listaItensComposicao = listaItensComposicao;
+//    }
 
 
     public String getNome() {
