@@ -53,7 +53,7 @@ public class CategoriaControllerRest {
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Categoria> listarEntity() {
-        return getDao().getAll();
+        return getDao().getAllCategoriaPai();
 
     }
 
