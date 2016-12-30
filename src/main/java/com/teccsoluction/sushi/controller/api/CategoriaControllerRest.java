@@ -50,10 +50,11 @@ public class CategoriaControllerRest {
             return new ResponseEntity<>(e, HttpStatus.SERVICE_UNAVAILABLE);
         }
     }
+    
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Categoria> listarEntity() {
-        return getDao().getAllCategoriaPai();
+        return getDao().getAll();
 
     }
 

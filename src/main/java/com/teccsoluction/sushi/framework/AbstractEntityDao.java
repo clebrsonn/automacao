@@ -1,6 +1,5 @@
 package com.teccsoluction.sushi.framework;
 
-import com.teccsoluction.sushi.entidade.Categoria;
 import com.teccsoluction.sushi.entidade.Item;
 import com.teccsoluction.sushi.entidade.Pagamento;
 import com.teccsoluction.sushi.entidade.Produto;
@@ -57,10 +56,7 @@ public abstract class AbstractEntityDao<Entity> {
         return result; 
     } 
     
-    public List<Categoria> getAllCategoriaPai() { 
-        List<Categoria> result = manager.createQuery("SELECT p FROM Categoria p where cat_pai= 4", Categoria.class).getResultList(); 
-        return result; 
-    } 
+    
 
     @Transactional
     public void add(Entity entity) {
