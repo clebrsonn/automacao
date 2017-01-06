@@ -33,12 +33,13 @@ public class Produto implements Serializable {
 	@Column(name = "PRECO_CUSTO")
 	private double precoCusto;
 
-	@Column(name = "PRECO_VENDA")
-	private double precoVenda;
-	@JsonIgnore
-	@ManyToOne
-	@JoinColumn
-	private Fornecedor fornecedor;
+    @Column(name = "PRECO_VENDA")
+    private double precoVenda;
+    
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn
+    private Fornecedor fornecedor;
 
 	// @OneToMany(mappedBy = "produto")
 	// private List<Item> items;

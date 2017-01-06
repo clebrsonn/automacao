@@ -55,6 +55,11 @@ public class ProdutoControllerRest {
     public List<Produto> listarEntity() {
         return getDao().getAll();
 
+    }   
+    @RequestMapping(value = "/categoria/{id}" ,method = RequestMethod.GET) 
+    public List<Produto> listarProdutoCategoria(@PathVariable long id) { 
+        return getDao().getAllProdutosCategoria(id); 
+ 
     }
     
     @RequestMapping(value = "categoria/{id}" ,method = RequestMethod.GET)
