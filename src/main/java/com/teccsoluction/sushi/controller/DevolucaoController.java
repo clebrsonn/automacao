@@ -3,7 +3,6 @@ package com.teccsoluction.sushi.controller;
 import com.teccsoluction.sushi.dao.generic.DevolucaoDAO;
 import com.teccsoluction.sushi.entidade.Devolucao;
 import com.teccsoluction.sushi.framework.AbstractController;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,7 +25,7 @@ public class DevolucaoController extends AbstractController<Devolucao> {
 
 
     @Override
-    protected AbstractEntityDao<Devolucao> getDao() {
+    protected DevolucaoDAO getDao() {
         // TODO Auto-generated method stub
         return dao;
     }

@@ -8,7 +8,6 @@ import com.teccsoluction.sushi.entidade.Fornecedor;
 import com.teccsoluction.sushi.entidade.Produto;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import com.teccsoluction.sushi.util.UnidadeMedida;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,7 +42,7 @@ public class ProdutoController extends AbstractController<Produto> {
     }
 
     @Override
-    protected AbstractEntityDao<Produto> getDao() {
+    protected ProdutoDAO getDao() {
         return dao;
     }
 

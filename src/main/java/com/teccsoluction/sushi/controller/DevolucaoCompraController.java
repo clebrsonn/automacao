@@ -7,7 +7,6 @@ import com.teccsoluction.sushi.entidade.DevolucaoCompra;
 import com.teccsoluction.sushi.entidade.Item;
 import com.teccsoluction.sushi.entidade.PedidoCompra;
 import com.teccsoluction.sushi.framework.AbstractController;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,12 +27,12 @@ public class DevolucaoCompraController extends AbstractController<DevolucaoCompr
 
     private
     final
-    AbstractEntityDao<PedidoCompra> pedidoCompraDao;
+    PedidoCompraDAO pedidoCompraDao;
 
 
     private
     final
-    AbstractEntityDao<Item> itemDao;
+    ItemDAO itemDao;
 
 
     @Autowired
@@ -45,7 +44,7 @@ public class DevolucaoCompraController extends AbstractController<DevolucaoCompr
     }
 
     @Override
-    protected AbstractEntityDao<DevolucaoCompra> getDao() {
+    protected DevolucaoCompraDAO getDao() {
         return dao;
     }
 

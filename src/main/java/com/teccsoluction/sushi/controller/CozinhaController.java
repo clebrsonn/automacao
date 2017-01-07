@@ -5,7 +5,6 @@ import com.teccsoluction.sushi.dao.generic.PedidoVendaDAO;
 import com.teccsoluction.sushi.entidade.Item;
 import com.teccsoluction.sushi.entidade.PedidoVenda;
 import com.teccsoluction.sushi.framework.AbstractEditor;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
@@ -24,12 +23,12 @@ public class CozinhaController {
 
     private
     final
-    AbstractEntityDao<PedidoVenda> pedidoVendaDao;
+    PedidoVendaDAO pedidoVendaDao;
 
 
     private
     final
-    AbstractEntityDao<Item> itemDao;
+    ItemDAO itemDao;
 
 
 //	@Autowired

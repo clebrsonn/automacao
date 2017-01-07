@@ -4,7 +4,6 @@ import com.teccsoluction.sushi.dao.generic.CategoriaDAO;
 import com.teccsoluction.sushi.entidade.Categoria;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +21,7 @@ public class CategoriaController extends AbstractController<Categoria> {
 
     private
     final
-    AbstractEntityDao<Categoria> dao;
+    CategoriaDAO dao;
 
 
     @Autowired
@@ -32,7 +31,7 @@ public class CategoriaController extends AbstractController<Categoria> {
     }
 
     @Override
-    protected AbstractEntityDao<Categoria> getDao() {
+    protected CategoriaDAO getDao() {
         return dao;
     }
 

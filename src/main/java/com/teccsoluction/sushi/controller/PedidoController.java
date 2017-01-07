@@ -8,7 +8,6 @@ import com.teccsoluction.sushi.entidade.Mesa;
 import com.teccsoluction.sushi.entidade.Pedido;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import com.teccsoluction.sushi.util.StatusPedido;
 import com.teccsoluction.sushi.util.TipoPedido;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +29,11 @@ public class PedidoController extends AbstractController<Pedido> {
 
     private
     final
-    AbstractEntityDao<Pedido> pedidoDao;
+    PedidoDAO pedidoDao;
     private
-    AbstractEntityDao<Mesa> mesaDao;
+    MesaDAO mesaDao;
     private
-    AbstractEntityDao<Garcon> garconDao;
+    GarconDAO garconDao;
 
     @Autowired
     public PedidoController(PedidoDAO dao, MesaDAO daomesa, GarconDAO daogarcon) {
@@ -48,7 +47,7 @@ public class PedidoController extends AbstractController<Pedido> {
 
 
     @Override
-    protected AbstractEntityDao<Pedido> getDao() {
+    protected PedidoDAO getDao() {
         // TODO Auto-generated method stub
         return pedidoDao;
     }

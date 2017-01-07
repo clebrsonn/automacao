@@ -6,7 +6,6 @@ import com.teccsoluction.sushi.entidade.Cotacao;
 import com.teccsoluction.sushi.entidade.Fornecedor;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import com.teccsoluction.sushi.util.StatusPedido;
 import com.teccsoluction.sushi.util.TipoPedido;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +27,12 @@ public class CotacaoController extends AbstractController<Cotacao> {
 
     private
     final
-    AbstractEntityDao<Cotacao> cotacaoDao;
+    CotacaoDAO cotacaoDao;
 
 
     private
     final
-    AbstractEntityDao<Fornecedor> fornecedorDao;
+    FornecedorDAO fornecedorDao;
 //	private	
 //	AbstractEntityDao<Garcon> garconDao;
 
@@ -59,7 +58,7 @@ public class CotacaoController extends AbstractController<Cotacao> {
 
 
     @Override
-    protected AbstractEntityDao<Cotacao> getDao() {
+    protected CotacaoDAO getDao() {
         // TODO Auto-generated method stub
         return cotacaoDao;
     }

@@ -8,7 +8,6 @@ import com.teccsoluction.sushi.dao.generic.PedidoVendaDAO;
 import com.teccsoluction.sushi.entidade.*;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import com.teccsoluction.sushi.util.OrigemPedido;
 import com.teccsoluction.sushi.util.StatusPedido;
 import com.teccsoluction.sushi.util.TipoPedido;
@@ -33,26 +32,26 @@ public class PedidoVendaController extends AbstractController<PedidoVenda> {
 
     private
     final
-    AbstractEntityDao<PedidoVenda> pedidoVendaDao;
+    PedidoVendaDAO pedidoVendaDao;
 
 
     private
     final
-    AbstractEntityDao<Item> itempedidovendaDao;
+    ItemDAO itempedidovendaDao;
 
     private
     final
-    AbstractEntityDao<Produto> produtopedidovendaDao;
+    ProdutoDAO produtopedidovendaDao;
 
     private
     final
-    AbstractEntityDao<Pagamento> pagamentopedidovendaDao;
+    PagamentoDAO pagamentopedidovendaDao;
 //	private
 //	AbstractEntityDao<Mesa> mesaDao;
 
     private
     final
-    AbstractEntityDao<Cliente> clienteDao;
+    ClienteDAO clienteDao;
 
 
 //	public PedidoVendaController(PedidoVendaDAO dao, MesaDAO daomesa, GarconDAO daogarcon){
@@ -91,7 +90,7 @@ public class PedidoVendaController extends AbstractController<PedidoVenda> {
 
 
     @Override
-    protected AbstractEntityDao<PedidoVenda> getDao() {
+    protected PedidoVendaDAO getDao() {
         // TODO Auto-generated method stub
         return pedidoVendaDao;
     }

@@ -55,12 +55,9 @@ public abstract class AbstractEntityDao<Entity> {
     public List<Produto> getAllProdutosCategoria(long id) { 
         List<Produto> result = manager.createQuery("SELECT p FROM Produto p where categoria_ID="+id, Produto.class).getResultList(); 
         return result; 
-    } 
-    
-    public List<Categoria> getAllCategoriaPai(long id) { 
-        List<Categoria> result = manager.createQuery("SELECT p FROM Categoria p where cat_pai="+id, Categoria.class).getResultList(); 
-        return result; 
     }
+
+
     
     
 
@@ -133,6 +130,7 @@ public abstract class AbstractEntityDao<Entity> {
     public Entity PegarPorId(long entityId) {
         return manager.find(entityClass, entityId);
     }
+
 
 //    public Entity searchOneEntity(String entity) {
 //        TypedQuery<Entity> query = manager.createQuery(createQueryOne(),

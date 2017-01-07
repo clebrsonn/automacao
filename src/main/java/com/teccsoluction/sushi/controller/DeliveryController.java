@@ -2,9 +2,11 @@ package com.teccsoluction.sushi.controller;
 
 import com.teccsoluction.sushi.dao.ProdutoDAO;
 import com.teccsoluction.sushi.dao.generic.*;
-import com.teccsoluction.sushi.entidade.*;
+import com.teccsoluction.sushi.entidade.Cliente;
+import com.teccsoluction.sushi.entidade.Item;
+import com.teccsoluction.sushi.entidade.PedidoVenda;
+import com.teccsoluction.sushi.entidade.Produto;
 import com.teccsoluction.sushi.framework.AbstractEditor;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
@@ -27,26 +29,26 @@ public class DeliveryController {
 
     private
     final
-    AbstractEntityDao<PedidoVenda> pedidoVendaDao;
+    PedidoVendaDAO pedidoVendaDao;
 
 
     private
     final
-    AbstractEntityDao<Cliente> clienteDao;
+    ClienteDAO clienteDao;
 
     private
     final
-    AbstractEntityDao<Item> itemDao;
-
-
-    private
-    final
-    AbstractEntityDao<Produto> produtopedidovendaDao;
+    ItemDAO itemDao;
 
 
     private
     final
-    AbstractEntityDao<Pagamento> pagamentoDao;
+    ProdutoDAO produtopedidovendaDao;
+
+
+    private
+    final
+    PagamentoDAO pagamentoDao;
 
 //	@Autowired
 //    public CaixaController() {

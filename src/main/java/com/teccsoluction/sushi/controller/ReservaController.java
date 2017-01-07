@@ -6,7 +6,6 @@ import com.teccsoluction.sushi.entidade.Mesa;
 import com.teccsoluction.sushi.entidade.Reserva;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,11 +23,11 @@ public class ReservaController extends AbstractController<Reserva> {
 
     private
     final
-    AbstractEntityDao<Reserva> reservaDao;
+    ReservaDAO reservaDao;
 
     private
     final
-    AbstractEntityDao<Mesa> mesaDao;
+    MesaDAO mesaDao;
 
     @Autowired
     public ReservaController(ReservaDAO dao, MesaDAO daomesa) {
@@ -40,7 +39,7 @@ public class ReservaController extends AbstractController<Reserva> {
 
 
     @Override
-    protected AbstractEntityDao<Reserva> getDao() {
+    protected ReservaDAO getDao() {
         // TODO Auto-generated method stub
         return reservaDao;
     }

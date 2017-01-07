@@ -29,7 +29,7 @@ public class RecebimentoController extends AbstractController<Recebimento> {
 
     private
     final
-    AbstractEntityDao<Recebimento> daorecebimento;
+    RecebimentoDAO daorecebimento;
 
     private
     final
@@ -75,7 +75,7 @@ public class RecebimentoController extends AbstractController<Recebimento> {
 
 
     @Override
-    protected AbstractEntityDao<Recebimento> getDao() {
+    protected RecebimentoDAO getDao() {
         // TODO Auto-generated method stub
         return daorecebimento;
     }
