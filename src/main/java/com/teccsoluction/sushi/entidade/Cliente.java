@@ -35,7 +35,7 @@ public class Cliente implements Serializable {
     private String telefone;
 
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @DateTimeFormat(pattern = "yyyy/MM/dd")
     @Column(name = "data_nascimento")
     private Date dataNascimento;
 

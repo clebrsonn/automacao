@@ -17,11 +17,14 @@
             <input name="nome" type="text" class="inp-form" value="${cliente.nome }"/>
 
             <p>Data Nascimento do Cliente:</p>
+            <input name="dataNascimento" type="text" class="inp-form" value="${cliente.dataNascimento }"/>
+            <fmt:formatDate type="date" pattern="yyyy/MM/dd"  value="" />
+            
 
             <%--<input type="date" name="dataFinalizacao"--%>
                    <%--value="<fmt:parseDate value="${cliente.dataNascimento }" pattern="dd/MM/yyyy" />"/>--%>
 
-            <input name="dataNascimento" type="date" pattern="dd/MM/yyyy" class="inp-form" value="${cliente.dataNascimento }"/>
+<%--             <input name="dataNascimento" type="date" pattern="dd/MM/yyyy" class="inp-form" value="${cliente.dataNascimento }"/> --%>
 
             <p>Email do Cliente:</p>
             <input name="email" type="text" class="inp-form" value="${cliente.email }"/>

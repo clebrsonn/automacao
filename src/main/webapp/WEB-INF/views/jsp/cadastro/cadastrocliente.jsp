@@ -63,8 +63,8 @@
             <input name="nome" type="text" class="inp-form"/></p>
 
             <p>Data Nascimento :
-            <input name="dataNascimento" type="text" class="inp-form"
-            <fmt:formatDate type="date"  value="${cliente.dataNascimento}" pattern="dd/MM/yyyy"/> /> </p>
+            <input name="dataNascimento" type="text" class="inp-form"/>
+            <fmt:formatDate type="date" pattern="yyyy/MM/dd"  value="${cliente.dataNascimento}" /> </p>
 
 
             <p>Email do Cliente:
