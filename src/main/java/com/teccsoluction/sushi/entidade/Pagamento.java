@@ -56,7 +56,11 @@ public class Pagamento implements Serializable {
         return id;
     }
 
-    public String getNome() {
+    public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
         return nome;
     }
 

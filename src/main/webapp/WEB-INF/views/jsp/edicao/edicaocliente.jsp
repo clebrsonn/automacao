@@ -4,7 +4,7 @@
 
 <div id="conteudo" class="conteudo">
 
-    <h3>Ediçao de Gerente</h3>
+    <h3>Edicao de Cliente</h3>
 
     <div id="form">
         <form id="formCliente" action="edicao" method="POST">
@@ -21,7 +21,7 @@
             <%--<input type="date" name="dataFinalizacao"--%>
                    <%--value="<fmt:parseDate value="${cliente.dataNascimento }" pattern="dd/MM/yyyy" />"/>--%>
 
-            <input name="dataNascimento" type="text" class="inp-form" value="${cliente.dataNascimento }"/>
+            <input name="dataNascimento" type="date" pattern="dd/MM/yyyy" class="inp-form" value="${cliente.dataNascimento }"/>
 
             <p>Email do Cliente:</p>
             <input name="email" type="text" class="inp-form" value="${cliente.email }"/>

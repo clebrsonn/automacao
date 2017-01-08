@@ -65,7 +65,12 @@ public class Servico implements Serializable {
     }
 
 
-    @Override
+    public void setId(long id) {
+		this.id = id;
+	}
+
+
+	@Override
     public String toString() {
         return nome;
     }

@@ -34,7 +34,8 @@ public class Categoria implements Serializable {
     @Column(name = "ID")
     private long id;
 
-    @Column(name = "NOME", nullable = false)
+
+	@Column(name = "NOME", nullable = false)
     private String nome;
 
     
@@ -78,6 +79,11 @@ public class Categoria implements Serializable {
     }
 
 
+    public void setId(long id) {
+		this.id = id;
+	}
+    
+    
     @Override
     public String toString() {
         return nome;

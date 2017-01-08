@@ -45,7 +45,12 @@ public class Despesa implements Serializable {
     }
 
 
-    public Double getValor() {
+    public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public Double getValor() {
         return valor;
     }
 

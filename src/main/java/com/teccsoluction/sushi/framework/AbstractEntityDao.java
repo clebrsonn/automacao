@@ -22,6 +22,8 @@ public abstract class AbstractEntityDao<Entity> {
 
     private Class<Entity> entityClass;
     private String entityAlias;
+    
+    
 
     public AbstractEntityDao(Class<Entity> entityClass, String entityAlias) {
         this.entityClass = entityClass;
@@ -87,7 +89,14 @@ public abstract class AbstractEntityDao<Entity> {
 
     @Transactional
     public void editar(Entity entity) {
-        manager.merge(entity);
+//    	manager.find(entityClass, id);
+    	
+//    	Entity entityant = manager.find(entityClass, id);
+//    	entityant.= entity;
+ //   	manager.remove(entityant);
+    	
+    	 manager.merge(entity);
+    	
     }
 
     @Transactional

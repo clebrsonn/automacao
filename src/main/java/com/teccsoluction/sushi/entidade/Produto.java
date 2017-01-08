@@ -67,7 +67,11 @@ public class Produto implements Serializable {
         this.categoria = categoria;
     }
 
-    public String getNumero() {
+    public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNumero() {
         return codebar;
     }
 

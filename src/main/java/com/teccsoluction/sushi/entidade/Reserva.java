@@ -61,7 +61,12 @@ public class Reserva implements Serializable {
     }
 
 
-    public Date getData() {
+    public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public Date getData() {
         return data;
     }
 

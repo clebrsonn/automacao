@@ -54,7 +54,12 @@ public class Promocao implements Serializable {
     }
 
 
-    public String getNome() {
+    public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public String getNome() {
         return nome;
     }
 

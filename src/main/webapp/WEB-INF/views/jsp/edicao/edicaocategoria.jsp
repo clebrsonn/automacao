@@ -6,7 +6,7 @@
     <h3>${acao} de Categoria</h3>
 
     <div id="form">
-        <form id="formCategoria" action="edicao" method="POST">
+        <form id="formCategoria" action="edicao" method=POST>
 
 
             <p>ID da categoria:</p>
