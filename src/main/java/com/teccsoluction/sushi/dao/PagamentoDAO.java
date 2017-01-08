@@ -1,18 +1,19 @@
-package com.teccsoluction.sushi.dao.generic;
+package com.teccsoluction.sushi.dao;
 
-import com.teccsoluction.sushi.entidade.Promocao;
+import com.teccsoluction.sushi.entidade.Pagamento;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.TypedQuery;
+import java.util.List;
 
 @Repository
-public class PromocaoDAO extends AbstractEntityDao<Promocao> {
+public class PagamentoDAO extends AbstractEntityDao<Pagamento> {
 
 
-    public PromocaoDAO() {
+    public PagamentoDAO() {
 
-        super(Promocao.class, "Promocao");
+        super(Pagamento.class, "Pagamento");
     }
 
     @Override
@@ -33,5 +34,10 @@ public class PromocaoDAO extends AbstractEntityDao<Promocao> {
 
     }
 
+    //PEGA OS ITENS POR PEDIDO
+    public List<Pagamento> getAllPagamento(long id) {
+        List<Pagamento> result = manager.createQuery("SELECT p FROM Pagamento p where pedido_ID=" + id, Pagamento.class).getResultList();
+        return result;
+    }
 
 }

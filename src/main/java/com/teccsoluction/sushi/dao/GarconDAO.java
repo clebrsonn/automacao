@@ -1,37 +1,32 @@
-package com.teccsoluction.sushi.dao.generic;
+package com.teccsoluction.sushi.dao;
 
-import com.teccsoluction.sushi.entidade.Reserva;
+import com.teccsoluction.sushi.entidade.Garcon;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.TypedQuery;
 
+
 @Repository
-public class ReservaDAO extends AbstractEntityDao<Reserva> {
+public class GarconDAO extends AbstractEntityDao<Garcon> {
 
 
-    public ReservaDAO() {
-
-        super(Reserva.class, "Reserva");
+    public GarconDAO() {
+        super(Garcon.class, "Garcon");
     }
 
     @Override
     protected void appendPredicate(StringBuilder predicate) {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     protected void setParameters(TypedQuery<?> query) {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     protected void appendOrder(StringBuilder predicate) {
-        // TODO Auto-generated method stub
 
     }
-
-
 }

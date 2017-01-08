@@ -1,17 +1,21 @@
-package com.teccsoluction.sushi.dao.generic;
+package com.teccsoluction.sushi.dao;
 
-import com.teccsoluction.sushi.entidade.Mesa;
+import com.teccsoluction.sushi.entidade.PedidoCompra;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.TypedQuery;
 
-@Repository
-public class MesaDAO extends AbstractEntityDao<Mesa> {
 
-    public MesaDAO() {
+@Repository
+public class PedidoCompraDAO extends AbstractEntityDao<PedidoCompra> {
+
+
+    public PedidoCompraDAO() {
         // TODO Auto-generated constructor stub
-        super(Mesa.class, "Mesa");
+
+        super(PedidoCompra.class, "PedidoCompra");
+
     }
 
     @Override
