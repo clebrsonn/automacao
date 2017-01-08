@@ -1,6 +1,6 @@
 package com.teccsoluction.sushi.controller;
 
-import com.teccsoluction.sushi.dao.generic.DevolucaoDAO;
+import com.teccsoluction.sushi.dao.DevolucaoDAO;
 import com.teccsoluction.sushi.entidade.Devolucao;
 import com.teccsoluction.sushi.framework.AbstractController;
 import org.springframework.stereotype.Controller;

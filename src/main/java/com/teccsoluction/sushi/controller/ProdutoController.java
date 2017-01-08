@@ -2,7 +2,7 @@ package com.teccsoluction.sushi.controller;
 
 import com.teccsoluction.sushi.dao.FornecedorDAO;
 import com.teccsoluction.sushi.dao.ProdutoDAO;
-import com.teccsoluction.sushi.dao.generic.CategoriaDAO;
+import com.teccsoluction.sushi.dao.CategoriaDAO;
 import com.teccsoluction.sushi.entidade.Categoria;
 import com.teccsoluction.sushi.entidade.Fornecedor;
 import com.teccsoluction.sushi.entidade.Produto;

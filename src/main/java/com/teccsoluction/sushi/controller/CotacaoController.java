@@ -1,7 +1,7 @@
 package com.teccsoluction.sushi.controller;
 
 import com.teccsoluction.sushi.dao.FornecedorDAO;
-import com.teccsoluction.sushi.dao.generic.CotacaoDAO;
+import com.teccsoluction.sushi.dao.CotacaoDAO;
 import com.teccsoluction.sushi.entidade.Cotacao;
 import com.teccsoluction.sushi.entidade.Fornecedor;
 import com.teccsoluction.sushi.framework.AbstractController;

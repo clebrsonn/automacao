@@ -1,6 +1,6 @@
 package com.teccsoluction.sushi.controller;
 
-import com.teccsoluction.sushi.dao.generic.DescontoDAO;
+import com.teccsoluction.sushi.dao.DescontoDAO;
 import com.teccsoluction.sushi.entidade.Desconto;
 import com.teccsoluction.sushi.framework.AbstractController;
 import org.springframework.beans.factory.annotation.Autowired;

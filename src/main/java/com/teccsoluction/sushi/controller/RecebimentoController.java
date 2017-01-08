@@ -2,9 +2,9 @@ package com.teccsoluction.sushi.controller;
 
 import com.teccsoluction.sushi.dao.FornecedorDAO;
 import com.teccsoluction.sushi.dao.ProdutoDAO;
-import com.teccsoluction.sushi.dao.generic.ItemDAO;
-import com.teccsoluction.sushi.dao.generic.PedidoCompraDAO;
-import com.teccsoluction.sushi.dao.generic.RecebimentoDAO;
+import com.teccsoluction.sushi.dao.ItemDAO;
+import com.teccsoluction.sushi.dao.PedidoCompraDAO;
+import com.teccsoluction.sushi.dao.RecebimentoDAO;
 import com.teccsoluction.sushi.entidade.*;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;

@@ -1,7 +1,6 @@
 package com.teccsoluction.sushi.controller;
 
-import com.teccsoluction.sushi.dao.ProdutoDAO;
-import com.teccsoluction.sushi.dao.generic.*;
+import com.teccsoluction.sushi.dao.*;
 import com.teccsoluction.sushi.entidade.Cliente;
 import com.teccsoluction.sushi.entidade.Item;
 import com.teccsoluction.sushi.entidade.PedidoVenda;

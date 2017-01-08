@@ -1,7 +1,7 @@
 package com.teccsoluction.sushi.controller;
 
-import com.teccsoluction.sushi.dao.generic.MesaDAO;
-import com.teccsoluction.sushi.dao.generic.ReservaDAO;
+import com.teccsoluction.sushi.dao.MesaDAO;
+import com.teccsoluction.sushi.dao.ReservaDAO;
 import com.teccsoluction.sushi.entidade.Mesa;
 import com.teccsoluction.sushi.entidade.Reserva;
 import com.teccsoluction.sushi.framework.AbstractController;

@@ -1,8 +1,8 @@
 package com.teccsoluction.sushi.controller;
 
-import com.teccsoluction.sushi.dao.generic.GarconDAO;
-import com.teccsoluction.sushi.dao.generic.MesaDAO;
-import com.teccsoluction.sushi.dao.generic.PedidoDAO;
+import com.teccsoluction.sushi.dao.GarconDAO;
+import com.teccsoluction.sushi.dao.MesaDAO;
+import com.teccsoluction.sushi.dao.PedidoDAO;
 import com.teccsoluction.sushi.entidade.Garcon;
 import com.teccsoluction.sushi.entidade.Mesa;
 import com.teccsoluction.sushi.entidade.Pedido;

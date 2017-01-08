@@ -1,8 +1,8 @@
 package com.teccsoluction.sushi.controller;
 
-import com.teccsoluction.sushi.dao.generic.DevolucaoVendaDAO;
-import com.teccsoluction.sushi.dao.generic.ItemDAO;
-import com.teccsoluction.sushi.dao.generic.PedidoVendaDAO;
+import com.teccsoluction.sushi.dao.DevolucaoVendaDAO;
+import com.teccsoluction.sushi.dao.ItemDAO;
+import com.teccsoluction.sushi.dao.PedidoVendaDAO;
 import com.teccsoluction.sushi.entidade.DevolucaoVenda;
 import com.teccsoluction.sushi.entidade.Item;
 import com.teccsoluction.sushi.entidade.PedidoVenda;

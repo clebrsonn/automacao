@@ -1,6 +1,6 @@
 package com.teccsoluction.sushi.controller;
 
-import com.teccsoluction.sushi.dao.generic.CategoriaDAO;
+import com.teccsoluction.sushi.dao.CategoriaDAO;
 import com.teccsoluction.sushi.entidade.Categoria;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;
