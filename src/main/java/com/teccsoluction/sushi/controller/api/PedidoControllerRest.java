@@ -1,6 +1,6 @@
 package com.teccsoluction.sushi.controller.api;
 
-import com.teccsoluction.sushi.dao.generic.PedidoDAO;
+import com.teccsoluction.sushi.dao.PedidoDAO;
 import com.teccsoluction.sushi.entidade.Pedido;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import com.teccsoluction.sushi.framework.AbstractRestController;

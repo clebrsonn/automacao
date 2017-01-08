@@ -1,7 +1,7 @@
 package com.teccsoluction.sushi.controller.api;
 
 
-import com.teccsoluction.sushi.dao.generic.PromocaoDAO;
+import com.teccsoluction.sushi.dao.PromocaoDAO;
 import com.teccsoluction.sushi.entidade.Promocao;
 import com.teccsoluction.sushi.framework.AbstractRestController;
 import org.springframework.beans.factory.annotation.Autowired;

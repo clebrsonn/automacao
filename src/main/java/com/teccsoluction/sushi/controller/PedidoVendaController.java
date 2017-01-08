@@ -1,10 +1,10 @@
 package com.teccsoluction.sushi.controller;
 
 import com.teccsoluction.sushi.dao.ProdutoDAO;
-import com.teccsoluction.sushi.dao.generic.ClienteDAO;
-import com.teccsoluction.sushi.dao.generic.ItemDAO;
-import com.teccsoluction.sushi.dao.generic.PagamentoDAO;
-import com.teccsoluction.sushi.dao.generic.PedidoVendaDAO;
+import com.teccsoluction.sushi.dao.ClienteDAO;
+import com.teccsoluction.sushi.dao.ItemDAO;
+import com.teccsoluction.sushi.dao.PagamentoDAO;
+import com.teccsoluction.sushi.dao.PedidoVendaDAO;
 import com.teccsoluction.sushi.entidade.*;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;

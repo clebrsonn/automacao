@@ -1,6 +1,6 @@
 package com.teccsoluction.sushi.controller.api;
 
-import com.teccsoluction.sushi.dao.generic.ItemDAO;
+import com.teccsoluction.sushi.dao.ItemDAO;
 import com.teccsoluction.sushi.entidade.Item;
 import com.teccsoluction.sushi.framework.AbstractRestController;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.teccsoluction.sushi.controller.api;
 
-import com.teccsoluction.sushi.dao.generic.MesaDAO;
+import com.teccsoluction.sushi.dao.MesaDAO;
 import com.teccsoluction.sushi.entidade.Mesa;
 import com.teccsoluction.sushi.framework.AbstractRestController;
 import org.springframework.beans.factory.annotation.Autowired;
