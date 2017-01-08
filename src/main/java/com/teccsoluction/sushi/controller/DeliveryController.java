@@ -1,20 +1,11 @@
 package com.teccsoluction.sushi.controller;
 
-import com.teccsoluction.sushi.dao.ProdutoDAO;
-import com.teccsoluction.sushi.dao.generic.CaixaDAO;
-import com.teccsoluction.sushi.dao.generic.ClienteDAO;
-import com.teccsoluction.sushi.dao.generic.ItemDAO;
-import com.teccsoluction.sushi.dao.generic.PagamentoDAO;
-import com.teccsoluction.sushi.dao.generic.PedidoVendaDAO;
+import com.teccsoluction.sushi.dao.*;
 import com.teccsoluction.sushi.entidade.Cliente;
 import com.teccsoluction.sushi.entidade.Item;
-import com.teccsoluction.sushi.entidade.Pagamento;
 import com.teccsoluction.sushi.entidade.PedidoVenda;
 import com.teccsoluction.sushi.entidade.Produto;
 import com.teccsoluction.sushi.framework.AbstractEditor;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
-import java.util.List;
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
@@ -23,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+
 @Controller
 @RequestMapping(value = "delivery/")
 public class DeliveryController {
@@ -30,99 +24,94 @@ public class DeliveryController {
     private
     final
     CaixaDAO dao;
-    
-    
-    
-	private
-	final
-	AbstractEntityDao<PedidoVenda> pedidoVendaDao;
-	
-	
-	private
-	final
-	AbstractEntityDao<Cliente> clienteDao;
-	
-	private
-	final
-	AbstractEntityDao<Item> itemDao;
-	
-	
-	private
-	final
-	AbstractEntityDao<Produto> produtopedidovendaDao;
-	
-	
-	private
-	final
-	AbstractEntityDao<Pagamento> pagamentoDao;
-    
+
+
+    private
+    final
+    PedidoVendaDAO pedidoVendaDao;
+
+
+    private
+    final
+    ClienteDAO clienteDao;
+
+    private
+    final
+    ItemDAO itemDao;
+
+
+    private
+    final
+    ProdutoDAO produtopedidovendaDao;
+
+
+    private
+    final
+    PagamentoDAO pagamentoDao;
+
 //	@Autowired
 //    public CaixaController() {
 //        super("caixa");
 //  
 //    }
-	
+
 
     @Autowired
-    public DeliveryController(CaixaDAO dao,ProdutoDAO daoprod,ItemDAO daoitem,ClienteDAO daocli,PedidoVendaDAO daopedido,PagamentoDAO daopag) {
+    public DeliveryController(CaixaDAO dao, ProdutoDAO daoprod, ItemDAO daoitem, ClienteDAO daocli, PedidoVendaDAO daopedido, PagamentoDAO daopag) {
         super();
         this.dao = dao;
-        this.clienteDao =daocli;
+        this.clienteDao = daocli;
         this.itemDao = daoitem;
         this.produtopedidovendaDao = daoprod;
-        this.pedidoVendaDao =daopedido;
+        this.pedidoVendaDao = daopedido;
         this.pagamentoDao = daopag;
-    } 
-
-    
-	  @InitBinder
-	    protected void initBinder(HttpServletRequest request,  ServletRequestDataBinder binder) {
-
-	        binder.registerCustomEditor(Cliente.class, new AbstractEditor<Cliente>(this.clienteDao){
-	        });
-
-	        binder.registerCustomEditor(Item.class, new AbstractEditor<Item>(this.itemDao) {
-	        });
-	        
-	        binder.registerCustomEditor(Produto.class, new AbstractEditor<Produto>(this.produtopedidovendaDao) {
-	        });
-	        
-	        binder.registerCustomEditor(PedidoVenda.class, new AbstractEditor<PedidoVenda>(this.pedidoVendaDao) {
-	        });
+    }
 
 
-	    }
-    
+    @InitBinder
+    protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) {
+
+        binder.registerCustomEditor(Cliente.class, new AbstractEditor<Cliente>(this.clienteDao) {
+        });
+
+        binder.registerCustomEditor(Item.class, new AbstractEditor<Item>(this.itemDao) {
+        });
+
+        binder.registerCustomEditor(Produto.class, new AbstractEditor<Produto>(this.produtopedidovendaDao) {
+        });
+
+        binder.registerCustomEditor(PedidoVenda.class, new AbstractEditor<PedidoVenda>(this.pedidoVendaDao) {
+        });
+
+
+    }
+
     @RequestMapping(value = "carregarPedidoDelivery", method = RequestMethod.GET)
-  		public ModelAndView  carregarPedidoDelivery(HttpServletRequest request){
-  	    	
-  	    
-    	
-    		ModelAndView movimentacaodelivery = new ModelAndView("movimentacaodelivery");
+    public ModelAndView carregarPedidoDelivery(HttpServletRequest request) {
+
+
+        ModelAndView movimentacaodelivery = new ModelAndView("movimentacaodelivery");
 
 //  	    	long idf = Long.parseLong(request.getParameter("idpedidovenda"));
 //  	    	long idfprod = Long.parseLong(request.getParameter("codigoitem"));
 //	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
-	    	
-	    	
-	    	List<PedidoVenda> pedidovendaList = pedidoVendaDao.getAll();
+
+
+        List<PedidoVenda> pedidovendaList = pedidoVendaDao.getAll();
 //	    	List<Item> itemList = itemDao.getAllItens(idf);
 //	    	Produto produto = produtopedidovendaDao.PegarPorId(idfprod);
-	    	
+
 //	    	movimentacaodelivery.addObject("itemList", itemList);
-	    	movimentacaodelivery.addObject("pedidovendaList", pedidovendaList);
+        movimentacaodelivery.addObject("pedidovendaList", pedidovendaList);
 //	    	movimentacaodelivery.addObject("pv", pv);
 //	    	movimentacaocaixa.addObject("produto", produto);
-	    	
-	
 
 
-			
-			return movimentacaodelivery;
-    	}
-    
+        return movimentacaodelivery;
+    }
+
     //POST
-    
+
 //    	@RequestMapping(value = "AddItemVenda", method = RequestMethod.POST)
 //		public ModelAndView  additemvendaPOST(HttpServletRequest request){
 //
@@ -240,6 +229,6 @@ public class DeliveryController {
 //			
 //			return addformapagamento;
 //		}
-    
-    
+
+
 }

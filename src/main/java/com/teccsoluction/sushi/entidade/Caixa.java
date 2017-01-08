@@ -15,7 +15,7 @@ public class Caixa implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private long id;
 
@@ -34,10 +34,10 @@ public class Caixa implements Serializable {
     public Caixa() {
         // TODO Auto-generated constructor stub
     }
-    
+
     public Caixa(Caixa cat) {
         // TODO Auto-generated constructor stub
-    
+
     }
 
 
@@ -65,7 +65,6 @@ public class Caixa implements Serializable {
     public String toString() {
         return nome;
     }
-
 
 
 }

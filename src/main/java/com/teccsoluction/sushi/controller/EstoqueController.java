@@ -1,9 +1,8 @@
 package com.teccsoluction.sushi.controller;
 
-import com.teccsoluction.sushi.dao.generic.EstoqueDAO;
+import com.teccsoluction.sushi.dao.EstoqueDAO;
 import com.teccsoluction.sushi.entidade.Estoque;
 import com.teccsoluction.sushi.framework.AbstractController;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +22,7 @@ public class EstoqueController extends AbstractController<Estoque> {
     }
 
     @Override
-    protected AbstractEntityDao<Estoque> getDao() {
+    protected EstoqueDAO getDao() {
         return dao;
     }
 }

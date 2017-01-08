@@ -28,12 +28,10 @@ public class PedidoCompra extends Pedido {
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "pedidoCompra")
     private List<DevolucaoCompra> devolucaoCompra;
-    
-    
-    
+
 
     public PedidoCompra() {
-        devolucaoCompra = new ArrayList<>();
+      //  devolucaoCompra = new ArrayList<>();
     }
 
     public Fornecedor getFornecedor() {

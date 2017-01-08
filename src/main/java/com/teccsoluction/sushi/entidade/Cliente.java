@@ -21,7 +21,7 @@ public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private long id;
 
@@ -38,18 +38,21 @@ public class Cliente implements Serializable {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "data_nascimento")
     private Date dataNascimento;
+
+
     
     @JsonIgnore
     @LazyCollection(LazyCollectionOption.FALSE)
     // cliente pedido de venda
-    @OneToMany(mappedBy="cliente")
+    @OneToMany(mappedBy = "cliente")
     private List<PedidoVenda> listaPedidoVenda;
-   
-    @JsonIgnore
-    @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany
-    private List <DevolucaoVenda> listaDevolucaoVenda;
 
+   
+//    @JsonIgnore
+//    @LazyCollection(LazyCollectionOption.FALSE)
+//    @OneToMany
+//    private List<DevolucaoVenda> listaDevolucaoVenda;
+//
 
     public Cliente() {
         // TODO Auto-generated constructor stub
@@ -60,21 +63,17 @@ public class Cliente implements Serializable {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     public String getEmail() {
         return email;
     }
 
-
     public void setEmail(String email) {
         this.email = email;
     }
-
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
 
     public long getId() {
         return id;

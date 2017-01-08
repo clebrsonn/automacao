@@ -5,6 +5,7 @@ import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.TypedQuery;
+import java.util.List;
 
 
 @Service
@@ -28,6 +29,12 @@ public class ProdutoDAO extends AbstractEntityDao<Produto> {
     @Override
     protected void appendOrder(StringBuilder predicate) {
 
+    }
+
+    //pega os produtos de uma determinada categoria
+    public List<Produto> getAllProdutosCategoria(long id) {
+        List<Produto> result = manager.createQuery("SELECT p FROM Produto p where categoria_ID=" + id, Produto.class).getResultList();
+        return result;
     }
 
 

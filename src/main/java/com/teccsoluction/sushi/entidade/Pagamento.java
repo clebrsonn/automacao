@@ -13,7 +13,7 @@ public class Pagamento implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private long id;
 
@@ -24,13 +24,13 @@ public class Pagamento implements Serializable {
     private String tipo;
 
     private int parcelas;
-//
+    //
     @ManyToOne
-    @JoinColumn(name="pedido_id",nullable = true)
+    @JoinColumn(name = "pedido_id", nullable = true)
     private Pedido pedido;
 //    
 //    private String 
-    
+
 
     public Pagamento() {
         // TODO Auto-generated constructor stub

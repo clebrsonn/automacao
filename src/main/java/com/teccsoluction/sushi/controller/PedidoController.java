@@ -1,13 +1,13 @@
 package com.teccsoluction.sushi.controller;
-import com.teccsoluction.sushi.dao.generic.GarconDAO;
-import com.teccsoluction.sushi.dao.generic.MesaDAO;
-import com.teccsoluction.sushi.dao.generic.PedidoDAO;
+
+import com.teccsoluction.sushi.dao.GarconDAO;
+import com.teccsoluction.sushi.dao.MesaDAO;
+import com.teccsoluction.sushi.dao.PedidoDAO;
 import com.teccsoluction.sushi.entidade.Garcon;
 import com.teccsoluction.sushi.entidade.Mesa;
 import com.teccsoluction.sushi.entidade.Pedido;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import com.teccsoluction.sushi.util.StatusPedido;
 import com.teccsoluction.sushi.util.TipoPedido;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,36 +26,36 @@ import java.util.List;
 @RequestMapping(value = "pedido/")
 public class PedidoController extends AbstractController<Pedido> {
 
-	
-	private
-	final
-	AbstractEntityDao<Pedido> pedidoDao;
-	private
-	AbstractEntityDao<Mesa> mesaDao;
-	private	
-	AbstractEntityDao<Garcon> garconDao;
-		
-	@Autowired
-	public PedidoController(PedidoDAO dao, MesaDAO daomesa, GarconDAO daogarcon){
-		
-		super("pedido");
-		
-		this.pedidoDao= dao;
-		this.garconDao= daogarcon;
-		this.mesaDao = daomesa;
-	}
+
+    private
+    final
+    PedidoDAO pedidoDao;
+    private
+    MesaDAO mesaDao;
+    private
+    GarconDAO garconDao;
+
+    @Autowired
+    public PedidoController(PedidoDAO dao, MesaDAO daomesa, GarconDAO daogarcon) {
+
+        super("pedido");
+
+        this.pedidoDao = dao;
+        this.garconDao = daogarcon;
+        this.mesaDao = daomesa;
+    }
 
 
-	@Override
-	protected AbstractEntityDao<Pedido> getDao() {
-		// TODO Auto-generated method stub
-		return pedidoDao;
-	}
-	
-	  @InitBinder
-    protected void initBinder(HttpServletRequest request,  ServletRequestDataBinder binder) {
+    @Override
+    protected PedidoDAO getDao() {
+        // TODO Auto-generated method stub
+        return pedidoDao;
+    }
 
-        binder.registerCustomEditor(Mesa.class, new AbstractEditor<Mesa>(this.mesaDao){
+    @InitBinder
+    protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) {
+
+        binder.registerCustomEditor(Mesa.class, new AbstractEditor<Mesa>(this.mesaDao) {
         });
 
         binder.registerCustomEditor(Garcon.class, new AbstractEditor<Garcon>(this.garconDao) {
@@ -63,20 +63,20 @@ public class PedidoController extends AbstractController<Pedido> {
 
 
     }
-	  
-	    @ModelAttribute
-	    public void addAttributes(Model model) {
 
-	        List<Garcon> garconList =garconDao.getAll();
-	        List<Mesa> mesaList =mesaDao.getAll();
-	       
-	        TipoPedido[] tipoList  = TipoPedido.values();	
-			StatusPedido[]tipoStatusList = StatusPedido.values();
-			
-	        model.addAttribute("garconList", garconList);
-	        model.addAttribute("mesaList", mesaList);
-	        model.addAttribute("tipoList", tipoList);
-	        model.addAttribute("tipoStatusList", tipoStatusList);
-	    }  
+    @ModelAttribute
+    public void addAttributes(Model model) {
+
+        List<Garcon> garconList = garconDao.getAll();
+        List<Mesa> mesaList = mesaDao.getAll();
+
+        TipoPedido[] tipoList = TipoPedido.values();
+        StatusPedido[] tipoStatusList = StatusPedido.values();
+
+        model.addAttribute("garconList", garconList);
+        model.addAttribute("mesaList", mesaList);
+        model.addAttribute("tipoList", tipoList);
+        model.addAttribute("tipoStatusList", tipoStatusList);
+    }
 
 }

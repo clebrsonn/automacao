@@ -32,7 +32,7 @@ public abstract class Devolucao implements Serializable {
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "devolucao")
     private List<Item> itens;
-    
+
 
     public Devolucao() {
         itens = new ArrayList<>();

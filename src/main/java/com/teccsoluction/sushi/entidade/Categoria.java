@@ -30,12 +30,13 @@ public class Categoria implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private long id;
 
     @Column(name = "NOME", nullable = false)
     private String nome;
+
     
     @JsonIgnore
 	@ManyToOne
@@ -53,7 +54,7 @@ public class Categoria implements Serializable {
     public Categoria() {
         // TODO Auto-generated constructor stub
     }
-    
+
 //    public Categoria(Categoria cat) {
 //        // TODO Auto-generated constructor stub
 //    	this.catpai=cat;
@@ -77,21 +78,20 @@ public class Categoria implements Serializable {
     }
 
 
-
     @Override
     public String toString() {
         return nome;
     }
 
 
-	public Categoria getCatpai() {
-		return catpai;
-	}
+    public Categoria getCatpai() {
+        return catpai;
+    }
 
 
-	public void setCatpai(Categoria catpai) {
-		this.catpai = catpai;
-	}
+    public void setCatpai(Categoria catpai) {
+        this.catpai = catpai;
+    }
 
     public List<Produto> getProdutos() {
         return produtos;

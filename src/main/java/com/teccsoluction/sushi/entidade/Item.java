@@ -13,7 +13,7 @@ import java.util.List;
 public class Item {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private long id;
 
@@ -39,14 +39,14 @@ public class Item {
     @JoinColumn
     private Produto produto;
 
-    @LazyCollection(LazyCollectionOption.FALSE)
-    @ManyToMany
-    @JoinTable(name = "item_has_cotacao")
-    private List<Cotacao> cotacoes;
+//    @LazyCollection(LazyCollectionOption.FALSE)
+//    @ManyToMany
+//    @JoinTable(name = "item_has_cotacao")
+//    private List<Cotacao> cotacoes;
 
 
     public Item() {
-        cotacoes = new ArrayList<>();
+    //    cotacoes = new ArrayList<>();
     }
 
 
@@ -57,6 +57,8 @@ public class Item {
         this.precoUnitario = produto.getPrecoVenda();
         this.pedido = pedido;
     }
+    
+    
 
 
     public Pedido getPedido() {
@@ -136,13 +138,13 @@ public class Item {
         this.devolucao = devolucao;
     }
 
-    public void setCotacoes(List<Cotacao> cotacoes) {
-        this.cotacoes = cotacoes;
-    }
-
-    public List<Cotacao> getCotacoes() {
-        return cotacoes;
-    }
+//    public void setCotacoes(List<Cotacao> cotacoes) {
+//        this.cotacoes = cotacoes;
+//    }
+//
+//    public List<Cotacao> getCotacoes() {
+//        return cotacoes;
+//    }
 
     public long getId() {
         return id;

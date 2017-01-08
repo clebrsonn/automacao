@@ -1,5 +1,6 @@
 package com.teccsoluction.sushi.framework;
 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,28 +15,28 @@ public abstract class AbstractController<Entity> {
 
     private final String entityAlias;
 
-    protected abstract AbstractEntityDao<Entity> getDao();
-
-
     public AbstractController(String entityAlias) {
         this.entityAlias = entityAlias;
     }
 
+    protected abstract AbstractEntityDao<Entity> getDao();
+
     @RequestMapping(value = "cadastro", method = RequestMethod.GET)
     public ModelAndView cadastrarEntity() {
-    	
-    	ModelAndView cadastro = new ModelAndView("cadastro" + entityAlias);
+
+        ModelAndView cadastro = new ModelAndView("cadastro" + entityAlias);
 //        cadastro.addObject("acao", "add");
 
-    	 List<Entity> entityList = getDao().getAll();
+        List<Entity> entityList = getDao().getAll();
 //    	 
 //    	 cadastro.addObject("entityList", entityList);
-    	 
-    	 return cadastro;
+
+        return cadastro;
 
 //        return new ModelAndView("cadastro" + entityAlias);
     }
 
+    @Transactional
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String AdicionarEntity(@ModelAttribute Entity entity) {
 
@@ -43,9 +44,9 @@ public abstract class AbstractController<Entity> {
 
         getDao().add(entity);
 //        getDao().PegarPorId(entity);
-        
+
 //        cadastroEntity.addObject("entity", entity);
-        
+
         System.out.println(entityAlias);
         return "redirect:cadastro";//cadastroEntity;
        
@@ -65,7 +66,7 @@ public abstract class AbstractController<Entity> {
         return movimentacao;
     }
 
-
+    @Transactional
     @RequestMapping(value = "edicao", method = RequestMethod.GET)
     public ModelAndView editarEntityForm(HttpServletRequest request) {
 
@@ -77,11 +78,10 @@ public abstract class AbstractController<Entity> {
         edicao.addObject("acao", "edicao");
 
 
-
         return edicao;
     }
 
-
+    @Transactional
     @RequestMapping(value = "edicao", method = RequestMethod.POST)
     public ModelAndView editarEntity(HttpServletRequest request, Entity entity) {
 
@@ -89,12 +89,11 @@ public abstract class AbstractController<Entity> {
         Long idf = Long.parseLong(request.getParameter("id"));
         getDao().editar(entity);
 
-        
 
-        return new ModelAndView("redirect:/" + entityAlias + "/"+"movimentacao");
+        return new ModelAndView("redirect:/" + entityAlias + "/" + "movimentacao");
     }
 
-
+    @Transactional
     @RequestMapping(value = "delete", method = RequestMethod.GET)
     public ModelAndView deletarEntity(HttpServletRequest request) {
 
@@ -106,8 +105,6 @@ public abstract class AbstractController<Entity> {
 
         return new ModelAndView("redirect:/" + entityAlias + "/movimentacao");
     }
-
-
 
 
 }

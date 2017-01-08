@@ -29,7 +29,7 @@ public abstract class AbstractRestController<Entity> {
 
     @Transactional
     @RequestMapping(method = RequestMethod.POST)
-    public void saveEntity(Entity entity) {
+    public void AdicionarEntity(Entity entity) {
         validateSave(entity);
         getDao().add(entity);
     }
@@ -42,7 +42,7 @@ public abstract class AbstractRestController<Entity> {
     protected abstract void validateSave(Entity entity);
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Entity> searchEntity(@PathVariable Long id) {
+    public ResponseEntity<Entity> buscarEntity(@PathVariable Long id) {
         Entity entity = getDao().PegarPorId(id);
         if (entity == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -51,7 +51,7 @@ public abstract class AbstractRestController<Entity> {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Entity> listarAllEntity() {
+    public List<Entity> listarEntity() {
         return getDao().getAll();
 
     }

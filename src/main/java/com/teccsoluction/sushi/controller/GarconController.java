@@ -1,9 +1,8 @@
 package com.teccsoluction.sushi.controller;
 
-import com.teccsoluction.sushi.dao.generic.GarconDAO;
+import com.teccsoluction.sushi.dao.GarconDAO;
 import com.teccsoluction.sushi.entidade.Garcon;
 import com.teccsoluction.sushi.framework.AbstractController;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +22,7 @@ public class GarconController extends AbstractController<Garcon> {
     }
 
     @Override
-    protected AbstractEntityDao<Garcon> getDao() {
+    protected GarconDAO getDao() {
         return dao;
     }
 }

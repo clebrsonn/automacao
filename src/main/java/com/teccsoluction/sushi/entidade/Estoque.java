@@ -14,39 +14,42 @@ import java.util.List;
  */
 @Entity
 @Table(name = "ESTOQUE")
-public class Estoque  implements Serializable{
+public class Estoque implements Serializable {
+
+    private static final long serialVersionUID = 0xcL;
+
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
-    
+
     @Column(name = "nome")
     private String nome;
    
-    @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany
-    private List<Item> items;
-    
-    
+//    @LazyCollection(LazyCollectionOption.FALSE)
+//    @OneToMany
+//    private List<Item> items;
+
+
     public Estoque() {
-		// TODO Auto-generated constructor stub
-    	
-    	items = new ArrayList<>();
-	}
-    
+        // TODO Auto-generated constructor stub
+
+       // items = new ArrayList<>();
+    }
+
 
     public String getNome() {
-		return nome;
-	}
+        return nome;
+    }
 
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
 
-	public Long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -54,11 +57,11 @@ public class Estoque  implements Serializable{
         this.id = id;
     }
 
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
+//    public List<Item> getItems() {
+//        return items;
+//    }
+//
+//    public void setItems(List<Item> items) {
+//        this.items = items;
+//    }
 }

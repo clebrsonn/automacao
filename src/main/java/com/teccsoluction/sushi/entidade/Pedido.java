@@ -42,8 +42,8 @@ public abstract class Pedido {
 
     public Pedido() {
         // TODO Auto-generated constructor stub
-        items = new ArrayList<>();
-        pagamentos = new ArrayList<>();
+//        items = new ArrayList<>();
+//        pagamentos = new ArrayList<>();
     }
 
     public long getId() {

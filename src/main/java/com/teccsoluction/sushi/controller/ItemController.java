@@ -1,10 +1,9 @@
 package com.teccsoluction.sushi.controller;
 
 
-import com.teccsoluction.sushi.dao.generic.ItemDAO;
+import com.teccsoluction.sushi.dao.ItemDAO;
 import com.teccsoluction.sushi.entidade.Item;
 import com.teccsoluction.sushi.framework.AbstractController;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,7 +16,7 @@ public class ItemController extends AbstractController<Item> {
 
     private
     ItemDAO dao;
-    
+
 //	private
 //	final
 //	AbstractEntityDao<PedidoVenda> pedidovendaDao;
@@ -37,17 +36,16 @@ public class ItemController extends AbstractController<Item> {
     @Autowired
     public ItemController(ItemDAO itemdao) {
         super("item");
-        this.dao=itemdao;
+        this.dao = itemdao;
 
     }
 
     @Override
-    protected AbstractEntityDao<Item> getDao() {
+    protected ItemDAO getDao() {
         return dao;
     }
-    
-    
-    
+
+
 //    @RequestMapping(value = "additemvenda/", method = RequestMethod.GET)
 //	public ModelAndView  additemvenda(HttpServletRequest request){
 //    	
@@ -68,6 +66,6 @@ public class ItemController extends AbstractController<Item> {
 //		
 //		return additemvenda;
 //	}
-    
-    
+
+
 }

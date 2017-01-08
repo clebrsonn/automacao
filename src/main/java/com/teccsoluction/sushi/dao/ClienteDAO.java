@@ -1,4 +1,4 @@
-package com.teccsoluction.sushi.dao.generic;
+package com.teccsoluction.sushi.dao;
 
 import com.teccsoluction.sushi.entidade.Cliente;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;

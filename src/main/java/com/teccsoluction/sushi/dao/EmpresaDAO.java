@@ -1,6 +1,6 @@
-package com.teccsoluction.sushi.dao.generic;
+package com.teccsoluction.sushi.dao;
 
-import com.teccsoluction.sushi.entidade.DevolucaoCompra;
+import com.teccsoluction.sushi.entidade.Empresa;
 import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import org.springframework.stereotype.Repository;
 
@@ -8,11 +8,11 @@ import javax.persistence.TypedQuery;
 
 
 @Repository
-public class DevolucaoCompraDAO extends AbstractEntityDao<DevolucaoCompra> {
+public class EmpresaDAO extends AbstractEntityDao<Empresa> {
 
 
-    public DevolucaoCompraDAO() {
-        super(DevolucaoCompra.class, "DevolucaoCompra");
+    public EmpresaDAO() {
+        super(Empresa.class, "Empresa");
     }
 
     @Override

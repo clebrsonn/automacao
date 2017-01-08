@@ -1,20 +1,10 @@
 package com.teccsoluction.sushi.controller;
 
-import com.teccsoluction.sushi.dao.generic.ItemDAO;
-
-import com.teccsoluction.sushi.dao.generic.PedidoVendaDAO;
-
+import com.teccsoluction.sushi.dao.ItemDAO;
+import com.teccsoluction.sushi.dao.PedidoVendaDAO;
 import com.teccsoluction.sushi.entidade.Item;
-
 import com.teccsoluction.sushi.entidade.PedidoVenda;
-
 import com.teccsoluction.sushi.framework.AbstractEditor;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
-
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
@@ -23,82 +13,83 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+
 @Controller
 @RequestMapping(value = "cozinha/")
 public class CozinhaController {
 
-    
-	private
-	final
-	AbstractEntityDao<PedidoVenda> pedidoVendaDao;
-	
-	
-	private
-	final
-	AbstractEntityDao<Item> itemDao;
-	
-	
+
+    private
+    final
+    PedidoVendaDAO pedidoVendaDao;
+
+
+    private
+    final
+    ItemDAO itemDao;
+
+
 //	@Autowired
 //    public CaixaController() {
 //        super("caixa");
 //  
 //    }
-	
+
 
     @Autowired
-    public CozinhaController(ItemDAO daoitem,PedidoVendaDAO daopedido) {
+    public CozinhaController(ItemDAO daoitem, PedidoVendaDAO daopedido) {
         super();
 
         this.itemDao = daoitem;
-        this.pedidoVendaDao =daopedido;
+        this.pedidoVendaDao = daopedido;
 
-    } 
+    }
 
-    
-	  @InitBinder
-	    protected void initBinder(HttpServletRequest request,  ServletRequestDataBinder binder) {
+
+    @InitBinder
+    protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) {
 
 //	        binder.registerCustomEditor(Cliente.class, new AbstractEditor<Cliente>(this.clienteDao){
 //	        });
 
-	        binder.registerCustomEditor(Item.class, new AbstractEditor<Item>(this.itemDao) {
-	        });
-	        
+        binder.registerCustomEditor(Item.class, new AbstractEditor<Item>(this.itemDao) {
+        });
+
 //	        binder.registerCustomEditor(Produto.class, new AbstractEditor<Produto>(this.produtopedidovendaDao) {
 //	        });
-	        
-	        binder.registerCustomEditor(PedidoVenda.class, new AbstractEditor<PedidoVenda>(this.pedidoVendaDao) {
-	        });
+
+        binder.registerCustomEditor(PedidoVenda.class, new AbstractEditor<PedidoVenda>(this.pedidoVendaDao) {
+        });
 
 
-	    }
-    
+    }
+
     @RequestMapping(value = "carregarPedidoEmPreparacao", method = RequestMethod.GET)
-  		public ModelAndView  carregarPedidoEmPreparacao(HttpServletRequest request){
-  	    	
-  	    
-    	
-    		ModelAndView movimentacaocozinha = new ModelAndView("movimentacaocozinha");
+    public ModelAndView carregarPedidoEmPreparacao(HttpServletRequest request) {
+
+
+        ModelAndView movimentacaocozinha = new ModelAndView("movimentacaocozinha");
 
 //  	    	long idf = Long.parseLong(request.getParameter("idpedidovenda"));
 //  	    	long idfprod = Long.parseLong(request.getParameter("codigoitem"));
 //	    	PedidoVenda pv = pedidoVendaDao.PegarPorId(idf);
-	    	
-	    	
-	    	List<PedidoVenda> pedidovendaList = pedidoVendaDao.getAll();
+
+
+        List<PedidoVenda> pedidovendaList = pedidoVendaDao.getAll();
 //	    	List<Item> itemList = itemDao.getAllItens();
 //	    	Produto produto = produtopedidovendaDao.PegarPorId(idfprod);
-	    	
+
 //	    	movimentacaocozinha.addObject("itemList", itemList);
-	    	movimentacaocozinha.addObject("pedidovendaList", pedidovendaList);
+        movimentacaocozinha.addObject("pedidovendaList", pedidovendaList);
 //	    	movimentacaocozinha.addObject("pv", pv);
 //	    	movimentacaocaixa.addObject("produto", produto);
 
 
-			
-			return movimentacaocozinha;
-    	}
-    
+        return movimentacaocozinha;
+    }
+
     //POST
 //    
 //    	@RequestMapping(value = "AddItemVenda", method = RequestMethod.POST)
@@ -218,6 +209,6 @@ public class CozinhaController {
 //			
 //			return addformapagamento;
 //		}
-    
-    
+
+
 }
