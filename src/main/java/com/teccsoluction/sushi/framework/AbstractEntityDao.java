@@ -57,11 +57,11 @@ public abstract class AbstractEntityDao<Entity> {
     }
     
     //pega os produtos de uma determinada categoria 
-    
-    public List<Produto> getAllProdutosCategoria(long id) { 
-        List<Produto> result = manager.createQuery("SELECT p FROM Produto p where categoria_ID="+id, Produto.class).getResultList(); 
-        return result; 
-    } 
+//    
+//    public List<Produto> getAllProdutosCategoria(long id) { 
+//        List<Produto> result = manager.createQuery("SELECT p FROM Produto p where categoria_ID="+id, Produto.class).getResultList(); 
+//        return result; 
+//    } 
 
     @Transactional
     public void add(Entity entity) {
