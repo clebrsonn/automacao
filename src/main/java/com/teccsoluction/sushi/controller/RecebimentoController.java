@@ -8,7 +8,6 @@ import com.teccsoluction.sushi.dao.generic.RecebimentoDAO;
 import com.teccsoluction.sushi.entidade.*;
 import com.teccsoluction.sushi.framework.AbstractController;
 import com.teccsoluction.sushi.framework.AbstractEditor;
-import com.teccsoluction.sushi.framework.AbstractEntityDao;
 import com.teccsoluction.sushi.util.StatusPedido;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,20 +32,20 @@ public class RecebimentoController extends AbstractController<Recebimento> {
 
     private
     final
-    AbstractEntityDao<Fornecedor> fornecedorDao;
+    FornecedorDAO fornecedorDao;
 
     private
     final
-    AbstractEntityDao<PedidoCompra> pedidoCompraDao;
+    PedidoCompraDAO pedidoCompraDao;
 
 
     private
     final
-    AbstractEntityDao<Produto> produtoDao;
+    ProdutoDAO produtoDao;
 
     private
     final
-    AbstractEntityDao<Item> itemDao;
+    ItemDAO itemDao;
 
 
     @Autowired

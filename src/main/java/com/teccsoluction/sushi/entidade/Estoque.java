@@ -16,6 +16,9 @@ import java.util.List;
 @Table(name = "ESTOQUE")
 public class Estoque implements Serializable {
 
+    private static final long serialVersionUID = 0xcL;
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
