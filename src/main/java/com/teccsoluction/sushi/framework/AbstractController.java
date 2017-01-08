@@ -1,5 +1,6 @@
 package com.teccsoluction.sushi.framework;
 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,6 +36,7 @@ public abstract class AbstractController<Entity> {
 //        return new ModelAndView("cadastro" + entityAlias);
     }
 
+    @Transactional
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String AdicionarEntity(@ModelAttribute Entity entity) {
 
@@ -79,7 +81,7 @@ public abstract class AbstractController<Entity> {
         return edicao;
     }
 
-
+    @Transactional
     @RequestMapping(value = "edicao", method = RequestMethod.POST)
     public ModelAndView editarEntity(HttpServletRequest request, Entity entity) {
 
@@ -91,7 +93,7 @@ public abstract class AbstractController<Entity> {
         return new ModelAndView("redirect:/" + entityAlias + "/" + "movimentacao");
     }
 
-
+    @Transactional
     @RequestMapping(value = "delete", method = RequestMethod.GET)
     public ModelAndView deletarEntity(HttpServletRequest request) {
 
