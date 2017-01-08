@@ -66,7 +66,7 @@ public abstract class AbstractController<Entity> {
         return movimentacao;
     }
 
-
+    @Transactional
     @RequestMapping(value = "edicao", method = RequestMethod.GET)
     public ModelAndView editarEntityForm(HttpServletRequest request) {
 
