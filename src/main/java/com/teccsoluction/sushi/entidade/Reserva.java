@@ -24,7 +24,7 @@ public class Reserva implements Serializable {
     private String numero;
 
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @DateTimeFormat(pattern = "yyyy/MM/dd")
     private Date data;
 
     @Column(name = "mesa")

@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 <div>
-            <h3>Movimentação das Formas de Pagamento</h3>
+            <h3>Movimentacao das Formas de Pagamento</h3>
             	<div id="content-table">
 	<form id="mainform">
 
@@ -55,7 +55,7 @@
                        <td>${pagamento.parcelas}</td>
                     
                      <td class="options-width">
-                        <a href="edicaoid=${pagamento.id}" class="icon-1 info-tooltip" title="Edidar Estoria"></a>
+                        <a href="edicao?id=${pagamento.id}" class="icon-1 info-tooltip" title="Edidar Estoria"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${pagamento.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${pagamento.id}" class="icon-3 info-tooltip" title="bbb"></a>

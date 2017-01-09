@@ -134,7 +134,7 @@
 
                    
                     <td class="options-width">
-                        <a href="edicaoitem?id=${item.id}" class="icon-1 info-tooltip" title="Edit"></a>
+                        <a href="/edicaoitem?id=${pedido.id}" class="icon-1 info-tooltip" title="Edit"></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/delete?id=${item.id}" class="icon-4 info-tooltip" title="aaa"></a>
                          <a href="/edit?id=${item.id}" class="icon-3 info-tooltip" title="bbb"></a>

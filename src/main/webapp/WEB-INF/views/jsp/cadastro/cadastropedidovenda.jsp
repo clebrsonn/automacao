@@ -100,8 +100,8 @@
 			<select name="status" id="files" class="inp-form">
 				<optgroup label="Status do Pedido">
 
-					<c:forEach var="tipostatus" items="${tipoStatusList}">
-						<option value="${tipostatus}">${tipostatus}</option>
+					<c:forEach var="status" items="${tipoStatusList}">
+						<option value="${status}">${status}</option>
 					</c:forEach>
 
 

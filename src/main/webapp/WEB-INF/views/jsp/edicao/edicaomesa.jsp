@@ -3,17 +3,17 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Edição de Mesa</h3>
+		<h3>Edicao de Mesa</h3>
 	
 	<div id="form">
-	<form id="formMesa" action="edicao" method="get">
+	<form id="formMesa" action="edicao" method="POST">
 
 
 		<p>ID Mesa:</p>
 		<input type="text" class="inp-form"   name="id" value="${mesa.id}"/>
 
 		<p>Numero Mesa:</p>
-		<input name="nome"type="text" class="inp-form" value="${mesa.numero }"/>
+		<input name="numero"type="text" class="inp-form" value="${mesa.numero}"/>
 
 
 		<p>Status:</p>
@@ -22,7 +22,7 @@
 		
 						        <option value="${mesa.status }">${mesa.status }</option>
 		
-			<optgroup label="Tipo de Pedido">
+			<optgroup label="Status Mesa">
 				       
 				        <option value="Disponivel">Disponivel</option>
 				        <option value="Indisponivel">Indisponivel</option>
@@ -45,9 +45,12 @@
 
 
 
-<button class="form-submit">Update</button>
-<!-- 		<input type="button" value="" class="form-submit" />  -->
-		<input	type="reset" value="" class="form-reset" />
+       <div id="botoes">
+                <button class="button">Atualizar</button>
+                <button class="button">Apagar</button>
+
+
+            </div>
 
 	</form>
 

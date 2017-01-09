@@ -3,7 +3,7 @@
 
 <div id="conteudo" class="conteudo">
 
-		<h3>Edição de Formas de Pagamentos</h3>
+		<h3>Edicao da Formas de Pagamentos</h3>
 	
 	
 	<div id="formm">

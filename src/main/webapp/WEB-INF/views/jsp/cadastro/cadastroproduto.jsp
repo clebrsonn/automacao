@@ -53,9 +53,9 @@
 				
 				<legend>Dados do Produto</legend>
 			
-		<p>Codigo:
-			<input name="id"type="text" class="inp-form" readonly="readonly" />
-		</p>
+<!-- 		<p>Codigo: -->
+<!-- 			<input name="id"type="text" class="inp-form" readonly="readonly" /> -->
+<!-- 		</p> -->
 		
 		<p>Barra:
 			<input name="codebar"type="text" class="inp-form" />

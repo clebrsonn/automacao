@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page session="false" %>
 
 <div id="conteudo" class="conteudo">
@@ -16,8 +17,10 @@
 		<p>Numero da Reserva:</p>
 		<input name="numero" type="text" class="inp-form" value="${reserva.numero }"/>
 		
+		
 			<p>Data da Reserva:</p>
 		<input name="data" type="text" class="inp-form" value="${reserva.data }"/>
+		<fmt:formatDate type="date" pattern="yyyy/MM/dd"  value="" />
 		
 			<p>Hora da Reserva:</p>
 		<input name="hora" type="text" class="inp-form" value="${reserva.hora }"/>

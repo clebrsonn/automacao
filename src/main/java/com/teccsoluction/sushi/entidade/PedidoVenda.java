@@ -2,6 +2,7 @@ package com.teccsoluction.sushi.entidade;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.teccsoluction.sushi.util.OrigemPedido;
+import com.teccsoluction.sushi.util.StatusPedido;
 import com.teccsoluction.sushi.util.TipoPedido;
 
 import javax.persistence.*;
@@ -28,7 +29,23 @@ public class PedidoVenda extends Pedido {
     private TipoPedido tipo;
 
 
-    // VENDA OOU COMPRA
+    // ependente OOU em preparação
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
+    
+    
+
+    public StatusPedido getStatus() {
+		return status;
+	}
+
+
+	public void setStatus(StatusPedido status) {
+		this.status = status;
+	}
+
+
+	// VENDA OOU COMPRA
     @Enumerated(EnumType.STRING)
     private OrigemPedido origempedido;
 
@@ -39,6 +56,16 @@ public class PedidoVenda extends Pedido {
 
 
 
+
+
+	public OrigemPedido getOrigempedido() {
+		return origempedido;
+	}
+
+
+	public void setOrigempedido(OrigemPedido origempedido) {
+		this.origempedido = origempedido;
+	}
 
 
 	//lista de devolucoes de compra

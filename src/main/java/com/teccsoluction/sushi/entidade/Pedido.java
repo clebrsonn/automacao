@@ -22,7 +22,7 @@ public abstract class Pedido {
     protected long id;
 
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @DateTimeFormat(pattern = "yyyy/MM/dd")
     private Date data;
 
     @Enumerated(EnumType.STRING)

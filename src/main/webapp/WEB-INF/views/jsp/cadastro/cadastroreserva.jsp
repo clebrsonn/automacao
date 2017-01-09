@@ -57,8 +57,8 @@
 				<legend>Dados da Reserva</legend>
 			
 
-		<p>ID da Reserva:
-		<input type="text" class="inp-form"  name="id" value="${reserva.id}"/> </p>
+<!-- 		<p>ID da Reserva: -->
+<!-- 		<input type="text" class="inp-form"  name="id" readonly="readonly"/> </p> -->
 
 		<p>Numero da Reserva:
 		<input name="numero" type="text" class="inp-form" value="${reserva.numero}"/> </p>
