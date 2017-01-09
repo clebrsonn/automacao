@@ -30,7 +30,7 @@
 
 
 <c:choose>
-  <c:when test="${pedido.status== 'TELEVENDAS' }">
+  <c:when test="${pedido.id!= null }">
     <tr class="alternate-row">
                 <td><input  type="checkbox"/></td>
                     <td>${pedido.id}</td>
