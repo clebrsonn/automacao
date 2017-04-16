@@ -34,7 +34,8 @@
 		<button onclick="window.location.href='cozinha/carregarPedidoEmPreparacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/cozinha.png">Cozinha</p></button>
 		<button onclick="window.location.href='delivery/carregarPedidoDelivery'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/entregaa.png">Entregas</p></button>
 		<button onclick="window.location.href='empresa/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/entregaa.png">Empresa</p></button>
-<%-- 		<button onclick="window.location.href='caixa/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/entregaa.png">Caixa</p></button> --%>
+		<button onclick="window.location.href='caixa/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/entregaa.png">Salão</p></button>
+<%-- 		<button onclick="window.location.href='caixa/movimentacao'"><p><img alt="kkk" src="${pageContext.request.contextPath}/resources/images/entregaa.png">Salão</p></button> --%>
 
 	
 </div>

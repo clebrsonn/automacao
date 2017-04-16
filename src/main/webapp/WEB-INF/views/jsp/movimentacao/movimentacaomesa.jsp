@@ -17,7 +17,7 @@
   						</c:when>
   						
 						<c:when test="${mesa.status == 'Indisponivel'}">
-								<div class="mesa"><div class="mesa_indisponivel">${mesa.numero}</div><div class="ocupado"></div></div>
+								<a href="edicao?id=${mesa.id}" ><div class="mesa"><div class="mesa_indisponivel">${mesa.numero}</div><div class="ocupado"></div></div></a>
   						
   						</c:when>
   						
